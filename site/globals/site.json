@@ -16,7 +16,7 @@
     "twitter": "https://twitter.com/m2creates",
     "linkedin": "https://linkedin.com/in/mmagdalena"
   },
-  "navigation": {
+  "nav": {
     "main": [
       {
         "label": "Home",
@@ -35,5 +35,9 @@
         "url": "/contact/"
       }
     ]
+  },
+  "button": {
+    "label": "Download",
+    "url": "https://streamsites.com"
   }
 }
