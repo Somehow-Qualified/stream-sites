@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en" class="min-h-full antialiased">
+<head>
+    {# include our meta tags #}
+    {% include "components/meta.njk" %}
+
+    {# include main.css in development mode #}
+    {% if helpers.environment == "development" %}
+    <link rel="stylesheet" href="/css/main.css">
+    {% else %}
+    {# otherwise, use main.min.css #}
+    <link rel="stylesheet" href="/css/main.min.css">
+    {% endif %}
+
+    {# favicon #}
+    <link rel="icon" type="image/png" href="{{ site.images.favicon }}">
+</head>
+
+<body {% if body_class %} id="{{ body_class }}"{% endif %} class="min-h-full font-sans text-lg text-purple-darkest leading-normal">
+
+    <div id="wrapper" class="wrapper flex flex-col relative min-h-screen">
+
+        {# include header #}
+        {% include "components/header.njk" %}
+
+        {# include content #}
+        {{ content | safe }}
+
+        {# include footer #}
+        {% include "components/footer.njk" %}
+
+    </div>
+
+    {# include scripts #}
+    {% if helpers.environment == "development" %}
+    <script src="/javascript/main.js"></script>
+    {% else %}
+    <script src="/javascript/main.min.js"></script>
+    {% endif %}
+
+</body>
+</html>
