@@ -1,10 +1,10 @@
 {
-    "name": "Skeleventy",
-    "url": "https://skeleventy.netlify.com",
+    "name": "Stream Sites",
+    "url": "https://streamsites.netlify.com",
     "author": {
-        "name": "Max Power",
-        "email": "hello@maxpower.com",
-        "handle": "@maxpower",
+        "name": "Melanie E Magdalena",
+        "email": "hello@melaniemagdalena.com",
+        "handle": "@m2creates",
         "avatar": "/images/blog/author.jpg"
     },
     "images": {
@@ -13,8 +13,7 @@
         "og": "/images/meta/og.jpg"
     },
     "social_links": {
-        "facebook": "https://www.facebook.com",
-        "twitter": "https://www.twitter.com",
-        "linkedin": "https://www.linkedin.com"
+        "twitter": "https://twitter.com/m2creates",
+        "linkedin": "https://linkedin.com/in/mmagdalena"
     }
 }
