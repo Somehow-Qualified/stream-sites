@@ -5,8 +5,8 @@ backend:
 # Uncomment below to disable drafts
 publish_mode: editorial_workflow
 
-media_folder: "images/blog" # Media files will be stored in the repo under images/uploads
-public_folder: "images/blog"
+media_folder: "images" # Media files will be stored in the repo under images/uploads
+public_folder: "images"
 
 collections:
   - name: "blog" # Used in routes, e.g., /admin/collections/blog
