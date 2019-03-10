@@ -6,14 +6,17 @@
 
     {# include main.css in development mode #}
     {% if helpers.environment == "development" %}
-    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="css/main.css">
     {% else %}
     {# otherwise, use main.min.css #}
-    <link rel="stylesheet" href="/css/main.min.css">
+    <link rel="stylesheet" href="css/main.min.css">
     {% endif %}
 
     {# favicon #}
     <link rel="icon" type="image/png" href="{{ site.images.favicon }}">
+
+    {# Netlify Identity #}
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 
 <body {% if body_class %} id="{{ body_class }}"{% endif %} class="min-h-full font-sans text-lg text-purple-darkest leading-normal">
@@ -33,9 +36,9 @@
 
     {# include scripts #}
     {% if helpers.environment == "development" %}
-    <script src="/javascript/main.js"></script>
+    <script src="javascript/main.js"></script>
     {% else %}
-    <script src="/javascript/main.min.js"></script>
+    <script src="javascript/main.min.js"></script>
     {% endif %}
 
 </body>
