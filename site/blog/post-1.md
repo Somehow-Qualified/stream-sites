@@ -1,7 +1,6 @@
 ---
 title: 7 steps to more productive meetings
 date: 2018-09-30
-permalink: 7-steps-to-more-productive-meetings
 category: Business
 featured_image: /images/blog/post-1.jpg
 image_caption: Photo by Dylan Gillis on Unsplash

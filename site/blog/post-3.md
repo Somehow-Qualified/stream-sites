@@ -1,7 +1,6 @@
 ---
 title: Why running is incredible medicine for your brain
 date: 2019-11-15T00:00:00.000Z
-permalink: why-running-is-incredible-for-your-brain
 featured_image: /images/blog/post-3.jpg
 layout: post
 ---

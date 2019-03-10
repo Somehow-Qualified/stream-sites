@@ -1,4 +1,5 @@
 {
     "layout": "layouts/post.njk",
-    "tags": "blog"
+    "tags": "blog",
+    "outputPath": "dist/blog/"
 }
