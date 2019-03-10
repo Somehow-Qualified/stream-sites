@@ -1,7 +1,7 @@
 <nav id="nav" class="nav flex">
 
     <ul class="menu flex flex-col md:flex-row items-center list-reset text-base">
-        {% for item in navigation.main %}
+        {% for item in site.navigation.main %}
         <li class="level-1 mb-4 md:mr-4 md:mb-0">
             <a href="{{ item.url | safe }}" class="link font-bold text-white {% if page.url == item.url %}active text-pink-dark{% endif %}
             ">{{ item.label }}</a>

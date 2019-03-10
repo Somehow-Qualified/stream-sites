@@ -15,12 +15,13 @@ collections:
     create: true # Allow users to create new documents in this collection
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
     fields: # The fields for each document, usually in front matter
-      - {label: "Template", name: "layout", widget: "select", default: "post", options: ["post"]}
       - {label: "Title", name: "title", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Permalink", name: "permalink", widget: "string"}
       - {label: "Featured Image", name: "featured_image", widget: "image", media_library: {config:{multiple: false}}}
-      # {label: "Publish Date", name: "date", widget: "datetime"}
       # {label: "Category", name: "category", widget: "string"}
       - {label: "Body", name: "body", widget: "markdown"}
+      - {label: "Template", name: "layout", widget: "select", default: "post", options: ["post"]}
   - name: "pages"
     label: "Page"
     folder: "site/pages"

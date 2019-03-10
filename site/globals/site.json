@@ -1,19 +1,39 @@
 {
-    "name": "Stream Sites",
-    "url": "https://streamsites.netlify.com",
-    "author": {
-        "name": "Melanie E Magdalena",
-        "email": "hello@melaniemagdalena.com",
-        "handle": "@m2creates",
-        "avatar": "/images/blog/author.jpg"
-    },
-    "images": {
-        "favicon": "/images/favicon.ico",
-        "twitter": "/images/meta/twitter.jpg",
-        "og": "/images/meta/og.jpg"
-    },
-    "social_links": {
-        "twitter": "https://twitter.com/m2creates",
-        "linkedin": "https://linkedin.com/in/mmagdalena"
-    }
+  "name": "Stream Sites",
+  "url": "https://streamsites.netlify.com",
+  "author": {
+    "name": "Melanie E Magdalena",
+    "email": "hello@melaniemagdalena.com",
+    "handle": "@m2creates",
+    "avatar": "/images/blog/author.jpg"
+  },
+  "images": {
+    "favicon": "/images/favicon.ico",
+    "twitter": "/images/meta/twitter.jpg",
+    "og": "/images/meta/og.jpg"
+  },
+  "social_links": {
+    "twitter": "https://twitter.com/m2creates",
+    "linkedin": "https://linkedin.com/in/mmagdalena"
+  },
+  "navigation": {
+    "main": [
+      {
+        "label": "Home",
+        "url": "/"
+      },
+      {
+        "label": "About",
+        "url": "/about/"
+      },
+      {
+        "label": "Blog",
+        "url": "/blog/"
+      },
+      {
+        "label": "Contact",
+        "url": "/contact/"
+      }
+    ]
+  }
 }
