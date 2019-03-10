@@ -25,6 +25,7 @@ module.exports = function (eleventyConfig) {
 
     // Layout aliases
     eleventyConfig.addLayoutAlias('default', 'layouts/default.njk');
+    eleventyConfig.addLayoutAlias('home', 'layouts/home.njk');
     eleventyConfig.addLayoutAlias('post', 'layouts/post.njk');
 
     // Include our static assets
@@ -43,9 +44,9 @@ module.exports = function (eleventyConfig) {
 
         dir: {
             input: 'site',
-            output: 'dist',
             includes: 'includes',
-            data: 'globals'
+            data: 'globals',
+            output: 'dist' // the Publish directory
         }
     };
 

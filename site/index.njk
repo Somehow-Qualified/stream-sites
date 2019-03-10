@@ -1,9 +1,8 @@
 ---
-layout: default
+layout: home
 meta_title: Home
-meta_description: Homepage description
-body_class: home
-title: Welcome to Skeleventy
+meta_description: Stream Sites is a Eleventy static site generated with Netlify and powered with Netlify CMS + Identity
+title: Welcome to Stream Sites
 ---
 
 <main id="main" class="main container m-auto flex flex-1 flex-col md:flex-row py-10 px-6 lg:px-0 lg:py-20">
@@ -30,5 +29,15 @@ title: Welcome to Skeleventy
     </section>
 
 </main>
-
-
+<!-- Enable Netlify Identity Login -->
+<script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", user => {
+      if (!user) {
+        window.netlifyIdentity.on("login", () => {
+          document.location.href = "/admin/";
+        });
+      }
+    });
+  }
+</script>
