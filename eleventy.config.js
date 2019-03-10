@@ -32,6 +32,9 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy("javascript");
     eleventyConfig.addPassthroughCopy("images");
 
+    // Include Netlify CMS Admin
+    eleventyConfig.addPassthroughCopy("site/admin");
+
     return {
         templateFormats: ["md", "njk"],
         markdownTemplateEngine: 'njk',
