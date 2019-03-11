@@ -8,6 +8,10 @@ backend:
 media_folder: "images" # Media files will be stored in the repo under images/uploads
 public_folder: "images"
 
+# Replace URL with your Netlify or Custom domain
+# to enable CMS previews
+site_url: https://demo-streamsites.netlify.com
+
 collections:
   - name: "blog" # Used in routes, e.g., /admin/collections/blog
     label: "Blog" # Used in the UI
