@@ -49,7 +49,7 @@ collections:
   - name: "settings"
     label: "Settings"
     description: "Edit your settings."
-    folder: "site/globals"
+    file: "site/globals/site.json"
     extension: "json"
     format: "json"
     create: false
