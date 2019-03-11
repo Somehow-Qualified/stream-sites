@@ -20,12 +20,12 @@ module.exports = function (eleventyConfig) {
 
     // Collections
     eleventyConfig.addCollection('blog', collection => {
-        return collection.getFilteredByTag('blog').reverse();
+        return collection.getFilteredByGlob("site/blog/*.md");
     });
 
     // Layout aliases
     eleventyConfig.addLayoutAlias('default', 'layouts/default.njk');
-    eleventyConfig.addLayoutAlias('home', 'layouts/home.njk');
+    eleventyConfig.addLayoutAlias('main-page', 'layouts/main-page.njk');
     eleventyConfig.addLayoutAlias('post', 'layouts/post.njk');
 
     // Include our static assets
@@ -37,9 +37,9 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy("site/admin");
 
     return {
-        templateFormats: ["md", "njk"],
-        markdownTemplateEngine: 'njk',
-        htmlTemplateEngine: 'njk',
+        templateFormats : ["njk", "md", "html"],
+        htmlTemplateEngine : "njk",
+        markdownTemplateEngine : "njk",
         passthroughFileCopy: true,
 
         dir: {

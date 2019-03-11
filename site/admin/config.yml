@@ -27,7 +27,7 @@ collections:
     create: true # Change to true to allow users to create new pages
     slug: "{{slug}}"
     fields:
-      - {label: "Template", name: "layout", widget: "select", default: "default", options: ["default", "home"]}
+      - {label: "Template", name: "layout", widget: "select", default: "default", options: ["default", "main-page"]}
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Meta Title", name: "meta_title", widget: "string" }
       - { label: "Meta Description", name: "meta_description", widget: "string" }
