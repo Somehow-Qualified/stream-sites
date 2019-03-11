@@ -29,9 +29,9 @@ collections:
       - {label: "Template", name: "layout", widget: "select", default: "post", options: ["post"]}
   - name: "pages"
     label: "Page"
-    folder: "site"
+    folder: "site/pages"
     create: true # Change to true to allow users to create new pages
-    slug: "{{slug}}.html"
+    slug: "{{slug}}"
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Meta Title", name: "meta_title", widget: "string" }
