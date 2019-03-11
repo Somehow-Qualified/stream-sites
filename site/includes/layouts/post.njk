@@ -12,7 +12,7 @@ layout: default
 
             <div class="text-sm md:text-base text-grey-dark flex justify-center">
 
-                <p class="author">By {{ site.author.name }}</p>
+                <p class="author">By {{ author.name }}</p>
 
                 <p class="px-2">—</p>
 
@@ -56,13 +56,13 @@ layout: default
 
             <figure class="mb-4">
 
-                <img class="block rounded-full m-auto w-64 p-8 md:p-12" src="{{ site.author.avatar }}" alt="{{ site.author.name }}">
+                <img class="block rounded-full m-auto w-64 p-8 md:p-12" src="{{ site.author.avatar }}" alt="{{ author.name }}">
 
-                <figcaption class="font-bold text-pink-dark">{{ site.author.name }}</figcaption>
+                <figcaption class="font-bold text-pink-dark">{{ author.name }}</figcaption>
 
             </figure>
 
-            <p class="text-sm mb-8">{{ site.author.bio }}</p>
+            <p class="text-sm mb-8">{{ author.bio }}</p>
 
             {% include 'components/social-icons.njk' %}
 
