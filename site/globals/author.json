@@ -1,9 +1,7 @@
 {
-  "author": {
-    "name": "Melanie E Magdalena",
-    "email": "hello@melaniemagdalena.com",
-    "handle": "@m2creates",
-    "avatar": "/images/author.jpg",
-    "bio": "Equal parts coffee, creativity, and code."
-  }
+  "name": "Melanie E Magdalena",
+  "email": "hello@melaniemagdalena.com",
+  "handle": "@m2creates",
+  "avatar": "/images/author.jpg",
+  "bio": "Equal parts coffee, creativity, and code."
 }
