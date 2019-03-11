@@ -68,9 +68,9 @@ collections:
         name: "images"
         widget: "object"
         fields:
-          - {label: "Favicon", name: "favicon", widget: "image", media_library: {config:{multiple: false}}}
-          - {label: "Twitter Sharing", name: "twitter-og", widget: "image", media_library: {config:{multiple: false}}}
-          - {label: "General Social Sharing", name: "og", widget: "image", media_library: {config:{multiple: false}}}
+          - { label: "Favicon", name: "favicon", widget: "image", media_library: {config:{multiple: false}} }
+          - { label: "Twitter Sharing", name: "twitter-og", widget: "image", media_library: {config:{multiple: false}} }
+          - { label: "General Social Sharing", name: "og", widget: "image", media_library: {config:{multiple: false}} }
       - label: "Social Links"
         name: "social_links"
         widget: "object"
