@@ -81,6 +81,7 @@ collections:
           - { label: "Facebook", name: "facebook", widget: "string" }
       - label: "Colors"
         name: "colors"
+        description: "Select the color palette you want to use."
         widget: "object"
         fields:
           - { label: "Main Color", name: "main", widget: "select", default: "purple", options: ["red", "orange", "yellow", "teal", "blue", "indigo", "purple", "pink"] }
