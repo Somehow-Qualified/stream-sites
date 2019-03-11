@@ -17,6 +17,10 @@
     "twitter": "https://twitter.com/m2creates",
     "linkedin": "https://linkedin.com/in/mmagdalena"
   },
+  "colors": {
+    "main": "purple",
+    "accent": "pink"
+  },
   "nav": {
     "main": [
       {
