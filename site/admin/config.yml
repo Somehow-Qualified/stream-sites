@@ -54,12 +54,12 @@ collections:
     create:              false
     preview:             false
     files:
-      - label:           "Site Branding"
-        name:            "Site Branding"
+      - label:           "Brand Settings"
+        name:            "site"
         file:            "site/globals/site.json"
         preview:         false
         fields:
-          - { label: "Name", name: "name", widget: "string" }
+          - { label: "Brand Name", name: "name", widget: "string" }
           - { label: "Live URL", name: "url", widget: "string" }
           - { label: "Favicon", name: "favicon", widget: "image", media_library: {config:{multiple: false}} }
           - label:       "Colors"
@@ -69,35 +69,35 @@ collections:
             fields:
               - { label: "Main Color", name: "main", widget: "select", default: "purple", options: ["red", "orange", "yellow", "teal", "blue", "indigo", "purple", "pink"] }
               - { label: "Accent Color", name: "accent", widget: "select", default: "pink", options: ["red", "orange", "yellow", "teal", "blue", "indigo", "purple", "pink"] }
-          - label:       "social"
-            name:        "Social Media"
-            file:        "site/globals/social.json"
-            preview:     false
+      - label:       "Social Media"
+        name:        "social"
+        file:        "site/globals/social.json"
+        preview:     false
+        fields:
+          - label:   "Social Sharing Images"
+            name:    "images"
+            widget:  "object"
             fields:
-              - label:   "Social Sharing Images"
-                name:    "images"
-                widget:  "object"
-                fields:
-                  - { label: "Open Graph Image", name: "og", widget: "image", media_library: { config: { multiple: false } } }
-                  - { label: "Twitter Image", name: "twitter-og", widget: "image", media_library: { config: { multiple: false } } }
-              - label:   "Social Links"
-                name:    "social_links"
-                widget:  "object"
-                fields:
-                  - { label: "Twitter", name: "twitter", widget: "string" }
-                  - { label: "LinkedIn", name: "linkedin", widget: "string" }
-                  - { label: "Facebook", name: "facebook", widget: "string" }
-          - label:       "author"
-            name:        "Author"
-            widget:      "object"
-            file:        "site/globals/author.json"
-            preview:     false
+              - { label: "Open Graph Image", name: "og", widget: "image", media_library: { config: { multiple: false } } }
+              - { label: "Twitter Image", name: "twitter-og", widget: "image", media_library: { config: { multiple: false } } }
+          - label:   "Social Links"
+            name:    "social_links"
+            widget:  "object"
             fields:
-              - { label: "Name", name: "name", widget: "string" }
-              - { label: "Email", name: "email", widget: "string" }
-              - { label: "Handle", name: "handle", widget: "string" }
-              - { label: "Avatar", name: "avatar", widget: "image", media_library: { config: { multiple: false } } }
-              - { label: "Short Bio", name: "bio", widget: "string" }
+              - { label: "Twitter", name: "twitter", widget: "string" }
+              - { label: "LinkedIn", name: "linkedin", widget: "string" }
+              - { label: "Facebook", name: "facebook", widget: "string" }
+      - label:       "Profile Settings"
+        name:        "profile"
+        widget:      "object"
+        file:        "site/globals/author.json"
+        preview:     false
+        fields:
+          - { label: "Name", name: "name", widget: "string" }
+          - { label: "Email", name: "email", widget: "string" }
+          - { label: "Handle", name: "handle", widget: "string" }
+          - { label: "Avatar", name: "avatar", widget: "image", media_library: { config: { multiple: false } } }
+          - { label: "Short Bio", name: "bio", widget: "string" }
 
   # name:                "navigation"
   #  label:              "Nav Menu"
