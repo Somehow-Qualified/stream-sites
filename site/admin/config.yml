@@ -49,44 +49,47 @@ collections:
   - name: "settings"
     label: "Settings"
     description: "Edit your settings."
-    file: "site/globals/site.json"
     extension: "json"
     format: "json"
     create: false
     preview: false
-    fields:
-      - { label: "Name", name: "name", widget: "string" }
-      - { label: "Live URL", name: "url", widget: "string" }
-      - label: "Author"
-        name: "author"
-        widget: "object"
+    files:
+      label: "Site"
+      name: "site"
+        file: "site/globals/site.json"
         fields:
           - { label: "Name", name: "name", widget: "string" }
-          - { label: "Email", name: "email", widget: "string" }
-          - { label: "Handle", name: "handle", widget: "string" }
-          - {label: "Avatar", name: "avatar", widget: "image", media_library: {config:{multiple: false}}}
-          - { label: "Short Bio", name: "bio", widget: "string" }
-      - label: "Site Images"
-        name: "images"
-        widget: "object"
-        fields:
-          - { label: "Favicon", name: "favicon", widget: "image", media_library: {config:{multiple: false}} }
-          - { label: "Twitter Sharing", name: "twitter-og", widget: "image", media_library: {config:{multiple: false}} }
-          - { label: "General Social Sharing", name: "og", widget: "image", media_library: {config:{multiple: false}} }
-      - label: "Social Links"
-        name: "social_links"
-        widget: "object"
-        fields:
-          - { label: "Twitter", name: "twitter", widget: "string" }
-          - { label: "LinkedIn", name: "linkedin", widget: "string" }
-          - { label: "Facebook", name: "facebook", widget: "string" }
-      - label: "Colors"
-        name: "colors"
-        description: "Select the color palette you want to use."
-        widget: "object"
-        fields:
-          - { label: "Main Color", name: "main", widget: "select", default: "purple", options: ["red", "orange", "yellow", "teal", "blue", "indigo", "purple", "pink"] }
-          - { label: "Accent Color", name: "accent", widget: "select", default: "pink", options: ["red", "orange", "yellow", "teal", "blue", "indigo", "purple", "pink"] }
+          - { label: "Live URL", name: "url", widget: "string" }
+          - label: "Author"
+            name: "author"
+            widget: "object"
+            fields:
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Email", name: "email", widget: "string" }
+              - { label: "Handle", name: "handle", widget: "string" }
+              - {label: "Avatar", name: "avatar", widget: "image", media_library: {config:{multiple: false}}}
+              - { label: "Short Bio", name: "bio", widget: "string" }
+          - label: "Site Images"
+            name: "images"
+            widget: "object"
+            fields:
+              - { label: "Favicon", name: "favicon", widget: "image", media_library: {config:{multiple: false}} }
+              - { label: "Twitter Sharing", name: "twitter-og", widget: "image", media_library: {config:{multiple: false}} }
+              - { label: "General Social Sharing", name: "og", widget: "image", media_library: {config:{multiple: false}} }
+          - label: "Social Links"
+            name: "social_links"
+            widget: "object"
+            fields:
+              - { label: "Twitter", name: "twitter", widget: "string" }
+              - { label: "LinkedIn", name: "linkedin", widget: "string" }
+              - { label: "Facebook", name: "facebook", widget: "string" }
+          - label: "Colors"
+            name: "colors"
+            description: "Select the color palette you want to use."
+            widget: "object"
+            fields:
+              - { label: "Main Color", name: "main", widget: "select", default: "purple", options: ["red", "orange", "yellow", "teal", "blue", "indigo", "purple", "pink"] }
+              - { label: "Accent Color", name: "accent", widget: "select", default: "pink", options: ["red", "orange", "yellow", "teal", "blue", "indigo", "purple", "pink"] }
   # name: "navigation"
   #  label: "Nav Menu"
   #  fields:
