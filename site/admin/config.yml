@@ -54,7 +54,7 @@ collections:
     create:              false
     preview:             false
     files:
-      - label:           "site"
+      - label:           "Site Branding"
         name:            "Site Branding"
         file:            "site/globals/site.json"
         preview:         false
