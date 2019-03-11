@@ -23,7 +23,7 @@ collections:
       - {label: "Template", name: "layout", widget: "select", default: "post", options: ["post"]}
   - name: "pages"
     label: "Page"
-    folder: "site/pages"
+    folder: "site"
     create: true # Change to true to allow users to create new pages
     slug: "{{slug}}"
     fields:
