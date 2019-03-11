@@ -13,8 +13,10 @@ public_folder: "images"
 site_url: https://demo-streamsites.netlify.com
 
 collections:
-  - name: "blog" # Used in routes, e.g., /admin/collections/blog
-    label: "Blog" # Used in the UI
+  - name: "blog"
+    label: "Blog"
+    label_singular: "Blog"
+    description: "Create a blog post."
     folder: "site/blog" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
@@ -28,9 +30,30 @@ collections:
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Template", name: "layout", widget: "select", default: "post", options: ["post"]}
   - name: "pages"
-    label: "Page"
+    label: "Pages"
+    label_singular: "Page"
+    description: "Create a new page."
     folder: "site/pages"
-    create: true # Change to true to allow users to create new pages
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Meta Title", name: "meta_title", widget: "string" }
+      - { label: "Meta Description", name: "meta_description", widget: "string" }
+      - { label: "Permalink", name: "permalink", widget: "string" }
+      # { label: "Publish Date", name: "date", widget: "datetime" }
+      # { label: "Navigation Title", name: "navtitle", widget: "string" }
+      # { label: "Tags", name: "tags", widget: "hidden", default: "nav" }
+      - { label: "Body", name: "body", widget: "markdown" }
+      - {label: "Template", name: "layout", widget: "select", default: "default", options: ["default", "main-page"]}
+  - name: "settings"
+    label: "Settings"
+    label_singular: "Page"
+    description: "Edit your settings."
+    folder: "site/globals/site"
+    extension: "json"
+    format: "json"
+    create: false
     slug: "{{slug}}"
     fields:
       - { label: "Title", name: "title", widget: "string" }
