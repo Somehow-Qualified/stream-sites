@@ -57,6 +57,7 @@ collections:
       - label: "site"
         name: "Site"
         file: "site/globals/site.json"
+        preview: false
         fields:
           - { label: "Name", name: "name", widget: "string" }
           - { label: "Live URL", name: "url", widget: "string" }
