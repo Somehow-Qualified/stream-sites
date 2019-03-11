@@ -53,6 +53,7 @@ collections:
     extension: "json"
     format: "json"
     create: false
+    preview: false
     fields:
       - { label: "Name", name: "name", widget: "string" }
       - { label: "Live URL", name: "url", widget: "string" }
