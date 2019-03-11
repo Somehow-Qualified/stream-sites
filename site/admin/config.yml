@@ -60,6 +60,7 @@ collections:
         name: "author"
         widget: "object"
         fields:
+          - { label: "Name", name: "name", widget: "string" }
           - { label: "Email", name: "email", widget: "string" }
           - { label: "Handle", name: "handle", widget: "string" }
           - {label: "Avatar", name: "avatar", widget: "image", media_library: {config:{multiple: false}}}
@@ -78,9 +79,24 @@ collections:
           - { label: "Twitter", name: "twitter", widget: "string" }
           - { label: "LinkedIn", name: "linkedin", widget: "string" }
           - { label: "Facebook", name: "facebook", widget: "string" }
-      - label: "Nav Button"
-        name: "button"
+      - label: "Colors"
+        name: "color"
         widget: "object"
         fields:
-          - { label: "Button Text", name: "label", widget: "string" }
-          - { label: "Button Link", name: "url", widget: "string" }
+          - { label: "Main Color", name: "color_main", widget: "select", default: "{{ site.colors.color_main }}", options: ["red, orange, yellow, teal, blue, indigo, purple, {{ site.colors.color_main }}"] }
+          - { label: "Accent Color", name: "color_accent", widget: "select", default: "{{ site.colors.color_main }}", options: ["red, orange, yellow, teal, blue, indigo, purple, {{ site.colors.color_main }}"] }
+  # name: "navigation"
+  #  label: "Nav Menu"
+  #  fields:
+  #    - label: "Menu Links"
+  #      name: "main"
+  #      widget: "object"
+  #      fields:
+  #        - { label: "Home Page", name: "label", widget: "string" }
+  #        - { label: "Button Link", name: "url", widget: "string" }
+  #    - label: "Nav Button"
+  #      name: "button"
+  #      widget: "object"
+  #      fields:
+  #        - { label: "Button Text", name: "label", widget: "string" }
+  #        - { label: "Button Link", name: "url", widget: "string" }
