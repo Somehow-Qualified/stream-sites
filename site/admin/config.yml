@@ -54,8 +54,8 @@ collections:
     create: false
     preview: false
     files:
-      label: "Site"
-      name: "site"
+      - label: "site"
+        name: "Site"
         file: "site/globals/site.json"
         fields:
           - { label: "Name", name: "name", widget: "string" }
