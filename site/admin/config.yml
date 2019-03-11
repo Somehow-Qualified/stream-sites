@@ -18,7 +18,9 @@ collections:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Featured Image", name: "featured_image", widget: "image", media_library: {config:{multiple: false}}}
-      # {label: "Category", name: "category", widget: "string"}
+      - {label: "Image Caption", name: "image_caption", widget: "string"}
+      - {label: "Excerpt", name: "excerpt", widget: "string"}
+      - {label: "Category", name: "category", widget: "string"}
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Template", name: "layout", widget: "select", default: "post", options: ["post"]}
   - name: "pages"
@@ -27,11 +29,12 @@ collections:
     create: true # Change to true to allow users to create new pages
     slug: "{{slug}}"
     fields:
-      - {label: "Template", name: "layout", widget: "select", default: "default", options: ["default", "main-page"]}
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Meta Title", name: "meta_title", widget: "string" }
       - { label: "Meta Description", name: "meta_description", widget: "string" }
+      - { label: "Permalink", name: "permalink", widget: "string" }
       # { label: "Publish Date", name: "date", widget: "datetime" }
       # { label: "Navigation Title", name: "navtitle", widget: "string" }
       # { label: "Tags", name: "tags", widget: "hidden", default: "nav" }
       - { label: "Body", name: "body", widget: "markdown" }
+      - {label: "Template", name: "layout", widget: "select", default: "default", options: ["default", "main-page"]}
