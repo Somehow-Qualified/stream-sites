@@ -31,7 +31,7 @@ collections:
     label: "Page"
     folder: "site"
     create: true # Change to true to allow users to create new pages
-    slug: "{{slug}}"
+    slug: "{{slug}}.html"
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Meta Title", name: "meta_title", widget: "string" }
