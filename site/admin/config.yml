@@ -1,26 +1,26 @@
 backend:
-  name: git-gateway
-  branch: master # Branch to update (optional; defaults to master)
+  name:                  git-gateway
+  branch:                master # Branch to update (optional; defaults to master)
 
 # Uncomment below to enable drafts for GitHub
-# publish_mode: editorial_workflow
+# publish_mode:          editorial_workflow
 
-media_folder: "images" # Media files will be stored in the repo under images/uploads
-public_folder: "images"
+media_folder:            "images" # Media files will be stored in the repo under images/uploads
+public_folder:           "images"
 
 # Replace URL with your Netlify or Custom domain
 # to enable CMS previews
-site_url: https://demo-streamsites.netlify.com
+site_url:                https://demo-streamsites.netlify.com
 
 collections:
-  - name: "blog"
-    label: "Blog"
-    label_singular: "Blog"
-    description: "Create a blog post."
-    folder: "site/blog" # The path to the folder where the documents are stored
-    create: true # Allow users to create new documents in this collection
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
-    fields: # The fields for each document, usually in front matter
+  - name:                "blog"
+    label:               "Blog"
+    label_singular:      "Blog"
+    description:         "Create a blog post."
+    folder:              "site/blog" # The path to the folder where the documents are stored
+    create:              true # Allow users to create new documents in this collection
+    slug:                "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    fields:              # The fields for each document, usually in front matter
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Featured Image", name: "featured_image", widget: "image", media_library: {config:{multiple: false}} }
@@ -29,13 +29,13 @@ collections:
       - { label: "Category", name: "category", widget: "string" }
       - { label: "Body", name: "body", widget: "markdown" }
       - { label: "Template", name: "layout", widget: "select", default: "post", options: ["post"] }
-  - name: "pages"
-    label: "Pages"
-    label_singular: "Page"
-    description: "Create a new page."
-    folder: "site/pages"
-    create: true
-    slug: "{{slug}}"
+  - name:                "pages"
+    label:               "Pages"
+    label_singular:      "Page"
+    description:         "Create a new page."
+    folder:              "site/pages"
+    create:              true
+    slug:                "{{slug}}"
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Meta Title", name: "meta_title", widget: "string" }
@@ -46,63 +46,71 @@ collections:
       # { label: "Tags", name: "tags", widget: "hidden", default: "nav" }
       - { label: "Body", name: "body", widget: "markdown" }
       - { label: "Template", name: "layout", widget: "select", default: "default", options: ["default", "main-page"] }
-  - name: "settings"
-    label: "Settings"
-    description: "Edit your settings."
-    extension: "json"
-    format: "json"
-    create: false
-    preview: false
+  - name:                "settings"
+    label:               "Settings"
+    description:         "Edit your global settings."
+    extension:           "json"
+    format:              "json"
+    create:              false
+    preview:             false
     files:
-      - label: "site"
-        name: "Site"
-        file: "site/globals/site.json"
-        preview: false
+      - label:           "site"
+        name:            "Site Branding"
+        file:            "site/globals/site.json"
+        preview:         false
         fields:
           - { label: "Name", name: "name", widget: "string" }
           - { label: "Live URL", name: "url", widget: "string" }
-          - label: "Author"
-            name: "author"
-            widget: "object"
+          - { label: "Favicon", name: "favicon", widget: "image", media_library: {config:{multiple: false}} }
+          - label:       "Colors"
+            name:        "colors"
+            description: "Select the color palette you want to use."
+            widget:      "object"
+            fields:
+              - { label: "Main Color", name: "main", widget: "select", default: "purple", options: ["red", "orange", "yellow", "teal", "blue", "indigo", "purple", "pink"] }
+              - { label: "Accent Color", name: "accent", widget: "select", default: "pink", options: ["red", "orange", "yellow", "teal", "blue", "indigo", "purple", "pink"] }
+          - label:       "social"
+            name:        "Social Media"
+            file:        "site/globals/social.json"
+            preview:     false
+            fields:
+              - label:   "Social Sharing Images"
+                name:    "images"
+                widget:  "object"
+                fields:
+                  - { label: "Open Graph Image", name: "og", widget: "image", media_library: { config: { multiple: false } } }
+                  - { label: "Twitter Image", name: "twitter-og", widget: "image", media_library: { config: { multiple: false } } }
+              - label:   "Social Links"
+                name:    "social_links"
+                widget:  "object"
+                fields:
+                  - { label: "Twitter", name: "twitter", widget: "string" }
+                  - { label: "LinkedIn", name: "linkedin", widget: "string" }
+                  - { label: "Facebook", name: "facebook", widget: "string" }
+          - label:       "author"
+            name:        "Author"
+            widget:      "object"
+            file:        "site/globals/author.json"
+            preview:     false
             fields:
               - { label: "Name", name: "name", widget: "string" }
               - { label: "Email", name: "email", widget: "string" }
               - { label: "Handle", name: "handle", widget: "string" }
-              - {label: "Avatar", name: "avatar", widget: "image", media_library: {config:{multiple: false}}}
+              - { label: "Avatar", name: "avatar", widget: "image", media_library: { config: { multiple: false } } }
               - { label: "Short Bio", name: "bio", widget: "string" }
-          - label: "Site Images"
-            name: "images"
-            widget: "object"
-            fields:
-              - { label: "Favicon", name: "favicon", widget: "image", media_library: {config:{multiple: false}} }
-              - { label: "Twitter Sharing", name: "twitter-og", widget: "image", media_library: {config:{multiple: false}} }
-              - { label: "General Social Sharing", name: "og", widget: "image", media_library: {config:{multiple: false}} }
-          - label: "Social Links"
-            name: "social_links"
-            widget: "object"
-            fields:
-              - { label: "Twitter", name: "twitter", widget: "string" }
-              - { label: "LinkedIn", name: "linkedin", widget: "string" }
-              - { label: "Facebook", name: "facebook", widget: "string" }
-          - label: "Colors"
-            name: "colors"
-            description: "Select the color palette you want to use."
-            widget: "object"
-            fields:
-              - { label: "Main Color", name: "main", widget: "select", default: "purple", options: ["red", "orange", "yellow", "teal", "blue", "indigo", "purple", "pink"] }
-              - { label: "Accent Color", name: "accent", widget: "select", default: "pink", options: ["red", "orange", "yellow", "teal", "blue", "indigo", "purple", "pink"] }
-  # name: "navigation"
-  #  label: "Nav Menu"
+
+  # name:                "navigation"
+  #  label:              "Nav Menu"
   #  fields:
-  #    - label: "Menu Links"
-  #      name: "main"
-  #      widget: "object"
+  #    - label:          "Menu Links"
+  #      name:           "main"
+  #      widget:         "object"
   #      fields:
   #        - { label: "Home Page", name: "label", widget: "string" }
   #        - { label: "Button Link", name: "url", widget: "string" }
-  #    - label: "Nav Button"
-  #      name: "button"
-  #      widget: "object"
+  #    - label:          "Nav Button"
+  #      name:           "button"
+  #      widget:         "object"
   #      fields:
   #        - { label: "Button Text", name: "label", widget: "string" }
   #        - { label: "Button Link", name: "url", widget: "string" }

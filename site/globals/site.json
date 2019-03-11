@@ -1,48 +1,9 @@
 {
   "name": "Stream Sites",
   "url": "https://demo-streamsites.netlify.com",
-  "author": {
-    "name": "Melanie E Magdalena",
-    "email": "hello@melaniemagdalena.com",
-    "handle": "@m2creates",
-    "avatar": "/images/author.jpg",
-    "bio": "Equal parts coffee, creativity, and code."
-  },
-  "images": {
-    "favicon": "/images/favicon.ico",
-    "twitter-og": "/images/twitter.jpg",
-    "og": "/images/og.jpg"
-  },
-  "social_links": {
-    "twitter": "https://twitter.com/m2creates",
-    "linkedin": "https://linkedin.com/in/mmagdalena"
-  },
+  "favicon": "/images/favicon.ico",
   "colors": {
     "main": "purple",
     "accent": "pink"
-  },
-  "nav": {
-    "main": [
-      {
-        "label": "Home",
-        "url": "/"
-      },
-      {
-        "label": "About",
-        "url": "/about/"
-      },
-      {
-        "label": "Blog",
-        "url": "/blog/"
-      },
-      {
-        "label": "Contact",
-        "url": "/contact/"
-      }
-    ]
-  },
-  "button": {
-    "label": "Download",
-    "url": "https://streamsites.xyz"
   }
 }

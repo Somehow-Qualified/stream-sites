@@ -1,0 +1,10 @@
+{
+  "images": {
+    "twitter-og": "/images/twitter.jpg",
+    "og": "/images/og.jpg"
+  },
+  "social_links": {
+    "twitter": "https://twitter.com/m2creates",
+    "linkedin": "https://linkedin.com/in/mmagdalena"
+  }
+}
