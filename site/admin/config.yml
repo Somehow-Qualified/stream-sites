@@ -91,10 +91,10 @@ collections:
         file:            "site/globals/author.json"
         preview:         false
         fields:
-          - { label: "Name", name: "name", widget: "string" }
-          - { label: "Email", name: "email", widget: "string" }
-          - { label: "Handle", name: "handle", widget: "string" }
-          - { label: "Avatar", name: "avatar", widget: "image", media_library: {config:{multiple: false}}}
+          - { label: "Name", name: "name", widget: "string", hint: "The name you want people to call you, such as your Twitch name or IRL name." }
+          - { label: "Email", name: "email", widget: "string", hint: "An email someone can reach you at. Example: hi@streamsites.xyz" }
+          - { label: "Handle", name: "handle", widget: "string", hint: "Your Twitter handle" }
+          - { label: "Avatar", name: "avatar", widget: "image", media_library: {config:{multiple: false}}, hint: "An image of you/your logotype. For best results use a square image at 500x500 pixels."}
           - { label: "Short Bio", name: "bio", widget: "string", hint: "A short description of yourself to include at the end of blog posts." }
 
   # name:                "navigation"
