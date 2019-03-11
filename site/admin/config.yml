@@ -74,11 +74,13 @@ collections:
       - label: "Social Links"
         name: "social_links"
         widget: "object"
+        fields:
           - { label: "Twitter", name: "twitter", widget: "string" }
           - { label: "LinkedIn", name: "linkedin", widget: "string" }
           - { label: "Facebook", name: "facebook", widget: "string" }
       - label: "Nav Button"
         name: "button"
         widget: "object"
+        fields:
           - { label: "Button Text", name: "label", widget: "string" }
           - { label: "Button Link", name: "url", widget: "string" }
