@@ -10,7 +10,7 @@
   },
   "images": {
     "favicon": "/images/favicon.ico",
-    "twitter": "/images/twitter.jpg",
+    "twitter-og": "/images/twitter.jpg",
     "og": "/images/og.jpg"
   },
   "social_links": {
