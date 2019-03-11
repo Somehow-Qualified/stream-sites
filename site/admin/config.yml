@@ -83,8 +83,8 @@ collections:
         name: "colors"
         widget: "object"
         fields:
-          - { label: "Main Color", name: "main", widget: "select", default: "purple", options: ["red, orange, yellow, teal, blue, indigo, purple, pink"] }
-          - { label: "Accent Color", name: "accent", widget: "select", default: "pink", options: ["red, orange, yellow, teal, blue, indigo, purple, pink"] }
+          - { label: "Main Color", name: "main", widget: "select", default: "purple", options: ["red", "orange", "yellow", "teal", "blue", "indigo", "purple", "pink"] }
+          - { label: "Accent Color", name: "accent", widget: "select", default: "pink", options: ["red", "orange", "yellow", "teal", "blue", "indigo", "purple", "pink"] }
   # name: "navigation"
   #  label: "Nav Menu"
   #  fields:
