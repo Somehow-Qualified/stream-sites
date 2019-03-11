@@ -10,7 +10,7 @@ public_folder: "images"
 
 # Replace URL with your Netlify or Custom domain
 # to enable CMS previews
-site_url: {%  site.url %}
+site_url: site.url
 
 collections:
   - name: "blog" # Used in routes, e.g., /admin/collections/blog
