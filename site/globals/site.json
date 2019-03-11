@@ -5,12 +5,13 @@
     "name": "Melanie E Magdalena",
     "email": "hello@melaniemagdalena.com",
     "handle": "@m2creates",
-    "avatar": "/images/blog/author.jpg"
+    "avatar": "/images/author.jpg",
+    "bio": "Equal parts coffee, creativity, and code."
   },
   "images": {
     "favicon": "/images/favicon.ico",
-    "twitter": "/images/meta/twitter.jpg",
-    "og": "/images/meta/og.jpg"
+    "twitter": "/images/twitter.jpg",
+    "og": "/images/og.jpg"
   },
   "social_links": {
     "twitter": "https://twitter.com/m2creates",
@@ -38,6 +39,6 @@
   },
   "button": {
     "label": "Download",
-    "url": "https://streamsites.com"
+    "url": "https://streamsites.xyz"
   }
 }
