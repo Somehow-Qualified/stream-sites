@@ -48,9 +48,8 @@ collections:
       - {label: "Template", name: "layout", widget: "select", default: "default", options: ["default", "main-page"]}
   - name: "settings"
     label: "Settings"
-    label_singular: "Page"
     description: "Edit your settings."
-    folder: "site/globals/site"
+    folder: "site/globals"
     extension: "json"
     format: "json"
     create: false
