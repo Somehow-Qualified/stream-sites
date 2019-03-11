@@ -53,14 +53,9 @@ collections:
     extension: "json"
     format: "json"
     create: false
-    slug: "{{slug}}"
     fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Meta Title", name: "meta_title", widget: "string" }
-      - { label: "Meta Description", name: "meta_description", widget: "string" }
-      - { label: "Permalink", name: "permalink", widget: "string" }
-      # { label: "Publish Date", name: "date", widget: "datetime" }
-      # { label: "Navigation Title", name: "navtitle", widget: "string" }
-      # { label: "Tags", name: "tags", widget: "hidden", default: "nav" }
-      - { label: "Body", name: "body", widget: "markdown" }
-      - {label: "Template", name: "layout", widget: "select", default: "default", options: ["default", "main-page"]}
+      - { label: "Name", name: "name", widget: "string" }
+      - { label: "Email", name: "email", widget: "string" }
+      - { label: "Handle", name: "handle", widget: "string" }
+      - {label: "Avatar", name: "avatar", widget: "image", media_library: {config:{multiple: false}}}
+      - { label: "Short Bio", name: "bio", widget: "string" }
