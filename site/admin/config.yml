@@ -49,13 +49,36 @@ collections:
   - name: "settings"
     label: "Settings"
     description: "Edit your settings."
-    folder: "site/globals"
+    folder: "site/globals/author"
     extension: "json"
     format: "json"
     create: false
     fields:
       - { label: "Name", name: "name", widget: "string" }
-      - { label: "Email", name: "email", widget: "string" }
-      - { label: "Handle", name: "handle", widget: "string" }
-      - {label: "Avatar", name: "avatar", widget: "image", media_library: {config:{multiple: false}}}
-      - { label: "Short Bio", name: "bio", widget: "string" }
+      - { label: "Live URL", name: "url", widget: "string" }
+      - label: "Author"
+        name: "author"
+        widget: "object"
+        fields:
+          - { label: "Email", name: "email", widget: "string" }
+          - { label: "Handle", name: "handle", widget: "string" }
+          - {label: "Avatar", name: "avatar", widget: "image", media_library: {config:{multiple: false}}}
+          - { label: "Short Bio", name: "bio", widget: "string" }
+      - label: "Site Images"
+        name: "images"
+        widget: "object"
+        fields:
+          - {label: "Favicon", name: "favicon", widget: "image", media_library: {config:{multiple: false}}}
+          - {label: "Twitter Sharing", name: "twitter", widget: "image", media_library: {config:{multiple: false}}}
+          - {label: "General Social Sharing", name: "og", widget: "image", media_library: {config:{multiple: false}}}
+      - label: "Social Links"
+        name: "social_links"
+        widget: "object"
+          - { label: "Twitter", name: "twitter", widget: "string" }
+          - { label: "LinkedIn", name: "linkedin", widget: "string" }
+          - { label: "Facebook", name: "facebook", widget: "string" }
+      - label: "Nav Button"
+        name: "button"
+        widget: "object"
+          - { label: "Button Text", name: "label", widget: "string" }
+          - { label: "Button Link", name: "url", widget: "string" }
