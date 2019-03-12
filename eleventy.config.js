@@ -20,7 +20,7 @@ module.exports = function (eleventyConfig) {
 
     // Collections
     eleventyConfig.addCollection('blog', collection => {
-        return collection.getFilteredByGlob("site/blog/*.md");
+        return collection.getFilteredByTag('blog').reverse();
     });
 
     // Layout aliases

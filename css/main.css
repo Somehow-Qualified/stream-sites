@@ -489,24 +489,8 @@ h3 {
   background-color: #fff;
 }
 
-.bg-purple-darkest {
-  background-color: #21183c;
-}
-
-.bg-pink-dark {
-  background-color: #eb5286;
-}
-
 .hover\:bg-white:hover {
   background-color: #fff;
-}
-
-.hover\:bg-pink-light:hover {
-  background-color: #fa7ea8;
-}
-
-.border-purple-darker {
-  border-color: #382b5f;
 }
 
 .rounded {
@@ -771,18 +755,6 @@ h3 {
 
 .text-white {
   color: #fff;
-}
-
-.text-purple-darkest {
-  color: #21183c;
-}
-
-.text-purple-darker {
-  color: #382b5f;
-}
-
-.text-pink-dark {
-  color: #eb5286;
 }
 
 .text-xs {

@@ -47,7 +47,7 @@ gulp.task('clean', function() {
 /**
  * Errors function
  */
-var onError = function (err) {
+const onError = function (err) {
     notify.onError({
         title: "Gulp Error - Compile Failed",
         message: "Error: <%= error.message %>"
