@@ -2,7 +2,7 @@
 title: Test
 meta_title: test
 meta_description: testing
-permalink: test
+slug: test
 layout: default
 ---
 hello world
