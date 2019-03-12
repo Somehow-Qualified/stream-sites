@@ -85,6 +85,11 @@ strong {
  * 2. Correct the odd `em` font sizing in all browsers.
  */
 
+code {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
 /**
  * Add the correct font size in all browsers.
  */
@@ -405,14 +410,8 @@ button,
   cursor: pointer;
 }
 
-a {
-  text-decoration: none;
-  color: #eb5286;
+#header a {
   transition: .25s color ease-out;
-}
-
-a:hover {
-  color: #f66d9b;
 }
 
 h1,
@@ -489,8 +488,24 @@ h3 {
   background-color: #fff;
 }
 
+.bg-orange-dark {
+  background-color: #de751f;
+}
+
+.bg-purple-darkest {
+  background-color: #21183c;
+}
+
 .hover\:bg-white:hover {
   background-color: #fff;
+}
+
+.hover\:bg-orange-light:hover {
+  background-color: #faad63;
+}
+
+.border-purple-darker {
+  border-color: #382b5f;
 }
 
 .rounded {
@@ -757,6 +772,22 @@ h3 {
   color: #fff;
 }
 
+.text-orange-dark {
+  color: #de751f;
+}
+
+.text-purple-darkest {
+  color: #21183c;
+}
+
+.text-purple-darker {
+  color: #382b5f;
+}
+
+.hover\:text-orange:hover {
+  color: #f6993f;
+}
+
 .text-xs {
   font-size: .75rem;
 }
@@ -785,8 +816,8 @@ h3 {
   font-style: italic;
 }
 
-.capitalize {
-  text-transform: capitalize;
+.no-underline {
+  text-decoration: none;
 }
 
 .antialiased {

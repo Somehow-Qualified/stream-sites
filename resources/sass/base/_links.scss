@@ -5,10 +5,6 @@
     transition: 0.25s color ease-out;
 }
 
-a {
-    @apply no-underline text-pink-dark transition;
-
-    &:hover {
-        @apply text-pink;
-    }
+#header a {
+    @apply transition;
 }

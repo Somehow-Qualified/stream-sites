@@ -136,7 +136,7 @@ gulp.task('js:minify', function() {
             suffix: '.min'
         }))
         .pipe(uglify())
-        .pipe(gulp.dest(paths.javascript.dest))
+        .pipe(gulp.dest('./dist/javascript'))
         .pipe(notify({
             message: 'Javascript - Minify Success'
         }));
@@ -159,8 +159,10 @@ gulp.task('default', ['css', 'js:compile']);
 gulp.task('dev', ['css', 'js:compile'], function () {
     // Configure watch files.
     gulp.watch([
-        'site/*.njk',
-        'site/includes/**/*.njk',
+        // 'site/*.njk',
+        // 'site/includes/**/*.njk',
+        'dist/*.html',
+        'dist/**/*.html'
     ], ['css']);
     gulp.watch('./tailwind.config.js', ['css']);
     gulp.watch('./resources/sass/**/*.scss', ['css']);
@@ -181,8 +183,10 @@ gulp.task('css:compile:preflight', function () {
             tailwindcss('./tailwind.config.js'),
             purgecss({
                 content: [
-                    'site/*.njk',
-                    'site/includes/**/*.njk',
+                    // 'site/*.njk',
+                    // 'site/includes/**/*.njk',
+                    './dist/*.html',
+                    './dist/**/*.html',
                 ],
                 extractors: [
                     {
@@ -232,9 +236,9 @@ gulp.task('css:minify:preflight', ['css:compile:preflight'], function () {
         .pipe(rename({
             suffix: '.min'
         }))
-        .pipe(gulp.dest('./css'))
+        .pipe(gulp.dest('./dist/css'))
         .pipe(notify({
-            message: 'CSS Preflight Success'
+            message: 'CSS Minify Success'
         }));
 });
 
