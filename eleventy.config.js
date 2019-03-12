@@ -22,6 +22,9 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addCollection('blog', collection => {
         return collection.getFilteredByGlob("site/blog/*.md");
     });
+    eleventyConfig.addCollection('page', collection => {
+        return collection.getFilteredByGlob("site/*.md");
+    });
 
     // Layout aliases
     eleventyConfig.addLayoutAlias('default', 'layouts/default.njk');

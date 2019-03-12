@@ -33,9 +33,9 @@ collections:
     label:               "Pages"
     label_singular:      "Page"
     description:         "Create a new page."
-    folder:              "site"
+    folder:              "site/page"
     create:              true
-    slug:                "{{slug}}.html"
+    slug:                "{{slug}}"
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Meta Title", name: "meta_title", widget: "string" }
