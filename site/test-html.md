@@ -2,7 +2,7 @@
 title: Test
 meta_title: test
 meta_description: testing
-slug: test
+permalink: testpage
 layout: main-page
 ---
-hello world
+hello world - can you see me?
