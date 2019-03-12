@@ -1,5 +1,6 @@
 {
+    "layout": "layouts/default.njk",
     "tags": "page",
-    "outputPath": "dist/",
+    "outputPath": "dist",
     "permalink": "{{ slug }}.html"
 }
