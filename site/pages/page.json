@@ -1,5 +1,4 @@
 {
-    "tags": "page",
     "outputPath": "dist/",
     "permalink": "{{ slug }}.html"
 }
