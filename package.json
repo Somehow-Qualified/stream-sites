@@ -5,7 +5,7 @@
 	"scripts": {
 		"dev": "ELEVENTY_ENV=development eleventy --config=eleventy.config.js --serve & gulp dev",
 		"build": "eleventy --config=eleventy.config.js && gulp build",
-		"build:clean": "gulp clean && eleventy --config=eleventy.config.js && gulp build"
+		"build:clean": "gulp clean && npm run build"
 	},
 	"repository": {
 		"type": "git",
