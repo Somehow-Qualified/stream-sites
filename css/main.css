@@ -488,20 +488,20 @@ h3 {
   background-color: #fff;
 }
 
-.bg-orange-dark {
-  background-color: #de751f;
-}
-
 .bg-purple-darkest {
   background-color: #21183c;
+}
+
+.bg-pink-dark {
+  background-color: #eb5286;
 }
 
 .hover\:bg-white:hover {
   background-color: #fff;
 }
 
-.hover\:bg-orange-light:hover {
-  background-color: #faad63;
+.hover\:bg-pink-light:hover {
+  background-color: #fa7ea8;
 }
 
 .border-purple-darker {
@@ -772,10 +772,6 @@ h3 {
   color: #fff;
 }
 
-.text-orange-dark {
-  color: #de751f;
-}
-
 .text-purple-darkest {
   color: #21183c;
 }
@@ -784,8 +780,12 @@ h3 {
   color: #382b5f;
 }
 
-.hover\:text-orange:hover {
-  color: #f6993f;
+.text-pink-dark {
+  color: #eb5286;
+}
+
+.hover\:text-pink:hover {
+  color: #f66d9b;
 }
 
 .text-xs {

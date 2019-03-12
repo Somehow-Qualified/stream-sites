@@ -78,7 +78,7 @@ collections:
             widget:      "object"
             fields:
               - { label: "Open Graph Image", name: "og", widget: "image", media_library: { config: { multiple: false } } }
-              - { label: "Twitter Image", name: "twitter-og", widget: "image", media_library: {config:{multiple: false}}}
+              - { label: "Twitter Image", name: "twitter_og", widget: "image", media_library: {config:{multiple: false}}}
           - label:       "Social Links"
             name:        "social_links"
             widget:      "object"
