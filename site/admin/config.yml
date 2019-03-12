@@ -29,13 +29,13 @@ collections:
       - { label: "Category", name: "category", widget: "string" }
       - { label: "Body", name: "body", widget: "markdown" }
       - { label: "Template", name: "layout", widget: "select", default: "post", options: ["post"] }
-  - name:                "pages"
+  - name:                "page"
     label:               "Pages"
     label_singular:      "Page"
     description:         "Create a new page."
-    folder:              "site/pages"
+    folder:              "site"
     create:              true
-    slug:                "{{slug}}"
+    slug:                "{{slug}}.html"
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Meta Title", name: "meta_title", widget: "string" }

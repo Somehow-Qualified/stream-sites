@@ -1,4 +1,0 @@
-{
-    "outputPath": "dist/",
-    "permalink": "{{ slug }}.html"
-}
