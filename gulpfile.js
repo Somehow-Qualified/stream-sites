@@ -1,26 +1,25 @@
-
-
 /**
  * Required Packages
  */
-var gulp = require('gulp'),
-    sass = require('gulp-sass'),
-    postcss = require('gulp-postcss'),
-    rename = require('gulp-rename'),
-    cleanCSS = require('gulp-clean-css'),
-    notify = require('gulp-notify'),
-    run = require('gulp-run-command').default,
-    babel = require('gulp-babel'),
-    concat = require('gulp-concat'),
-    uglify = require('gulp-uglify'),
-    plumber = require('gulp-plumber'),
-    tailwindcss = require('tailwindcss'),
-    purgecss = require('@fullhuman/postcss-purgecss');
+const gulp = require('gulp'),
+      sass = require('gulp-sass'),
+      postcss = require('gulp-postcss'),
+      rename = require('gulp-rename'),
+      cleanCSS = require('gulp-clean-css'),
+      notify = require('gulp-notify'),
+      run = require('gulp-run-command').default,
+      babel = require('gulp-babel'),
+      concat = require('gulp-concat'),
+      uglify = require('gulp-uglify'),
+      plumber = require('gulp-plumber'),
+      tailwindcss = require('tailwindcss'),
+      purgecss = require('@fullhuman/postcss-purgecss');
+      del = require("del");
 
 /**
  * Resources paths
  */
-var paths = {
+const paths = {
 
     sass: {
         source: './resources/sass/main.scss',
@@ -37,6 +36,13 @@ var paths = {
     }
 
 }
+
+/**
+ * Clean assets
+*/
+gulp.task('clean', function() {
+  del(['dist']);
+});
 
 /**
  * Errors function
@@ -244,3 +250,6 @@ gulp.task('css:preflight', ['css:minify:preflight']);
  * Always double check that everything is still working. If something isn't displaying correctly, it may be because you need to add it to the purgeCSS whitelist.
  */
 gulp.task('build', ['css:preflight', 'js:minify']);
+
+// Purge the dist
+gulp.task('build:clean', ['clean', 'build']);

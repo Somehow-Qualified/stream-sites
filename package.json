@@ -4,7 +4,8 @@
 	"description": "Skeleventy - A skeleton boilerplate built with Eleventy",
 	"scripts": {
 		"dev": "ELEVENTY_ENV=development eleventy --config=eleventy.config.js --serve & gulp dev",
-		"build": "gulp build && eleventy --config=eleventy.config.js"
+		"build": "gulp build && eleventy --config=eleventy.config.js",
+		"build:clean": "gulp build:clean && eleventy --config=eleventy.config.js"
 	},
 	"repository": {
 		"type": "git",
@@ -17,6 +18,7 @@
 		"@babel/core": "^7.2.0",
 		"@babel/preset-env": "^7.3.1",
 		"@fullhuman/postcss-purgecss": "^1.1.0",
+		"del": "^4.0.0",
 		"gulp": "^3.9.1",
 		"gulp-babel": "^8.0.0",
 		"gulp-clean-css": "^3.10.0",
