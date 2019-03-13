@@ -1,5 +1,5 @@
 [build]
   command = "npm run build"
-  publish = "dist"
+  publish = "dist/"
   NODE_ENV = "8.9.0"
-  Functions = "functions"
+  Functions = "functions/"

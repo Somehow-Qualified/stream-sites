@@ -5,8 +5,7 @@ backend:
 # Uncomment below to enable drafts for GitHub
 # publish_mode:          editorial_workflow
 
-media_folder:            "images" # Media files will be stored in the repo under images/uploads
-public_folder:           "images"
+media_folder:            "images" # Media files will be stored in the repo under images
 
 # Replace URL with your Netlify or Custom domain
 # to enable CMS previews
