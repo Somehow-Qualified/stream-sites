@@ -53,7 +53,7 @@ if (!page('blog')) {
       document.getElementById('liveAlert').classList.remove('hidden');
     } else {
       // Stream is offline or Stream Data not available
-
+      console.log('Streamer is not available.')
     }
   };
 

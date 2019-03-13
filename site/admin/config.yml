@@ -11,6 +11,9 @@ public_folder:           "images"
 # Replace URL with your Netlify or Custom domain
 # to enable CMS previews
 site_url:                https://demo-streamsites.netlify.com
+display_url:             https://demo-streamsites.netlify.com
+
+show_preview_links:      false
 
 collections:
   - name:                "blog"
@@ -52,7 +55,8 @@ collections:
     extension:           "json"
     format:              "json"
     create:              false
-    preview:             false
+    editor:
+      preview: false
     files:
       - label:           "Brand Settings"
         name:            "site"
@@ -71,7 +75,6 @@ collections:
       - label:           "Social Media"
         name:            "social"
         file:            "site/globals/social.json"
-        preview:         false
         fields:
           - label:       "Social Sharing Images"
             name:        "images"
@@ -89,12 +92,11 @@ collections:
       - label:           "Profile Settings"
         name:            "author"
         file:            "site/globals/author.json"
-        preview:         false
         fields:
           - { label: "Name", name: "name", widget: "string", hint: "The name you want people to call you, such as your Twitch name or IRL name." }
           - { label: "Email", name: "email", widget: "string", hint: "An email someone can reach you at. Example: hi@streamsites.xyz" }
           - { label: "Twitch Display Name", name: "twitch_handle", widget: "string", hint: "Your Twitch Handle, this is case sensitive. THANKS TWITCH!" }
-          - { label: "Handle", name: "twitter_handle", widget: "string", hint: "Your Twitter handle" }
+          - { label: "Twitter Handle", name: "twitter_handle", widget: "string", hint: "Your Twitter handle" }
           - { label: "Avatar", name: "avatar", widget: "image", media_library: {config:{multiple: false}}, hint: "An image of you/your logotype. For best results use a square image at 500x500 pixels."}
           - { label: "Short Bio", name: "bio", widget: "string", hint: "A short description of yourself to include at the end of blog posts." }
 
