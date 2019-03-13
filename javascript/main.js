@@ -25,3 +25,41 @@ page = function page(name) {
 if (!page('blog')) {
   document.querySelector('.content > p').classList.add('intro');
 }
+
+// Twitch Live
+// Adapt from Freecodecamp to display
+
+// game > data.stream.channel.game
+// stream title > data.stream.channel.status
+// make a link > buttonLink.href = "https://www.twitch.tv/" + data;
+// broadcaster > data.stream.channel.display_name
+// avatar > data.stream.channel.logo
+// preview img > data.stream.preview.large
+// "https://wind-bow.glitch.me/twitch-api/streams/" + value + "?callback=?";
+
+(function() {
+  var data;
+  var request = new XMLHttpRequest();
+  request.open('GET', "https://wind-bow.glitch.me/twitch-api/streams/" + twitchName, true);
+
+  request.onload = function() {
+    if (request.status >= 200 && request.status < 400) {
+      // Stream is online
+      var resp = request.responseText;
+      console.log(resp);
+      data = JSON.parse(resp);
+      document.getElementById('liveAlertLink').setAttribute('href', data.stream.channel.url);
+      document.getElementById('liveAlertText').innerHTML = 'Now playing ' + data.stream.channel.game + ' with ' + data.stream.viewers + ' viewers!';
+      document.getElementById('liveAlert').classList.remove('hidden');
+    } else {
+      // Stream is offline or Stream Data not available
+
+    }
+  };
+
+  request.onerror = function() {
+    // There was a connection error of some sort
+  };
+
+  request.send();
+})();
