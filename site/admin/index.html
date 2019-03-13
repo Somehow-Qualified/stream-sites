@@ -3,8 +3,23 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   <title>Stream Sites Admin</title>
+  <style>
+  /*
+  * from https://github.com/netlify/netlify-cms/issues/1040#issuecomment-427533565
+  */
+  aside a[href="#/collections/posts"] span::before {
+    content: "\f5a1";
+  }
+  aside a[href="#/collections/page"] span::before {
+    content: "\f15c";
+  }
+  aside a[href="#/collections/settings"] span::before {
+    content: "\f085";
+  }
+  </style>
 </head>
 <body>
   <!-- Include the script that builds the page and powers Netlify CMS -->
