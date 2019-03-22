@@ -3,7 +3,7 @@
   "url": "https://demo-streamsites.netlify.com",
   "favicon": "/images/favicon.ico",
   "colors": {
-    "main": "purple",
-    "accent": "pink"
+    "main": "blue",
+    "accent": "cyan"
   }
 }

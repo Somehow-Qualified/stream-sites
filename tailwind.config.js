@@ -96,6 +96,14 @@ let colors = {
   'teal-lighter': '#a0f0ed',
   'teal-lightest': '#e8fffe',
 
+  'cyan-darkest': '#02567B',
+  'cyan-darker': '#036B98',
+  'cyan-dark': '#059DDE',
+  'cyan': '#1aa5e4',
+  'cyan-light': '#42B6E8',
+  'cyan-lighter': '#6EC6EC',
+  'cyan-lightest': '#D1F0FD',
+
   'blue-darkest': '#12283a',
   'blue-darker': '#1c3d5a',
   'blue-dark': '#2779bd',

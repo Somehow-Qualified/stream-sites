@@ -8,3 +8,12 @@
 #header a {
     @apply transition;
 }
+
+// Todo: set link color to accent selected
+// This inherit rule voids hover colors
+main a:-webkit-any-link,
+main a,
+#footer a:-webkit-any-link,
+#footer a {
+  color: inherit;
+}
