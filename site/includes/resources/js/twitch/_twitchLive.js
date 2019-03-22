@@ -1,31 +1,3 @@
-// Blog utilities
-// add a class of 'intro' to the first paragraph
-// do this on every page apart from the blog page
-if (!page('blog')) {
-  document.querySelector('.content > p').classList.add('intro');
-}
-// Config
-// Selectors
-// store selectors for reference so we only call them once
-var $body = document.querySelector('body');
-var $header = document.getElementById('#header');
-var $nav = document.getElementById('#nav');
-var $footer = document.getElementById('#footer');
-// Helpers
-var
-/**
-* @description Test if the body id is something
-* @param  		{string}
-* @return 		{bool}
-*
-*/
-page = function page(name) {
-  if (!name) {
-    return $body.getAttribute('id');
-  }
-
-  return $body.getAttribute('id') == name;
-};
 // Twitch Live
 // Adapted from Freecodecamp
 
@@ -39,12 +11,13 @@ page = function page(name) {
   preview img     data.stream.preview.large
   call            "https://wind-bow.glitch.me/twitch-api/streams/" + value;
 */
-(function () {
+
+(function() {
   var data;
   var request = new XMLHttpRequest();
   request.open('GET', "https://wind-bow.glitch.me/twitch-api/streams/" + twitchName, true);
 
-  request.onload = function () {
+  request.onload = function() {
     if (request.status >= 200 && request.status < 400) {
       // Stream is online
       // TODO: add option to display a button to trigger modal Twitch viewer on desktop
@@ -57,11 +30,12 @@ page = function page(name) {
     } else {
       // Stream is offline or Stream Data not available
       // TODO: Add option here to hide a button cta
-      console.log('Stream is not available.');
+      console.log('Stream is not available.')
     }
   };
 
-  request.onerror = function () {// There was a connection error of some sort
+  request.onerror = function() {
+    // There was a connection error of some sort
   };
 
   request.send();

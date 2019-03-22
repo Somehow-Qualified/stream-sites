@@ -1,4 +1,3 @@
-
 // Config
 
 // Selectors
@@ -10,5 +9,3 @@ const $header = document.getElementById('#header')
 const $nav = document.getElementById('#nav')
 
 const $footer = document.getElementById('#footer')
-
-

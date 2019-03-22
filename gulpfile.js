@@ -22,15 +22,15 @@ const gulp = require('gulp'),
 const paths = {
 
     sass: {
-        source: './resources/sass/main.scss',
+        source: './site/includes/resources/sass/main.scss',
         dest: 'css/'
     },
 
     javascript: {
         source:
             [
-                './resources/js/utilities/*.js',
-                './resources/js/local/*.js'
+                './site/includes/resources/js/utilities/*.js',
+                './site/includes/resources/js/twitch/*.js'
             ],
         dest: 'javascript/'
     }
@@ -110,7 +110,8 @@ gulp.task('css:minify', ['css:compile'], function() {
 gulp.task('css', ['css:minify']);
 
 /**
- * Concatinate and Compile Scripts
+ * Concatenate and Compile Scripts
+ *
  */
 gulp.task('js:compile', function () {
     return gulp.src(paths.javascript.source)
@@ -130,7 +131,7 @@ gulp.task('js:compile', function () {
  * Minify Scripts
  * This will be ran as part of our preflight task
  */
-gulp.task('js:minify', function() {
+gulp.task('js:minify', ['js:compile'], function() {
     return gulp.src(paths.javascript.dest + 'main.js')
         .pipe(rename({
             suffix: '.min'
@@ -144,12 +145,13 @@ gulp.task('js:minify', function() {
 
 /**
  * Run all JS tasks
-// gulp.task('js', ['js:minify']);
+*/
+gulp.task('js', ['js:minify']);
 
 /**
  * Default Gulp task
  */
-gulp.task('default', ['css', 'js:compile']);
+gulp.task('default', ['css', 'js']);
 
 /**
  * Dev task
