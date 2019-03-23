@@ -1,7 +1,7 @@
 // Helpers
 const
 
-    /**
+  /**
 	 * @description Test if the body id is something
 	 * @param  		{string}
 	 * @return 		{bool}
