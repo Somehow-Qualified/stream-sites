@@ -17,3 +17,7 @@ const
         return ($body.getAttribute('id') == name);
 
     };
+
+if ( !page('blog') ) {
+  document.querySelector('.content > p').classList.add('intro');
+}

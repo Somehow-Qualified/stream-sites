@@ -1,9 +1,10 @@
 // Blog utilities
 // add a class of 'intro' to the first paragraph
 // do this on every page apart from the blog page
-if (!page('blog')) {
-  document.querySelector('.content > p').classList.add('intro');
-}
+// TODO: why did this break after moving it between files
+// if ( !page('blog') ) {
+//   document.querySelector('.content > p')[0].classList.add('intro');
+// }
 // Config
 // Selectors
 // store selectors for reference so we only call them once
@@ -26,6 +27,10 @@ page = function page(name) {
 
   return $body.getAttribute('id') == name;
 };
+
+if (!page('blog')) {
+  document.querySelector('.content > p').classList.add('intro');
+}
 // Twitch Live
 // Adapted from Freecodecamp
 
