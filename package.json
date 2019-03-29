@@ -1,7 +1,7 @@
 {
-	"name": "skeleventy",
-	"version": "1.0.0",
-	"description": "Skeleventy - A skeleton boilerplate built with Eleventy",
+	"name": "streamsites",
+	"version": "0.0.1",
+	"description": "Stream Sites - a static site boilerplate for streamers",
 	"scripts": {
 		"dev": "ELEVENTY_ENV=development eleventy --config=eleventy.config.js --serve & gulp dev",
 		"build": "eleventy --config=eleventy.config.js && gulp build",
@@ -9,9 +9,9 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/josephdyer/skeleventy.git"
+		"url": "https://gitlab.com/m2creates/ss-core.git"
 	},
-	"author": "Joseph Dyer",
+	"author": "Melanie E Magdalena",
 	"license": "MIT",
 	"devDependencies": {
 		"@11ty/eleventy": "^0.7.1",
@@ -32,5 +32,8 @@
 		"gulp-uglify": "^3.0.1",
 		"html-minifier": "^3.5.21",
 		"tailwindcss": "^0.7.4"
+	},
+	"dependencies": {
+		"eleventy-plugin-reading-time": "0.0.1"
 	}
 }
