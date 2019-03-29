@@ -1,7 +1,7 @@
 {
 	"name": "streamsites",
 	"version": "0.0.1",
-	"description": "Stream Sites - a static site boilerplate for streamers",
+	"description": "Stream Sites - a static site boilerplate for streamers.",
 	"scripts": {
 		"dev": "ELEVENTY_ENV=development eleventy --config=eleventy.config.js --serve & gulp dev",
 		"build": "eleventy --config=eleventy.config.js && gulp build",
