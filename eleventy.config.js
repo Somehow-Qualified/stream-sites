@@ -3,7 +3,7 @@ const htmlmin = require("html-minifier");
 module.exports = function (eleventyConfig) {
 
     // Add a date formatter filter to Nunjucks
-    eleventyConfig.addFilter('dateDisplay', require('./filters/dates.js'));
+    eleventyConfig.addFilter('dateDisplay', require('./site/includes/filters/dates.js'));
 
     // Minify our HTML
     eleventyConfig.addTransform('htmlmin', function(content, outputPath) {
