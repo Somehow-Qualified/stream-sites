@@ -3,24 +3,31 @@ const htmlmin = require("html-minifier");
 module.exports = function (eleventyConfig) {
 
     // Add a date formatter filter to Nunjucks
-    eleventyConfig.addFilter("dateDisplay", require("./filters/dates.js"));
+    eleventyConfig.addFilter('dateDisplay', require('./filters/dates.js'));
 
     // Minify our HTML
-    eleventyConfig.addTransform("htmlmin", function(content, outputPath) {
-        if( outputPath.endsWith(".html") ) {
-            let minified = htmlmin.minify(content, {
-                useShortDoctype: true,
-                removeComments: true,
-                collapseWhitespace: true
-            });
-            return minified;
-        }
-        return content;
+    eleventyConfig.addTransform('htmlmin', function(content, outputPath) {
+      if( outputPath.endsWith('.html') ) {
+        let minified = htmlmin.minify(content, {
+          useShortDoctype: true,
+          removeComments: true,
+          collapseWhitespace: true
+        });
+        return minified;
+      }
+      return content;
     });
 
     // Collections
     eleventyConfig.addCollection('blog', collection => {
-        return collection.getFilteredByTag('blog').reverse();
+      return collection.getFilteredByGlob('**/blog/*.md').reverse();
+    });
+
+    // only content in the latest `blog/` directory
+    eleventyConfig.addCollection('postsLatest', collection => {
+      return collection
+        .getFilteredByGlob('**/blog/*.md')
+        .slice(-9)
     });
 
     // Layout aliases
@@ -31,23 +38,23 @@ module.exports = function (eleventyConfig) {
     // Include our static assets
     // eleventyConfig.addPassthroughCopy("css");
     // eleventyConfig.addPassthroughCopy("javascript");
-    eleventyConfig.addPassthroughCopy("images");
+    eleventyConfig.addPassthroughCopy('images');
 
     // Include Netlify CMS Admin
-    eleventyConfig.addPassthroughCopy("site/admin");
+    eleventyConfig.addPassthroughCopy('site/admin');
 
     return {
-        templateFormats : ["njk", "md", "html"],
-        htmlTemplateEngine : "njk",
-        markdownTemplateEngine : "njk",
-        passthroughFileCopy: true,
+      templateFormats : ['njk', 'md', 'html'],
+      htmlTemplateEngine : 'njk',
+      markdownTemplateEngine : 'njk',
+      passthroughFileCopy: true,
 
-        dir: {
-            input: 'site',
-            includes: 'includes',
-            data: 'globals',
-            output: 'dist' // the Publish directory
-        }
+      dir: {
+        input: 'site',
+        includes: 'includes',
+        data: 'globals',
+        output: 'dist' // the Publish directory
+      }
     };
 
 };
