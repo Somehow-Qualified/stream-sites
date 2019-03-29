@@ -23,6 +23,10 @@ section: blog
 
               <p class="px-2">—</p>
 
+              <p class="author">Reading Time: {{ content | readingTime }}</p>
+
+              <p class="px-2">—</p>
+
               {% if tags %}
                 <p class="category">Posted in
                 {% for tag in tags %}
