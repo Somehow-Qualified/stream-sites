@@ -1,19 +1,22 @@
 <div class="footer-wrapper">
 
-    <footer id="footer" class="footer bg-grey-lighter">
+  <footer id="footer" class="footer bg-grey-lighter">
 
-        <div class="footer-inner container m-auto md:flex justify-between items-center px-6 py-10">
+    <div class="footer-inner container m-auto md:flex justify-between items-center px-6 py-10">
 
-            <p class="text-{{ site.colors.main }}-darkest pb-8 md:pb-0">© 2019 {{ site.name }}. Built with <a class="no-underline hover:text-{{ site.colors.accent }}" href="https://streamsites.xyz/">Stream Sites.</a></p>
+      <p class="text-{{ site.colors.main }}-darkest pb-8 md:pb-0">© 2019
+        {{ site.name }}. Built with
+        <a class="no-underline hover:text-{{ site.colors.accent }}" href="https://streamsites.xyz/">Stream Sites.</a>
+      </p>
 
-            {% include 'components/social-icons.njk' %}
+      {% include 'components/social-icons.njk' %}
 
-        </div>
+    </div>
 
-    </footer>
+  </footer>
 
 </div>
 
 <script>
-const twitchName = "{{ author.twitch_handle }}";
+  const twitchName = "{{ author.twitch_handle }}";
 </script>

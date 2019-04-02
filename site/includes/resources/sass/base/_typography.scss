@@ -1,9 +1,13 @@
-
 //==========  Typography ==========//
 
 // headings
-h1, h2, h3, h4, h5, h6 {
-    @apply font-bold leading-tight mt-0 mb-6;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	@apply font-bold leading-tight mt-0 mb-6;
 }
 
 // content
@@ -13,13 +17,13 @@ h1, h2, h3, h4, h5, h6 {
 	p {
 		@apply mb-8;
 
-        // intro paragraph
+		// intro paragraph
 		&.intro {
 			@apply border-b border-grey-lighter text-2xl pb-10 mb-10 font-light text-grey-darker;
 
 			@screen md {
-                @apply text-3xl;
-            }
+				@apply text-3xl;
+			}
 		}
-    }
+	}
 }

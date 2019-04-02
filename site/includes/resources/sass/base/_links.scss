@@ -1,12 +1,11 @@
-
 //==========  Links ==========//
 
 .transition {
-    transition: 0.25s color ease-out;
+  transition: 0.25s color ease-out;
 }
 
 #header a {
-    @apply transition;
+  @apply transition;
 }
 
 // Todo: set link color to accent selected

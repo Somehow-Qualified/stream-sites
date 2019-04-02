@@ -1,96 +1,93 @@
 backend:
-  name:                  git-gateway
-  branch:                master # Branch to update (optional; defaults to master)
+  name:              git-gateway
+  branch:            master # Branch to update (optional; defaults to master)
 
 # Uncomment below to enable drafts for GitHub
-# publish_mode:          editorial_workflow
+# publish_mode:      editorial_workflow
 
-media_folder:            "images" # Media files will be stored in the repo under images
+media_folder:        "images" # Media files will be stored in the repo under images
 
 # Replace URL with your Netlify or Custom domain
 # to enable CMS previews
-site_url:                https://demo-streamsites.netlify.com
-display_url:             https://demo-streamsites.netlify.com
+site_url:            https://demo-streamsites.netlify.com
+display_url:         https://demo-streamsites.netlify.com
 
-show_preview_links:      false
+show_preview_links:  false
 
 collections:
-  - name:                "blog"
-    label:               "Blog"
-    label_singular:      "Blog"
-    description:         "Create a blog post."
-    folder:              "site/blog" # The path to the folder where the documents are stored
-    create:              true # Allow users to create new documents in this collection
-    slug:                "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
-    fields:              # The fields for each document, usually in front matter
+  - name:            "blog"
+    label:           "Blog"
+    label_singular:  "Blog"
+    description:     "Create a blog post."
+    folder:          "site/blog" # The path to the folder where the documents are stored
+    create:          true # Allow users to create new documents in this collection
+    slug:            "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    fields:          # The fields for each document, usually in front matter
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Featured Image", name: "featured_image", widget: "image", media_library: {config:{multiple: false}} }
       - { label: "Image Caption", name: "image_caption", widget: "string" }
       - { label: "Excerpt", name: "excerpt", widget: "string" }
-      - { label: "Category", name: "category", widget: "string" }
+      - { label: "Tags", name: "tag", widget: "string" }
       - { label: "Body", name: "body", widget: "markdown" }
       - { label: "Template", name: "layout", widget: "select", default: "post", options: ["post"] }
-  - name:                "page"
-    label:               "Pages"
-    label_singular:      "Page"
-    description:         "Create a new page."
-    folder:              "site/page"
-    create:              true
-    slug:                "{{slug}}"
+  - name:            "page"
+    label:           "Pages"
+    label_singular:  "Page"
+    description:     "Create a new page."
+    folder:          "site/page"
+    create:          true
+    slug:            "{{slug}}"
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Meta Title", name: "meta_title", widget: "string" }
       - { label: "Meta Description", name: "meta_description", widget: "string" }
       - { label: "Slug", name: "slug", widget: "string" }
-      # { label: "Publish Date", name: "date", widget: "datetime" }
-      # { label: "Navigation Title", name: "navtitle", widget: "string" }
-      # { label: "Tags", name: "tags", widget: "hidden", default: "nav" }
       - { label: "Body", name: "body", widget: "markdown" }
       - { label: "Template", name: "layout", widget: "select", default: "default", options: ["default", "main-page"] }
-  - name:                "settings"
-    label:               "Settings"
-    description:         "Edit your global settings."
-    extension:           "json"
-    format:              "json"
-    create:              false
+  - name:            "settings"
+    label:           "Settings"
+    description:     "Edit your global settings."
+    extension:       "json"
+    format:          "json"
+    create:          false
     editor:
-      preview: false
+      preview:       false
     files:
-      - label:           "Brand Settings"
-        name:            "site"
-        file:            "site/globals/site.json"
-        preview:         false
+      - label:       "Brand Settings"
+        name:        "site"
+        file:        "site/globals/site.json"
+        preview:     false
         fields:
           - { label: "Brand Name", name: "name", widget: "string" }
           - { label: "Live URL", name: "url", widget: "string" }
           - { label: "Favicon", name: "favicon", widget: "image", media_library: {config:{multiple: false}}}
-          - label:       "Theme"
-            name:        "colors"
-            widget:      "object"
+          - label:   "Theme"
+            name:    "colors"
+            widget:  "object"
             fields:
               - { label: "Main Color", name: "main", widget: "select", default: "purple", options: ["red", "orange", "yellow", "teal", "blue", "indigo", "purple", "pink"] }
               - { label: "Accent Color", name: "accent", widget: "select", default: "pink", options: ["red", "orange", "yellow", "teal", "blue", "indigo", "purple", "pink"] }
-      - label:           "Social Media"
-        name:            "social"
-        file:            "site/globals/social.json"
+      - label:       "Social Media"
+        name:        "social"
+        file:        "site/globals/social.json"
         fields:
-          - label:       "Social Sharing Images"
-            name:        "images"
-            widget:      "object"
+          - label:   "Social Sharing Images"
+            name:    "images"
+            widget:  "object"
             fields:
               - { label: "Open Graph Image", name: "og", widget: "image", media_library: { config: { multiple: false } } }
               - { label: "Twitter Image", name: "twitter_og", widget: "image", media_library: {config:{multiple: false}}}
-          - label:       "Social Links"
-            name:        "social_links"
-            widget:      "object"
+          - label:   "Social Links"
+            name:    "social_links"
+            widget:  "object"
             fields:
               - { label: "Twitter", name: "twitter", widget: "string" }
               - { label: "LinkedIn", name: "linkedin", widget: "string" }
               - { label: "Facebook", name: "facebook", widget: "string" }
-      - label:           "Profile Settings"
-        name:            "author"
-        file:            "site/globals/author.json"
+      - label:       "Profile Settings"
+        name:        "author"
+        file:        "site/globals/author.json"
         fields:
           - { label: "Name", name: "name", widget: "string", hint: "The name you want people to call you, such as your Twitch name or IRL name." }
           - { label: "Email", name: "email", widget: "string", hint: "An email someone can reach you at. Example: hi@streamsites.xyz" }
@@ -98,19 +95,3 @@ collections:
           - { label: "Twitter Handle", name: "twitter_handle", widget: "string", hint: "Your Twitter handle" }
           - { label: "Avatar", name: "avatar", widget: "image", media_library: {config:{multiple: false}}, hint: "An image of you/your logotype. For best results use a square image at 500x500 pixels."}
           - { label: "Short Bio", name: "bio", widget: "string", hint: "A short description of yourself to include at the end of blog posts." }
-
-  # name:                "navigation"
-  #  label:              "Nav Menu"
-  #  fields:
-  #    - label:          "Menu Links"
-  #      name:           "main"
-  #      widget:         "object"
-  #      fields:
-  #        - { label: "Home Page", name: "label", widget: "string" }
-  #        - { label: "Button Link", name: "url", widget: "string" }
-  #    - label:          "Nav Button"
-  #      name:           "button"
-  #      widget:         "object"
-  #      fields:
-  #        - { label: "Button Text", name: "label", widget: "string" }
-  #        - { label: "Button Link", name: "url", widget: "string" }

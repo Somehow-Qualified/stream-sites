@@ -1,5 +1,6 @@
 <!doctype html>
 <html>
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,44 +8,53 @@
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   <title>Stream Sites Admin</title>
   <style>
-  /*
-  * from https://github.com/netlify/netlify-cms/issues/1040#issuecomment-427533565
-  */
+    /*
+    * from https://github.com/netlify/netlify-cms/issues/1040#issuecomment-427533565
+    */
 
-  aside {
-    padding: 6px 0 12px !important;
-  }
-  aside h2 {
-    margin-top: 12px !important;
-    font-size: 22px !important;
-    line-height: 37px !important;
-  }
-  aside a span {
-    display: inline-flex !important;
-    justify-content: center;
-    align-items: center;
-  }
-  aside a span svg {
-    display: none !important;
-  }
-  aside a span::before {
-    font-family: "Font Awesome 5 Free";
-    font-size: 1rem;
-    font-weight: 900;
-  }
-  aside a[href="#/collections/blog"] span::before {
-    content: "\f304";
-  }
-  aside a[href="#/collections/page"] span::before {
-    content: "\f15c";
-  }
-  aside a[href="#/collections/settings"] span::before {
-    content: "\f085";
-  }
+    aside {
+      padding: 6px 0 12px !important;
+    }
+
+    aside h2 {
+      margin-top: 12px !important;
+      font-size: 22px !important;
+      line-height: 37px !important;
+    }
+
+    aside a span {
+      display: inline-flex !important;
+      justify-content: center;
+      align-items: center;
+    }
+
+    aside a span svg {
+      display: none !important;
+    }
+
+    aside a span::before {
+      font-family: "Font Awesome 5 Free";
+      font-size: 1rem;
+      font-weight: 900;
+    }
+
+    aside a[href="#/collections/blog"] span::before {
+      content: "\f304";
+    }
+
+    aside a[href="#/collections/page"] span::before {
+      content: "\f15c";
+    }
+
+    aside a[href="#/collections/settings"] span::before {
+      content: "\f085";
+    }
   </style>
 </head>
+
 <body>
   <!-- Include the script that builds the page and powers Netlify CMS -->
   <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
 </body>
+
 </html>

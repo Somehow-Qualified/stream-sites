@@ -12,12 +12,12 @@
   call            "https://wind-bow.glitch.me/twitch-api/streams/" + value;
 */
 
-(function() {
+(function () {
   var data;
   var request = new XMLHttpRequest();
   request.open('GET', "https://wind-bow.glitch.me/twitch-api/streams/" + twitchName, true);
 
-  request.onload = function() {
+  request.onload = function () {
     if (request.status >= 200 && request.status < 400) {
       // Stream is online
       // TODO: add option to display a button to trigger modal Twitch viewer on desktop
@@ -34,7 +34,7 @@
     }
   };
 
-  request.onerror = function() {
+  request.onerror = function () {
     // There was a connection error of some sort
   };
 
