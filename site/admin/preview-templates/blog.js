@@ -13,7 +13,7 @@ const Blog = createClass({
         <h1>${entry.getIn(["data", "title"], "")}</h1>
         <p>
           <time>${format(entry.getIn(["data", "date"], new Date()),"DD MMM YYYY")}</time>
-          — Posted in ${entry.getIn(["data", "tags"], "")}
+           — Posted in ${entry.getIn(["data", "tags"], "")}
         </p>
         <figure>
           <div><img src="${entry.getIn(["data", "featured_image"], "")}" alt="${entry.getIn(["data", "image_caption"], "")}" /></div>

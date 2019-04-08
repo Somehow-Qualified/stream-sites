@@ -22,23 +22,23 @@ article {
 }
 
 h1 {
-  font-size: 1.875rem;
+  font-size: 1.875rem !important;
 }
 
 h2 {
-	font-size: 1.5rem;
+	font-size: 1.5rem !important;
 }
 
 h3 {
-	font-size: 1.25rem;
+	font-size: 1.25rem !important;
 }
 
 h4 {
-	font-size: 1.125rem;
+	font-size: 1.125rem !important;
 }
 
 h5, p {
-	font-size: 1rem;
+	font-size: 1rem !important;
 }
 
 a[href],
@@ -51,5 +51,5 @@ a[href]:not(:hover) {
 }
 
 p {
-	margin-bottom: 1rem;
+	margin-bottom: 1rem !important;
 }
