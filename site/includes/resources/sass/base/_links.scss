@@ -41,7 +41,7 @@ main a,
     }
 }
 
-.sr-skip-link:focus {
+.sr-skip-link:focus, main:focus {
     outline: none;
 }
 
