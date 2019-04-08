@@ -31,7 +31,7 @@
 		"gulp-sass": "^4.0.2",
 		"gulp-uglify": "^3.0.1",
 		"html-minifier": "^3.5.21",
-		"tailwindcss": "^0.7.4"
+		"tailwindcss": "^1.0.0-beta.4"
 	},
 	"dependencies": {
 		"eleventy-plugin-reading-time": "0.0.1"

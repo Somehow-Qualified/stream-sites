@@ -9,9 +9,9 @@ section: blog
 
     <div class="post-header mb-12 md:mb-20">
 
-      <h1 class="page-title text-3xl md:text-center md:text-5xl lg:text-6xl">{{ title }}</h1>
+      <h1 class="page-title text-3xl md:text-center md:text-5xl lg:text-5xl">{{ title }}</h1>
 
-      <div class="text-sm md:text-base text-grey-dark flex justify-center">
+      <div class="text-sm md:text-base text-gray-600 flex justify-center">
 
         <p class="author">By
           {{ author.name }}</p>
@@ -51,7 +51,7 @@ section: blog
 
           {% if image_caption %}
 
-            <figcaption class="text-center text-sm italic text-grey-dark mt-4">{{ image_caption }}</figcaption>
+            <figcaption class="text-center text-sm italic text-gray-600 mt-4">{{ image_caption }}</figcaption>
 
           {% endif %}
 
@@ -74,7 +74,7 @@ section: blog
 
         <img class="block rounded-full m-auto w-64 p-8 md:p-12" src="{{ author.avatar }}" alt="{{ author.name }}">
 
-        <figcaption class="font-bold text-{{ site.colors.accent }}-dark">{{ author.name }}</figcaption>
+        <figcaption class="font-bold text-{{ site.colors.accent }}-600">{{ author.name }}</figcaption>
 
       </figure>
 

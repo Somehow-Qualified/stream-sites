@@ -345,12 +345,25 @@ button:focus {
 
 
 ul {
+  list-style: none;
   margin: 0;
+  padding: 0;
 }
 
 /**
  * Tailwind custom reset styles
  */
+
+/**
+ * 1. Use the system font stack as a sane default.
+ * 2. Use Tailwind's default "normal" line-height so the user isn't forced
+ * to override it to ensure consistency even when using the default theme.
+ */
+
+html {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; /* 1 */
+  line-height: 1.5; /* 2 */
+}
 
 /**
  * Allow adding a border to an element by just adding a border-width.
@@ -373,7 +386,7 @@ ul {
 *::after {
   border-width: 0;
   border-style: solid;
-  border-color: #dae1e7;
+  border-color: #e2e8f0;
 }
 
 /**
@@ -394,11 +407,6 @@ textarea {
   resize: vertical;
 }
 
-img {
-  max-width: 100%;
-  height: auto;
-}
-
 input::placeholder,
 textarea::placeholder {
   color: inherit;
@@ -408,6 +416,80 @@ textarea::placeholder {
 button,
 [role="button"] {
   cursor: pointer;
+}
+
+h1,
+h2,
+h3 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+/**
+ * Reset links to optimize for opt-in styling instead of
+ * opt-out.
+ */
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+/**
+ * Reset form element properties that are easy to forget to
+ * style explicitly so you don't inadvertently introduce
+ * styles that deviate from your design system. These styles
+ * supplement a partial reset that is already applied by
+ * normalize.css.
+ */
+
+button,
+input,
+textarea {
+  padding: 0;
+  line-height: inherit;
+  color: inherit;
+}
+
+/**
+ * Use the configured 'mono' font family for elements that
+ * are expected to be rendered with a monospace font, falling
+ * back to the system monospace stack if there is no configured
+ * 'mono' font family.
+ */
+
+
+code {
+  font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+/**
+ * Make replaced elements `display: block` by default as that's
+ * the behavior you want almost all of the time. Inspired by
+ * CSS Remedy, with `svg` added as well.
+ *
+ * https://github.com/mozdevs/cssremedy/issues/14
+ */
+
+img,
+svg,
+video,
+canvas {
+  display: block;
+  vertical-align: middle;
+}
+
+/**
+ * Constrain images and videos to the parent width and preserve
+ * their instrinsic aspect ratio.
+ *
+ * https://github.com/mozdevs/cssremedy/issues/14
+ */
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
 }
 
 #header a {
@@ -473,12 +555,12 @@ h3 {
 
 .content p.intro {
   border-bottom-width: 1px;
-  border-color: #f1f5f8;
+  border-color: #e2e8f0;
   font-size: 1.5rem;
   padding-bottom: 2.5rem;
   margin-bottom: 2.5rem;
   font-weight: 300;
-  color: #606f7b;
+  color: #4a5568;
 }
 
 @media (min-width: 768px) {
@@ -491,9 +573,9 @@ h3 {
   width: 100%;
 }
 
-@media (min-width: 576px) {
+@media (min-width: 640px) {
   .container {
-    max-width: 576px;
+    max-width: 640px;
   }
 }
 
@@ -503,61 +585,52 @@ h3 {
   }
 }
 
-@media (min-width: 992px) {
+@media (min-width: 1024px) {
   .container {
-    max-width: 992px;
+    max-width: 1024px;
   }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1280px) {
   .container {
-    max-width: 1200px;
+    max-width: 1280px;
   }
-}
-
-.list-reset {
-  list-style: none;
-  padding: 0;
 }
 
 .appearance-none {
   appearance: none;
 }
 
-.bg-grey-lighter {
-  background-color: #f1f5f8;
-}
-
 .bg-white {
   background-color: #fff;
 }
 
-.bg-cyan-dark {
-  background-color: #059dde;
+.bg-gray-200 {
+  background-color: #edf2f7;
 }
 
-.bg-blue-darkest {
-  background-color: #12283a;
+.bg-blue-600 {
+  background-color: #3182ce;
 }
 
-.bg-blue-darker {
-  background-color: #1c3d5a;
+.bg-blue-800 {
+  background-color: #2c5282;
 }
 
-.bg-blue-dark {
-  background-color: #2779bd;
+.bg-blue-900 {
+  background-color: #2a4365;
 }
 
-.hover\:bg-white:hover {
-  background-color: #fff;
+.bg-indigo-600 {
+  background-color: #5a67d8;
 }
 
-.hover\:bg-cyan-light:hover {
-  background-color: #42b6e8;
+.hover\:bg-indigo-400:hover {
+  background-color: #7f9cf5;
 }
 
-.border-blue-darkest {
-  border-color: #12283a;
+.border-blue-900 {
+  border-color: #2a4365;
 }
 
 .rounded {
@@ -593,16 +666,16 @@ h3 {
   display: inline-block;
 }
 
-.hidden {
-  display: none;
-}
-
 .flex {
   display: flex;
 }
 
 .inline-flex {
   display: inline-flex;
+}
+
+.hidden {
+  display: none;
 }
 
 .flex-col {
@@ -634,7 +707,7 @@ h3 {
 }
 
 .font-sans {
-  font-family: system-ui, BlinkMacSystemFont, -apple-system, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
 .font-semibold {
@@ -837,20 +910,12 @@ h3 {
   position: relative;
 }
 
-.pin-b {
-  bottom: 0;
-}
-
-.pin-l {
-  left: 0;
-}
-
 .shadow-md {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .12), 0 2px 4px 0 rgba(0, 0, 0, .08);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, .1), 0 2px 4px -1px rgba(0, 0, 0, .06);
 }
 
 .focus\:shadow-outline:focus {
-  box-shadow: 0 0 0 3px rgba(52, 144, 220, .5);
+  box-shadow: 0 0 0 3px rgba(66, 153, 225, .5);
 }
 
 .fill-current {
@@ -865,36 +930,32 @@ h3 {
   text-align: center;
 }
 
-.text-grey-dark {
-  color: #8795a1;
-}
-
-.text-grey {
-  color: #b8c2cc;
-}
-
 .text-white {
   color: #fff;
 }
 
-.text-cyan-dark {
-  color: #059dde;
+.text-gray-600 {
+  color: #718096;
 }
 
-.text-blue-darkest {
-  color: #12283a;
+.text-blue-200 {
+  color: #bee3f8;
 }
 
-.text-blue-darker {
-  color: #1c3d5a;
+.text-blue-800 {
+  color: #2c5282;
 }
 
-.text-blue-lightest {
-  color: #eff8ff;
+.text-blue-900 {
+  color: #2a4365;
 }
 
-.hover\:text-cyan:hover {
-  color: #1aa5e4;
+.text-indigo-600 {
+  color: #5a67d8;
+}
+
+.hover\:text-indigo-500:hover {
+  color: #667eea;
 }
 
 .text-xs {
@@ -1026,7 +1087,7 @@ h3 {
   }
 }
 
-@media (min-width: 992px) {
+@media (min-width: 1024px) {
 
   .lg\:mb-24 {
     margin-bottom: 6rem;
@@ -1052,7 +1113,7 @@ h3 {
     padding-right: 8rem;
   }
 
-  .lg\:text-6xl {
-    font-size: 5rem;
+  .lg\:text-5xl {
+    font-size: 3rem;
   }
 }
