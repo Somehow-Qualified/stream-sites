@@ -11,20 +11,21 @@ const Blog = createClass({
     return html`
       <article>
         <h1>${entry.getIn(["data", "title"], null)}</h1>
-        <p>
-          <small>
-            <time
+        <p><time
               >${
                 format(
                   entry.getIn(["data", "date"], new Date()),
-                  "DD MMM yyyy"
+                  "DD MMM YYYY"
                 )
               }</time
             >
-            ${" by Author"}
-          </small>
+            — Posted in ${entry.getIn(["data", "tags"], "")}
         </p>
-        <p>${entry.getIn(["data", "excerpt"], "")}</p>
+        <figure>
+          <img src="${entry.getIn(["data", "featured_image"], null)}" alt="${entry.getIn(["data", "image_caption"], null)}">
+          <figcaption>${entry.getIn(["data", "image_caption"], null)}</figcaption>
+        </figure>
+        <p>TL;DR - ${entry.getIn(["data", "tldr"], "")}</p>
         ${this.props.widgetFor("body")}
       </article>
     `;
