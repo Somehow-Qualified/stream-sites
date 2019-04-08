@@ -16,7 +16,7 @@ const Blog = createClass({
           — Posted in ${entry.getIn(["data", "tags"], "")}
         </p>
         <figure>
-          <img src="${entry.getIn(["data", "featured_image"], "")}" alt="${entry.getIn(["data", "image_caption"], "")}">
+          <div><img src="${entry.getIn(["data", "featured_image"], "")}" alt="${entry.getIn(["data", "image_caption"], "")}" /></div>
           <figcaption>${entry.getIn(["data", "image_caption"], "")}</figcaption>
         </figure>
         <p>TL;DR - ${entry.getIn(["data", "tldr"], "")}</p>
