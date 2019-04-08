@@ -19,7 +19,7 @@ const Blog = createClass({
           <div><img src="${entry.getIn(["data", "featured_image"], "")}" alt="${entry.getIn(["data", "image_caption"], "")}" /></div>
           <figcaption>${entry.getIn(["data", "image_caption"], "")}</figcaption>
         </figure>
-        <p>TL;DR - ${entry.getIn(["data", "tldr"], "")}</p>
+        <p class="tldr">TL;DR - ${entry.getIn(["data", "tldr"], "")}</p>
         ${this.props.widgetFor("body")}
       </article>
     `;

@@ -50,6 +50,16 @@ a[href]:not(:hover) {
 	text-decoration: none;
 }
 
-p {
+p, figure {
 	margin-bottom: 1rem !important;
+}
+
+figcaption {
+	font-style: italic;
+}
+
+.tldr {
+	font-size: 1.5rem;
+	font-style: italic;
+	font-weight: 800;
 }
