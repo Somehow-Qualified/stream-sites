@@ -4,7 +4,7 @@ import format from "https://unpkg.com/date-fns@2.0.0-alpha.2/esm/format/index.js
 const html = htm.bind(h);
 
 // Preview component for a Post
-const Post = createClass({
+const Blog = createClass({
   render() {
     const entry = this.props.entry;
 
