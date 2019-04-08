@@ -36,7 +36,6 @@ module.exports = function (eleventyConfig) {
 
     // Layout aliases
     eleventyConfig.addLayoutAlias('default', 'layouts/default.njk');
-    eleventyConfig.addLayoutAlias('main-page', 'layouts/main-page.njk');
     eleventyConfig.addLayoutAlias('post', 'layouts/post.njk');
 
     // Include our static assets

@@ -7,7 +7,7 @@ excerpt: >-
   A meeting is a gathering of two or more people that has been convened for the
   purpose of achieving a common goal through verbal interaction.
 tldr: Testing out multiple tags
-tags: css, business, test tag
+tags: CSS
 layout: post
 ---
 

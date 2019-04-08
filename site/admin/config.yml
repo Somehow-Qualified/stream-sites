@@ -19,19 +19,19 @@ collections:
     label:           "Blog"
     label_singular:  "Blog"
     description:     "Create a blog post."
-    folder:          "site/blog" # The path to the folder where the documents are stored
-    create:          true # Allow users to create new documents in this collection
-    slug:            "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
-    fields:          # The fields for each document, usually in front matter
+    folder:          "site/blog"
+    create:          true
+    slug:            "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Featured Image", name: "featured_image", widget: "image", media_library: {config:{multiple: false}} }
-      - { label: "Image Caption", name: "image_caption", widget: "string" }
-      - { label: "Excerpt", name: "excerpt", widget: "string" }
-      - { label: "TL;DR", name: "tldr", widget: "string" }
-      - { label: "Tags", name: "tags", widget: "string" }
+      - { label: "Image Caption", name: "image_caption", widget: "string", hint: "Describe this image for anyone who can't see it. Also a great place to give credit where credit is due." }
+      - { label: "Excerpt", name: "excerpt", widget: "string", hint: "A short description to tease this in a Search or Social Media preview." }
+      - { label: "TL;DR", name: "tldr", widget: "string", hint: "A short description of this post for people who don't want to read. Shown at the beginning of the post." }
+      - { label: "Tag", name: "tags", widget: "string", hint: "Supports 1 Tag right now. Pick a key word this post should be associated with so it can be grouped with others of the same tag." }
       - { label: "Body", name: "body", widget: "markdown" }
-      - { label: "Template", name: "layout", widget: "select", default: "post", options: ["post"] }
+      - { label: "Template", name: "layout", widget: "hidden", default: "post" }
   - name:            "page"
     label:           "Pages"
     label_singular:  "Page"
@@ -41,11 +41,11 @@ collections:
     slug:            "{{slug}}"
     fields:
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Meta Title", name: "meta_title", widget: "string" }
-      - { label: "Meta Description", name: "meta_description", widget: "string" }
+      - { label: "Meta Title", name: "meta_title", widget: "string", hint: "A title to display on a Search result. (What do you want Google to see?)" }
+      - { label: "Meta Description", name: "meta_description", widget: "string", hint: "A short description to tease this in a Search or Social Media preview." }
       - { label: "Slug", name: "slug", widget: "string" }
       - { label: "Body", name: "body", widget: "markdown" }
-      - { label: "Template", name: "layout", widget: "select", default: "default", options: ["default", "main-page"] }
+      - { label: "Template", name: "layout", widget: "hidden", default: "default" }
   - name:            "settings"
     label:           "Settings"
     description:     "Edit your global settings."
@@ -60,15 +60,15 @@ collections:
         file:        "site/globals/site.json"
         preview:     false
         fields:
-          - { label: "Brand Name", name: "name", widget: "string" }
-          - { label: "Live URL", name: "url", widget: "string" }
+          - { label: "Brand Name", name: "name", widget: "string", hint: "The name of your brand, community, or just your Twitch name." }
+          - { label: "Live URL", name: "url", widget: "string", hint: "What is the URL of your site? I.e. https://streamsites.xyz" }
           - { label: "Favicon", name: "favicon", widget: "image", media_library: {config:{multiple: false}}}
           - label:   "Theme"
             name:    "colors"
             widget:  "object"
             fields:
-              - { label: "Main Color", name: "main", widget: "select", default: "purple", options: ["red", "orange", "yellow", "teal", "blue", "indigo", "purple", "pink"] }
-              - { label: "Accent Color", name: "accent", widget: "select", default: "pink", options: ["red", "orange", "yellow", "teal", "blue", "indigo", "purple", "pink"] }
+              - { label: "Main Color", name: "main", widget: "select", default: "purple", options: ["red", "orange", "yellow", "teal", "blue", "indigo", "purple", "pink"], hint: "Pick a main color for your site." }
+              - { label: "Accent Color", name: "accent", widget: "select", default: "pink", options: ["red", "orange", "yellow", "teal", "blue", "indigo", "purple", "pink"], hint: "Pick a secondary color for your site. Used on buttons and other accents." }
       - label:       "Social Media"
         name:        "social"
         file:        "site/globals/social.json"
@@ -77,15 +77,15 @@ collections:
             name:    "images"
             widget:  "object"
             fields:
-              - { label: "Open Graph Image", name: "og", widget: "image", media_library: { config: { multiple: false } } }
-              - { label: "Twitter Image", name: "twitter_og", widget: "image", media_library: {config:{multiple: false}}}
+              - { label: "Open Graph Image", name: "og", widget: "image", media_library: { config: { multiple: false } }, hint: "This is the image used by Facebook and other Open Graph networks." }
+              - { label: "Twitter Image", name: "twitter_og", widget: "image", media_library: { config: { multiple: false } }, hint: "This is the image used by Twitter to make a large Twitter Card link preview." }
           - label:   "Social Links"
             name:    "social_links"
             widget:  "object"
             fields:
-              - { label: "Twitter", name: "twitter", widget: "string" }
-              - { label: "LinkedIn", name: "linkedin", widget: "string" }
-              - { label: "Facebook", name: "facebook", widget: "string" }
+              - { label: "Twitter", name: "twitter", widget: "string", hint: "https://twitter.com/yourhandle" }
+              - { label: "LinkedIn", name: "linkedin", widget: "string", hint: "https://linkedin.com/in/yourhandle" }
+              - { label: "Facebook", name: "facebook", widget: "string", hint: "https://facebook.com/yourpagename" }
       - label:       "Profile Settings"
         name:        "author"
         file:        "site/globals/author.json"
