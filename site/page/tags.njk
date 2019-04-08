@@ -14,19 +14,15 @@ body_class: blog
 layout: default
 ---
 
-<main id="main" class="main flex flex-1 flex-col md:flex-row py-10 px-6 lg:px-0 lg:py-20 bg-{{ site.colors.main }}-darkest">
+<section class="flex-1 container ml-auto mr-auto">
 
-  <section id="blog-posts" class="flex-1 container ml-auto mr-auto">
+  <h1 class="page-title text-white text-3xl md:text-center md:text-5xl mb-16 lg:mb-24 lg:text-6xl">Tagged “{{ tag }}”</h1>
 
-    <h1 class="page-title text-white text-3xl md:text-center md:text-5xl mb-16 lg:mb-24 lg:text-6xl">Tagged “{{ tag }}”</h1>
+  <div class="posts md:flex flex-1">
 
-    <div class="posts md:flex flex-1">
+    {% set postslist = collections[ tag ] %}
+    {% include 'components/postslist.njk' %}
 
-      {% set postslist = collections[ tag ] %}
-      {% include 'components/postslist.njk' %}
+  </div>
 
-    </div>
-
-  </section>
-
-</main>
+</section>

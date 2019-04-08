@@ -16,3 +16,56 @@ main a,
 #footer a {
   color: inherit;
 }
+
+// Skip Link
+@mixin sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+@mixin sr-only-focusable {
+    &:active,
+    &:focus {
+        position: static;
+        width: auto;
+        height: auto;
+        overflow: visible;
+        clip: auto;
+        white-space: normal;
+    }
+}
+
+.sr-skip-link:focus {
+    outline: none;
+}
+
+.sr-only {
+    @include sr-only();
+}
+
+.sr-only-focusable {
+    @include sr-only-focusable();
+}
+
+.sr-skip-link {
+    @include sr-only();
+    @include sr-only-focusable();
+
+    &:focus {
+        position: absolute;
+        left: 50%;
+        top: 0;
+        font-size: 1rem;
+        transform: translateX(-50%);
+        background-color: #3d4852;
+        color: #fff;
+        border-radius: 0 0 0.5rem 0.5rem;
+        padding: 1rem 1.5rem;
+    }
+}

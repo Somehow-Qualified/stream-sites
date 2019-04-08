@@ -4,15 +4,10 @@
     {# include our meta tags #}
     {% include "components/meta.njk" %}
 
-    {# include main.css in development mode #}
-    {% if helpers.environment == "development" %}
-      <link rel="stylesheet" href="/css/main.css">
-    {% else %}
-      {# otherwise, use main.min.css #}
-      <link rel="stylesheet" href="/css/main.min.css">
-    {% endif %}
+    {# include styles #}
+    <link rel="stylesheet" href="/css/main.min.css">
 
-    {# favicon #}
+    {# Favicon #}
     <link rel="icon" type="image/ico" href="{{ site.favicon }}">
 
     {# Netlify Identity #}
@@ -21,13 +16,19 @@
 
   <body {% if body_class %} id="{{ body_class }}" {% endif %} class="min-h-full font-sans text-lg text-{{ site.colors.main }}-darkest leading-normal">
 
+    <a href="#main" class="sr-skip-link">skip to main content</a>
+
     <div id="wrapper" class="wrapper flex flex-col relative min-h-screen">
 
       {# include header #}
       {% include "components/header.njk" %}
 
-      {# include content #}
-      {{ content | safe }}
+      <main id="main" class="main container m-auto flex flex-1 flex-col md:flex-row py-10 px-6 lg:px-0 lg:py-20" role="main" tabindex="-1">
+
+        {# include content #}
+        {{ content | safe }}
+
+      </main>
 
       {# include footer #}
       {% include "components/footer.njk" %}
@@ -35,11 +36,20 @@
     </div>
 
     {# include scripts #}
-    {% if helpers.environment == "development" %}
-      <script src="/javascript/main.js"></script>
-    {% else %}
-      <script src="/javascript/main.min.js"></script>
-    {% endif %}
+    <script src="/javascript/main.min.js" defer></script>
+
+    <!-- Enable Netlify Identity Login -->
+    <script>
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", user => {
+          if (!user) {
+            window.netlifyIdentity.on("login", () => {
+              document.location.href = "/admin/";
+            });
+          }
+        });
+      }
+    </script>
 
   </body>
 </html>
