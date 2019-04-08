@@ -1,5 +1,6 @@
 *, *:before, *:after {
   box-sizing: border-box;
+	font-size: 16px;
 }
 
 html,
@@ -16,12 +17,28 @@ body {
 
 article {
 	max-width: 37.5em;
+	margin: 1em;
+	padding: 1em;
 }
 
-p,
-pre,
-code {
-	line-height: 1.5;
+h1 {
+  font-size: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+}
+
+h4 {
+	font-size: 1.125rem;
+}
+
+h5, p {
+	font-size: 1rem;
 }
 
 a[href],
@@ -33,36 +50,6 @@ a[href]:not(:hover) {
 	text-decoration: none;
 }
 
-header,
-main,
-footer {
-	padding: 1em;
-}
-
-pre {
-	font-size: 14px;
-	direction: ltr;
-	text-align: left;
-	white-space: pre;
-	word-spacing: normal;
-	word-break: normal;
-	-moz-tab-size: 2;
-	tab-size: 2;
-	-webkit-hyphens: none;
-	-moz-hyphens: none;
-	-ms-hyphens: none;
-	hyphens: none;
-	padding: 1em;
-	margin: .5em 0;
-}
-
-/* Posts List */
-article {
-	margin-bottom: 1em;
-	padding-bottom: 1em;
-}
-
-main > section > article > * {
-	margin-top: 0;
-	margin-bottom: .5em;
+p {
+	margin-bottom: 1rem;
 }
