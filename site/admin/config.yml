@@ -9,8 +9,8 @@ media_folder:        "images" # Media files will be stored in the repo under ima
 
 # Replace URL with your Netlify or Custom domain
 # to enable CMS previews
-site_url:            `${process.env.URL}`
-display_url:         `${process.env.URL}`
+site_url:            ${process.env.URL}
+display_url:         ${process.env.URL}
 
 show_preview_links:  false
 
