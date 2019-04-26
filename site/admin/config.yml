@@ -1,5 +1,7 @@
 backend:
   name:              git-gateway
+  repo:              stream-sites/ss-core # Path to your GitLab repository
+  client_id:         667b971899da308f8083a28fb4a42ce51e6953a4b94e443f1894c3f631f26042 # Application ID from your GitLab settings
   branch:            master # Branch to update (optional; defaults to master)
 
 # Uncomment below to enable drafts for GitHub
@@ -9,8 +11,8 @@ media_folder:        "images" # Media files will be stored in the repo under ima
 
 # Replace URL with your Netlify or Custom domain
 # to enable CMS previews
-site_url:            ${process.env.URL}
-display_url:         ${process.env.URL}
+# site_url:            ${process.env.URL}
+# display_url:         ${process.env.URL}
 
 show_preview_links:  false
 
