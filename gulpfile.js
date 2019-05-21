@@ -18,34 +18,27 @@ const gulp = require('gulp'),
   plumber = require('gulp-plumber'),
   tailwindcss = require('tailwindcss'),
   purgecss = require('@fullhuman/postcss-purgecss');
-  del = require("del");
+  del = require('del');
 
 /**
  * Resources paths
  **/
-const paths = {
+ const paths = {
 
-  sass: {
-    source: './site/includes/resources/sass/main.scss',
-    dest: 'css/'
-  },
+   sass: {
+     source: './site/includes/resources/sass/main.scss',
+     dest: 'css/'
+   },
 
-  javascript: {
-    source: [
-      './site/includes/resources/js/utilities/*.js',
-      './site/includes/resources/js/twitch/*.js'
-    ],
-    dest: 'javascript/'
-  }
+   javascript: {
+     source: [
+       './site/includes/resources/js/utilities/*.js',
+       './site/includes/resources/js/twitch/*.js'
+     ],
+     dest: 'javascript/'
+   }
 
-}
-
-/**
- * Clean assets
- **/
-gulp.task('clean', function() {
-  del(['dist']);
-});
+ }
 
 /**
  * Errors function
@@ -55,9 +48,16 @@ const onError = function(err) {
     title: "Gulp Error - Compile Failed",
     message: "Error: <%= error.message %>"
   })(err);
-
   this.emit('end');
 };
+
+/**
+ * Clean assets
+ **/
+gulp.task('clean', function (done) {
+  del(['./dist'], done);
+  done();
+});
 
 /**************************************
  * TAILWIND & CSS
@@ -68,11 +68,6 @@ class TailwindExtractor {
     return content.match(/[A-z0-9-:\/]+/g) || [];
   }
 }
-
-/**
- * Create the tailwind.config.js file.
- **/
-gulp.task('tailwind:init', run('./node_modules/.bin/tailwind init tailwind.config.js'));
 
 /**
  * Compile Tailwind
@@ -93,12 +88,13 @@ gulp.task('css:compile', function() {
     .pipe(notify({
       message: 'Tailwind - Compile Success'
     }));
+    done();
 });
 
 /**
  * Minify the CSS
  **/
-gulp.task('css:minify', ['css:compile'], function() {
+gulp.task('css:minify', function() {
   return gulp.src([
       './css/main.css',
       '!./css/*.min.css'
@@ -107,16 +103,17 @@ gulp.task('css:minify', ['css:compile'], function() {
     .pipe(rename({
       suffix: '.min'
     }))
-    .pipe(gulp.dest('./css'))
+    .pipe(gulp.dest('./dist/css'))
     .pipe(notify({
       message: 'CSS - Minify Success'
     }));
+    done();
 });
 
 /**
  * Run all CSS tasks
  **/
-gulp.task('css', ['css:minify']);
+gulp.task('css', gulp.series('css:minify'));
 
 /**************************************
  * JAVASCRIPT
@@ -139,13 +136,14 @@ gulp.task('js:compile', function() {
     .pipe(notify({
       message: 'Javascript - Compile Success'
     }));
+    done();
 });
 
 /**
  * Minify Scripts
  * This will be ran as part of our preflight task
  **/
-gulp.task('js:minify', ['js:compile'], function() {
+gulp.task('js:minify', function() {
   return gulp.src(paths.javascript.dest + 'main.js')
     .pipe(rename({
       suffix: '.min'
@@ -155,37 +153,19 @@ gulp.task('js:minify', ['js:compile'], function() {
     .pipe(notify({
       message: 'Javascript - Minify Success'
     }));
+    done();
 });
 
 /**
  * Run all JS tasks
  **/
-gulp.task('js', ['js:minify']);
+gulp.task('js', gulp.series('js:minify'));
 
 /**************************************
  * DEFAULT GULP TASK
  **************************************/
 
-gulp.task('default', ['css', 'js']);
-
-/**************************************
- * DEV TASK
- * This will run while you're building the theme and automatically compile any changes.
- * This includes any html changes you make so that the purgecss file will be updated.
- **************************************/
-
-gulp.task('dev', ['css', 'js:compile'], function() {
-  // Configure watch files.
-  gulp.watch([
-    // 'site/*.njk',
-    // 'site/includes/**/*.njk',
-    'dist/*.html',
-    'dist/**/*.html'
-  ], ['css']);
-  gulp.watch('./tailwind.config.js', ['css']);
-  gulp.watch('./includes/resources/sass/**/*.scss', ['css']);
-  gulp.watch('./includes/resources/js/**/*.js', ['js:compile']);
-});
+gulp.task('default', gulp.series('css', 'js'));
 
 /**************************************
  * CSS PREFLIGHT
@@ -228,6 +208,7 @@ gulp.task('css:compile:preflight', function() {
           'h2',
           'h3',
           'p',
+          'a',
           'blockquote',
           'intro'
         ],
@@ -240,12 +221,13 @@ gulp.task('css:compile:preflight', function() {
     .pipe(notify({
       message: 'Tailwind Preflight Success'
     }));
+    done();
 });
 
 /**
  * Minify the CSS [PREFLIGHT]
  **/
-gulp.task('css:minify:preflight', ['css:compile:preflight'], function() {
+gulp.task('css:minify:preflight', function() {
   return gulp.src([
       './css/*.css',
       '!./css/*.min.css'
@@ -258,21 +240,23 @@ gulp.task('css:minify:preflight', ['css:compile:preflight'], function() {
     .pipe(notify({
       message: 'CSS Minify Success'
     }));
+    done();
 });
 
 /**
  * Run all CSS tasks
  **/
-gulp.task('css:preflight', ['css:minify:preflight']);
+gulp.task('css:preflight', gulp.series('css:compile:preflight', 'css:minify:preflight'));
 
 /**
  * BUILD TASK
  * Run this once you're happy with your site and you want to prep the files for production.
  * This will run the CSS and Minify Script functions + pass the CSS through purgecss to remove any unused CSS.
  **/
-gulp.task('build', ['css:preflight', 'js:minify']);
+gulp.task('build', gulp.parallel('css:preflight', 'js:minify'));
 
 /**
- * Purge /dist
+ * CLEAN TASK
+ * Delete the production folder when rebuilding the site in development.
  **/
-gulp.task('build:clean', ['clean', 'build']);
+gulp.task('build:clean', gulp.parallel('clean', 'build'));

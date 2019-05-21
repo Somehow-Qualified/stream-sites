@@ -39,7 +39,7 @@ main {
 
 h1 {
   font-size: 2em;
-  margin: .67em 0;
+  margin: 0.67em 0;
 }
 
 /* Grouping content
@@ -133,8 +133,7 @@ textarea {
  */
 
 button,
-input {
-  /* 1 */
+input { /* 1 */
   overflow: visible;
 }
 
@@ -143,8 +142,7 @@ input {
  * 1. Remove the inheritance of text transform in Firefox.
  */
 
-button {
-  /* 1 */
+button { /* 1 */
   text-transform: none;
 }
 
@@ -410,7 +408,7 @@ textarea {
 input::placeholder,
 textarea::placeholder {
   color: inherit;
-  opacity: .5;
+  opacity: 0.5;
 }
 
 button,
@@ -493,7 +491,7 @@ video {
 }
 
 #header a {
-  transition: .25s color ease-out;
+  transition: 0.25s color ease-out;
 }
 
 main a:-webkit-any-link,
@@ -503,8 +501,7 @@ main a,
   color: inherit;
 }
 
-.sr-skip-link:focus,
-main:focus {
+.sr-skip-link:focus, main:focus {
   outline: none;
 }
 
@@ -519,8 +516,7 @@ main:focus {
   border: 0;
 }
 
-.sr-skip-link:active,
-.sr-skip-link:focus {
+.sr-skip-link:active, .sr-skip-link:focus {
   position: static;
   width: auto;
   height: auto;
@@ -537,7 +533,7 @@ main:focus {
   transform: translateX(-50%);
   background-color: #3d4852;
   color: #fff;
-  border-radius: 0 0 .5rem .5rem;
+  border-radius: 0 0 0.5rem 0.5rem;
   padding: 1rem 1.5rem;
 }
 
@@ -758,15 +754,15 @@ h3 {
 }
 
 .mr-2 {
-  margin-right: .5rem;
+  margin-right: 0.5rem;
 }
 
 .mb-2 {
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
 }
 
 .mr-3 {
-  margin-right: .75rem;
+  margin-right: 0.75rem;
 }
 
 .mt-4 {
@@ -834,7 +830,7 @@ h3 {
 }
 
 .p-2 {
-  padding: .5rem;
+  padding: 0.5rem;
 }
 
 .p-8 {
@@ -842,28 +838,28 @@ h3 {
 }
 
 .py-1 {
-  padding-top: .25rem;
-  padding-bottom: .25rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
 }
 
 .py-2 {
-  padding-top: .5rem;
-  padding-bottom: .5rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
 }
 
 .px-2 {
-  padding-left: .5rem;
-  padding-right: .5rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
 }
 
 .py-3 {
-  padding-top: .75rem;
-  padding-bottom: .75rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
 }
 
 .px-3 {
-  padding-left: .75rem;
-  padding-right: .75rem;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
 }
 
 .py-4 {
@@ -924,7 +920,7 @@ h3 {
 }
 
 .focus\:shadow-outline:focus {
-  box-shadow: 0 0 0 3px rgba(66, 153, 225, .5);
+  box-shadow: 0 0 0 3px rgba(66,153,225,0.5);
 }
 
 .fill-current {
@@ -1051,7 +1047,7 @@ h3 {
   }
 
   .md\:ml-2 {
-    margin-left: .5rem;
+    margin-left: 0.5rem;
   }
 
   .md\:mr-4 {
