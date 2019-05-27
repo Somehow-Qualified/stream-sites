@@ -1,14 +1,12 @@
 {
-  "images": {
-    "og": "/images/og.jpg",
-    "twitter_og": "/images/twitter.jpg"
-  },
-  "social_links": {
-    "twitter": "https://twitter.com/m2creates",
-    "linkedin": "https://linkedin.com/in/mmagdalena",
-    "facebook": "https://facebook.com"
-  },
-  "linkinbio": {
-
-  }
+  "linksinbio": [
+    {
+      "text": "Twitter",
+      "link": "https://twitter.com/m2creates"
+    },
+    {
+      "text": "LinkedIn",
+      "link": "https://linkedin.com/in/mmagdalena"
+    }
+  ]
 }
