@@ -1,6 +1,12 @@
 {
-  "twitter": {
-    "text": "Twitter",
-    "link": "https://twitter.com/m2creates"
-  }
+  "linksinbio": [
+    {
+      "text": "Twitter",
+      "link": "https://twitter.com/m2creates"
+    },
+    {
+      "text": "LinkedIn",
+      "link": "https://linkedin.com/in/mmagdalena"
+    }
+  ]
 }
