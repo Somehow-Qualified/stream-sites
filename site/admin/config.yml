@@ -86,12 +86,6 @@ collections:
               - { label: "Twitter", name: "twitter", widget: "string", hint: "https://twitter.com/yourhandle" }
               - { label: "LinkedIn", name: "linkedin", widget: "string", hint: "https://linkedin.com/in/yourhandle" }
               - { label: "Facebook", name: "facebook", widget: "string", hint: "https://facebook.com/yourpagename" }
-          - label:  "Link In Bio"
-            name:   "linkinbio"
-            widget: "list"
-            fields:
-              - { label: Text, name: text, widget: string }
-              - { label: Link, name: link, widget: string }
 
       - label:       "Profile Settings"
         name:        "author"
@@ -105,12 +99,12 @@ collections:
           - { label: "Short Bio", name: "bio", widget: "string", hint: "A short description of yourself to include at the end of blog posts." }
       - label:       "Link In Bio"
         name:        "linkinbio"
-        file:        "site/globals/social.json"
+        file:        "site/globals/linkinbio.json"
         create:       true
         fields:
           - label:   "Create Links In Bio"
             name:    "linksinbio"
-            widget: "list"
+            widget:  "list"
             fields:
               - { label: Text, name: text, widget: string }
               - { label: Link, name: link, widget: string }
