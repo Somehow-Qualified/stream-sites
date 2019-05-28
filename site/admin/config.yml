@@ -106,10 +106,10 @@ collections:
             name:    "linksinbio"
             widget:  "list"
             fields:
-              - { label: "Link Label", name: text, widget: string, hint: "This is a reference for yourself. It is not displayed on the site." }
+              - { label: "Link Label", name: "link_label", widget: "string", hint: "This is a reference for yourself. It is not displayed on the site." }
               - label: "Link Details"
                 name: "link_details"
                 widget: object
                 fields:
-                  - { label: "Text", name: text, widget: string, hint: "What should the text say?" }
-                  - { label: "Link", name: link, widget: string, hint: "Where should the link go? Include the https:// if you want to guarantee it works." }
+                  - { label: "Text", name: "text", widget: "string", hint: "What should the text say?" }
+                  - { label: "Link", name: "link", widget: "string", hint: "Where should the link go? Include the https:// if you want to guarantee it works." }
