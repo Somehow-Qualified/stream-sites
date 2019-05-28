@@ -12,7 +12,7 @@ layout: default
   <h1 class="page-title text-5xl">{{ title }}</h1>
 
   <ul class="content">
-    {% for text, link in linkinbio.linksinbio[] %}
+    {% for text, link in linkinbio.linksinbio %}
     <li><a href="{{ link | safe }}" target="_blank">{{ text }}</a></li>
     {% endfor %}
   </ul>
