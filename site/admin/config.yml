@@ -105,6 +105,6 @@ collections:
           - label:   "Add a Link"
             name:    "linksinbio"
             widget:  "list"
-              fields:
+              - fields:
                 - { label: "Text", name: "text", widget: "string", hint: "What should the text say?" }
                 - { label: "Link", name: "link", widget: "string", hint: "Where should the link go? Include the https:// if you want to guarantee it works." }
