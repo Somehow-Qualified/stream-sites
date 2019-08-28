@@ -97,14 +97,14 @@ collections:
           - { label: "Twitter Handle", name: "twitter_handle", widget: "string", hint: "Your Twitter handle" }
           - { label: "Avatar", name: "avatar", widget: "image", media_library: {config:{multiple: false}}, hint: "An image of you/your logotype. For best results use a square image at 500x500 pixels."}
           - { label: "Short Bio", name: "bio", widget: "string", hint: "A short description of yourself to include at the end of blog posts." }
-      - label:       "Link In Bio"
-        name:        "linkinbio"
-        file:        "site/globals/linkinbio.json"
-        create:       true
-        fields:
-          - label:   "Add a Link"
-            name:    "linksinbio"
-            widget:  "list"
-              - fields:
-                - { label: "Text", name: "text", widget: "string", hint: "What should the text say?" }
-                - { label: "Link", name: "link", widget: "string", hint: "Where should the link go? Include the https:// if you want to guarantee it works." }
+#      - label:       "Link In Bio"
+#        name:        "linkinbio"
+#        file:        "site/globals/linkinbio.json"
+#        create:       true
+#        fields:
+#          - label:   "Add a Link"
+#            name:    "linksinbio"
+#            widget:  "list"
+#              fields:
+#                - { label: "Text", name: "text", widget: "string", hint: "What should the text say?" }
+#                - { label: "Link", name: "link", widget: "string", hint: "Where should the link go? Include the https:// if you want to guarantee it works." }
