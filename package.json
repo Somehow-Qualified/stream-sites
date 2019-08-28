@@ -14,9 +14,9 @@
 	"author": "Melanie E Magdalena",
 	"license": "MIT",
 	"devDependencies": {
-		"@11ty/eleventy": "^0.8.3",
-		"@babel/core": "^7.4.4",
-		"@babel/preset-env": "^7.4.4",
+		"@11ty/eleventy": "^0.9.0",
+		"@babel/core": "^7.5.5",
+		"@babel/preset-env": "^7.5.5",
 		"@fullhuman/postcss-purgecss": "^1.1.0",
 		"del": "^4.1.1",
 		"eleventy-plugin-reading-time": "0.0.1",
@@ -33,6 +33,6 @@
 		"gulp-uglify": "^3.0.2",
 		"html-minifier": "^4.0.0",
 		"node-sass": "^4.12.0",
-		"tailwindcss": "^1.0.1"
+		"tailwindcss": "^1.1.2"
 	}
 }
