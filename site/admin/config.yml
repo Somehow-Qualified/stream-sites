@@ -101,19 +101,18 @@ collections:
         preview:     false
         fields:
           - label:    "Add a menu item"
-            name:     "menuitem"
+            name:     "main"
             widget:   "list"
             fields:
               - { label: "Label", name: "label", widget: "string", hint: "What text should be displayed?" }
               - { label: "Link", name: "url", widget: "string", hint: "What should this link to?" }
-#      - label:       "Link In Bio"
-#        name:        "linkinbio"
-#        file:        "site/globals/linkinbio.json"
-#        create:       true
-#        fields:
-#          - label:   "Add a Link"
-#            name:    "linksinbio"
-#            widget:  "list"
-#              fields:
-#                - { label: "Text", name: "text", widget: "string", hint: "What should the text say?" }
-#                - { label: "Link", name: "link", widget: "string", hint: "Where should the link go? Include the https:// if you want to guarantee it works." }
+      - label:       "Link In Bio"
+        name:        "linkinbio"
+        file:        "site/globals/linkinbio.json"
+        fields:
+          - label:   "Add a Link"
+            name:    "linksinbio"
+            widget:  "list"
+            fields:
+              - { label: "Label", name: "text", widget: "string", hint: "What should the text say?" }
+              - { label: "Link", name: "link", widget: "string", hint: "Where should the link go? Include the https:// if you want to guarantee it works." }
