@@ -1,13 +1,28 @@
+const { DateTime } = require("luxon");
+const fs = require("fs");
 const htmlmin = require("html-minifier");
-const readingTime = require('eleventy-plugin-reading-time');
+const pluginReadingTime = require('eleventy-plugin-reading-time');
+const pluginRss = require("@11ty/eleventy-plugin-rss");
+const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 
 module.exports = function (eleventyConfig) {
 
     // Add a date formatter filter to Nunjucks
     eleventyConfig.addFilter('dateDisplay', require('./site/includes/filters/dates.js'));
 
+    // Format dates for computers
+    eleventyConfig.addFilter('htmlDateString', (dateObj) => {
+      return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat('yyyy-LL-dd');
+    });
+
     // Display reading time for posts
-    eleventyConfig.addPlugin(readingTime);
+    eleventyConfig.addPlugin(pluginReadingTime);
+
+    // Adds RSS feed
+    eleventyConfig.addPlugin(pluginRss);
+
+    // Adds Syntax highlighter
+    eleventyConfig.addPlugin(pluginSyntaxHighlight);
 
     // Minify our HTML
     eleventyConfig.addTransform('htmlmin', function(content, outputPath) {

@@ -85,11 +85,6 @@ strong {
  * 2. Correct the odd `em` font sizing in all browsers.
  */
 
-code {
-  font-family: monospace, monospace; /* 1 */
-  font-size: 1em; /* 2 */
-}
-
 /**
  * Add the correct font size in all browsers.
  */
@@ -387,6 +382,10 @@ html {
   border-color: #e2e8f0;
 }
 
+/*
+ * Ensure horizontal rules are visible by default
+ */
+
 /**
  * Undo the `border-style: none` reset that Normalize applies to images so that
  * our `border-{width}` utilities have the expected effect.
@@ -407,8 +406,7 @@ textarea {
 
 input::placeholder,
 textarea::placeholder {
-  color: inherit;
-  opacity: 0.5;
+  color: #a0aec0;
 }
 
 button,
@@ -455,11 +453,6 @@ textarea {
  * back to the system monospace stack if there is no configured
  * 'mono' font family.
  */
-
-
-code {
-  font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-}
 
 /**
  * Make replaced elements `display: block` by default as that's
