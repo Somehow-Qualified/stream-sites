@@ -45,6 +45,8 @@ section: blog
   </div>
 
   {# author card #}
-  {% include "components/author.njk" %}
+  {% if settings.author_box === "true" %}
+    {% include "components/author.njk" %}
+  {% endif %}
 
 </section>
