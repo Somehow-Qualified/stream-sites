@@ -1,23 +1,12 @@
 {
-  "main": [{
+  "menuitem": [
+    {
       "label": "Home",
       "url": "/"
     },
     {
       "label": "About",
-      "url": "/about/"
-    },
-    {
-      "label": "Blog",
-      "url": "/blog/"
-    },
-    {
-      "label": "Contact",
-      "url": "/contact/"
+      "url": "/about"
     }
-  ],
-  "button": {
-    "label": "Download",
-    "url": "https://streamsites.xyz"
-  }
+  ]
 }
