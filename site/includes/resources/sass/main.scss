@@ -19,3 +19,7 @@
 // Import Tailwind utilities
 // TailwindCSS recommends leaving utilities till last to ensure they aren't overwritten.
 @tailwind utilities;
+
+#menu-toggle:checked + #menu {
+  display: block;
+}

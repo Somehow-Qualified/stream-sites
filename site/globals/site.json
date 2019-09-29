@@ -1,9 +1,10 @@
 {
   "name": "Stream Sites",
   "url": "https://demo-streamsites.netlify.com",
+  "logo": "/images/logo-ss-square.png",
   "favicon": "/images/favicon.ico",
   "colors": {
-    "main": "blue",
-    "accent": "indigo"
+    "main": "purple",
+    "accent": "pink"
   }
 }
