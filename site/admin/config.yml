@@ -62,6 +62,7 @@ collections:
         fields:
           - { label: "Brand Name", name: "name", widget: "string", hint: "The name of your brand, community, or just your Twitch name." }
           - { label: "Live URL", name: "url", widget: "string", hint: "What is the URL of your site? I.e. https://streamsites.xyz" }
+          - { label: "Logo", name: "logo", widget: "image", media_library: {config:{multiple: false}}}
           - { label: "Favicon", name: "favicon", widget: "image", media_library: {config:{multiple: false}}}
           - label:   "Theme"
             name:    "colors"
