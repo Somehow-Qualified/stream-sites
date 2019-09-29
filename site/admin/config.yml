@@ -106,11 +106,22 @@ collections:
             fields:
               - { label: "Label", name: "label", widget: "string", hint: "What text should be displayed?" }
               - { label: "Link", name: "url", widget: "string", hint: "What should this link to?" }
+      - label:       "Marketing CTAs"
+        name:        "ctas"
+        file:        "site/globals/ctas.json"
+        preview:     false
+        fields:
+          - label:   "Menu Button"
+            name:    "navigation"
+            widget:  "object"
+            fields:
+              - { label: "Button Text", name: "button_text", widget: "string", hint: "Something clickbaity" }
+              - { label: "Button Link", name: "button_link", widget: "string", hint: "Where should the link go? Twitch? Your Discord? Include the https:// if you want to guarantee it works." }
       - label:       "Link In Bio"
         name:        "linkinbio"
         file:        "site/globals/linkinbio.json"
         fields:
-          - label:   "Add a Link"
+          - label:   "Add a link to the Link In Bio page"
             name:    "linksinbio"
             widget:  "list"
             fields:
