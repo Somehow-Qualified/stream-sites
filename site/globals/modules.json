@@ -1,3 +1,4 @@
 {
-  "author_box": "false"
+  "author_box": "true",
+  "contact_form": "true"
 }

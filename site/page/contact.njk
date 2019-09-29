@@ -15,25 +15,8 @@ layout: default
 
     <p>Tell us how great we are in the form below.</p>
 
-    <form name="contact" method="POST" data-netlify="true">
-      <div class="mb-4">
-        <label class="block text-{{ site.colors.main }}-900 mb-2" for="name">Name</label>
-        <input class="appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline" id="name" type="text">
-      </div>
-
-      <div class="mb-4">
-        <label class="block text-{{ site.colors.main }}-900 mb-2" for="email">Email</label>
-        <input class="appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline" id="email" type="text">
-      </div>
-
-      <div class="mb-4">
-        <label class="block text-{{ site.colors.main }}-900 mb-2" for="message">Message</label>
-        <textarea class="appearance-none border rounded w-full py-2 px-3 h-32 leading-tight focus:outline-none focus:shadow-outline" id="message"></textarea>
-      </div>
-
-      <div class="mb-4">
-        <button class="inline-block rounded py-4 px-6 text-white font-bold bg-{{ site.colors.accent }}-600 hover:bg-{{ site.colors.accent }}-400" type="submit">Send message!</button>
-      </div>
-    </form>
+    {% if modules.contact_form === "true" %}
+      {% include "components/contact-form.njk" %}
+    {% endif %}
 
   </section>
