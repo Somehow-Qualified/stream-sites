@@ -122,7 +122,7 @@ collections:
         file:        "site/globals/linkinbio.json"
         fields:
           - label:   "Add a link to the Link In Bio page"
-            name:    "linksinbio"
+            name:    "linkinbio"
             widget:  "list"
             fields:
               - { label: "Label", name: "text", widget: "string", hint: "What should the text say?" }

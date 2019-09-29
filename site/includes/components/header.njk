@@ -16,10 +16,10 @@
 	  <input class="hidden" type="checkbox" id="menu-toggle" />
 
 	  <div class="hidden lg:flex lg:items-center lg:w-auto w-full" id="menu">
-	    <nav class="xs:w-full">
+	    <nav class="xs:w-full text-center">
 	      <ul class="lg:flex items-center justify-between text-base text-white pt-4 lg:pt-0">
 					{% for item in navigation.main %}
-			      <li class="mb-4 md:mr-4 md:mb-0">
+			      <li>
 			        <a href="{{ item.url | safe }}" class="lg:p-4 py-3 px-0 block font-bold hover:text-{{ site.colors.accent }}-400">{{ item.label }}</a>
 			      </li>
 			    {% endfor %}
