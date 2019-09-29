@@ -13,8 +13,8 @@ excludeFromSitemap: true
   {% endif %}
   <id>{{ site.url }}/</id>
   <author>
-    <name>{{ site.author.name }}</name>
-    <email>{{ site.author.email }}</email>
+    <name>{{ author.name }}</name>
+    <email>{{ author.email }}</email>
   </author>
   {%- for item in collections.blog | reverse -%}
   {% set absolutePostUrl %}{{ post.url | url | absoluteUrl(site.url) }}{% endset %}
