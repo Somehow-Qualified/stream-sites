@@ -53,10 +53,8 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addLayoutAlias('default', 'layouts/default.njk');
     eleventyConfig.addLayoutAlias('post', 'layouts/post.njk');
 
-    // Include our static assets
+    // Copy static assests
     eleventyConfig.addPassthroughCopy('images');
-
-    // Include Netlify CMS Admin
     eleventyConfig.addPassthroughCopy('site/admin');
 
     return {

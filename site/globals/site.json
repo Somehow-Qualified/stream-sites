@@ -5,5 +5,9 @@
   "colors": {
     "main": "blue",
     "accent": "indigo"
+  },
+  "author": {
+    "name": "Melanie E Magdalena",
+    "email": "hello@melaniemagdalena.com"
   }
 }
