@@ -1,5 +1,6 @@
 {
-  "main": [{
+  "main": [
+    {
       "label": "Home",
       "url": "/"
     },
@@ -14,10 +15,10 @@
     {
       "label": "Contact",
       "url": "/contact/"
+    },
+    {
+      "label": "Sitemap",
+      "url": "/sitemap.xml"
     }
-  ],
-  "button": {
-    "label": "Download",
-    "url": "https://streamsites.xyz"
-  }
+  ]
 }
