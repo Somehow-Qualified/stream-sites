@@ -127,3 +127,18 @@ collections:
             fields:
               - { label: "Label", name: "text", widget: "string", hint: "What should the text say?" }
               - { label: "Link", name: "link", widget: "string", hint: "Where should the link go? Include the https:// if you want to guarantee it works." }
+  - name:            "modules"
+    label:           "Modules"
+    description:     "Configure the modules on your site."
+    extension:       "json"
+    format:          "json"
+    create:          false
+    editor:
+      preview:       false
+    files:
+      - label:       "Module Settings"
+        name:        "site"
+        file:        "site/globals/modules.json"
+        preview:     false
+        fields:
+          - { label: "Author Box", name: "author_box", widget: "select", default: "true", options:  ["true", "false"], hint: "Choose whether or not to display the Author Box at the end of a blog post." }
