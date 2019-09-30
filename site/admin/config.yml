@@ -21,6 +21,7 @@ collections:
     folder:          "site/blog"
     create:          true
     slug:            "{{fields.slug}}"
+    preview_path:    "blog/{{fields.slug}}"
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Slug", name: "slug", widget: "string" }
