@@ -1,7 +1,7 @@
 ---
 title: Don't do meetings
 slug: 2019-03-23-sample-post
-date: 2018-09-30T00:00:00.000Z
+date: 2019-03-24T00:00:00.000Z
 tags: CSS
 featured_image: /images/post-1.jpg
 image_caption: Photo by Dylan Gillis on Unsplash
