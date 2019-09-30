@@ -176,6 +176,19 @@ collections:
             fields:
               - { label: "Button Text", name: "button_text", widget: "string", hint: "Something clickbaity" }
               - { label: "Button Link", name: "button_link", widget: "string", hint: "Where should the link go? Twitch? Your Discord? Include the https:// if you want to guarantee it works." }
+      - label:       "SEO"
+        name:        "seo"
+        file:        "site/globals/seo.json"
+        preview:     false
+        fields:
+          - { label: "Site Title", name: "site_title", widget: "string", required: false, hint: "Customize the title a search engine will see." }
+          - { label: "Site Description", name: "site_description", widget: "string", required: false, hint: "Write a default description to appear on posts/pages via search results when a custom one does not exist." }
+          - label:   "Default Social Share Images"
+            name:    "images"
+            widget:  "object"
+            fields:
+              - { label: "Open Graph Image", name: "og", widget: "image", media_library: { config: { multiple: false } }, hint: "This is the image used by Facebook and other Open Graph networks." }
+              - { label: "Twitter Card Image", name: "twitter_og", widget: "image", media_library: { config: { multiple: false } }, hint: "This is the image used by Twitter to make a large Twitter Card link preview." }
       - label:       "Social Media"
         name:        "social"
         file:        "site/globals/social.json"
