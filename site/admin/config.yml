@@ -129,7 +129,8 @@ collections:
         file:        "site/globals/navigation.json"
         preview:     false
         fields:
-          - label:    "Add a menu item"
+          - label:    "Menu Links"
+            label_singular: "Menu Link"
             name:     "main"
             widget:   "list"
             fields:
