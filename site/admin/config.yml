@@ -46,21 +46,6 @@ collections:
       - { label: "Slug", name: "slug", widget: "string" }
       - { label: "Body", name: "body", widget: "markdown" }
       - { label: "Template", name: "layout", widget: "hidden", default: "default" }
-  - name:            "default-pages"
-    label:           "Default Pages"
-    label_singular:  "Default Page"
-    description:     "Edit a default page"
-    files:
-      - label: "404"
-        name: "404"
-        file: "site/page/404.njk"
-        fields:
-          - {label: "Title", name: title, widget: string}
-          - {label: "Permalink", name: permalink, widget: string}
-          - {label: "Meta Title", name: meta_title, widget: string}
-          - {label: "Meta Description", name: meta_description, widget: string}
-          - {label: "Body Class", name: body_class, widget: "hidden", default: "404"}
-          - {label: "Layout", name: layout, widget: "hidden", default: "default"}
   - name:            "settings"
     label:           "Settings"
     description:     "Edit your global settings."
