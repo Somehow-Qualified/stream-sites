@@ -1,8 +1,7 @@
 ---
 title: Get in Touch!
 form: true
-seo:
-  slug: contact-page-test
+slug: contact
 layout: layouts/contact.njk
 ---
 

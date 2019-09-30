@@ -21,9 +21,10 @@ collections:
     description:     "Create or edit a blog post"
     folder:          "site/blog"
     create:          true
-    slug:            "{{fields.seo.slug}}"
+    slug:            "{{fields.slug}}"
     fields:
       - { label: "Title", name: "title", widget: "string" }
+      - { label: "Slug", name: "slug", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Tag", name: "tags", widget: "string", hint: "Supports 1 Tag right now. Pick a key word this post should be associated with so it can be grouped with others of the same tag." }
       - { label: "Featured Image", name: "featured_image", widget: "image", required: false, media_library: {config:{multiple: false}} }
@@ -36,7 +37,6 @@ collections:
         fields:
           - { label: "Meta Title", name: "meta_title", widget: "string", required: false, hint: "A title to display on a Search result. (What do you want Google to see?)" }
           - { label: "Meta Description", name: "excerpt", widget: "string", required: false, hint: "A short description to tease this in a Search or Social Media preview." }
-          - { label: "Slug", name: "slug", widget: "string" }
       - { label: "Template", name: "layout", widget: "hidden", default: "post" }
   - name:            "page"
     label:           "Pages"
@@ -45,9 +45,10 @@ collections:
     folder:          "site/page"
     create:          true
     filter:          { field: "page_type", value: "default" }
-    slug:            "{{fields.seo.slug}}"
+    slug:            "{{fields.slug}}"
     fields:
       - { label: "Title", name: "title", widget: "string" }
+      - { label: "Slug", name: "slug", widget: "string" }
       - { label: "Featured Image", name: "featured_image", widget: "image", required: false, media_library: {config:{multiple: false}} }
       - { label: "Body", name: "body", widget: "markdown" }
       - label: "SEO"
@@ -56,7 +57,6 @@ collections:
         fields:
           - { label: "Meta Title", name: "meta_title", widget: "string", required: false, hint: "A title to display on a Search result. (What do you want Google to see?)" }
           - { label: "Meta Description", name: "excerpt", widget: "string", required: false, hint: "A short description to tease this in a Search or Social Media preview." }
-          - { label: "Slug", name: "slug", widget: "string" }
       - { label: "Template", name: "layout", widget: "hidden", default: "default" }
       - { label: "Page Type", name: "page_type", widget: "hidden", default: "default" }
   - name:            "modules"
@@ -70,10 +70,11 @@ collections:
       - label:       "Contact"
         name:        "contact"
         file:        "site/page/contact.md"
-        slug:        {{fields.seo.slug}}
+        slug:        {{fields.slug}}
         preview:     true
         fields:
           - { label: "Title", name: "title", widget: "string" }
+          - { label: "Slug", name: "slug", widget: "string", default: "contact" }
           - { label: "Body", name: "body", widget: "markdown" }
           - { label: "Contact Form", name: "form", widget: "boolean", default: true, hint: "Should the page display a contact form?" }
           - label: "SEO"
@@ -82,7 +83,6 @@ collections:
             fields:
               - { label: "Meta Title", name: "meta_title", widget: "string", required: false, hint: "A title to display on a Search result. (What do you want Google to see?)" }
               - { label: "Meta Description", name: "excerpt", widget: "string", required: false, hint: "A short description to tease this in a Search or Social Media preview." }
-              - { label: "Slug", name: "slug", widget: "string", default: "contact" }
           - { label: "Template", name: "layout", widget: "hidden", default: "layouts/contact.njk" }
   - name:            "linkinbio"
     label:           "Link In Bio"
@@ -97,6 +97,7 @@ collections:
         preview:     true
         fields:
           - { label: "Title", name: "title", widget: "string" }
+          - { label: "Slug", name: "slug", widget: "string", default: "link-in-bio" }
           - { label: "Body", name: "body", widget: "markdown" }
           - label: "SEO"
             name: "seo"
@@ -104,7 +105,6 @@ collections:
             fields:
               - { label: "Meta Title", name: "meta_title", widget: "string", required: false, hint: "A title to display on a Search result. (What do you want Google to see?)" }
               - { label: "Meta Description", name: "excerpt", widget: "string", required: false, hint: "A short description to tease this in a Search or Social Media preview." }
-              - { label: "Slug", name: "slug", widget: "string", default: "link-in-bio" }
           - { label: "Template", name: "layout", widget: "hidden", default: "layouts/linkinbio.njk" }
       - label:       "Links"
         name:        "linkinbio_links"
