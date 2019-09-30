@@ -35,7 +35,7 @@ collections:
         widget: "object"
         fields:
           - { label: "Meta Title", name: "meta_title", widget: "string", required: false, hint: "A title to display on a Search result. (What do you want Google to see?)" }
-          - { label: "Meta Description", name: "excerpt", widget: "string", required: false, hint: "A short description to tease this in a Search or Social Media preview." }
+          - { label: "Meta Description", name: "excerpt", widget: "text", required: false, hint: "A short description to tease this in a Search or Social Media preview." }
       - { label: "Template", name: "layout", widget: "hidden", default: "post" }
   - name:            "page"
     label:           "Pages"
@@ -55,7 +55,7 @@ collections:
         widget: "object"
         fields:
           - { label: "Meta Title", name: "meta_title", widget: "string", required: false, hint: "A title to display on a Search result. (What do you want Google to see?)" }
-          - { label: "Meta Description", name: "excerpt", widget: "string", required: false, hint: "A short description to tease this in a Search or Social Media preview." }
+          - { label: "Meta Description", name: "excerpt", widget: "text", required: false, hint: "A short description to tease this in a Search or Social Media preview." }
       - { label: "Template", name: "layout", widget: "hidden", default: "default" }
       - { label: "Page Type", name: "page_type", widget: "hidden", default: "default" }
   - name:            "modules"
@@ -81,7 +81,7 @@ collections:
             widget: "object"
             fields:
               - { label: "Meta Title", name: "meta_title", widget: "string", required: false, hint: "A title to display on a Search result. (What do you want Google to see?)" }
-              - { label: "Meta Description", name: "excerpt", widget: "string", required: false, hint: "A short description to tease this in a Search or Social Media preview." }
+              - { label: "Meta Description", name: "excerpt", widget: "text", required: false, hint: "A short description to tease this in a Search or Social Media preview." }
           - { label: "Template", name: "layout", widget: "hidden", default: "layouts/contact.njk" }
   - name:            "linkinbio"
     label:           "Link In Bio"
@@ -103,7 +103,7 @@ collections:
             widget: "object"
             fields:
               - { label: "Meta Title", name: "meta_title", widget: "string", required: false, hint: "A title to display on a Search result. (What do you want Google to see?)" }
-              - { label: "Meta Description", name: "excerpt", widget: "string", required: false, hint: "A short description to tease this in a Search or Social Media preview." }
+              - { label: "Meta Description", name: "excerpt", widget: "text", required: false, hint: "A short description to tease this in a Search or Social Media preview." }
           - { label: "Template", name: "layout", widget: "hidden", default: "layouts/linkinbio.njk" }
       - label:       "Links"
         name:        "linkinbio_links"
@@ -182,7 +182,7 @@ collections:
         preview:     false
         fields:
           - { label: "Site Title", name: "site_title", widget: "string", required: false, hint: "Customize the title a search engine will see." }
-          - { label: "Site Description", name: "site_description", widget: "string", required: false, hint: "Write a default description to appear on posts/pages via search results when a custom one does not exist." }
+          - { label: "Site Description", name: "site_description", widget: "text", required: false, hint: "Write a default description to appear on posts/pages via search results when a custom one does not exist." }
           - label:   "Default Social Share Images"
             name:    "images"
             widget:  "object"
@@ -207,7 +207,7 @@ collections:
           - { label: "Name", name: "name", widget: "string", hint: "The name you want people to call you, such as your Twitch name or IRL name." }
           - { label: "Email", name: "email", widget: "string", hint: "An email someone can reach you at. Example: hi@streamsites.xyz" }
           - { label: "Avatar", name: "avatar", widget: "image", media_library: {config:{multiple: false}}, hint: "An image of you/your logotype. For best results use a square image at 500x500 pixels."}
-          - { label: "Short Bio", name: "bio", widget: "string", hint: "A short description of yourself to include at the end of blog posts." }
+          - { label: "Short Bio", name: "bio", widget: "text", hint: "A short description of yourself to include at the end of blog posts." }
   - name:            "custom"
     label:           "Custom Modules"
     description:     "Manage your custom modules"
