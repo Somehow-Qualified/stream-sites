@@ -21,12 +21,12 @@ TO-DO:
 <meta name="twitter:description" content="{% if seo.meta_description %}{{ seo.meta_description }}{% elif seo.excerpt %}{{ seo.excerpt }}{% else %}{{ seo.site_description }}{% endif %}">
 <meta name="twitter:site" content="{{ author.twitter_handle }}">
 <meta name="twitter:creator" content="{{ author.twitter_handle }}">
-<meta name="twitter:image:src" content="{{ site.url }}{{ social.images.twitter_og }}">
+<meta name="twitter:image:src" content="{% if featured_image %}{{ site.url }}{{ featured_image }}{% else %}{{ site.url }}{{ social.images.twitter_og }}{% endif %}">
 
 {# Open Graph #}
 <meta name="og:title" content="{% if seo.meta_title %}{{ seo.meta_title }}{% elif title %}{{ title }} | {{ site.name }}{% else %}{{ title }} | {{ seo.site_title }}{% endif %}">
 <meta name="og:description" content="{% if seo.meta_description %}{{ seo.meta_description }}{% elif seo.excerpt %}{{ seo.excerpt }}{% else %}{{ seo.site_description }}{% endif %}">
-<meta name="og:image" content="{{ site.url }}{{ social.images.og }}">
+<meta name="og:image" content="{% if featured_image %}{{ site.url }}{{ featured_image }}{% else %}{{ site.url }}{{ social.images.twitter_og }}{% endif %}">
 <meta name="og:url" content="{{ site.url }}{{ page.url }}">
 <meta name="og:site_name" content="{{ site.name }}">
 <meta name="og:locale" content="en_US">

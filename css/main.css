@@ -550,7 +550,6 @@ body:not(#blog) .content p.intro {
   padding-bottom: 2.5rem;
   margin-bottom: 2.5rem;
   font-weight: 300;
-  color: #4a5568;
 }
 
 @media (min-width: 768px) {
@@ -921,8 +920,8 @@ body:not(#blog) .content p.intro {
   color: #44337a;
 }
 
-.text-pink-600 {
-  color: #d53f8c;
+.text-pink-100 {
+  color: #fff5f7;
 }
 
 .hover\:text-purple-900:hover {
@@ -1016,16 +1015,12 @@ body:not(#blog) .content p.intro {
     margin-left: 0.5rem;
   }
 
-  .md\:mt-20 {
-    margin-top: 5rem;
+  .md\:mt-8 {
+    margin-top: 2rem;
   }
 
   .md\:mb-20 {
     margin-bottom: 5rem;
-  }
-
-  .md\:p-12 {
-    padding: 3rem;
   }
 
   .md\:px-16 {

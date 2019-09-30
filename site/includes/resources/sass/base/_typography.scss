@@ -19,7 +19,7 @@ body:not(#blog) .content {
 
 		// intro paragraph
 		&.intro {
-			@apply border-b border-gray-300 text-2xl pb-10 mb-10 font-light text-gray-700;
+			@apply border-b border-gray-300 text-2xl pb-10 mb-10 font-light;
 
 			@screen md {
 				@apply text-3xl;
