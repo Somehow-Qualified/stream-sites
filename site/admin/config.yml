@@ -68,7 +68,14 @@ collections:
     slug:            "{{slug}}"
     preview_path:    "{{fields.slug}}"
     files:
-#      - { label: "Author Box", name: "author_box", widget: "boolean", default: true, hint: "Choose whether or not to display the Author Box at the end of a blog post." }
+      - label:       "Author Box"
+        name:        "author"
+        file:        "site/globals/author.json"
+        fields:
+          - { label: "Author Box: On or Off?", name: "display", widget: "boolean", default: true, hint: "Choose whether or not to display the Author Box at the end of a blog post." }
+          - { label: "Name", name: "name", widget: "string", hint: "The name you want people to call you, such as your Twitch name or IRL name." }
+          - { label: "Short Bio", name: "bio", widget: "text", hint: "A short description of yourself to include at the end of blog posts." }
+          - { label: "Avatar", name: "avatar", widget: "image", media_library: {config:{multiple: false}}, hint: "An image of you/your logotype. For best results use a square image at 500x500 pixels."}
       - label:       "Contact"
         name:        "contact"
         file:        "site/page/contact.md"
@@ -112,6 +119,7 @@ collections:
       - label:       "Links"
         name:        "linkinbio_links"
         file:        "site/globals/linkinbio.json"
+        preview:     true
         fields:
           - label:   "Add a link"
             name:    "linkinbio"
@@ -193,25 +201,18 @@ collections:
             fields:
               - { label: "Open Graph Image", name: "og", widget: "image", media_library: { config: { multiple: false } }, hint: "This is the image used by Facebook and other Open Graph networks." }
               - { label: "Twitter Card Image", name: "twitter_og", widget: "image", media_library: { config: { multiple: false } }, hint: "This is the image used by Twitter to make a large Twitter Card link preview." }
-      - label:       "Social Media"
+      - label:       "Social Links"
         name:        "social"
         file:        "site/globals/social.json"
         fields:
           - label:   "Social Links"
+            label_singular: "Social Link"
             name:    "social_links"
             widget:  "object"
             fields:
               - { label: "Twitter", name: "twitter", widget: "string", hint: "https://twitter.com/yourhandle" }
               - { label: "LinkedIn", name: "linkedin", widget: "string", hint: "https://linkedin.com/in/yourhandle" }
               - { label: "Facebook", name: "facebook", widget: "string", hint: "https://facebook.com/yourpagename" }
-      - label:       "Profile Settings"
-        name:        "author"
-        file:        "site/globals/author.json"
-        fields:
-          - { label: "Name", name: "name", widget: "string", hint: "The name you want people to call you, such as your Twitch name or IRL name." }
-          - { label: "Email", name: "email", widget: "string", hint: "An email someone can reach you at. Example: hi@streamsites.xyz" }
-          - { label: "Avatar", name: "avatar", widget: "image", media_library: {config:{multiple: false}}, hint: "An image of you/your logotype. For best results use a square image at 500x500 pixels."}
-          - { label: "Short Bio", name: "bio", widget: "text", hint: "A short description of yourself to include at the end of blog posts." }
   - name:            "custom"
     label:           "Custom Modules"
     description:     "Manage your custom modules"

@@ -45,7 +45,7 @@ section: blog
   </div>
 
   {# author card #}
-  {% if modules.author_box === "true" %}
+  {% if author.display %}
     {% include "components/author.njk" %}
   {% endif %}
 
