@@ -1,6 +1,7 @@
 const { DateTime } = require("luxon");
 const fs = require("fs");
 const htmlmin = require("html-minifier");
+const pluginLazyImages = require('eleventy-plugin-lazyimages');
 const pluginReadingTime = require('eleventy-plugin-reading-time');
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
@@ -15,13 +16,13 @@ module.exports = function (eleventyConfig) {
       return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat('yyyy-LL-dd');
     });
 
-    // Display reading time for posts
+    // Load plugins
+    eleventyConfig.addPlugin(pluginLazyImages, {
+      imgSelector: 'img', // custom image selector
+      placeholderQuality: 75
+    });
     eleventyConfig.addPlugin(pluginReadingTime);
-
-    // Adds RSS feed
     eleventyConfig.addPlugin(pluginRss);
-
-    // Adds Syntax highlighter
     eleventyConfig.addPlugin(pluginSyntaxHighlight);
 
     // Minify our HTML

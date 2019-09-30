@@ -21,6 +21,7 @@
 		"@babel/preset-env": "^7.5.5",
 		"@fullhuman/postcss-purgecss": "^1.1.0",
 		"del": "^4.1.1",
+		"eleventy-plugin-lazyimages": "github:liamfiddler/eleventy-plugin-lazyimages",
 		"eleventy-plugin-reading-time": "0.0.1",
 		"gulp": "^4.0.2",
 		"gulp-babel": "^8.0.0",
