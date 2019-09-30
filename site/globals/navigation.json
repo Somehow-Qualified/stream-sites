@@ -1,4 +1,7 @@
 {
+  "nav_logo": {
+    "display": "true"
+  },
   "main": [
     {
       "label": "Home",
@@ -18,7 +21,7 @@
     }
   ],
   "nav_button": {
-    "button_text": "Go to Twitch New",
+    "button_text": "Go to Twitch",
     "button_link": "https://twitch.tv/m2creates"
   }
 }

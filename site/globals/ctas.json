@@ -1,6 +1,36 @@
 {
-  "navigation": {
-    "button_text": "Go to Twitch",
-    "button_link": "https://twitch.tv/m2creates"
-  }
+  "buttons": [
+    {
+      "button_text": "Twitch Sub",
+      "button_link": "https://www.twitch.tv/subs/fatsack51"
+    },
+    {
+      "button_text": "Purchase Bits",
+      "button_link": "https://www.twitch.tv/bits"
+    },
+    {
+      "button_text": "Twitch Prime",
+      "button_link": "https://www.twitch.tv/prime/"
+    },
+    {
+      "button_text": "Steam Wishlist",
+      "button_link": "https://store.steampowered.com/wishlist/id/fatsack51/"
+    },
+    {
+      "button_text": "Humble Monthly",
+      "button_link": "https://www.humblebundle.com/monthly/checkout?selected_plan=monthly_basic&gift=true"
+    },
+    {
+      "button_text": "Donate",
+      "button_link": "https://streamlabs.com/fatsack51"
+    },
+    {
+      "button_text": "Patreon",
+      "button_link": "https://www.patreon.com/fatsack51"
+    },
+    {
+      "button_text": "Merch",
+      "button_link": "https://www.designbyhumans.com/shop/Fatsack51/"
+    }
+  ]
 }

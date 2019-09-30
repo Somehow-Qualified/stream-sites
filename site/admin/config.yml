@@ -46,6 +46,25 @@ collections:
       - { label: "Slug", name: "slug", widget: "string" }
       - { label: "Body", name: "body", widget: "markdown" }
       - { label: "Template", name: "layout", widget: "hidden", default: "default" }
+  - name:            "core"
+    label:           "Core Pages"
+    label_singular:  "Core Page"
+    description:     "Edit a core page."
+    create:          false
+    slug:            "{{slug}}"
+    files:
+      - label:       "Contact"
+        name:        "contact"
+        file:        "site/page/contact.md"
+        preview:     true
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
+          - { label: "Contact Form", name: "form", widget: "boolean", default: true, hint: "Should the page have a contact form." }
+          - { label: "Template", name: "layout", widget: "hidden", default: "layouts/contact.njk" }
+          - { label: "Meta Title", name: "meta_title", widget: "string", hint: "A title to display on a Search result. (What do you want Google to see?)" }
+          - { label: "Meta Description", name: "meta_description", widget: "string", hint: "A short description to tease this in a Search or Social Media preview." }
+          - { label: "Slug", name: "slug", widget: "string", default: "contect" }
   - name:            "linkinbio"
     label:           "Link In Bio"
     label_singular:  "Link In Bio"
@@ -129,6 +148,11 @@ collections:
         file:        "site/globals/navigation.json"
         preview:     false
         fields:
+          - label:    "Logo"
+            name:     "nav_logo"
+            widget:   "boolean"
+            default:   true
+            hint:     "Choose whether or not to display a logo in your site header."
           - label:    "Menu Links"
             label_singular: "Menu Link"
             name:     "main"
@@ -147,12 +171,12 @@ collections:
         file:        "site/globals/ctas.json"
         preview:     false
         fields:
-          - label:   "Menu Button"
-            name:    "navigation"
-            widget:  "object"
+          - label:    "Create a button"
+            name:     "buttons"
+            widget:   "list"
             fields:
-              - { label: "Button Text", name: "button_text", widget: "string", hint: "Something clickbaity" }
-              - { label: "Button Link", name: "button_link", widget: "string", hint: "Where should the link go? Twitch? Your Discord? Include the https:// if you want to guarantee it works." }
+              - { label: "Button Text", name: "button_text", widget: "string", hint: "What text should be displayed?" }
+              - { label: "Button Link", name: "button_link", widget: "string", hint: "What should this link to?" }
   - name:            "modules"
     label:           "Modules"
     description:     "Configure the modules on your site."

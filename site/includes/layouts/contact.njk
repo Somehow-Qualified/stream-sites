@@ -1,12 +1,7 @@
 ---
-title: Contact Us
-permalink: contact.html
-meta_title: Contact
-meta_description: Contact page description
-body_class: contact
 layout: default
+section: contact
 ---
-
 <section class="flex-1 container mx-auto">
 
   <h1 class="page-title text-5xl">{{ title }}</h1>
@@ -15,7 +10,7 @@ layout: default
 
     {{ content | safe }}
 
-    {% if modules.contact_form === "true" %}
+    {% if form %}
       {% include "components/contact-form.njk" %}
     {% endif %}
 
