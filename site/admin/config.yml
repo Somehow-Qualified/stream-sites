@@ -9,7 +9,7 @@ media_folder:        "images" # Media files will be stored in the repo under ima
 
 # Replace URL with your Netlify or Custom domain to enable CMS previews
 site_url:            https://demo-streamsites.netlify.com
-display_url:         Stream Sites Demo
+display_url:         https://demo-streamsites.netlify.com
 
 show_preview_links:  true
 
