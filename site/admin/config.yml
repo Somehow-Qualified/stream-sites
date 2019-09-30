@@ -21,7 +21,7 @@ collections:
     description:     "Create or edit a blog post"
     folder:          "site/blog"
     create:          true
-    slug:            "{{slug}}"
+    slug:            "{{fields.seo.slug}}"
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
@@ -45,7 +45,7 @@ collections:
     folder:          "site/page"
     create:          true
     filter:          { field: "page_type", value: "default" }
-    slug:            "{{slug}}"
+    slug:            "{{fields.seo.slug}}"
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Featured Image", name: "featured_image", widget: "image", required: false, media_library: {config:{multiple: false}} }
@@ -70,6 +70,7 @@ collections:
       - label:       "Contact"
         name:        "contact"
         file:        "site/page/contact.md"
+        slug:        {{fields.seo.slug}}
         preview:     true
         fields:
           - { label: "Title", name: "title", widget: "string" }
@@ -193,12 +194,6 @@ collections:
         name:        "social"
         file:        "site/globals/social.json"
         fields:
-          - label:   "Social Sharing Images"
-            name:    "images"
-            widget:  "object"
-            fields:
-              - { label: "Open Graph Image", name: "og", widget: "image", media_library: { config: { multiple: false } }, hint: "This is the image used by Facebook and other Open Graph networks." }
-              - { label: "Twitter Image", name: "twitter_og", widget: "image", media_library: { config: { multiple: false } }, hint: "This is the image used by Twitter to make a large Twitter Card link preview." }
           - label:   "Social Links"
             name:    "social_links"
             widget:  "object"

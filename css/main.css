@@ -865,10 +865,6 @@ body:not(#blog) .content p.intro {
   padding-bottom: 3rem;
 }
 
-.static {
-  position: static;
-}
-
 .absolute {
   position: absolute;
 }
