@@ -9,7 +9,7 @@ seo:
   excerpt: >-
     A meeting is a gathering of two or more people that has been convened for
     the purpose of achieving a common goal through verbal interaction.
-  meta_title: Don't do meetings | Stream Sites
+  meta_title: Don't do meetings | Super Stream Sites
   slug: dont-do-meetings
 layout: post
 ---
