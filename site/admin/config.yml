@@ -46,13 +46,14 @@ collections:
       - { label: "Slug", name: "slug", widget: "string" }
       - { label: "Body", name: "body", widget: "markdown" }
       - { label: "Template", name: "layout", widget: "hidden", default: "default" }
-  - name:            "core"
-    label:           "Core Pages"
-    label_singular:  "Core Page"
-    description:     "Edit a core page."
+  - name:            "modules"
+    label:           "Modules"
+    label_singular:  "Module"
+    description:     "Configure and customize a module."
     create:          false
     slug:            "{{slug}}"
     files:
+#      - { label: "Author Box", name: "author_box", widget: "boolean", default: true, hint: "Choose whether or not to display the Author Box at the end of a blog post." }
       - label:       "Contact"
         name:        "contact"
         file:        "site/page/contact.md"
@@ -93,6 +94,20 @@ collections:
             fields:
               - { label: "Label", name: "text", widget: "string", hint: "What should the text say?" }
               - { label: "Link", name: "link", widget: "string", hint: "Where should the link go? Include the https:// if you want to guarantee it works." }
+  - name:            "powerups"
+    label:           "Power Ups"
+    label_singular:  "Power Up"
+    description:     "Manage your Power Ups."
+    create:          false
+    editor:
+      preview:       false
+    files:
+      - label:       "Twitch"
+        name:        "twitch"
+        file:        "site/globals/twitch.json"
+        preview:     false
+        fields:
+          - { label: "Twitch Handle", name: "handle", widget: "string", hint: "What is your Twitch handle?" }
   - name:            "settings"
     label:           "Settings"
     description:     "Edit your global settings."
@@ -126,7 +141,7 @@ collections:
             name:     "nav_logo"
             widget:   "boolean"
             default:   true
-            hint:     "Choose whether or not to display your logo in your site header."
+            hint:     "Choose whether or not to display your logo in the site header. You can upload/change your logo in Settings: Branding."
           - label:    "Menu Links"
             label_singular: "Menu Link"
             name:     "main"
@@ -157,7 +172,6 @@ collections:
               - { label: "Twitter", name: "twitter", widget: "string", hint: "https://twitter.com/yourhandle" }
               - { label: "LinkedIn", name: "linkedin", widget: "string", hint: "https://linkedin.com/in/yourhandle" }
               - { label: "Facebook", name: "facebook", widget: "string", hint: "https://facebook.com/yourpagename" }
-
       - label:       "Profile Settings"
         name:        "author"
         file:        "site/globals/author.json"
@@ -166,7 +180,15 @@ collections:
           - { label: "Email", name: "email", widget: "string", hint: "An email someone can reach you at. Example: hi@streamsites.xyz" }
           - { label: "Avatar", name: "avatar", widget: "image", media_library: {config:{multiple: false}}, hint: "An image of you/your logotype. For best results use a square image at 500x500 pixels."}
           - { label: "Short Bio", name: "bio", widget: "string", hint: "A short description of yourself to include at the end of blog posts." }
-      - label:       "Marketing CTAs"
+  - name:            "custom"
+    label:           "Custom Modules"
+    description:     "Install and manage your custom modules here."
+    extension:       "json"
+    format:          "json"
+    create:          false
+    editor:
+      preview:       false
+      - label:       "CTA Buttons"
         name:        "ctas"
         file:        "site/globals/ctas.json"
         preview:     false
@@ -177,20 +199,3 @@ collections:
             fields:
               - { label: "Button Text", name: "button_text", widget: "string", hint: "What text should be displayed?" }
               - { label: "Button Link", name: "button_link", widget: "string", hint: "What should this link to?" }
-  - name:            "modules"
-    label:           "Modules"
-    description:     "Configure the modules on your site."
-    extension:       "json"
-    format:          "json"
-    create:          false
-    editor:
-      preview:       false
-    files:
-      - label:       "Module Settings"
-        name:        "site"
-        file:        "site/globals/modules.json"
-        preview:     false
-        fields:
-          - { label: "Author Box", name: "author_box", widget: "boolean", default: true, hint: "Choose whether or not to display the Author Box at the end of a blog post." }
-          - { label: "Contact Form", name: "contact_form", widget: "boolean", default: true, hint: "Choose whether or not to display the Contact Form on the Contact Page." }
-          - { label: "Use Logo", name: "navigation_logo", widget: "boolean", default: true, hint: "Choose whether or not to display a logo in your site header." }
