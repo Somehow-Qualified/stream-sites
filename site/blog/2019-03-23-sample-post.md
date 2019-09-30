@@ -1,5 +1,6 @@
 ---
 title: Don't do meetings
+slug: 2019-03-23-sample-post
 date: 2018-09-30T00:00:00.000Z
 tags: CSS
 featured_image: /images/post-1.jpg
@@ -10,7 +11,6 @@ seo:
     A meeting is a gathering of two or more people that has been convened for
     the purpose of achieving a common goal through verbal interaction.
   meta_title: Don't do meetings | Super Stream Sites
-  slug: dont-do-meetings
 layout: post
 ---
 
