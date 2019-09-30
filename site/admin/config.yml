@@ -66,13 +66,13 @@ collections:
     description:     "Configure and customize modules"
     create:          false
     slug:            "{{slug}}"
+    preview_path:    "{{fields.slug}}"
     files:
 #      - { label: "Author Box", name: "author_box", widget: "boolean", default: true, hint: "Choose whether or not to display the Author Box at the end of a blog post." }
       - label:       "Contact"
         name:        "contact"
         file:        "site/page/contact.md"
         slug:        {{fields.slug}}
-        preview_path: "{{fields.slug}}"
         preview:     true
         fields:
           - { label: "Title", name: "title", widget: "string" }
