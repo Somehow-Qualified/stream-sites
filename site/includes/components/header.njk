@@ -1,7 +1,7 @@
 {# {% include 'components/livealert.njk' %} #}
 
 <header id="header" class="header bg-{{ site.colors.main }}-900 p-8 border-b border-{{ site.colors.main }}-900">
-	<div class="flex flex-wrap justify-between items-center">
+	<div class="container flex flex-wrap justify-between items-center m-auto">
 		<a class="company-logo-link block text-white font-bold text-3xl md:mb-0 no-underline" href="/" aria-label="Back to home">
 		  {% if modules.navigation_logo === "true" %}
 		    <img src="{{ site.logo }}" alt="{{ site.name }}" class="h-16 w-auto">
@@ -25,6 +25,9 @@
 			    {% endfor %}
 					<li>
 			      <a class="inline-block rounded md:ml-2 py-3 px-6 text-white font-bold bg-{{ site.colors.accent }}-600 hover:bg-{{ site.colors.accent }}-400 no-underline" href="{{ ctas.navigation.button_link | safe }}" target="_blank" rel="noopener">{{ ctas.navigation.button_text }}</a>
+			    </li>
+					<li>
+			      <a class="inline-block rounded md:ml-2 py-3 px-6 text-white font-bold bg-{{ site.colors.accent }}-600 hover:bg-{{ site.colors.accent }}-400 no-underline" href="{{ navigation.nav_button..button_link | safe }}" target="_blank" rel="noopener">{{ navigation.nav_button.button_text }}</a>
 			    </li>
 	      </ul>
 	    </nav>

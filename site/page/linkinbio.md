@@ -6,6 +6,6 @@ slug: link-in-bio
 layout: layouts/linkinbio.njk
 ---
 
-# This is my cool link in bio page.
+## This is my cool link in bio page.
 
 Check out my links.

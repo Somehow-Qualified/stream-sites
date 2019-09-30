@@ -16,5 +16,9 @@
       "label": "Contact",
       "url": "/contact/"
     }
-  ]
+  ],
+  "nav_button": {
+    "button_text": "Go to Twitch New",
+    "button_link": "https://twitch.tv/m2creates"
+  }
 }
