@@ -13,10 +13,12 @@ layout: default
 
   <div class="content">
 
-    <p>Tell us how great we are in the form below.</p>
+    {{ content | safe }}
 
     {% if modules.contact_form === "true" %}
       {% include "components/contact-form.njk" %}
     {% endif %}
 
-  </section>
+  </div>
+
+</section>
