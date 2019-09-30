@@ -18,7 +18,7 @@ collections:
   - name:            "blog"
     label:           "Blog"
     label_singular:  "Blog"
-    description:     "Create a blog post."
+    description:     "Create or edit a blog post."
     folder:          "site/blog"
     create:          true
     slug:            "{{year}}-{{month}}-{{day}}-{{slug}}"
@@ -35,9 +35,10 @@ collections:
   - name:            "page"
     label:           "Pages"
     label_singular:  "Page"
-    description:     "Create a new page."
+    description:     "Create or edit a page."
     folder:          "site/page"
     create:          true
+    filter:          { field: "page_type", value: "default" }
     slug:            "{{slug}}"
     fields:
       - { label: "Title", name: "title", widget: "string" }
@@ -46,6 +47,7 @@ collections:
       - { label: "Slug", name: "slug", widget: "string" }
       - { label: "Body", name: "body", widget: "markdown" }
       - { label: "Template", name: "layout", widget: "hidden", default: "default" }
+      - { label: "Page Type", name: "page_type", widget: "hidden", default: "default" }
   - name:            "modules"
     label:           "Modules"
     label_singular:  "Module"

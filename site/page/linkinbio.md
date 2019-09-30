@@ -3,6 +3,7 @@ title: Link In Bio
 meta_title: Link In Bio
 meta_description: Get in touch!
 slug: link-in-bio
+page_type: core
 layout: layouts/linkinbio.njk
 ---
 
