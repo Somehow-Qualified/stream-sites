@@ -953,6 +953,10 @@ h3 {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.invisible {
+  visibility: hidden;
+}
+
 .w-64 {
   width: 16rem;
 }
@@ -981,10 +985,6 @@ h3 {
 
   .md\:flex {
     display: flex;
-  }
-
-  .md\:flex-row {
-    flex-direction: row;
   }
 
   .md\:mb-0 {
