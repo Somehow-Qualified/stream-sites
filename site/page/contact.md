@@ -1,10 +1,10 @@
 ---
 title: Get in Touch!
-form: true
+form: false
+layout: layouts/contact.njk
 meta_title: Contact
 meta_description: Contact Stream Sites with your feedback!
 slug: contact
-layout: layouts/contact.njk
 ---
 
 We love feedback!
