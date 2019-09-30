@@ -74,6 +74,16 @@
     span[class*="ToggleHandle-dropDeep-ToggleHandle"] {
       box-shadow: rgba(68, 74, 87, 0.5) 0px 1px 8px 0px, rgba(68, 74, 87, 0.5) 0px 0px 4px 0px;
     }
+    /* Prominent hover on collection items */
+    li > a[class*="ListCardLink"]:hover {
+      border-radius: inherit;
+      background-color: rgb(58, 105, 199);
+      transition: ease-in-out 300ms;
+    }
+    li > a[class*="ListCardLink"]:hover > h2 {
+      color: #fff;
+      transition: ease-in-out 100ms;
+    }
   </style>
 </head>
 
