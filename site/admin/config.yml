@@ -17,41 +17,52 @@ show_preview_links:  false
 collections:
   - name:            "blog"
     label:           "Blog"
-    label_singular:  "Blog"
-    description:     "Create or edit a blog post."
+    label_singular:  "Blog Post"
+    description:     "Create or edit a blog post"
     folder:          "site/blog"
     create:          true
-    slug:            "{{year}}-{{month}}-{{day}}-{{slug}}"
+    slug:            "{{slug}}"
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
-      - { label: "Featured Image", name: "featured_image", widget: "image", media_library: {config:{multiple: false}} }
-      - { label: "Image Caption", name: "image_caption", widget: "string", hint: "Describe this image for anyone who can't see it. Also a great place to give credit where credit is due." }
-      - { label: "Excerpt", name: "excerpt", widget: "string", hint: "A short description to tease this in a Search or Social Media preview." }
-      - { label: "TL;DR", name: "tldr", widget: "string", hint: "A short description of this post for people who don't want to read. Shown at the beginning of the post." }
       - { label: "Tag", name: "tags", widget: "string", hint: "Supports 1 Tag right now. Pick a key word this post should be associated with so it can be grouped with others of the same tag." }
+      - { label: "Featured Image", name: "featured_image", widget: "image", required: false, media_library: {config:{multiple: false}} }
+      - { label: "Image Caption", name: "image_caption", widget: "string", required: false, hint: "Describe this image for anyone who can't see it. Also a great place to give credit where credit is due." }
+      - { label: "TL;DR", name: "tldr", widget: "string", hint: "A short description of this post for people who don't want to read. Shown at the beginning of the post." }
       - { label: "Body", name: "body", widget: "markdown" }
+      - label: "SEO"
+        name: "seo"
+        widget: "object"
+        fields:
+          - { label: "Meta Title", name: "meta_title", widget: "string", required: false, hint: "A title to display on a Search result. (What do you want Google to see?)" }
+          - { label: "Meta Description", name: "excerpt", widget: "string", required: false, hint: "A short description to tease this in a Search or Social Media preview." }
+          - { label: "Slug", name: "slug", widget: "string" }
       - { label: "Template", name: "layout", widget: "hidden", default: "post" }
   - name:            "page"
     label:           "Pages"
     label_singular:  "Page"
-    description:     "Create or edit a page."
+    description:     "Create or edit a page"
     folder:          "site/page"
     create:          true
     filter:          { field: "page_type", value: "default" }
     slug:            "{{slug}}"
     fields:
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Meta Title", name: "meta_title", widget: "string", hint: "A title to display on a Search result. (What do you want Google to see?)" }
-      - { label: "Meta Description", name: "meta_description", widget: "string", hint: "A short description to tease this in a Search or Social Media preview." }
-      - { label: "Slug", name: "slug", widget: "string" }
+      - { label: "Featured Image", name: "featured_image", widget: "image", required: false, media_library: {config:{multiple: false}} }
       - { label: "Body", name: "body", widget: "markdown" }
+      - label: "SEO"
+        name: "seo"
+        widget: "object"
+        fields:
+          - { label: "Meta Title", name: "meta_title", widget: "string", required: false, hint: "A title to display on a Search result. (What do you want Google to see?)" }
+          - { label: "Meta Description", name: "excerpt", widget: "string", required: false, hint: "A short description to tease this in a Search or Social Media preview." }
+          - { label: "Slug", name: "slug", widget: "string" }
       - { label: "Template", name: "layout", widget: "hidden", default: "default" }
       - { label: "Page Type", name: "page_type", widget: "hidden", default: "default" }
   - name:            "modules"
     label:           "Modules"
     label_singular:  "Module"
-    description:     "Configure and customize a module."
+    description:     "Configure and customize modules"
     create:          false
     slug:            "{{slug}}"
     files:
@@ -64,14 +75,18 @@ collections:
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Body", name: "body", widget: "markdown" }
           - { label: "Contact Form", name: "form", widget: "boolean", default: true, hint: "Should the page display a contact form?" }
+          - label: "SEO"
+            name: "seo"
+            widget: "object"
+            fields:
+              - { label: "Meta Title", name: "meta_title", widget: "string", required: false, hint: "A title to display on a Search result. (What do you want Google to see?)" }
+              - { label: "Meta Description", name: "excerpt", widget: "string", required: false, hint: "A short description to tease this in a Search or Social Media preview." }
+              - { label: "Slug", name: "slug", widget: "string", default: "contact" }
           - { label: "Template", name: "layout", widget: "hidden", default: "layouts/contact.njk" }
-          - { label: "Meta Title", name: "meta_title", widget: "string", hint: "A title to display on a Search result. (What do you want Google to see?)" }
-          - { label: "Meta Description", name: "meta_description", widget: "string", hint: "A short description to tease this in a Search or Social Media preview." }
-          - { label: "Slug", name: "slug", widget: "string", default: "contect" }
   - name:            "linkinbio"
     label:           "Link In Bio"
     label_singular:  "Link In Bio"
-    description:     "Edit a specialty page."
+    description:     "Edit your Link in Bio content and/or links"
     create:          false
     slug:            "{{slug}}"
     files:
@@ -82,10 +97,14 @@ collections:
         fields:
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Body", name: "body", widget: "markdown" }
+          - label: "SEO"
+            name: "seo"
+            widget: "object"
+            fields:
+              - { label: "Meta Title", name: "meta_title", widget: "string", required: false, hint: "A title to display on a Search result. (What do you want Google to see?)" }
+              - { label: "Meta Description", name: "excerpt", widget: "string", required: false, hint: "A short description to tease this in a Search or Social Media preview." }
+              - { label: "Slug", name: "slug", widget: "string", default: "link-in-bio" }
           - { label: "Template", name: "layout", widget: "hidden", default: "layouts/linkinbio.njk" }
-          - { label: "Meta Title", name: "meta_title", widget: "string", hint: "A title to display on a Search result. (What do you want Google to see?)" }
-          - { label: "Meta Description", name: "meta_description", widget: "string", hint: "A short description to tease this in a Search or Social Media preview." }
-          - { label: "Slug", name: "slug", widget: "string", default: "link-in-bio" }
       - label:       "Links"
         name:        "linkinbio_links"
         file:        "site/globals/linkinbio.json"
@@ -99,7 +118,7 @@ collections:
   - name:            "powerups"
     label:           "Power Ups"
     label_singular:  "Power Up"
-    description:     "Manage your Power Ups."
+    description:     "Manage your Power Ups"
     create:          false
     editor:
       preview:       false
@@ -184,7 +203,7 @@ collections:
           - { label: "Short Bio", name: "bio", widget: "string", hint: "A short description of yourself to include at the end of blog posts." }
   - name:            "custom"
     label:           "Custom Modules"
-    description:     "Manage your custom modules."
+    description:     "Manage your custom modules"
     extension:       "json"
     format:          "json"
     create:          false
