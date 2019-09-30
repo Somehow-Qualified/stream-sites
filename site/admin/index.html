@@ -31,6 +31,7 @@
       font-size: 1rem;
       font-weight: 900;
     }
+    /* Sidebar Icons */
     aside a[href="#/collections/blog"] span::before {
       content: "\f304";
     }
@@ -42,6 +43,17 @@
     }
     aside a[href="#/collections/modules"] span::before {
       content: "\f1b3";
+    }
+    /* Card Header */
+    div[class*="CollectionTopContainer-dropMain-card-cardTop"] > div[class*="CollectionTopRow"] {
+      margin-bottom: 8px;
+    }
+    div[class*="CollectionTopContainer-dropMain-card-cardTop"] > div[class*="CollectionTopRow"] > p[class*="CollectionTopDescription-cardTopDescription"] {
+      margin: 0;
+    }
+    /* Remove ViewContols until Grid actually does something */
+    div[class*="CollectionTopContainer-dropMain-card-cardTop"] > div[class*="ViewControls"] {
+      display: none;
     }
     /* Make toggles not invisible */
     span[class*="ToggleHandle-dropDeep-ToggleHandle"] {
