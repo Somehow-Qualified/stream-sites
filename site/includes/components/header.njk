@@ -4,7 +4,7 @@
 	<div class="container flex flex-wrap justify-between items-center m-auto">
 
 		<a class="company-logo-link block text-white font-bold text-3xl md:mb-0 no-underline" href="/" aria-label="Back to home">
-		  {% if navigation.nav_logo === "true" %}
+		  {% if navigation.nav_logo %}
 		    <img src="{{ site.logo }}" alt="{{ site.name }}" class="h-16 w-auto">
 		  {% else %}
 		    {{ site.name }}
