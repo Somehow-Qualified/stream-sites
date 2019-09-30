@@ -1,7 +1,5 @@
 {
-  "nav_logo": {
-    "display": "true"
-  },
+  "nav_logo": false,
   "main": [
     {
       "label": "Home",
