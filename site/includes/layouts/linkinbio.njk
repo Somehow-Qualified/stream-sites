@@ -1,15 +1,13 @@
 ---
-title: Link In Bio
-permalink: link-in-bio.html
-meta_title: Link In Bio
-meta_description: Get in touch!
-body_class: home
 layout: default
+section: linkinbio
 ---
 
 <section class="flex-1">
 
   <h1 class="page-title text-5xl text-center">{{ title }}</h1>
+
+  {{ content | safe }}
 
   <ul class="content text-center">
     {% for text, link in linkinbio.linksinbio %}
