@@ -68,6 +68,23 @@ collections:
     slug:            "{{slug}}"
     preview_path:    "{{fields.slug}}"
     files:
+      - label:       "About"
+        name:        "about"
+        file:        "site/page/about.md"
+        slug:        {{fields.slug}}
+        preview:     true
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Slug", name: "slug", widget: "string", default: "about" }
+          - { label: "Body", name: "body", widget: "markdown" }
+          - { label: "Contact Form", name: "form", widget: "boolean", default: true, hint: "Should the page display a contact form?" }
+          - label: "SEO"
+            name: "seo"
+            widget: "object"
+            fields:
+              - { label: "Meta Title", name: "meta_title", widget: "string", required: false, hint: "A title to display on a Search result. (What do you want Google to see?)" }
+              - { label: "Meta Description", name: "excerpt", widget: "text", required: false, hint: "A short description to tease this in a Search or Social Media preview." }
+          - { label: "Template", name: "layout", widget: "hidden", default: "layouts/about.njk" }
       - label:       "Author Box"
         name:        "author"
         file:        "site/globals/author.json"
@@ -93,6 +110,22 @@ collections:
               - { label: "Meta Title", name: "meta_title", widget: "string", required: false, hint: "A title to display on a Search result. (What do you want Google to see?)" }
               - { label: "Meta Description", name: "excerpt", widget: "text", required: false, hint: "A short description to tease this in a Search or Social Media preview." }
           - { label: "Template", name: "layout", widget: "hidden", default: "layouts/contact.njk" }
+      - label:       "404 Page"
+        name:        "404"
+        file:        "site/page/404.md"
+        slug:        {{fields.slug}}
+        preview:     true
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Slug", name: "slug", widget: "string", default: "404" }
+          - { label: "Body", name: "body", widget: "markdown" }
+          - label: "SEO"
+            name: "seo"
+            widget: "object"
+            fields:
+              - { label: "Meta Title", name: "meta_title", widget: "string", required: false, hint: "A title to display on a Search result. (What do you want Google to see?)" }
+              - { label: "Meta Description", name: "excerpt", widget: "text", required: false, hint: "A short description to tease this in a Search or Social Media preview." }
+          - { label: "Template", name: "layout", widget: "hidden", default: "layouts/404.njk" }
   - name:            "linkinbio"
     label:           "Link In Bio"
     label_singular:  "Link In Bio"

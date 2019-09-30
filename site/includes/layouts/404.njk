@@ -1,10 +1,6 @@
 ---
-title: Oops!
-permalink: 404.html
-meta_title: 404
-meta_description: 404 page description
-body_class: 404
 layout: default
+section: 404
 ---
 
 <section class="flex-1">
@@ -12,10 +8,12 @@ layout: default
   <h1 class="page-title text-5xl">{{ title }}</h1>
 
   <div class="content">
-    <p>Sorry, we can't find that page!</p>
+
+    {{ content | safe }}
     <p>
       <a href="/">Take me back to the homepage</a>
     </p>
+
   </div>
 
 </section>

@@ -1,0 +1,20 @@
+---
+layout: default
+section: about
+---
+
+<section class="flex-1">
+
+  <h1 class="page-title text-5xl">{{ title }}</h1>
+
+  <div class="content">
+
+    {{ content | safe }}
+
+    {% if form %}
+      {% include "components/contact-form.njk" %}
+    {% endif %}
+
+  </div>
+
+</section>
