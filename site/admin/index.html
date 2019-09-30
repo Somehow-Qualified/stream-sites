@@ -9,50 +9,43 @@
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   <title>Stream Sites Admin</title>
   <style>
-    /*
-    * from https://github.com/netlify/netlify-cms/issues/1040#issuecomment-427533565
-    */
-
+    /* Modify sidebar: from https://github.com/netlify/netlify-cms/issues/1040#issuecomment-427533565 */
     aside {
       padding: 6px 0 12px !important;
     }
-
     aside h2 {
       margin-top: 12px !important;
       font-size: 22px !important;
       line-height: 37px !important;
     }
-
     aside a span {
       display: inline-flex !important;
       justify-content: center;
       align-items: center;
     }
-
     aside a span svg {
       display: none !important;
     }
-
     aside a span::before {
       font-family: "Font Awesome 5 Free";
       font-size: 1rem;
       font-weight: 900;
     }
-
     aside a[href="#/collections/blog"] span::before {
       content: "\f304";
     }
-
     aside a[href="#/collections/page"] span::before {
       content: "\f15c";
     }
-
     aside a[href="#/collections/settings"] span::before {
       content: "\f085";
     }
-
     aside a[href="#/collections/modules"] span::before {
       content: "\f1b3";
+    }
+    /* Make toggles not invisible */
+    span[class*="ToggleHandle-dropDeep-ToggleHandle"] {
+      box-shadow: rgba(68, 74, 87, 0.5) 0px 1px 8px 0px, rgba(68, 74, 87, 0.5) 0px 0px 4px 0px;
     }
   </style>
 </head>
