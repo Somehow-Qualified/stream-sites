@@ -182,7 +182,7 @@ collections:
           - { label: "Short Bio", name: "bio", widget: "string", hint: "A short description of yourself to include at the end of blog posts." }
   - name:            "custom"
     label:           "Custom Modules"
-    description:     "Install and manage your custom modules here."
+    description:     "Manage your custom modules."
     extension:       "json"
     format:          "json"
     create:          false
