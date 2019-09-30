@@ -188,6 +188,7 @@ collections:
     create:          false
     editor:
       preview:       false
+    files:
       - label:       "CTA Buttons"
         name:        "ctas"
         file:        "site/globals/ctas.json"
