@@ -1,13 +1,16 @@
 ---
 title: Don't do meetings
 date: 2018-09-30T00:00:00.000Z
+tags: CSS
 featured_image: /images/post-1.jpg
 image_caption: Photo by Dylan Gillis on Unsplash
-excerpt: >-
-  A meeting is a gathering of two or more people that has been convened for the
-  purpose of achieving a common goal through verbal interaction.
 tldr: Testing out multiple tags
-tags: CSS
+seo:
+  excerpt: >-
+    A meeting is a gathering of two or more people that has been convened for
+    the purpose of achieving a common goal through verbal interaction.
+  meta_title: Don't do meetings | Stream Sites
+  slug: dont-do-meetings
 layout: post
 ---
 
