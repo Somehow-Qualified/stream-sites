@@ -142,5 +142,6 @@ collections:
         file:        "site/globals/modules.json"
         preview:     false
         fields:
-          - { label: "Author Box", name: "author_box", widget: "select", default: "true", options:  ["true", "false"], hint: "Choose whether or not to display the Author Box at the end of a blog post." }
-          - { label: "Contact Form", name: "contact_form", widget: "select", default: "true", options:  ["true", "false"], hint: "Choose whether or not to display the Contact Form on the Contact Page." }
+          - { label: "Author Box", name: "author_box", widget: "boolean", default: true, hint: "Choose whether or not to display the Author Box at the end of a blog post." }
+          - { label: "Contact Form", name: "contact_form", widget: "boolean", default: true, hint: "Choose whether or not to display the Contact Form on the Contact Page." }
+          - { label: "Use Logo", name: "navigation_logo", widget: "boolean", default: true, hint: "Choose whether or not to display a logo in your site header." }
