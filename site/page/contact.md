@@ -1,11 +1,9 @@
 ---
 title: Get in Touch!
 form: true
+seo:
+  slug: contact-page
 layout: layouts/contact.njk
-meta_title: Contact
-meta_description: Contact Stream Sites with your feedback!
-slug: contact
-page_type: core
 ---
 
 We love feedback!
