@@ -60,7 +60,7 @@ collections:
         fields:
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Body", name: "body", widget: "markdown" }
-          - { label: "Template", name: "layout", widget: "hidden", default: "layout/linkinbio.njk" }
+          - { label: "Template", name: "layout", widget: "hidden", default: "layouts/linkinbio.njk" }
           - { label: "Meta Title", name: "meta_title", widget: "string", hint: "A title to display on a Search result. (What do you want Google to see?)" }
           - { label: "Meta Description", name: "meta_description", widget: "string", hint: "A short description to tease this in a Search or Social Media preview." }
           - { label: "Slug", name: "slug", widget: "string", default: "link-in-bio" }
