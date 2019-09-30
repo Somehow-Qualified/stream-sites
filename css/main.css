@@ -595,10 +595,6 @@ body:not(#blog) .content p.intro {
   background-color: #fff;
 }
 
-.bg-gray-200 {
-  background-color: #edf2f7;
-}
-
 .bg-purple-900 {
   background-color: #44337a;
 }
@@ -833,6 +829,11 @@ body:not(#blog) .content p.intro {
   padding-right: 1rem;
 }
 
+.py-6 {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
 .px-6 {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
@@ -846,6 +847,10 @@ body:not(#blog) .content p.intro {
 .px-12 {
   padding-left: 3rem;
   padding-right: 3rem;
+}
+
+.pb-0 {
+  padding-bottom: 0;
 }
 
 .pt-4 {
@@ -924,8 +929,16 @@ body:not(#blog) .content p.intro {
   color: #d53f8c;
 }
 
+.hover\:text-purple-900:hover {
+  color: #44337a;
+}
+
 .hover\:text-pink-400:hover {
   color: #f687b3;
+}
+
+.hover\:text-pink-500:hover {
+  color: #ed64a6;
 }
 
 .text-xs {

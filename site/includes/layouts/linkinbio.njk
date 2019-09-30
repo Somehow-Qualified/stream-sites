@@ -35,16 +35,16 @@ section: linkinbio
         </div>
       </header>
 
-      <main id="main" class="main container content m-auto py-10 px-6 lg:px-0 lg:py-20" role="main" tabindex="-1">
+      <main id="main" class="main container content m-auto py-10 px-6 lg:px-0 lg:py-20 text-center" role="main" tabindex="-1">
         <section class="flex-1">
 
-          <h1 class="page-title text-5xl text-center">{{ title }}</h1>
+          <h1 class="page-title text-5xl">{{ title }}</h1>
 
           {{ content | safe }}
 
-          <ul class="content text-center">
-            {% for text, link in linkinbio.linksinbio %}
-            <li><a href="{{ link | safe }}" target="_blank" class="lg:p-4 py-3 px-0 block text-white font-bold hover:text-{{ site.colors.accent }}-400">{{ text }}</a></li>
+          <ul class="content text-center text-white">
+            {% for item in linkinbio.linkinbio %}
+            <a href="{{ item.link | safe }}" target="_blank" class="lg:p-4 py-3 px-0 block font-bold hover:text-{{ site.colors.main }}-900 bg-{{ site.colors.accent }}-600 hover:bg-{{ site.colors.accent }}-400 mb-4"><li>{{ item.text }}</li></a>
             {% endfor %}
           </ul>
 
@@ -52,10 +52,10 @@ section: linkinbio
       </main>
 
       <div class="footer-wrapper">
-        <footer id="footer" class="footer bg-gray-200">
-          <div class="footer-inner container m-auto md:flex justify-center items-center px-6 py-10">
-            <p class="text-{{ site.colors.main }}-900 pb-8 md:pb-0">
-              © 2019 {{ site.name }}. Built with <a class="no-underline hover:text-{{ site.colors.accent }}" href="https://streamsites.xyz/">Stream Sites.</a>
+        <footer id="footer" class="footer bg-{{ site.colors.main }}-900">
+          <div class="footer-inner container m-auto md:flex justify-center items-center px-6 py-6">
+            <p class="text-white pb-0 text-center">
+              © 2019 {{ site.name }}. Built with <a class="no-underline hover:text-{{ site.colors.accent }}-500" href="https://streamsites.xyz/">Stream Sites.</a>
             </p>
           </div>
         </footer>
