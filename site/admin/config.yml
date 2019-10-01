@@ -128,7 +128,7 @@ collections:
           - { label: "Template", name: "layout", widget: "hidden", default: "layouts/404.njk" }
       - label:       "Privacy Policy"
         name:        "privacy"
-        file:        "site/page/privacy.md"
+        file:        "site/page/privacy-policy.md"
         slug:        {{fields.slug}}
         preview:     true
         fields:
