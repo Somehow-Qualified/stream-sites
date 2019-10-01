@@ -35,11 +35,13 @@ Cookies are files with small amount of data which may include an anonymous uniqu
 You can instruct your browser to refuse all cookies or to indicate when a cookie is being sent. However, if you do not accept cookies, you may not be able to use some portions of our Website.
 
 Examples of Cookies we use:
+
 - Session Cookies. We use Session Cookies to operate our Website.
 - Preference Cookies. We use Preference Cookies to remember your preferences and various settings.
 - Security Cookies. We use Security Cookies for security purposes.
 
-Use of Data
+## Use of Data
+
 - Fatsack Gaming uses the collected data for various purposes:
 - To provide and maintain the Website
 - To notify you about changes to our Website

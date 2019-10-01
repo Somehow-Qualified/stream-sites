@@ -1,6 +1,5 @@
 ---
 layout: default
-section: privacy
 ---
 
 <section class="flex-1">
@@ -21,7 +20,7 @@ section: privacy
       <li>By email: {{ site.email }}</li>
     </ul>
 
-    <p class="text-right"><em>Effective as of: {{ date }}</em></p>
+    <p class="text-right"><em>Effective as of: {{ date | dateDisplay }}</em></p>
 
   </div>
 
