@@ -126,6 +126,23 @@ collections:
               - { label: "Meta Title", name: "meta_title", widget: "string", required: false, hint: "A title to display on a Search result. (What do you want Google to see?)" }
               - { label: "Meta Description", name: "excerpt", widget: "text", required: false, hint: "A short description to tease this in a Search or Social Media preview." }
           - { label: "Template", name: "layout", widget: "hidden", default: "layouts/404.njk" }
+      - label:       "Privacy Policy"
+        name:        "privacy"
+        file:        "site/page/privacy.md"
+        slug:        {{fields.slug}}
+        preview:     true
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Effective Date", name: "date", widget: "datetime" }
+          - { label: "Slug", name: "slug", widget: "hidden", default: "privacy" }
+          - { label: "Body", name: "body", widget: "markdown" }
+          - label: "SEO"
+            name: "seo"
+            widget: "object"
+            fields:
+              - { label: "Meta Title", name: "meta_title", widget: "string", required: false, hint: "A title to display on a Search result. (What do you want Google to see?)" }
+              - { label: "Meta Description", name: "excerpt", widget: "text", required: false, hint: "A short description to tease this in a Search or Social Media preview." }
+          - { label: "Template", name: "layout", widget: "hidden", default: "privacy" }
   - name:            "linkinbio"
     label:           "Link In Bio"
     label_singular:  "Link In Bio"
@@ -190,6 +207,7 @@ collections:
         fields:
           - { label: "Brand Name", name: "name", widget: "string", hint: "The name of your brand, community, or just your Twitch name." }
           - { label: "Live URL", name: "url", widget: "string", hint: "What is the URL of your site? I.e. https://streamsites.xyz" }
+          - { label: "Email address", name: "email", widget: "string", hint: "This is required for your privacy policy. Where should people reach you? Don't have an email - Sidemail is great!" }
           - { label: "Logo", name: "logo", widget: "image", media_library: {config:{multiple: false}}}
           - { label: "Favicon", name: "favicon", widget: "image", media_library: {config:{multiple: false}}}
           - label:   "Theme"

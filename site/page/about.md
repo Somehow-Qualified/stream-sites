@@ -2,6 +2,9 @@
 title: About
 form: false
 slug: about
+seo:
+  excerpt: About Stream Sites
+  meta_title: Stream Sites are a simple way for streamers to share and store their content!
 layout: layouts/about.njk
 ---
 Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil dolor ipsum voluptatum dicta eveniet commodi molestiae! Suscipit, magnam cumque, illum ab amet ipsum deserunt distinctio est dolore dolor ad ipsa cupiditate minus soluta, possimus accusamus.
