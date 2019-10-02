@@ -1,8 +1,10 @@
 ---
 title: Hello world
-meta_title: Hello world
-meta_description: Greet the universe
 slug: starstuff
+eleventyExcludeFromCollections: false
+seo:
+  excerpt: Greet the universe
+  meta_title: Hello world
 layout: default
 page_type: default
 ---

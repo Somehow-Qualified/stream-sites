@@ -27,7 +27,7 @@ module.exports = function (eleventyConfig) {
 
     // Minify our HTML
     eleventyConfig.addTransform('htmlmin', function(content, outputPath) {
-      if( outputPath.endsWith('.html') ) {
+      if(outputPath && outputPath.endsWith('.html')) {
         let minified = htmlmin.minify(content, {
           useShortDoctype: true,
           removeComments: true,
@@ -38,9 +38,19 @@ module.exports = function (eleventyConfig) {
       return content;
     });
 
+    // Set up for drafts
+    const now = new Date();
+    const livePosts = p => p.date <= now && !p.data.draft;
+
     // Collections
     eleventyConfig.addCollection('blog', collection => {
-      return collection.getFilteredByGlob('**/blog/*.md').reverse();
+
+      // Use all posts
+      // return collection.getFilteredByGlob('**/blog/*.md').reverse();
+
+      // Omit drafts and scheduled posts
+      return collection.getFilteredByGlob('**/blog/*.md')
+        .filter(livePosts).reverse();
     });
 
     // only content in the latest `blog/` directory

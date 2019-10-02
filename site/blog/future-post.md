@@ -1,8 +1,8 @@
 ---
-title: Test post
-slug: test-post
-date: 2019-09-30T20:21:49.553Z
-draft: false
+title: Future post
+slug: future-post
+date: 2019-10-11T20:21:49.553Z
+draft: true
 eleventyExcludeFromCollections: false
 tags:
   - CSS

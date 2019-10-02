@@ -5,6 +5,7 @@ slug: privacy
 seo:
   excerpt: Your privacy is important!
   meta_title: Privacy Policy
+page_type: core
 layout: layouts/privacy.njk
 ---
 

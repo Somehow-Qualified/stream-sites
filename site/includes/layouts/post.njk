@@ -18,10 +18,11 @@ section: blog
       <p class="px-2">—</p>
       {% if tags %}
         <p class="category">Posted in
+          {% set separator = joiner(' +') %}
           {% for tag in tags %}
             {%- if tag != "blog" -%}
               {% set tagUrl %}/tags/{{ tag }}/{% endset %}
-              <a href="{{ tagUrl | url }}" rel="tag">{{ tag }}</a>
+              {{ separator() }} <a href="{{ tagUrl | url }}" rel="tag" class="underline">{{ tag }}</a>
             {%- endif -%}
           {% endfor %}
         </p>

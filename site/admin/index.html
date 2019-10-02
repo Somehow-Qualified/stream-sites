@@ -10,6 +10,11 @@
   <title>Stream Sites Admin</title>
   <link rel="icon" type="image/ico" href="/images/logo-ss-square.png">
   <style>
+    :root {
+      --cms-primary: rgb(58, 105, 199);
+      --cms-gray: rgb(223, 223, 227);
+      --cms-text-dark: rgb(49, 61, 62);
+    }
     /* Modify sidebar: from https://github.com/netlify/netlify-cms/issues/1040#issuecomment-427533565 */
     aside {
       padding: 6px 0 12px !important;
@@ -81,35 +86,69 @@
     li > a[class*="ListCardLink"]:hover {
       border-radius: inherit;
       transition: ease-in-out 300ms;
-      border: 2px solid rgb(58, 105, 199);
+      border: 2px solid var(--cms-primary);
       background-color: rgb(232, 245, 254);
     }
     li > a[class*="ListCardLink"]:hover > h2 {
-      color: rgb(58, 105, 199);
+      color: var(--cms-primary);
       transition: ease-in-out 100ms;
     }
     a[class*="CollectionTopNewButton-button-dropDeep-default-gray"]:hover {
-      background-color: rgb(58, 105, 199);
+      background-color: var(--cms-primary);
     }
     /* Fields */
-    [data-whatintent="mouse"] :focus {
-      border-color: rgb(58, 105, 199) !important;
+    div[class*="css-"],
+    label[class*="css-"],
+    input[type=text],
+    textarea[class*="TextControl"]  {
+      border-radius: 0 !important;
+    }
+    label[class*="css-"]::before,
+    label[class*="css-"]::after {
+      display: none;
     }
     input[type=text] {
-      border-radius: 0;
       border-top: none;
       border-left: none;
       border-right: none;
-      border-bottom: 2px solid rgb(223, 223, 227);
+      border-bottom: 2px solid var(--cms-gray);
       padding: 16px 8px;
     }
-    textarea {
-      border-radius: 0 !important;
-      border-top: none !important;
-      border-bottom: 2px solid rgb(223, 223, 227) !important;
+    textarea[class*="TextControl"] {
+      border: 2px solid var(--cms-gray) !important;
       padding: 16px 8px !important;
     }
-
+    [data-whatintent="mouse"] :focus {
+      border-color: var(--cms-primary) !important;
+    }
+    /* Image Selector Container > Thumbnail */
+    img[class*="-Image"] {
+      object-fit: cover;
+    }
+    /* Image Selector Container > Buttons */
+    div[class*="-ControlContainer"] > div > span > div > div {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    div[class*="-ControlContainer"] > div > span > div > div > button {
+      margin: 0;
+      height: 30px;
+    }
+    /* Collapsible Groups */
+    div[class*="-TopBarContainer"] {
+      justify-content: flex-end;
+    }
+    button[class*="-ExpandButton-"] {
+      display: flex;
+    }
+    button[class*="-ExpandButton-"]::before {
+      content: 'Expand/Collapse';
+      margin-right: 8px;
+      font-size: 12px;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
   </style>
 </head>
 

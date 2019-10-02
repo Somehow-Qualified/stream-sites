@@ -1,12 +1,14 @@
 ---
 title: About
 slug: about
+eleventyExcludeFromCollections: false
 form: false
 seo:
   excerpt: >-
     Stream Sites are a simple way for streamers to share and store their
     content!
   meta_title: About Stream Sites
+page_type: core
 layout: layouts/about.njk
 ---
 Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil dolor ipsum voluptatum dicta eveniet commodi molestiae! Suscipit, magnam cumque, illum ab amet ipsum deserunt distinctio est dolore dolor ad ipsa cupiditate minus soluta, possimus accusamus.

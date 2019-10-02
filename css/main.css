@@ -985,6 +985,14 @@ body:not(#blog) .content p.intro {
   font-style: italic;
 }
 
+.uppercase {
+  text-transform: uppercase;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
 .no-underline {
   text-decoration: none;
 }

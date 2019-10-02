@@ -2,6 +2,8 @@
 title: Don't do meetings
 slug: 2019-03-23-sample-post
 date: 2019-03-24T00:00:00.000Z
+draft: false
+eleventyExcludeFromCollections: false
 tags:
   - CSS
 featured_image: /images/post-1.jpg
