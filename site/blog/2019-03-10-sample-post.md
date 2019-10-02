@@ -2,7 +2,8 @@
 title: 7 steps to more productive meetings
 slug: 2019-03-10-sample-post
 date: 2019-03-11T00:00:00.000Z
-tags: Business
+tags:
+  - Business
 featured_image: /images/post-1.jpg
 image_caption: Photo by Dylan Gillis on Unsplash
 tldr: Meetings are dumb. Don't do it.

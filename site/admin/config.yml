@@ -26,7 +26,7 @@ collections:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Slug", name: "slug", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
-      - { label: "Tag", name: "tags", widget: "string", hint: "Supports 1 Tag right now. Pick a key word this post should be associated with so it can be grouped with others of the same tag." }
+      - { label: "Tag", name: "tags", widget: "list", hint: "Use tags to create archives of posts that are similar and/or related." }
       - { label: "Featured Image", name: "featured_image", widget: "image", required: false, media_library: {config:{multiple: false}} }
       - { label: "Image Caption", name: "image_caption", widget: "string", required: false, hint: "Describe this image for anyone who can't see it. Also a great place to give credit where credit is due." }
       - { label: "TL;DR", name: "tldr", widget: "text", hint: "A short description of this post for people who don't want to read. Shown at the beginning of the post." }

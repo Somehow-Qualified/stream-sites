@@ -2,7 +2,9 @@
 title: Test post
 slug: test-post
 date: 2019-09-30T20:21:49.553Z
-tags: CSS
+tags:
+  - CSS
+  - Business
 featured_image: /images/post-3.jpg
 image_caption: A girl prepares to run
 tldr: >-

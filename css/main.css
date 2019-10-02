@@ -710,17 +710,23 @@ body:not(#blog) .content p.intro {
   line-height: 1.5;
 }
 
-.m-6 {
-  margin: 1.5rem;
-}
-
 .m-auto {
   margin: auto;
+}
+
+.mx-3 {
+  margin-left: 0.75rem;
+  margin-right: 0.75rem;
 }
 
 .mx-4 {
   margin-left: 1rem;
   margin-right: 1rem;
+}
+
+.my-6 {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .mx-auto {
@@ -734,6 +740,10 @@ body:not(#blog) .content p.intro {
 
 .mb-2 {
   margin-bottom: 0.5rem;
+}
+
+.ml-3 {
+  margin-left: 0.75rem;
 }
 
 .mt-4 {
@@ -1009,10 +1019,6 @@ body:not(#blog) .content p.intro {
 }
 
 @media (min-width: 768px) {
-
-  .md\:block {
-    display: block;
-  }
 
   .md\:flex {
     display: flex;
