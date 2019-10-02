@@ -2,8 +2,8 @@
 title: Test post
 slug: test-post
 date: 2019-09-30T20:21:49.553Z
-draft: false
-eleventyExcludeFromCollections: false
+permalink: false
+eleventyExcludeFromCollections: true
 tags:
   - CSS
   - Business

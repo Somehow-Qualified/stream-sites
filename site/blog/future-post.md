@@ -2,8 +2,8 @@
 title: Future post
 slug: future-post
 date: 2019-10-11T20:21:49.553Z
-draft: true
-eleventyExcludeFromCollections: false
+permalink: false
+eleventyExcludeFromCollections: true
 tags:
   - CSS
   - Business

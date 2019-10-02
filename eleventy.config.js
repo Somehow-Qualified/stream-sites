@@ -17,10 +17,10 @@ module.exports = function (eleventyConfig) {
     });
 
     // Load plugins
-    eleventyConfig.addPlugin(pluginLazyImages, {
-      imgSelector: 'img', // custom image selector
-      placeholderQuality: 75
-    });
+    // eleventyConfig.addPlugin(pluginLazyImages, {
+    //   imgSelector: 'img', // custom image selector
+    //   placeholderQuality: 75
+    // });
     eleventyConfig.addPlugin(pluginReadingTime);
     eleventyConfig.addPlugin(pluginRss);
     eleventyConfig.addPlugin(pluginSyntaxHighlight);
@@ -40,7 +40,7 @@ module.exports = function (eleventyConfig) {
 
     // Set up for drafts
     const now = new Date();
-    const livePosts = p => p.date <= now && !p.data.draft;
+    const livePosts = p => p.date <= now;
 
     // Collections
     eleventyConfig.addCollection('blog', collection => {
