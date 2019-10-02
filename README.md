@@ -30,6 +30,12 @@ When you run the build command ready for deployment, Stream Sites will reference
 
 Purge will also run via the build command and will cross reference all of Tailwind's utility classes with your templates/HTML and will remove all the unused ones - pretty cool right?
 
+## Local testing
+
+At some point, 11ty dev broke when Gulp was updated to v4. Use `npm run build:clean` to recompile `dist` and look around.
+
+Ask M2 for her LocalValetDriver to serve `dist` locally on https.
+
 ## Ready to deploy?
 
 `npm run build` to minify scripts and run Purgecss over your styles.
