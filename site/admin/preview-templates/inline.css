@@ -226,6 +226,8 @@ figcaption {
 .seo-og > .image {
   border: 1px solid #dadde1;
   height: 261px;
+  overflow: hidden;
+  position: relative;
   width: 500px;
 }
 .seo-og > .image > img {
@@ -243,12 +245,11 @@ figcaption {
   background: #f2f3f5;
   border: 1px solid #dadde1;
   border-top: none;
-  border-bottom: none;
   color: #1d2129;
   padding: 10px 12px;
 }
 .seo-og > .text > .link {
-  border-collapse: separate;
+  background: #f2f3f5;
   color: #606770;
   direction: ltr;
   display: block;
@@ -270,7 +271,7 @@ figcaption {
   -webkit-font-smoothing: antialiased;
 }
 .seo-og > .text > .content {
-  border-collapse: separate;
+  background: #f2f3f5;
   color: #4b4f56;
   direction: ltr;
   display: block;
@@ -290,7 +291,7 @@ figcaption {
   -webkit-font-smoothing: antialiased;
 }
 .seo-og > .text > .content > .title {
-  border-collapse: separate;
+  background: #f2f3f5;
   color: #1d2129;
   cursor: pointer;
   direction: ltr;
@@ -312,7 +313,7 @@ figcaption {
   -webkit-font-smoothing: antialiased;
 }
 .seo-og > .text > .content > .desc {
-  border-collapse: separate;
+  background: #f2f3f5;
   color: #606770;
   direction: ltr;
   display: -webkit-box;

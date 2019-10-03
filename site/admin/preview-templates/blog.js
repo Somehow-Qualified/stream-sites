@@ -49,7 +49,7 @@ const Blog = createClass({
         <div class="seo-og">
           <div class="image"><img src="${entry.getIn(["data", "featured_image"], "")}" alt="${entry.getIn(["data", "image_caption"], "")}" /></div>
           <div class="text">
-            <p class="link">/blog/${link_preview}</p>
+            <p class="link">${link_preview}</p>
             <div class="content">
               <p class="title">${meta_title}</p>
               <p class="desc">${meta_desc}</p>
