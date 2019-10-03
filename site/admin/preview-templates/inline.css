@@ -257,7 +257,7 @@ figcaption {
   font-size: 12px !important;
   height: 11px;
   line-height: 11px;
-  margin: 0;
+  margin-bottom: 0 !important;
   overflow-x: hidden;
   overflow-y: hidden;
   text-align: left;
