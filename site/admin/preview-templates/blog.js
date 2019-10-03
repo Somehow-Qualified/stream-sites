@@ -8,7 +8,7 @@ const Blog = createClass({
   render() {
     const entry = this.props.entry;
     var seo = entry.getIn(['data', 'seo']);
-    var meta_title = this.props.widgetsFor('seo').getIn(['data', 'meta_title']) || "");
+    var meta_title = this.props.widgetsFor('seo').getIn(['data', 'meta_title']) || "";
 
     return html`
       <article>
@@ -35,7 +35,7 @@ const Blog = createClass({
         <h3 class="preview-label"><span>Twitter Card</span></h3>
         <div class="seo_card">
           <div class="seo-image_card"><img src="${entry.getIn(["data", "featured_image"], "")}" alt="${entry.getIn(["data", "image_caption"], "")}" /></div>
-          <p class="seo-title_card">${entry.getIn(["data", "meta_title"], "")}</p>
+          <p class="seo-title_card">${this.props.widgetsFor('seo').getIn(['data', 'meta_title']) || ""}</p>
           <p class="seo-desc_card">${entry.getIn(["data", "excerpt"], "")}</p>
           <p class="seo-link_card"></p>
         </div>
