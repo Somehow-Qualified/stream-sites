@@ -8,6 +8,7 @@ const Blog = createClass({
   render() {
     const entry = this.props.entry;
     var seo = entry.getIn(['data', 'seo']);
+    var meta_title = this.props.widgetsFor('seo').getIn(['data', 'meta_title']) || "");
 
     return html`
       <article>
@@ -27,7 +28,7 @@ const Blog = createClass({
         <h2>SEO Preview</h2>
         <h3 class="preview-label"><span>Google</span></h3>
         <div class="seo_search">
-          <p class="seo-title_search">${this.props.widgetsFor('seo').getIn(['data', 'meta_title']) || 0)}</p>
+          <p class="seo-title_search">${meta_title}</p>
           <p class="seo-link_search"></p>
           <p class="seo-desc_search">${entry.getIn(["data", "excerpt"], "")}</p>
         </div>
