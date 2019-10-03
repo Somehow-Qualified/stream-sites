@@ -1,3 +1,4 @@
+import * from "../css/main.min.css";
 import Blog from "/admin/preview-templates/blog.js";
 import Page from "/admin/preview-templates/page.js";
 
@@ -5,7 +6,8 @@ import Page from "/admin/preview-templates/page.js";
 CMS.registerPreviewTemplate("blog", Blog);
 CMS.registerPreviewTemplate("page", Page);
 
-CMS.registerPreviewStyle("/admin/preview-templates/inline.css");
+// CMS.registerPreviewStyle("/admin/preview-templates/inline.css");
+CMS.registerPreviewStyle("../css/main.min.css");
 // CMS.registerPreviewStyle("/css/main.min.css");
 // Register any CSS file on the home page as a preview style
 fetch("/")
