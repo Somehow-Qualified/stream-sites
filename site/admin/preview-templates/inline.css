@@ -66,7 +66,7 @@ figcaption {
 .tldr {
   font-size: 125% !important;
 }
-/* SEO Styles */
+/* SEO Labels */
 .preview-label {
   position: relative;
   margin: 1.75em 0 1em;
@@ -89,37 +89,38 @@ figcaption {
   height: 1px;
   background: #E0E7F1;
 }
+/* SEO Styles */
 .seo-search {
-  position: relative;
-  display: block;
   border-radius: 8px;
-  font-size: 14px !important;
-  line-height: 20px;
-  font-family: Arial, sans-serif;
-  -webkit-font-smoothing: subpixel-antialiased;
-  width: 600px;
   box-shadow: none;
+  display: block;
+  font-family: Arial, sans-serif;
+  font-size: 14px !important;
+  position: relative;
+  line-height: 20px;
   margin: 0;
   padding: 0;
+  width: 600px;
+  -webkit-font-smoothing: subpixel-antialiased;
 }
 .seo-search > .title {
-  display: block;
-  letter-spacing: normal;
   color: #1a0dab;
-  cursor: pointer;
+  display: block;
+  font-size: 18px !important;;
+  letter-spacing: normal;
+  line-height: 1.2;
+  margin-bottom: 0 !important;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  font-size: 18px !important;;
-  line-height: 1.2;
 }
 .seo-search > .link {
-  position: relative;
-  top: -2px;
-  font-size: 14px;
-  line-height: 16px;
-  letter-spacing: normal;
   color: #006621;
+  font-size: 14px !important;
+  letter-spacing: normal;
+  line-height: 20px;
+  top: -2px;
+  position: relative;
 }
 .seo-search > .desc {
   color: #545454;
@@ -128,19 +129,18 @@ figcaption {
   word-wrap: break-word;
 }
 .seo-card {
-  position: relative;
-  display: block;
   background-color: #ffffff;
-  border-style: solid;
   border-color: #E1E8ED;
-  border-width: 1px;
-  font-size: 14px;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  width: 506px;
   border-radius: 6px;
+  border-style: solid;
+  border-width: 1px;
+  display: block;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
   margin-left: 0;
   overflow: hidden;
+  position: relative;
+  -webkit-font-smoothing: antialiased;
+  width: 506px;
 }
 .seo-card > .image {
   background-color: #E1E8ED;
@@ -152,79 +152,187 @@ figcaption {
   border-bottom-width: 1px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
-  width: 504px;
   height: 252px;
   overflow: hidden;
   position: relative;
+  width: 504px;
 }
 .seo-card > .image > img {
-  position: absolute;
-  left: 50%;
-  top: 50%;
   height: 100%;
-  width: 100%;
+  left: 50%;
   object-fit: cover;
+  position: absolute;
+  top: 50%;
   -webkit-transform: translate(-50%,-50%);
   -ms-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
+  width: 100%;
 }
 .seo-card > .text {
   padding: 10.5px 14px;
 }
 .seo-card > .text > .title {
   display: block;
-  margin: 0 0 2.1px;
-  font-size: 14px;
-  letter-spacing: normal;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
+  font-size: 14px !important;
   font-weight: bold;
+  letter-spacing: normal;
   line-height: 18.2px;
+  margin: 0 !important;
   max-height: 18.2px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .seo-card > .text > .desc {
-  height: 36.3906px;
-  max-height: 36.4px;
-  margin-top: 4.52662px;
-  line-height: 18.2px;
-  letter-spacing: normal;
-  word-wrap: break-word;
-  overflow: hidden;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  text-overflow: ellipsis;
   display: block;
   display: -webkit-box;
+  font-size: 14px !important;
+  height: 36.3906px;
+  letter-spacing: normal;
+  line-height: 18.2px;
+  margin-bottom: 0 !important;
+  max-height: 36.4px;
+  overflow: hidden;
+  margin-top: 4.52662px;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
 }
 .seo-card > .text > .link {
+  color: #8899A6;
   display: block;
-  text-transform: lowercase;
-  line-height: 1.3125;
+  font-size: 14px !important;
   letter-spacing: normal;
-  white-space: nowrap;
+  line-height: 1.3125;
+  margin-bottom: 0 !important;
+  margin-top: 4.52662px;
   overflow: hidden;
   text-overflow: ellipsis;
-  margin-top: 4.52662px;
-  color: #8899A6;
+  text-transform: lowercase;
+  white-space: nowrap;
 }
 .seo-og {
-
+  background-color: #ffffff;
+  display: block;
+  font-size: 14px !important;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, '.SFNSText-Regular', sans-serif;
+  margin: 0 -20px;
+  overflow: hidden;
+  position: relative;
+  -webkit-font-smoothing: subpixel-antialiased;
+  width: 500px;
 }
 .seo-og > .image {
   border: 1px solid #dadde1;
-  width: 500px;
   height: 261px;
+  width: 500px;
+}
+.seo-og > .image > img {
+  height: 100%;
+  left: 50%;
+  object-fit: cover;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  width: 100%;
 }
 .seo-og > .text {
-
+  background: #f2f3f5;
+  border: 1px solid #dadde1;
+  border-top: none;
+  border-bottom: none;
+  color: #1d2129;
+  padding: 10px 12px;
 }
 .seo-og > .text > .link {
-
+  border-collapse: separate;
+  color: #606770;
+  direction: ltr;
+  display: block;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 12px !important;
+  height: 11px;
+  line-height: 11px;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  text-align: left;
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+  user-select: none;
+  white-space: nowrap;
+  width: 501px;
+  word-wrap: break-word;
+  -webkit-border-horizontal-spacing: 0px;
+  -webkit-border-vertical-spacing: 0px;
+  -webkit-font-smoothing: antialiased;
 }
-.seo-og > .text > .title {
-
+.seo-og > .text > .content {
+  border-collapse: separate;
+  color: #4b4f56;
+  direction: ltr;
+  display: block;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 12px !important;
+  height: 46px;
+  line-height: 14.4px;
+  margin-top: 5px;
+  max-height: 46px;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  text-align: left;
+  user-select: none;
+  word-wrap: break-word;
+  -webkit-border-horizontal-spacing: 0px;
+  -webkit-border-vertical-spacing: 0px;
+  -webkit-font-smoothing: antialiased;
 }
-.seo-og > .text > .desc {
-
+.seo-og > .text > .content > .title {
+  border-collapse: separate;
+  color: #1d2129;
+  cursor: pointer;
+  direction: ltr;
+  display: inline;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 16px !important;
+  font-weight: 600;
+  height: auto;
+  letter-spacing: normal;
+  line-height: 20px;
+  margin-top: 5px;
+  text-align: left;
+  user-select: none;
+  white-space: normal;
+  width: auto;
+  word-wrap: break-word;
+  -webkit-border-horizontal-spacing: 0px;
+  -webkit-border-vertical-spacing: 0px;
+  -webkit-font-smoothing: antialiased;
+}
+.seo-og > .text > .content > .desc {
+  border-collapse: separate;
+  color: #606770;
+  direction: ltr;
+  display: -webkit-box;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 14px !important;
+  height: 18px;
+  line-height: 20px;
+  margin-top: 3px;
+  max-height: 80px;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  text-align: left;
+  text-overflow: ellipsis;
+  user-select: none;
+  white-space: normal;
+  word-break: break-word;
+  word-wrap: break-word;
+  -webkit-border-horizontal-spacing: 0px;
+  -webkit-border-vertical-spacing: 0px;
+  -webkit-box-orient: vertical;
+  -webkit-font-smoothing: antialiased;
+  -webkit-line-clamp: 1;
 }
