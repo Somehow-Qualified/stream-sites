@@ -9,6 +9,8 @@ const Blog = createClass({
     const entry = this.props.entry;
     var seo = entry.getIn(['data', 'seo']);
     var meta_title = this.props.widgetsFor('seo').getIn(['data', 'meta_title']) || "";
+    var meta_desc = this.props.widgetsFor('seo').getIn(['data', 'excerpt']) || "";
+    var link_preview = '/blog/' + ${entry.getIn(["data", "slug"], "")};
 
     return html`
       <article>
@@ -27,24 +29,30 @@ const Blog = createClass({
       <section class="seo">
         <h2>SEO Preview</h2>
         <h3 class="preview-label"><span>Google</span></h3>
-        <div class="seo_search">
-          <p class="seo-title_search">${meta_title}</p>
-          <p class="seo-link_search"></p>
-          <p class="seo-desc_search">${entry.getIn(["data", "excerpt"], "")}</p>
+        <div class="seo-search">
+          <p class="title">${meta_title}</p>
+          <p class="link">${link_preview}</p>
+          <p class="desc">${meta_desc}</p>
         </div>
         <h3 class="preview-label"><span>Twitter Card</span></h3>
-        <div class="seo_card">
-          <div class="seo-image_card"><img src="${entry.getIn(["data", "featured_image"], "")}" alt="${entry.getIn(["data", "image_caption"], "")}" /></div>
-          <p class="seo-title_card">${this.props.widgetsFor('seo').getIn(['data', 'meta_title']) || ""}</p>
-          <p class="seo-desc_card">${entry.getIn(["data", "excerpt"], "")}</p>
-          <p class="seo-link_card"></p>
+        <div class="seo-card">
+          <div class="image">
+            <img src="${entry.getIn(["data", "featured_image"], "")}" alt="${entry.getIn(["data", "image_caption"], "")}" />
+          </div>
+          <div class="text">
+            <p class="title">${meta_title}</p>
+            <p class="desc">${meta_desc}</p>
+            <p class="link">${link_preview}</p>
+          </div>
         </div>
         <h3 class="preview-label"><span>Open Graph/Facebook</span></h3>
-        <div class="seo_og">
-          <div class="seo-image_og"><img src="${entry.getIn(["data", "featured_image"], "")}" alt="${entry.getIn(["data", "image_caption"], "")}" /></div>
-          <p class="seo-link_og"></p>
-          <p class="seo-title_og">${entry.getIn(["data", "meta_title"], "")}</p>
-          <p class="seo-desc_og">${entry.getIn(["data", "excerpt"], "")}</p>
+        <div class="seo-og">
+          <div class="image"><img src="${entry.getIn(["data", "featured_image"], "")}" alt="${entry.getIn(["data", "image_caption"], "")}" /></div>
+          <div class="text">
+            <p class="link">/blog/${link_preview}</p>
+            <p class="title">${meta_title}</p>
+            <p class="desc">${meta_desc}</p>
+          </div>
         </div>
       </section>
     `;

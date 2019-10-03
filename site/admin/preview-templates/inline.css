@@ -89,8 +89,142 @@ figcaption {
   height: 1px;
   background: #E0E7F1;
 }
-.seo-image_og {
+.seo-search {
+  position: relative;
+  display: block;
+  border-radius: 8px;
+  font-size: 14px !important;
+  line-height: 20px;
+  font-family: Arial, sans-serif;
+  -webkit-font-smoothing: subpixel-antialiased;
+  width: 600px;
+  box-shadow: none;
+  margin: 0;
+  padding: 0;
+}
+.seo-search > .title {
+  display: block;
+  letter-spacing: normal;
+  color: #1a0dab;
+  cursor: pointer;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 18px !important;;
+  line-height: 1.2;
+}
+.seo-search > .link {
+  position: relative;
+  top: -2px;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: normal;
+  color: #006621;
+}
+.seo-search > .desc {
+  color: #545454;
+  font-size: 13px !important;
+  line-height: 1.4;
+  word-wrap: break-word;
+}
+.seo-card {
+  position: relative;
+  display: block;
+  background-color: #ffffff;
+  border-style: solid;
+  border-color: #E1E8ED;
+  border-width: 1px;
+  font-size: 14px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  width: 506px;
+  border-radius: 6px;
+  margin-left: 0;
+  overflow: hidden;
+}
+.seo-card > .image {
+  background-color: #E1E8ED;
+  border-style: solid;
+  border-color: #E1E8ED;
+  border-top-width: 0;
+  border-left-width: 0;
+  border-right-width: 0;
+  border-bottom-width: 1px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  width: 504px;
+  height: 252px;
+  overflow: hidden;
+  position: relative;
+}
+.seo-card > .image > img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+}
+.seo-card > .text {
+  padding: 10.5px 14px;
+}
+.seo-card > .text > .title {
+  display: block;
+  margin: 0 0 2.1px;
+  font-size: 14px;
+  letter-spacing: normal;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-weight: bold;
+  line-height: 18.2px;
+  max-height: 18.2px;
+}
+.seo-card > .text > .desc {
+  height: 36.3906px;
+  max-height: 36.4px;
+  margin-top: 4.52662px;
+  line-height: 18.2px;
+  letter-spacing: normal;
+  word-wrap: break-word;
+  overflow: hidden;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  display: block;
+  display: -webkit-box;
+}
+.seo-card > .text > .link {
+  display: block;
+  text-transform: lowercase;
+  line-height: 1.3125;
+  letter-spacing: normal;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-top: 4.52662px;
+  color: #8899A6;
+}
+.seo-og {
+
+}
+.seo-og > .image {
   border: 1px solid #dadde1;
   width: 500px;
   height: 261px;
+}
+.seo-og > .text {
+
+}
+.seo-og > .text > .link {
+
+}
+.seo-og > .text > .title {
+
+}
+.seo-og > .text > .desc {
+
 }
