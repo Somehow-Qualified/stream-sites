@@ -16,7 +16,7 @@ body {
 	height: 100vh;
 }
 
-article {
+article, section {
 	max-width: 37.5em;
 	margin: 1em;
 	padding: 1em;
@@ -77,7 +77,7 @@ figcaption {
   background: #fff;
   padding-right: 12px;
   color: #18283E;
-  font-size: 1.125rem !important;
+  font-size: 0.8rem !important;
   font-weight: 400;
 }
 .preview-label::before {
