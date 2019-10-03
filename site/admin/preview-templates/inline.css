@@ -119,6 +119,7 @@ figcaption {
   font-size: 14px !important;
   letter-spacing: normal;
   line-height: 20px;
+  margin: 0;
   top: -2px;
   position: relative;
 }
@@ -217,7 +218,6 @@ figcaption {
   display: block;
   font-size: 14px !important;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, '.SFNSText-Regular', sans-serif;
-  margin: 0 -20px;
   overflow: hidden;
   position: relative;
   -webkit-font-smoothing: subpixel-antialiased;
@@ -257,6 +257,7 @@ figcaption {
   font-size: 12px !important;
   height: 11px;
   line-height: 11px;
+  margin: 0;
   overflow-x: hidden;
   overflow-y: hidden;
   text-align: left;
@@ -264,7 +265,6 @@ figcaption {
   text-transform: uppercase;
   user-select: none;
   white-space: nowrap;
-  width: 501px;
   word-wrap: break-word;
   -webkit-border-horizontal-spacing: 0px;
   -webkit-border-vertical-spacing: 0px;
@@ -293,7 +293,6 @@ figcaption {
 .seo-og > .text > .content > .title {
   background: #f2f3f5;
   color: #1d2129;
-  cursor: pointer;
   direction: ltr;
   display: inline;
   font-family: Helvetica, Arial, sans-serif;
