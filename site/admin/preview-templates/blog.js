@@ -8,9 +8,12 @@ const Blog = createClass({
   render() {
     const entry = this.props.entry;
 
+    const title = entry.getIn(["data", "title"], "");
+    const title_seo = entry.getIn(["data", "meta_title"], "");
+
     return html`
       <article>
-        <h1>${entry.getIn(["data", "title"], "")}</h1>
+        <h1>${title ?: title_seo}</h1>
         <p>
           <time>${format(entry.getIn(["data", "date"], new Date()),"DD MMM YYYY")}</time>
            — Posted in ${entry.getIn(["data", "tags"], "")}
@@ -22,27 +25,27 @@ const Blog = createClass({
         <p class="tldr">${entry.getIn(["data", "tldr"], "")}</p>
         ${this.props.widgetFor("body")}
       </article>
-      <section class="seo_group">
+      <section class="seo">
         <h2>SEO Preview</h2>
         <h3 class="preview-label"><span>Google</span></h3>
         <div class="seo_search">
-          <p class="seo-title_search">${entry.getIn(["data", "seo.meta_title"], "")}</p>
+          <p class="seo-title_search">${entry.getIn(["data", "meta_title"], "")}</p>
           <p class="seo-link_search"></p>
-          <p class="seo-desc_search">${entry.getIn(["data", "seo.excerpt"], "")}</p>
+          <p class="seo-desc_search">${entry.getIn(["data", "excerpt"], "")}</p>
         </div>
         <h3 class="preview-label"><span>Twitter Card</span></h3>
         <div class="seo_card">
           <div class="seo-image_card"><img src="${entry.getIn(["data", "featured_image"], "")}" alt="${entry.getIn(["data", "image_caption"], "")}" /></div>
-          <p class="seo-title_card">${entry.getIn(["data", "seo.meta_title"], "")}</p>
-          <p class="seo-desc_card">${entry.getIn(["data", "seo.excerpt"], "")}</p>
+          <p class="seo-title_card">${entry.getIn(["data", "meta_title"], "")}</p>
+          <p class="seo-desc_card">${entry.getIn(["data", "excerpt"], "")}</p>
           <p class="seo-link_card"></p>
         </div>
         <h3 class="preview-label"><span>Open Graph/Facebook</span></h3>
         <div class="seo_og">
           <div class="seo-image_og"><img src="${entry.getIn(["data", "featured_image"], "")}" alt="${entry.getIn(["data", "image_caption"], "")}" /></div>
-          <p class="seo-title_og">${entry.getIn(["data", "seo.meta_title"], "")}</p>
-          <p class="seo-desc_og">${entry.getIn(["data", "seo.excerpt"], "")}</p>
           <p class="seo-link_og"></p>
+          <p class="seo-title_og">${entry.getIn(["data", "meta_title"], "")}</p>
+          <p class="seo-desc_og">${entry.getIn(["data", "excerpt"], "")}</p>
         </div>
       </section>
     `;
