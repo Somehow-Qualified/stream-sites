@@ -19,9 +19,32 @@ const Blog = createClass({
           <div><img src="${entry.getIn(["data", "featured_image"], "")}" alt="${entry.getIn(["data", "image_caption"], "")}" /></div>
           <figcaption>${entry.getIn(["data", "image_caption"], "")}</figcaption>
         </figure>
-        <p>TL;DR - ${entry.getIn(["data", "tldr"], "")}</p>
+        <p class="tldr">${entry.getIn(["data", "tldr"], "")}</p>
         ${this.props.widgetFor("body")}
       </article>
+      <section class="seo_group">
+        <h2>SEO Preview</h2>
+        <h3 class="preview-label"><span>Google</span></h3>
+        <div class="seo_search">
+          <p class="seo-title_search">${entry.getIn(["data", "seo.meta_title"], "")}</p>
+          <p class="seo-link_search"></p>
+          <p class="seo-desc_search">${entry.getIn(["data", "seo.excerpt"], "")}</p>
+        </div>
+        <h3 class="preview-label"><span>Twitter Card</span></h3>
+        <div class="seo_card">
+          <div class="seo-image_card"><img src="${entry.getIn(["data", "featured_image"], "")}" alt="${entry.getIn(["data", "image_caption"], "")}" /></div>
+          <p class="seo-title_card">${entry.getIn(["data", "seo.meta_title"], "")}</p>
+          <p class="seo-desc_card">${entry.getIn(["data", "seo.excerpt"], "")}</p>
+          <p class="seo-link_card"></p>
+        </div>
+        <h3 class="preview-label"><span>Open Graph/Facebook</span></h3>
+        <div class="seo_og">
+          <div class="seo-image_og"><img src="${entry.getIn(["data", "featured_image"], "")}" alt="${entry.getIn(["data", "image_caption"], "")}" /></div>
+          <p class="seo-title_og">${entry.getIn(["data", "seo.meta_title"], "")}</p>
+          <p class="seo-desc_og">${entry.getIn(["data", "seo.excerpt"], "")}</p>
+          <p class="seo-link_og"></p>
+        </div>
+      </section>
     `;
   }
 });
