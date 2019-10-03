@@ -8,13 +8,9 @@ const Blog = createClass({
   render() {
     const entry = this.props.entry;
 
-    const title_post = entry.getIn(["data", "title"], "");
-    const title_seo = entry.getIn(["data", "meta_title"], "");
-    const title = title_post ?: title_seo;
-
     return html`
       <article>
-        <h1>${title}</h1>
+        <h1>${entry.getIn(["data", "title"], "")}</h1>
         <p>
           <time>${format(entry.getIn(["data", "date"], new Date()),"DD MMM YYYY")}</time>
            — Posted in ${entry.getIn(["data", "tags"], "")}
