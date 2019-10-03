@@ -10,7 +10,7 @@ const Blog = createClass({
     var seo = entry.getIn(['data', 'seo']);
     var meta_title = this.props.widgetsFor('seo').getIn(['data', 'meta_title']) || "";
     var meta_desc = this.props.widgetsFor('seo').getIn(['data', 'excerpt']) || "";
-    var link_preview = '/blog/' + ${entry.getIn(["data", "slug"], "")};
+    var link_preview = '/blog/' + entry.getIn(["data", "slug"], "");
 
     return html`
       <article>
