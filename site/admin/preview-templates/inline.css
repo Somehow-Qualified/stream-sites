@@ -55,7 +55,7 @@ p, figure {
 	margin-bottom: 1rem !important;
 }
 
-figure {
+figure, .featured-image {
   text-align: center;
 }
 

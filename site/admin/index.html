@@ -96,6 +96,10 @@
     a[class*="CollectionTopNewButton-button-dropDeep-default-gray"]:hover {
       background-color: var(--cms-primary);
     }
+    /* Control Panel */
+    div[class*="PreviewPaneContainer-ControlPaneContainer"] {
+      padding: 10px 16px;
+    }
     /* Fields */
     div[class*="css-"],
     label[class*="css-"],
@@ -112,11 +116,11 @@
       border-left: none;
       border-right: none;
       border-bottom: 2px solid var(--cms-gray);
-      padding: 16px 8px;
+      padding: 10px 8px;
     }
     textarea[class*="TextControl"] {
       border: 2px solid var(--cms-gray) !important;
-      padding: 16px 8px !important;
+      padding: 10px 8px !important;
     }
     [data-whatintent="mouse"] :focus {
       border-color: var(--cms-primary) !important;
@@ -137,7 +141,7 @@
     }
     /* Collapsible Groups */
     div[class*="-TopBarContainer"] {
-      justify-content: flex-end;
+      justify-content: space-between;
     }
     button[class*="-ExpandButton-"] {
       display: flex;
@@ -148,6 +152,9 @@
       font-size: 12px;
       text-transform: uppercase;
       font-weight: 600;
+    }
+    div[class*="ControlContainer"]:first-of-type {
+      margin-top: 0;
     }
   </style>
 </head>

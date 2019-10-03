@@ -26,12 +26,12 @@ collections:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Slug", name: "slug", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
-      - { label: "Set as draft?", name: "eleventyExcludeFromCollections", widget: "boolean", default: false, hint: "Default is public. Toggle right to make it a draft, left to make it public." }
       - { label: "Tag", name: "tags", widget: "list", hint: "Apply tags to create archives of posts that are similar and/or related. Separate multiple with a comma: i.e. Tag 1, Tag 2, Tag 3" }
-      - { label: "Featured Image", name: "featured_image", widget: "image", required: false, media_library: {config:{multiple: false}} }
+      - { label: "Featured Image", name: "featured_image", widget: "image", required: false, media_library: {config:{multiple: false}}, hint: "Recommended size: 1200×628 pixels" }
       - { label: "Image Caption", name: "image_caption", widget: "string", required: false, hint: "Describe this image for anyone who can't see it. Also a great place to give credit where credit is due." }
       - { label: "TL;DR", name: "tldr", widget: "text", hint: "A short description of this post for people who don't want to read. Shown at the beginning of the post." }
       - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Set as draft?", name: "eleventyExcludeFromCollections", widget: "boolean", default: false, hint: "Default is no." }
       - label: "SEO"
         name: "seo"
         widget: "object"
@@ -51,9 +51,9 @@ collections:
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Slug", name: "slug", widget: "string" }
-      - { label: "Featured Image", name: "featured_image", widget: "image", required: false, media_library: {config:{multiple: false}} }
+      - { label: "Featured Image", name: "featured_image", widget: "image", required: false, media_library: {config:{multiple: false}}, hint: "Recommended size: 1200×628 pixels" }
       - { label: "Body", name: "body", widget: "markdown" }
-      - { label: "Make this page public?", name: "eleventyExcludeFromCollections", widget: "boolean", default: true, hint: "Default is public. Toggle right to make public, left to make private." }
+      - { label: "Hide this page?", name: "eleventyExcludeFromCollections", widget: "boolean", default: false, hint: "Default is no." }
       - label: "SEO"
         name: "seo"
         widget: "object"
@@ -79,8 +79,8 @@ collections:
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Slug", name: "slug", widget: "string", default: "about" }
           - { label: "Body", name: "body", widget: "markdown" }
-          - { label: "Contact Form", name: "form", widget: "boolean", default: true, hint: "Should the page display a contact form?" }
-          - { label: "Use this module?", name: "eleventyExcludeFromCollections", widget: "boolean", default: true, hint: "Default is enabled. Toggle right to enable, left to disable." }
+          - { label: "Use Contact Form?", name: "form", widget: "boolean", default: false, hint: "Default is no." }
+          - { label: "Turn off this module?", name: "eleventyExcludeFromCollections", widget: "boolean", default: false, hint: "Default is no." }
           - label: "SEO"
             name: "seo"
             widget: "object"
@@ -92,7 +92,7 @@ collections:
         name:        "author"
         file:        "site/globals/author.json"
         fields:
-          - { label: "Author Box: On or Off?", name: "display", widget: "boolean", default: true, hint: "Choose whether or not to display the Author Box at the end of a blog post." }
+          - { label: "Use Author Box?", name: "display", widget: "boolean", default: true, hint: "Default is yes." }
           - { label: "Name", name: "name", widget: "string", hint: "The name you want people to call you, such as your Twitch name or IRL name." }
           - { label: "Short Bio", name: "bio", widget: "text", hint: "A short description of yourself to include at the end of blog posts." }
           - { label: "Avatar", name: "avatar", widget: "image", media_library: {config:{multiple: false}}, hint: "An image of you/your logotype. For best results use a square image at 500x500 pixels."}
@@ -105,8 +105,8 @@ collections:
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Slug", name: "slug", widget: "string", default: "contact" }
           - { label: "Body", name: "body", widget: "markdown" }
-          - { label: "Contact Form", name: "form", widget: "boolean", default: true, hint: "Should the page display a contact form?" }
-          - { label: "Use this module?", name: "eleventyExcludeFromCollections", widget: "boolean", default: true, hint: "Default is enabled. Toggle right to enable, left to disable." }
+          - { label: "Use Contact Form?", name: "form", widget: "boolean", default: true, hint: "Default is yes." }
+          - { label: "Turn off this module?", name: "eleventyExcludeFromCollections", widget: "boolean", default: false, hint: "Default is no." }
           - label: "SEO"
             name: "seo"
             widget: "object"
@@ -140,7 +140,6 @@ collections:
           - { label: "Effective Date", name: "date", widget: "datetime" }
           - { label: "Slug", name: "slug", widget: "hidden", default: "privacy" }
           - { label: "Body", name: "body", widget: "markdown" }
-          - { label: "Use this module?", name: "eleventyExcludeFromCollections", widget: "boolean", default: true, hint: "Default is enabled. Toggle right to enable, left to disable." }
           - label: "SEO"
             name: "seo"
             widget: "object"

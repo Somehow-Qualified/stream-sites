@@ -9,11 +9,12 @@ const Page = createClass({
     var seo = entry.getIn(['data', 'seo']);
     var meta_title = this.props.widgetsFor('seo').getIn(['data', 'meta_title']) || "";
     var meta_desc = this.props.widgetsFor('seo').getIn(['data', 'excerpt']) || "";
-    var link_preview = '/blog/' + entry.getIn(["data", "slug"], "");
+    var link_preview = entry.getIn(["data", "slug"], "");
 
     return html`
       <article>
         <h1>${entry.getIn(["data", "title"], null)}</h1>
+        <div class="featured-image"><img src="${entry.getIn(["data", "featured_image"], "")}" alt="${entry.getIn(["data", "image_caption"], "")}" /></div>
         ${this.props.widgetFor("body")}
       </article>
       <section class="seo">
