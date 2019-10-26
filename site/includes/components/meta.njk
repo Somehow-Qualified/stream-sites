@@ -31,3 +31,8 @@ TO-DO:
 <meta name="og:site_name" content="{{ site.name }}">
 <meta name="og:locale" content="en_US">
 <meta name="og:type" content="website">
+
+{% if twitchLive.status %}
+<meta name="twitch:status" content="{{ twitchLive.status }}">
+<meta name="twitch:title" content="{{ twitchLive.title }}">
+{% endif %}
