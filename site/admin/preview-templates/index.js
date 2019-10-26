@@ -3,6 +3,7 @@ import Page from "/admin/preview-templates/page.js";
 
 CMS.registerPreviewTemplate("blog", Blog);
 CMS.registerPreviewTemplate("page", Page);
+CMS.registerPreviewTemplate("about", Page);
 
 CMS.registerPreviewStyle("/admin/preview-templates/inline.css");
 
