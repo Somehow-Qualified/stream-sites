@@ -82,7 +82,7 @@ gulp.task('css:compile', function() {
       tailwindcss('./tailwind.config.js')
     ]))
     .pipe(rename({
-      extname: '.css'
+      extname: '.admin.css'
     }))
     .pipe(gulp.dest(paths.sass.dest))
     .pipe(notify({
@@ -96,14 +96,15 @@ gulp.task('css:compile', function() {
  **/
 gulp.task('css:minify', function() {
   return gulp.src([
-      './css/main.css',
-      '!./css/*.min.css'
+      './css/main.admin.css',
+      '!./css/*.admin.min.css'
     ])
     .pipe(cleanCSS())
     .pipe(rename({
       suffix: '.min'
     }))
-    .pipe(gulp.dest('./dist/css'))
+    // .pipe(gulp.dest('./dist/css'))
+    .pipe(gulp.dest('./dist/admin/preview-templates'))
     .pipe(notify({
       message: 'CSS - Minify Success'
     }));
@@ -246,7 +247,7 @@ gulp.task('css:minify:preflight', function() {
 /**
  * Run all CSS tasks
  **/
-gulp.task('css:preflight', gulp.series('css:compile:preflight', 'css:minify:preflight'));
+gulp.task('css:preflight', gulp.series('css:compile', 'css:minify', 'css:compile:preflight', 'css:minify:preflight'));
 
 /**
  * BUILD TASK
