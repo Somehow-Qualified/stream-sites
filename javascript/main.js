@@ -18,30 +18,31 @@ var $footer = document.getElementById('#footer');
   preview img     data.stream.preview.large
   call            "https://wind-bow.glitch.me/twitch-api/streams/" + value;
 */
-(function () {
-  var data;
-  var request = new XMLHttpRequest();
-  request.open('GET', "https://wind-bow.glitch.me/twitch-api/streams/" + twitchName, true);
-
-  request.onload = function () {
-    if (request.status >= 200 && request.status < 400) {
-      // Stream is online
-      // TODO: add option to display a button to trigger modal Twitch viewer on desktop
-      var resp = request.responseText;
-      console.log(resp);
-      data = JSON.parse(resp);
-      document.getElementById('liveAlertLink').setAttribute('href', data.stream.channel.url);
-      document.getElementById('liveAlertText').innerHTML = 'Now playing ' + data.stream.channel.game + ' with ' + data.stream.viewers + ' viewers!';
-      document.getElementById('liveAlert').classList.remove('hidden');
-    } else {
-      // Stream is offline or Stream Data not available
-      // TODO: Add option here to hide a button cta
-      console.log('Stream is not available.');
-    }
-  };
-
-  request.onerror = function () {// There was a connection error of some sort
-  };
-
-  request.send();
-})();
+// (function () {
+//   var data;
+//   var request = new XMLHttpRequest();
+//   request.open('GET', "https://wind-bow.glitch.me/twitch-api/streams/" + twitchName, true);
+//
+//   request.onload = function () {
+//     if (request.status >= 200 && request.status < 400) {
+//       // Stream is online
+//       // TODO: add option to display a button to trigger modal Twitch viewer on desktop
+//       var resp = request.responseText;
+//       console.log(resp);
+//       data = JSON.parse(resp);
+//       document.getElementById('liveAlertLink').setAttribute('href', data.stream.channel.url);
+//       document.getElementById('liveAlertText').innerHTML = 'Now playing ' + data.stream.channel.game + ' with ' + data.stream.viewers + ' viewers!';
+//       document.getElementById('liveAlert').classList.remove('hidden');
+//     } else {
+//       // Stream is offline or Stream Data not available
+//       // TODO: Add option here to hide a button cta
+//       console.log('Stream is not available.')
+//     }
+//   };
+//
+//   request.onerror = function () {
+//     // There was a connection error of some sort
+//   };
+//
+//   request.send();
+// })();

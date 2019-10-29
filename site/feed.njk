@@ -2,10 +2,12 @@
 permalink: feed.xml
 excludeFromSitemap: true
 ---
+{% set title =  seo.site_title or site.name %}
+{% set description = seo.site_description %}
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>{{ site.title }}</title>
-  <subtitle>{{ site.description }}</subtitle>
+  <title>{{ title }}</title>
+  <subtitle>{{ description }}</subtitle>
   <link href="{{ site.url }}/feed.xml" rel="self" type="application/atom+xml" />
   <link href="{{ site.url }}" rel="alternate" type="text/html"/>
   {% if collections.posts %}
@@ -13,8 +15,8 @@ excludeFromSitemap: true
   {% endif %}
   <id>{{ site.url }}/</id>
   <author>
-    <name>{{ author.name }}</name>
-    <email>{{ author.email }}</email>
+    <name>{{ site.name }}</name>
+    <email>{{ site.email }}</email>
   </author>
   {%- for item in collections.blog | reverse -%}
   {% set absolutePostUrl %}{{ post.url | url | absoluteUrl(site.url) }}{% endset %}

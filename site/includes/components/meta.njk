@@ -1,36 +1,31 @@
-{#
-TO-DO:
-- Add seo.meta_description / seo.except fallback to Site Level SEO description
-- Replace social.images.THING with new path when globals/seo.json is created
-#}
+{% set metaTitle =  seo.meta_title or renderData.title or title or seo.site_title or site.name %}
+{% set metaDescription = seo.meta_description or seo.excerpt or seo.site_description %}
+{% set metaImage = featured_image or seo.meta_image %}
+{% set metaImageAlt = image_caption or seo.site_image_alt %}
 
 {# Site #}
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>{% if seo.meta_title %}{{ seo.meta_title }}{% elif title %}{{ title }} | {{ site.name }}{% elif renderData.title %}{{ renderData.title }} | {{ site.name }}{% else %}{{ title }} | {{ seo.site_title }}{% endif %}</title>
-<meta name="description" content="{% if seo.meta_description %}{{ seo.meta_description }}{% elif seo.excerpt %}{{ seo.excerpt }}{% else %}{{ seo.site_description }}{% endif %}">
+<title>{{ title }} | {{ site.name }}</title>
+<meta name="description" content="{{ metaDescription }}">
 <link rel="canonical" href="{{ site.url }}{{ page.url }}">
 
 {# Google Schema #}
-<meta itemprop="name" content="{% if seo.meta_title %}{{ seo.meta_title }}{% elif title %}{{ title }} | {{ site.name }}{% elif renderData.title %}{{ renderData.title }} | {{ site.name }}{% else %}{{ title }} | {{ seo.site_title }}{% endif %}">
-<meta itemprop="description" content="{% if seo.meta_description %}{{ seo.meta_description }}{% elif seo.excerpt %}{{ seo.excerpt }}{% else %}{{ seo.site_description }}{% endif %}">
+<meta itemprop="name" content="{{ metaTitle }}">
+<meta itemprop="description" content="{{ metaDescription }}">
 
-{# Twitter #}
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="{% if seo.meta_title %}{{ seo.meta_title }}{% elif title %}{{ title }} | {{ site.name }}{% elif renderData.title %}{{ renderData.title }} | {{ site.name }}{% else %}{{ title }} | {{ seo.site_title }}{% endif %}">
-<meta name="twitter:description" content="{% if seo.meta_description %}{{ seo.meta_description }}{% elif seo.excerpt %}{{ seo.excerpt }}{% else %}{{ seo.site_description }}{% endif %}">
-<meta name="twitter:site" content="{{ author.twitter_handle }}">
-<meta name="twitter:creator" content="{{ author.twitter_handle }}">
-<meta name="twitter:image:src" content="{% if featured_image %}{{ site.url }}{{ featured_image }}{% else %}{{ site.url }}{{ social.images.twitter_og }}{% endif %}">
-
-{# Open Graph #}
-<meta name="og:title" content="{% if seo.meta_title %}{{ seo.meta_title }}{% elif title %}{{ title }} | {{ site.name }}{% elif renderData.title %}{{ renderData.title }} | {{ site.name }}{% else %}{{ title }} | {{ seo.site_title }}{% endif %}">
-<meta name="og:description" content="{% if seo.meta_description %}{{ seo.meta_description }}{% elif seo.excerpt %}{{ seo.excerpt }}{% else %}{{ seo.site_description }}{% endif %}">
-<meta name="og:image" content="{% if featured_image %}{{ site.url }}{{ featured_image }}{% else %}{{ site.url }}{{ social.images.twitter_og }}{% endif %}">
-<meta name="og:url" content="{{ site.url }}{{ page.url }}">
+{# Social Media #}
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" property="og:title" content="{{ metaTitle }}">
+<meta name="twitter:description" property="og:description" content="{{ metaDescription }}">
+<meta name="twitter:image:src" property="og:image:url" content="{{ site.url }}{{ metaImage }}">
+<meta name="twitter:image:alt" property="og:image:alt" content="{{ metaImageAlt }}">
 <meta name="og:site_name" content="{{ site.name }}">
+<meta name="og:url" content="{{ site.url }}{{ page.url }}">
 <meta name="og:locale" content="en_US">
 <meta name="og:type" content="website">
+<meta name="twitter:site" content="{{ seo.site_author }}">
+<meta name="twitter:creator" content="{{ seo.site_author }}">
 
 {% if twitchLive.status %}
 <meta name="twitch:status" content="{{ twitchLive.status }}">

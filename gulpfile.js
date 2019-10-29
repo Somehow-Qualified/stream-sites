@@ -86,7 +86,7 @@ gulp.task('css:compile', function() {
     }))
     .pipe(gulp.dest(paths.sass.dest))
     .pipe(notify({
-      message: 'Tailwind - Compile Success'
+      message: '1 Tailwind - Compile Success'
     }));
     done();
 });
@@ -106,7 +106,7 @@ gulp.task('css:minify', function() {
     // .pipe(gulp.dest('./dist/css'))
     .pipe(gulp.dest('./dist/admin/preview-templates'))
     .pipe(notify({
-      message: 'CSS - Minify Success'
+      message: '2 CSS - Minify Success'
     }));
     done();
 });
@@ -114,7 +114,7 @@ gulp.task('css:minify', function() {
 /**
  * Run all CSS tasks
  **/
-gulp.task('css', gulp.series('css:minify'));
+gulp.task('css', gulp.series('css:compile','css:minify'));
 
 /**************************************
  * JAVASCRIPT
@@ -135,7 +135,7 @@ gulp.task('js:compile', function() {
     .pipe(concat('main.js'))
     .pipe(gulp.dest(paths.javascript.dest))
     .pipe(notify({
-      message: 'Javascript - Compile Success'
+      message: '3 Javascript - Compile Success'
     }));
     done();
 });
@@ -152,7 +152,7 @@ gulp.task('js:minify', function() {
     .pipe(uglify())
     .pipe(gulp.dest('./dist/javascript'))
     .pipe(notify({
-      message: 'Javascript - Minify Success'
+      message: '4 Javascript - Minify Success'
     }));
     done();
 });
@@ -160,7 +160,7 @@ gulp.task('js:minify', function() {
 /**
  * Run all JS tasks
  **/
-gulp.task('js', gulp.series('js:minify'));
+gulp.task('js', gulp.series('js:compile','js:minify'));
 
 /**************************************
  * DEFAULT GULP TASK
@@ -220,7 +220,7 @@ gulp.task('css:compile:preflight', function() {
     }))
     .pipe(gulp.dest('css/'))
     .pipe(notify({
-      message: 'Tailwind Preflight Success'
+      message: '5 Tailwind Preflight Success'
     }));
     done();
 });
@@ -239,7 +239,7 @@ gulp.task('css:minify:preflight', function() {
     }))
     .pipe(gulp.dest('./dist/css'))
     .pipe(notify({
-      message: 'CSS Minify Success'
+      message: '6 CSS Minify Preflight Success'
     }));
     done();
 });
@@ -254,7 +254,7 @@ gulp.task('css:preflight', gulp.series('css:compile', 'css:minify', 'css:compile
  * Run this once you're happy with your site and you want to prep the files for production.
  * This will run the CSS and Minify Script functions + pass the CSS through purgecss to remove any unused CSS.
  **/
-gulp.task('build', gulp.parallel('css:preflight', 'js:minify'));
+gulp.task('build', gulp.parallel('css:preflight', 'js'));
 
 /**
  * CLEAN TASK
