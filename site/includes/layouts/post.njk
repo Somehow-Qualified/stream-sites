@@ -2,7 +2,6 @@
 layout: default
 section: blog
 ---
-
 <section class="flex-1 container ml-auto mr-auto lg:px-32">
 
   <div class="post-header mb-12 md:mb-20">
@@ -11,8 +10,13 @@ section: blog
 
     <div class="text-sm md:text-base text-gray-600 flex justify-center">
       <p class="md:text-center">
-        <span class="author">By {{ author.name }}</span>
-        <span class="px-2">—</span>
+        {% if video_type == "clip" %}
+          <span class="author">Clipped by {{ clipper }}</span>
+          <span class="px-2">—</span>
+        {% else %}
+          <span class="author">By {{ author.name }}</span>
+          <span class="px-2">—</span>
+        {% endif %}
         <time datetime="{{ date }}">{{ date | dateDisplay }}</time>
         <span class="px-2">—</span>
         <span class="author">Reading Time: {{ content | readingTime }}</span>
@@ -31,15 +35,18 @@ section: blog
       </p>
     </div>
 
-    {# featured post image #}
-    {% if featured_image %}
-      <figure class="mt-10 md:mt-8">
-        <img src="{{ featured_image }}" alt="{{ image_caption }}">
-        {% if image_caption %}
-          <figcaption class="text-center text-sm italic text-gray-600 mt-4">{{ image_caption }}</figcaption>
-        {% endif %}
-      </figure>
+    {# Hero Media #}
+    {% if video_type %}
+    <div class="resp-container twitch-embed mt-10 md:mt-8" data-id="{{ video_id }}"></div>
+    {% else %}
+    <figure class="mt-10 md:mt-8">
+      <img src="{{ featured_image }}" alt="{{ image_caption }}">
+      {% if image_caption %}
+        <figcaption class="text-center text-sm italic text-gray-600 mt-4">{{ image_caption }}</figcaption>
+      {% endif %}
+    </figure>
     {% endif %}
+
   </div>
 
   <div class="content post md:px-16">
@@ -53,3 +60,98 @@ section: blog
   {% endif %}
 
 </section>
+
+
+{% if video_type == "clip" %}
+  <script>
+    (function () {
+      let v = document.getElementsByClassName("twitch-embed");
+      for (let n = 0; n < v.length; n++) {
+        const p = document.createElement("div");
+        p.innerHTML = previewThumb(v[n].dataset.id);
+        p.onclick = previewIframe;
+        v[n].appendChild(p);
+      }
+    })();
+    function previewThumb(id) {
+      return '<img class="preview-image" src="{{ featured_image }}"><div class="play-icon"></div>';
+    }
+    function previewIframe() {
+      var iframe = document.createElement("iframe");
+      iframe.setAttribute("src", "//clips.twitch.tv/embed?clip=" + this.parentNode.dataset.id);
+      iframe.setAttribute("height", "480");
+      iframe.setAttribute("width", "854");
+      iframe.setAttribute("frameborder", "0");
+      iframe.setAttribute("scrolling", "0");
+      iframe.setAttribute("allowfullscreen", "1");
+      iframe.setAttribute("muted", "0");
+      iframe.setAttribute("autoplay", "1");
+      iframe.setAttribute("preload", "metadata");
+      iframe.setAttribute("class", "resp-iframe");
+      iframe.setAttribute("id", "clip-iframe");
+      this.parentNode.replaceChild(iframe, this);
+    }
+  </script>
+{% endif %}
+
+{% if video_type == "vod" %}
+  <script>
+    (function () {
+      let v = document.getElementsByClassName("twitch-embed");
+      for (let n = 0; n < v.length; n++) {
+        const p = document.createElement("div");
+        p.innerHTML = previewThumb(v[n].dataset.id);
+        p.onclick = previewIframe;
+        v[n].appendChild(p);
+      }
+    })();
+    function previewThumb(id) {
+      return '<img class="preview-image" src="{{ featured_image }}"><div class="play-icon"></div>';
+    }
+    function previewIframe() {
+      var iframe = document.createElement("iframe");
+      iframe.setAttribute("src", "//player.twitch.tv/?autoplay=false&video=v" + this.parentNode.dataset.id);
+      iframe.setAttribute("height", "480");
+      iframe.setAttribute("width", "854");
+      iframe.setAttribute("frameborder", "0");
+      iframe.setAttribute("scrolling", "0");
+      iframe.setAttribute("allowfullscreen", "1");
+      iframe.setAttribute("muted", "0");
+      iframe.setAttribute("preload", "metadata");
+      iframe.setAttribute("class", "resp-iframe");
+      iframe.setAttribute("id", "vod-iframe");
+      this.parentNode.replaceChild(iframe, this);
+    }
+  </script>
+{% endif %}
+
+{% if video_type == "collection" %}
+  <script>
+    (function () {
+      let v = document.getElementsByClassName("twitch-embed");
+      for (let n = 0; n < v.length; n++) {
+        const p = document.createElement("div");
+        p.innerHTML = previewThumb(v[n].dataset.id);
+        p.onclick = previewIframe;
+        v[n].appendChild(p);
+      }
+    })();
+    function previewThumb(id) {
+      return '<img class="preview-image" src="{{ featured_image }}"><div class="play-icon"></div>';
+    }
+    function previewIframe() {
+      var iframe = document.createElement("iframe");
+      iframe.setAttribute("src", "//player.twitch.tv/?autoplay=false&collection=" + this.parentNode.dataset.id);
+      iframe.setAttribute("height", "480");
+      iframe.setAttribute("width", "854");
+      iframe.setAttribute("frameborder", "0");
+      iframe.setAttribute("scrolling", "0");
+      iframe.setAttribute("allowfullscreen", "1");
+      iframe.setAttribute("muted", "0");
+      iframe.setAttribute("preload", "metadata");
+      iframe.setAttribute("class", "resp-iframe");
+      iframe.setAttribute("id", "collection-iframe");
+      this.parentNode.replaceChild(iframe, this);
+    }
+  </script>
+{% endif %}

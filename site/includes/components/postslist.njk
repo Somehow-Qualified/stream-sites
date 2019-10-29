@@ -1,8 +1,11 @@
 {% for post in postslist %}
 
+  {% set featuredImageAlt = 'Video clip thumbnail' or post.data.image_caption %}
+  {% set postCredit = post.data.clipper or author.name %}
+
     <article class="post mb-8 mx-4 flex-1 bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg">
 
-      {# featured post image & category #}
+      {# build post image & categories with links #}
       {% if post.data.featured_image %}
         <figure class="relative">
           <div class="absolute bottom-0 left-0 flex mx-3">
@@ -12,14 +15,21 @@
             {% endfor %}
           </div>
           <a href="{{ post.url }}">
-            <img src="{{ post.data.featured_image }}" alt="{{ post.data.image_caption }}" class="block rounded-t-lg">
+            <img src="{{ post.data.featured_image }}" alt="{{ featuredImageAlt }}" class="block rounded-t-lg">
           </a>
         </figure>
       {% endif %}
 
+      {# Build link, title, post credit, & date #}
       <a class="block text-{{ site.colors.main }}-800 no-underline p-8" href="{{ post.url }}">
         <h2 class="text-3xl mb-6">{{ post.data.title }}</h2>
-        <p class="text-sm text-gray-600 mb-4">By {{ author.name }}, <time datetime="{{ post.date }}" class="mb-0">{{ post.date | dateDisplay }}</time></p>
+        <p class="text-sm text-gray-600 mb-4">
+          {% if post.data.video_type == "clip" %}
+          Clipped by {{ post.data.clipper }},
+          {% else %}
+          {{ author.name }},
+          {% endif %}
+          <time datetime="{{ post.date }}" class="mb-0">{{ post.date | dateDisplay }}</time></p>
       </a>
 
     </article>

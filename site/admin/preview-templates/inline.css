@@ -336,3 +336,10 @@ figcaption {
   -webkit-font-smoothing: antialiased;
   -webkit-line-clamp: 1;
 }
+pre {
+  background: #1d1f21;
+  padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+	border-radius: 0.3em;
+}

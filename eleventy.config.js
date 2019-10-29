@@ -84,7 +84,7 @@ module.exports = function (eleventyConfig) {
     // Collections
     eleventyConfig.addCollection('blog', collection => {
 
-      // Use all posts
+      // Use all posts with newest first
       // return collection.getFilteredByGlob('**/blog/*.md').reverse();
 
       // Omit drafts and scheduled posts
@@ -97,6 +97,10 @@ module.exports = function (eleventyConfig) {
       return collection
         .getFilteredByGlob('**/blog/*.md')
         .slice(-9)
+    });
+
+    eleventyConfig.addCollection('highlights', collection => {
+      return collection.getFilteredByGlob('**/highlights/*.md').reverse();
     });
 
     // Layout aliases
