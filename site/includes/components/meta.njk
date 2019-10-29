@@ -1,6 +1,6 @@
 {% set metaTitle =  seo.meta_title or renderData.title or title or seo.site_title or site.name %}
 {% set metaDescription = seo.meta_description or seo.excerpt or seo.site_description %}
-{% set metaImage = featured_image or seo.meta_image %}
+{% set metaImage = featured_image or seo.site_image %}
 {% set metaImageAlt = image_caption or seo.site_image_alt %}
 
 {# Site #}
@@ -18,7 +18,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" property="og:title" content="{{ metaTitle }}">
 <meta name="twitter:description" property="og:description" content="{{ metaDescription }}">
-<meta name="twitter:image:src" property="og:image:url" content="{{ site.url }}{{ metaImage }}">
+<meta name="twitter:image:src" property="og:image" content="{{ site.url }}{{ metaImage }}">
 <meta name="twitter:image:alt" property="og:image:alt" content="{{ metaImageAlt }}">
 <meta name="og:site_name" content="{{ site.name }}">
 <meta name="og:url" content="{{ site.url }}{{ page.url }}">
