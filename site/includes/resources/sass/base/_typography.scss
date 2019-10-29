@@ -7,23 +7,36 @@ h3,
 h4,
 h5,
 h6 {
-	@apply font-bold leading-tight mt-0 mb-6;
+	@apply font-bold leading-tight mt-6 mb-6;
 }
 
-// content
-body:not(#blog) .content {
+h1 {
+	@apply text-5xl;
+}
 
-	// paragraph
-	p {
-		@apply mb-8;
+h2 {
+	@apply text-4xl;
+}
 
-		// intro paragraph
-		&.intro {
-			@apply border-b border-gray-300 text-2xl pb-10 mb-10 font-light;
+h3 {
+	@apply text-3xl;
+}
 
-			@screen md {
-				@apply text-3xl;
-			}
-		}
-	}
+h4 {
+	@apply text-2xl;
+}
+
+h5 {
+	@apply text-xl;
+}
+
+h6 {
+	@apply text-lg;
+}
+code {
+	@apply bg-black text-white px-2 py-1 text-sm;
+}
+code[class*="language-"],
+pre[class*="language-"] {
+	font-size: 1rem;
 }

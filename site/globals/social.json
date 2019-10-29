@@ -4,8 +4,10 @@
     "twitter_og": "/images/twitter.jpg"
   },
   "social_links": {
-    "twitter": "https://twitter.com/m2creates",
+    "facebook": "https://facebook.com",
     "linkedin": "https://linkedin.com/in/mmagdalena",
-    "facebook": "https://facebook.com"
+    "twitch": "",
+    "twitter": "https://twitter.com/m2creates",
+    "youtube": ""
   }
 }

@@ -1,7 +1,13 @@
 const { DateTime } = require("luxon");
 const fs = require("fs");
 const htmlmin = require("html-minifier");
-const pluginLazyImages = require('eleventy-plugin-lazyimages');
+
+const markdownItAnchor = require('markdown-it-anchor');
+const markdownItFootnote = require('markdown-it-footnote');
+const markdownItToc = require('markdown-it-table-of-contents');
+const markdownItVideo = require('markdown-it-video');
+
+// const pluginLazyImages = require('eleventy-plugin-lazyimages');
 const pluginReadingTime = require('eleventy-plugin-reading-time');
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
@@ -24,6 +30,39 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addPlugin(pluginReadingTime);
     eleventyConfig.addPlugin(pluginRss);
     eleventyConfig.addPlugin(pluginSyntaxHighlight);
+
+    // Markdown-It and Plugins
+    let markdownIt = require("markdown-it");
+    let markdownItConfig = {
+      html: true,
+      breaks: true,
+      linkify: true
+    };
+    let markdownItAnchorConfig = {
+      permalink: true,
+      permalinkBefore: true,
+      permalinkClass: 'bookmark',
+      permalinkSpace: true,
+      permalinkSymbol: '#'
+    };
+    let markdownItTocConfig = {
+      containerClass: 'md-toc',
+      includeLevel: [2, 3, 4, 5, 6],
+      listType: 'ul',
+      containerHeaderHtml: '<p class="md-toc-header">Contents</p>'
+    };
+    let markdownItVideoConfig = {
+      youtube: { width: 640, height: 390 },
+      vimeo: { width: 500, height: 281 },
+      vine: { width: 600, height: 600, embed: 'simple' },
+      prezi: { width: 550, height: 400 }
+    };
+    let markdownItLib = markdownIt(markdownItConfig)
+      .use(markdownItAnchor, markdownItAnchorConfig)
+      .use(markdownItFootnote)
+      .use(markdownItToc, markdownItTocConfig)
+      .use(markdownItVideo, markdownItVideoConfig);
+    eleventyConfig.setLibrary("md", markdownItLib);
 
     // Minify our HTML
     eleventyConfig.addTransform('htmlmin', function(content, outputPath) {
@@ -65,6 +104,7 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addLayoutAlias('post', 'layouts/post.njk');
 
     // Copy static assests
+    eleventyConfig.addPassthroughCopy('fonts');
     eleventyConfig.addPassthroughCopy('images');
     eleventyConfig.addPassthroughCopy('site/admin');
 

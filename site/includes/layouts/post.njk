@@ -10,23 +10,25 @@ section: blog
     <h1 class="page-title text-3xl md:text-center md:text-5xl lg:text-5xl">{{ title }}</h1>
 
     <div class="text-sm md:text-base text-gray-600 flex justify-center">
-      <p class="author">By {{ author.name }}</p>
-      <p class="px-2">—</p>
-      <time datetime="{{ date }}">{{ date | dateDisplay }}</time>
-      <p class="px-2">—</p>
-      <p class="author">Reading Time: {{ content | readingTime }}</p>
-      <p class="px-2">—</p>
-      {% if tags %}
-        <p class="category">Posted in
-          {% set separator = joiner(' +') %}
-          {% for tag in tags %}
-            {%- if tag != "blog" -%}
-              {% set tagUrl %}/tags/{{ tag }}/{% endset %}
-              {{ separator() }} <a href="{{ tagUrl | url }}" rel="tag" class="underline">{{ tag }}</a>
-            {%- endif -%}
-          {% endfor %}
-        </p>
-      {% endif %}
+      <p class="md:text-center">
+        <span class="author">By {{ author.name }}</span>
+        <span class="px-2">—</span>
+        <time datetime="{{ date }}">{{ date | dateDisplay }}</time>
+        <span class="px-2">—</span>
+        <span class="author">Reading Time: {{ content | readingTime }}</span>
+        <span class="px-2">—</span>
+        {% if tags %}
+          <span class="category">Posted in
+            {% set separator = joiner(' +') %}
+            {% for tag in tags %}
+              {%- if tag != "blog" -%}
+                {% set tagUrl %}/tags/{{ tag }}/{% endset %}
+                {{ separator() }} <a href="{{ tagUrl | url }}" rel="tag" class="underline">{{ tag }}</a>
+              {%- endif -%}
+            {% endfor %}
+          </span>
+        {% endif %}
+      </p>
     </div>
 
     {# featured post image #}

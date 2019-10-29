@@ -661,27 +661,200 @@ h5,
 h6 {
   font-weight: 700;
   line-height: 1.25;
-  margin-top: 0;
+  margin-top: 1.5rem;
   margin-bottom: 1.5rem;
 }
 
-body:not(#blog) .content p {
-  margin-bottom: 2rem;
+h1 {
+  font-size: 3rem;
 }
 
-body:not(#blog) .content p.intro {
-  border-bottom-width: 1px;
-  border-color: #e2e8f0;
+h2 {
+  font-size: 2.25rem;
+}
+
+h3 {
+  font-size: 1.875rem;
+}
+
+h4 {
   font-size: 1.5rem;
-  padding-bottom: 2.5rem;
-  margin-bottom: 2.5rem;
-  font-weight: 300;
 }
 
-@media (min-width: 768px) {
-  body:not(#blog) .content p.intro {
-    font-size: 1.875rem;
-  }
+h5 {
+  font-size: 1.25rem;
+}
+
+h6 {
+  font-size: 1.125rem;
+}
+
+code {
+  background-color: #000;
+  color: #fff;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  font-size: .875rem;
+}
+
+code[class*="language-"],
+pre[class*="language-"] {
+  font-size: 1rem;
+}
+
+/**
+ * atom-dark theme for `prism.js`
+ * Based on Atom's `atom-dark` theme: https://github.com/atom/atom-dark-syntax
+ * @author Joe Gibson (@gibsjose)
+ *
+ * Want a different syntax theme?
+ * Pick one from https://github.com/PrismJS/prism-themes
+ * and replace the contents of this file
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+  background: transparent;
+  color: #c5c8c6;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+  font-family: Inconsolata, Monaco, Consolas, 'Courier New', Courier, monospace;
+  direction: ltr;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  line-height: 1.5;
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+
+pre[class*="language-"] {
+  padding: 1em;
+  margin: .5em 0;
+  overflow: auto;
+  border-radius: 0.3em;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+  background: #1d1f21;
+}
+
+/* Inline code */
+
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: #7C7C7C;
+}
+
+.token.punctuation {
+  color: #c5c8c6;
+}
+
+.namespace {
+  opacity: .7;
+}
+
+.token.property,
+.token.keyword,
+.token.tag {
+  color: #96CBFE;
+}
+
+.token.class-name {
+  color: #FFFFB6;
+  text-decoration: underline;
+}
+
+.token.boolean,
+.token.constant {
+  color: #99CC99;
+}
+
+.token.symbol,
+.token.deleted {
+  color: #f92672;
+}
+
+.token.number {
+  color: #FF73FD;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+  color: #A8FF60;
+}
+
+.token.variable {
+  color: #C6C5FE;
+}
+
+.token.operator {
+  color: #EDEDED;
+}
+
+.token.entity {
+  color: #FFFFB6;
+  /* text-decoration: underline; */
+}
+
+.token.url {
+  color: #96CBFE;
+}
+
+.language-css .token.string,
+.style .token.string {
+  color: #87C38A;
+}
+
+.token.atrule,
+.token.attr-value {
+  color: #F9EE98;
+}
+
+.token.function {
+  color: #DAD085;
+}
+
+.token.regex {
+  color: #E9C062;
+}
+
+.token.important {
+  color: #fd971f;
+}
+
+.token.important,
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+.token.entity {
+  cursor: help;
 }
 
 .container {
@@ -710,6 +883,128 @@ body:not(#blog) .content p.intro {
   .container {
     max-width: 1280px;
   }
+}
+
+.content .intro {
+  border-bottom-width: 1px;
+  border-color: #e2e8f0;
+  font-size: 1.5rem;
+  padding-bottom: 2.5rem;
+  margin-bottom: 2.5rem;
+  font-weight: 300;
+}
+
+@media (min-width: 768px) {
+  .content .intro {
+    font-size: 1.875rem;
+  }
+}
+
+.md-toc {
+  background-color: #f7fafc;
+  padding: 1rem;
+}
+
+.md-toc-header {
+  font-weight: 700;
+}
+
+.content.post > ul,
+.md-toc ul {
+  display: block;
+  list-style-type: disc;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 40px;
+}
+
+.md-toc ul > li > * {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.content .bookmark {
+  opacity: .75;
+}
+
+.content p {
+  margin-bottom: 2rem;
+}
+
+.content p:last-of-type {
+  margin-bottom: 0;
+}
+
+.content.post > img {
+  width: 100%;
+  height: auto;
+}
+
+.content ol,
+.footnotes-list {
+  display: block;
+  list-style-type: decimal;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 40px;
+}
+
+.footnotes-sep {
+  margin-top: 2rem;
+  border-bottom-width: 1px;
+  border-color: #e2e8f0;
+  border-top-width: 0;
+  border-right-width: 0;
+  border-left-width: 0;
+}
+
+.resp-container,
+.embed-responsive,
+.embed-responsive-16by9 {
+  position: relative;
+  overflow: hidden;
+  padding-top: 56.25%;
+}
+
+.resp-container iframe,
+.embed-responsive iframe,
+.resp-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.resp-container .preview-image {
+  bottom: 0;
+  display: block;
+  left: 0;
+  margin: auto;
+  max-width: 100%;
+  width: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: auto;
+  cursor: pointer;
+}
+
+.resp-container .play-icon {
+  height: 72px;
+  width: 72px;
+  left: 50%;
+  top: 50%;
+  margin-left: -36px;
+  margin-top: -36px;
+  position: absolute;
+  background: url("../images/play_thumb.png") no-repeat;
+  cursor: pointer;
 }
 
 .sr-only {
