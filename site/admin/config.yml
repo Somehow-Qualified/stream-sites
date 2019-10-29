@@ -250,7 +250,7 @@ collections:
         fields:
           - { label: "Site Title", name: "site_title", widget: "string", required: false, hint: "Customize the title a search engine will see." }
           - { label: "Site Description", name: "site_description", widget: "text", required: false, hint: "Write a default description to appear on posts/pages via search results when a custom one does not exist." }
-          - { label: "Site Image", name: "site_image", widget: "image", media_library: { config: { multiple: false } }, hint: "A default image for sharing on Twitter/Facebook." }
+          - { label: "Site Image", name: "site_image", widget: "image", required: false, media_library: { config: { multiple: false } }, hint: "A default image for sharing on Twitter/Facebook." }
           - { label: "Site Image Alt Text", name: "site_image_alt", widget: "string", required: false, hint: "Describe the site image for those who can't see it." }
           - { label: "Site Author", name: "site_author", widget: "string", required: false, hint: "Enter your Twitter handle to give yourself credit for your work." }
       - label:       "Social Links"
