@@ -3,7 +3,7 @@
 	"version": "0.0.1",
 	"description": "Stream Sites - a static site boilerplate for streamers.",
 	"scripts": {
-		"dev": "ELEVENTY_ENV=development eleventy --config=eleventy.config.js --serve & gulp dev",
+		"dev": "ELEVENTY_ENV=development eleventy --config=eleventy.config.js --serve & gulp build",
 		"build": "eleventy --config=eleventy.config.js && gulp build",
 		"build:clean": "gulp clean && npm run build"
 	},
@@ -17,8 +17,8 @@
 		"@11ty/eleventy": "^0.9.0",
 		"@11ty/eleventy-plugin-rss": "^1.0.7",
 		"@11ty/eleventy-plugin-syntaxhighlight": "^2.0.3",
-		"@babel/core": "^7.6.4",
-		"@babel/preset-env": "^7.6.3",
+		"@babel/core": "^7.8.4",
+		"@babel/preset-env": "^7.8.4",
 		"@fullhuman/postcss-purgecss": "^1.3.0",
 		"del": "^4.1.1",
 		"eleventy-plugin-lazyimages": "github:liamfiddler/eleventy-plugin-lazyimages",
@@ -35,13 +35,14 @@
 		"gulp-sass": "^4.0.2",
 		"gulp-uglify": "^3.0.2",
 		"html-minifier": "^4.0.0",
-		"luxon": "^1.19.3",
+		"luxon": "^1.22.0",
 		"markdown-it": "^10.0.0",
 		"markdown-it-anchor": "^5.2.5",
+		"markdown-it-attrs": "^3.0.2",
 		"markdown-it-footnote": "^3.0.2",
 		"markdown-it-table-of-contents": "^0.4.4",
 		"markdown-it-video": "^0.6.3",
-		"node-sass": "^4.13.0",
-		"tailwindcss": "^1.1.3"
+		"node-sass": "^4.13.1",
+		"tailwindcss": "^1.2.0"
 	}
 }

@@ -2,12 +2,15 @@ const { DateTime } = require("luxon");
 const fs = require("fs");
 const htmlmin = require("html-minifier");
 
+// Markdown Plugins
 const markdownItAnchor = require('markdown-it-anchor');
+const markdownItAttrs = require('markdown-it-attrs');
 const markdownItFootnote = require('markdown-it-footnote');
 const markdownItToc = require('markdown-it-table-of-contents');
 const markdownItVideo = require('markdown-it-video');
 
-// const pluginLazyImages = require('eleventy-plugin-lazyimages');
+// Eleventy Plugins
+const pluginLazyImages = require('eleventy-plugin-lazyimages');
 const pluginReadingTime = require('eleventy-plugin-reading-time');
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
@@ -23,10 +26,10 @@ module.exports = function (eleventyConfig) {
     });
 
     // Load plugins
-    // eleventyConfig.addPlugin(pluginLazyImages, {
-    //   imgSelector: 'img', // custom image selector
-    //   placeholderQuality: 75
-    // });
+    eleventyConfig.addPlugin(pluginLazyImages, {
+      imgSelector: 'img', // custom image selector
+      placeholderQuality: 75
+    });
     eleventyConfig.addPlugin(pluginReadingTime);
     eleventyConfig.addPlugin(pluginRss);
     eleventyConfig.addPlugin(pluginSyntaxHighlight);
@@ -45,6 +48,12 @@ module.exports = function (eleventyConfig) {
       permalinkSpace: true,
       permalinkSymbol: '#'
     };
+    let markdownItAttrsConfig = {
+      // optional, these are default options
+      leftDelimiter: '{',
+      rightDelimiter: '}',
+      allowedAttributes: []  // empty array = all attributes are allowed
+    }
     let markdownItTocConfig = {
       containerClass: 'md-toc',
       includeLevel: [2, 3, 4, 5, 6],
@@ -59,6 +68,7 @@ module.exports = function (eleventyConfig) {
     };
     let markdownItLib = markdownIt(markdownItConfig)
       .use(markdownItAnchor, markdownItAnchorConfig)
+      .use(markdownItAttrs, markdownItAttrsConfig)
       .use(markdownItFootnote)
       .use(markdownItToc, markdownItTocConfig)
       .use(markdownItVideo, markdownItVideoConfig);

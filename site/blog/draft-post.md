@@ -8,4 +8,4 @@ tldr: 'Netlify CMS Beta: Editorial Workflow with GitLab'
 eleventyExcludeFromCollections: false
 layout: post
 ---
-Is this actually a draft?
+Is this actually a draft?{.text-2xl .md:font-bold}

@@ -1,9 +1,5 @@
 //==========  Links ==========//
 
-.transition {
-  transition: 0.25s color ease-out;
-}
-
 #header a {
   @apply transition;
 }
