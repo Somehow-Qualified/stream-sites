@@ -913,6 +913,14 @@ ol ol, ul ol {
   background-color: #fff;
 }
 
+.bg-purple-600 {
+  background-color: #805ad5;
+}
+
+.bg-purple-800 {
+  background-color: #553c9a;
+}
+
 .bg-purple-900 {
   background-color: #44337a;
 }
@@ -1006,6 +1014,10 @@ ol ol, ul ol {
   flex: 1 1 0%;
 }
 
+.flex-auto {
+  flex: 1 1 auto;
+}
+
 .font-sans {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
@@ -1020,6 +1032,10 @@ ol ol, ul ol {
 
 .h-32 {
   height: 8rem;
+}
+
+.leading-none {
+  line-height: 1;
 }
 
 .leading-tight {
@@ -1130,6 +1146,10 @@ ol ol, ul ol {
   overflow: hidden;
 }
 
+.p-2 {
+  padding: 0.5rem;
+}
+
 .p-8 {
   padding: 2rem;
 }
@@ -1137,6 +1157,11 @@ ol ol, ul ol {
 .px-0 {
   padding-left: 0;
   padding-right: 0;
+}
+
+.py-1 {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
 }
 
 .py-2 {
@@ -1237,6 +1262,10 @@ ol ol, ul ol {
   fill: currentColor;
 }
 
+.text-left {
+  text-align: left;
+}
+
 .text-center {
   text-align: center;
 }
@@ -1255,6 +1284,10 @@ ol ol, ul ol {
 
 .text-purple-100 {
   color: #faf5ff;
+}
+
+.text-purple-200 {
+  color: #e9d8fd;
 }
 
 .text-purple-800 {
@@ -1364,8 +1397,16 @@ ol.footnotes-list > li > p {
 
 @media (min-width: 768px) {
 
+  .md\:rounded-full {
+    border-radius: 9999px;
+  }
+
   .md\:flex {
     display: flex;
+  }
+
+  .md\:inline-flex {
+    display: inline-flex;
   }
 
   .md\:font-bold {
@@ -1443,6 +1484,11 @@ ol.footnotes-list > li > p {
   .lg\:px-0 {
     padding-left: 0;
     padding-right: 0;
+  }
+
+  .lg\:px-4 {
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 
   .lg\:py-20 {

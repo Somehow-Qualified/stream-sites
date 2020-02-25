@@ -9,9 +9,6 @@
 
     {# Favicon #}
     <link rel="icon" type="image/ico" href="{{ site.favicon }}">
-
-    {# Netlify Identity #}
-    {# <script src="https://identity.netlify.com/v1/netlify-identity-widget.js" defer></script> #}
   </head>
 
   <body {% if body_class %} id="{{ body_class }}" {% endif %} class="min-h-full font-sans text-lg text-{{ site.colors.main }}-900 leading-normal">
@@ -37,19 +34,6 @@
 
     {# include scripts #}
     <script src="/javascript/main.min.js" defer></script>
-
-    {# <!-- Enable Netlify Identity Login -->
-    <script>
-      if (window.netlifyIdentity) {
-        window.netlifyIdentity.on("init", user => {
-          if (!user) {
-            window.netlifyIdentity.on("login", () => {
-              document.location.href = "/admin/";
-            });
-          }
-        });
-      }
-    </script> #}
 
   </body>
 </html>

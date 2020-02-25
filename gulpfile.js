@@ -32,8 +32,7 @@ const gulp = require('gulp'),
 
    javascript: {
      source: [
-       './site/includes/resources/js/utilities/*.js',
-       './site/includes/resources/js/twitch/*.js'
+       './site/includes/resources/js/utilities/*.js'
      ],
      dest: 'javascript/'
    }

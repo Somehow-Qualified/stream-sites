@@ -1,4 +1,6 @@
-{# {% include 'components/livealert.njk' %} #}
+{% if stream.type == "live" %}
+{% include 'components/livealert.njk' %}
+{% endif %}
 
 <header id="header" class="header bg-{{ site.colors.main }}-900 p-8 border-b border-{{ site.colors.main }}-900">
 	<div class="container flex flex-wrap justify-between items-center m-auto">
