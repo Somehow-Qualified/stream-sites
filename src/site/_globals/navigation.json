@@ -2,10 +2,6 @@
   "nav_logo": true,
   "main": [
     {
-      "label": "Home",
-      "url": "/"
-    },
-    {
       "label": "About",
       "url": "/about/"
     },
