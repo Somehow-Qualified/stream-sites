@@ -1,11 +1,15 @@
 {
   "name": "Stream Sites",
+  "description": "My awesome Stream Site",
   "url": "https://demo-streamsites.netlify.com",
   "email": "hello@streamsites.xyz",
-  "logo": "/images/logo-ss-square.png",
-  "favicon": "/images/logo-ss-square.png",
+  "twitter_author": "@m2creates",
   "colors": {
     "main": "purple",
     "accent": "pink"
-  }
+  },
+  "logo": "/images/logo-ss-square.png",
+  "favicon": "/images/logo-ss-square.png",
+  "card_image": "/images/ss-card.jpg",
+  "card_image_alt": "Stream Sites logo",
 }

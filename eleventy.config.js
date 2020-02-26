@@ -11,6 +11,7 @@ const markdownItVideo = require('markdown-it-video');
 
 // Eleventy Plugins
 const pluginLazyImages = require('eleventy-plugin-lazyimages');
+const pluginPWA = require('eleventy-plugin-pwa');
 const pluginReadingTime = require('eleventy-plugin-reading-time');
 const pluginRss = require('@11ty/eleventy-plugin-rss');
 const pluginSyntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
@@ -39,6 +40,7 @@ module.exports = function (eleventyConfig) {
     imgSelector: 'img', // custom image selector
     placeholderQuality: 75
   });
+  eleventyConfig.addPlugin(pluginPWA);
   eleventyConfig.addPlugin(pluginReadingTime);
   eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addPlugin(pluginSyntaxHighlight);
@@ -108,7 +110,7 @@ module.exports = function (eleventyConfig) {
   });
 
   // Copy static assests
-  eleventyConfig.addPassthroughCopy('src/site/css');
+  eleventyConfig.addPassthroughCopy({ 'src/site/_includes/js': 'js' });
   eleventyConfig.addPassthroughCopy('src/site/fonts');
   eleventyConfig.addPassthroughCopy('images');
   eleventyConfig.addPassthroughCopy('src/site/admin');
@@ -138,7 +140,7 @@ module.exports = function (eleventyConfig) {
       output: 'dist' // the Publish directory
     },
     passthroughFileCopy: true,
-    templateFormats : ['njk', 'md', 'html'],
+    templateFormats : ['njk', 'md', 'html', '11ty.js'],
     htmlTemplateEngine : 'njk',
     markdownTemplateEngine : 'njk',
   };

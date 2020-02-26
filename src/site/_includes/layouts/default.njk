@@ -9,9 +9,17 @@
 
     {# Favicon #}
     <link rel="icon" type="image/ico" href="{{ site.favicon }}">
+
+    {# Service Worker #}
+    <link rel="manifest" href="/site.webmanifest">
+    <script>
+      if ("serviceWorker" in navigator)
+        navigator.serviceWorker.register("/service-worker.js");
+    </script>
+
   </head>
 
-  <body {% if body_class %} id="{{ body_class }}" {% endif %} class="min-h-full font-sans text-lg text-{{ site.colors.main }}-900 leading-normal">
+  <body {% if body_class %} id="{{ body_class }}" {% endif %} class="min-h-full font-sans text-lg text-{{ site.colors.main }}-900 leading-normal dark:bg-black dark:text-white">
 
     <a href="#main" class="sr-skip-link">skip to main content</a>
 
@@ -31,6 +39,8 @@
       {% include "components/footer.njk" %}
 
     </div>
+
+    <script src="/js/main.js" defer></script>
 
   </body>
 </html>

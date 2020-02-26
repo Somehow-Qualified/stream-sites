@@ -1,7 +1,7 @@
-{% set metaTitle =  seo.meta_title or renderData.title or title or seo.site_title or site.name %}
-{% set metaDescription = seo.meta_description or seo.excerpt or seo.site_description %}
-{% set metaImage = featured_image or seo.site_image %}
-{% set metaImageAlt = image_caption or seo.site_image_alt %}
+{% set metaTitle =  seo.meta_title or renderData.title or title or site.name %}
+{% set metaDescription = seo.meta_description or seo.excerpt or site.description %}
+{% set metaImage = featured_image or site.card_image %}
+{% set metaImageAlt = image_caption or site.card_image_alt %}
 
 {# Site #}
 <meta charset="utf-8">
@@ -24,10 +24,5 @@
 <meta name="og:url" content="{{ site.url }}{{ page.url }}">
 <meta name="og:locale" content="en_US">
 <meta name="og:type" content="website">
-<meta name="twitter:site" content="{{ seo.site_author }}">
-<meta name="twitter:creator" content="{{ seo.site_author }}">
-
-{% if twitchLive.status %}
-<meta name="twitch:status" content="{{ twitchLive.status }}">
-<meta name="twitch:title" content="{{ twitchLive.title }}">
-{% endif %}
+<meta name="twitter:site" content="{{ site.twitter_author }}">
+<meta name="twitter:creator" content="{{ site.twitter_author }}">
