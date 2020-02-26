@@ -1,9 +1,10 @@
+/* purgecss start ignore */
 @tailwind base;
+/* purgecss end ignore */
 
 /**
  * Links
  */
-
 main a:-webkit-any-link,
 main a,
 #footer a:-webkit-any-link,
@@ -63,7 +64,6 @@ main:focus {
   padding: 1rem 1.5rem;
   z-index: 1;
 }
-/* purgecss end ignore */
 /**
  * Typography
  * These sizes apply to all NJK and MD files
@@ -353,9 +353,11 @@ pre[class*="language-"] {
  background: url("../images/play_thumb.png") no-repeat;
  cursor: pointer;
 }
+/* purgecss end ignore */
 
 @tailwind utilities;
 
+/* purgecss start ignore */
 #menu-toggle:checked + #menu {
   display: block;
 }
@@ -383,3 +385,4 @@ li.footnote-item {
 li.footnote-item:last-of-type {
   padding-bottom: 0px;
 }
+/* purgecss end ignore */
