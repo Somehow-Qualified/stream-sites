@@ -13,6 +13,7 @@ module.exports = function(){
 		}
 	}).then(function(response) {
 		return response.data.data[0]
+		console.log(response.data.data[0]);
 	});
 
 }
