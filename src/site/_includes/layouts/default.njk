@@ -16,10 +16,11 @@
       if ("serviceWorker" in navigator)
         navigator.serviceWorker.register("/service-worker.js");
     </script>
+    <script>(localStorage.getItem('darkMode') === 'true') && document.documentElement.classList.add('mode-dark');</script>
 
   </head>
 
-  <body {% if body_class %} id="{{ body_class }}" {% endif %} class="min-h-full font-sans text-lg text-{{ site.colors.main }}-900 leading-normal dark:bg-black dark:text-white">
+  <body {% if body_class %} id="{{ body_class }}" {% endif %} class="min-h-full font-sans text-lg text-{{ site.colors.main }}-900 leading-normal dark:bg-{{ site.colors.main }}-900 dark:text-white">
 
     <a href="#main" class="sr-skip-link">skip to main content</a>
 

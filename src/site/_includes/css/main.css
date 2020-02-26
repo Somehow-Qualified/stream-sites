@@ -63,6 +63,16 @@ main:focus {
   z-index: 1;
 }
 
+.mode-dark .icon-dark,
+.icon-light {
+  display: none;
+}
+.mode-dark .icon-light,
+.icon-dark {
+  display: block;
+}
+
+
 /**
  * Typography
  * These sizes apply to all NJK and MD files

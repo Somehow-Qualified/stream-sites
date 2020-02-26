@@ -4,7 +4,7 @@
   "card_image": "/images/ss-card.jpg",
   "url": "https://demo-streamsites.netlify.com",
   "colors": {
-    "main": "blue",
+    "main": "purple",
     "accent": "pink"
   },
   "favicon": "/images/logo-ss-square.png",
