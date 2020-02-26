@@ -1,15 +1,15 @@
 {
+  "logo": "/images/logo-ss-square.png",
   "name": "Stream Sites",
-  "description": "My awesome Stream Site",
+  "card_image": "/images/ss-card.jpg",
   "url": "https://demo-streamsites.netlify.com",
-  "email": "hello@streamsites.xyz",
-  "twitter_author": "@m2creates",
   "colors": {
-    "main": "purple",
+    "main": "blue",
     "accent": "pink"
   },
-  "logo": "/images/logo-ss-square.png",
   "favicon": "/images/logo-ss-square.png",
-  "card_image": "/images/ss-card.jpg",
-  "card_image_alt": "Stream Sites logo"
+  "card_image_alt": "Stream Sites logo",
+  "twitter_author": "@m2creates",
+  "email": "hello@streamsites.xyz",
+  "description": "My awesome Stream Site"
 }
