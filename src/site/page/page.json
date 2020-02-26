@@ -2,5 +2,5 @@
   "layout": "layouts/default.njk",
   "tags": "page",
   "outputPath": "dist",
-  "permalink": "{{ slug }}.html"
+  "permalink": "{{ slug }}/index.html"
 }

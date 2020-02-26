@@ -1,8 +1,18 @@
 [build]
   command = "npm run build"
-  publish = "dist/"
-  NODE_ENV = "8.9.0"
-  Functions = "functions/"
+  publish = "dist"
+  # functions = "./src/functions"
+
+[context.production]
+  environment = { NODE_VERSION = "12", NODE_ENV = "production" }
+
+[dev]
+  command = "npm run start"
+  publish = "dist"
+  port = 3000
+  targetPort = 8181
+  NODE_ENV = "development"
+  # functionsPort = 34567
 
 [[headers]]
   # Define which paths this specific [[headers]] block will cover.

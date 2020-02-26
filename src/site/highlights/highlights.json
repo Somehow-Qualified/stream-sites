@@ -1,5 +1,6 @@
 {
   "layout": "layouts/post.njk",
   "tags": "highlights",
+  "templateEngineOverride": "njk,md",
   "outputPath": "dist/highlights/"
 }

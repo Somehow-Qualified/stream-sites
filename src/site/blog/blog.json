@@ -1,5 +1,6 @@
 {
   "layout": "layouts/post.njk",
   "tags": "blog",
+  "templateEngineOverride": "njk,md",
   "outputPath": "dist/blog/"
 }

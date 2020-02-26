@@ -2,8 +2,7 @@ backend:
   name:              git-gateway
   branch:            master # Branch to update (optional; defaults to master)
 
-# Uncomment below to enable drafts for GitHub
-publish_mode:      editorial_workflow
+publish_mode:        editorial_workflow # Enable drafts for GitHub/GitLab/Bitbucket
 
 media_folder:        "images" # Media files will be stored in the repo under images
 
@@ -124,7 +123,7 @@ collections:
           - { label: "Template", name: "layout", widget: "hidden", default: "layouts/about.njk" }
       - label:       "Author Box"
         name:        "author"
-        file:        "site/globals/author.json"
+        file:        "site/_globals/author.json"
         fields:
           - { label: "Use Author Box?", name: "display", widget: "boolean", default: true, hint: "Default is yes." }
           - { label: "Name", name: "name", widget: "string", hint: "The name you want people to call you, such as your Twitch name or IRL name." }
@@ -206,7 +205,7 @@ collections:
           - { label: "Template", name: "layout", widget: "hidden", default: "layouts/linkinbio.njk" }
       - label:       "Links"
         name:        "linkinbio_links"
-        file:        "site/globals/linkinbio.json"
+        file:        "site/_globals/linkinbio.json"
         preview:     true
         fields:
           - label:   "Add a link"
@@ -225,10 +224,11 @@ collections:
     files:
       - label:       "Twitch"
         name:        "twitch"
-        file:        "site/globals/twitch.json"
+        file:        "site/_globals/twitch.json"
         preview:     false
         fields:
-          - { label: "Twitch Handle", name: "handle", widget: "string", hint: "What is your Twitch handle?" }
+          - { label: "Twitch Handle", name: "handle", widget: "string", hint: "Enter your Twitch handle." }
+          - { label: "Client ID", name: "client", widget: "string", hint: "Enter your Twitch App Client-ID." }
   - name:            "settings"
     label:           "Settings"
     description:     "Edit your global settings."
@@ -240,7 +240,7 @@ collections:
     files:
       - label:       "Branding"
         name:        "site"
-        file:        "site/globals/site.json"
+        file:        "site/_globals/site.json"
         preview:     false
         fields:
           - { label: "Brand Name", name: "name", widget: "string", hint: "The name of your brand, community, or just your Twitch name." }
@@ -256,7 +256,7 @@ collections:
               - { label: "Accent Color", name: "accent", widget: "select", default: "pink", options: ["red", "orange", "yellow", "teal", "blue", "indigo", "purple", "pink"], hint: "Pick a secondary color for your site. Used on buttons and other accents." }
       - label:       "Navigation"
         name:        "nav"
-        file:        "site/globals/navigation.json"
+        file:        "site/_globals/navigation.json"
         preview:     false
         fields:
           - label:    "Logo"
@@ -279,7 +279,7 @@ collections:
               - { label: "Button Link", name: "button_link", widget: "string", hint: "Where should the link go? Twitch? Your Discord? Include the https:// if you want to guarantee it works." }
       - label:       "SEO"
         name:        "seo"
-        file:        "site/globals/seo.json"
+        file:        "site/_globals/seo.json"
         preview:     false
         fields:
           - { label: "Site Title", name: "site_title", widget: "string", required: false, hint: "Customize the title a search engine will see." }
@@ -289,7 +289,7 @@ collections:
           - { label: "Site Author", name: "site_author", widget: "string", required: false, hint: "Enter your Twitter handle to give yourself credit for your work." }
       - label:       "Social Links"
         name:        "social"
-        file:        "site/globals/social.json"
+        file:        "site/_globals/social.json"
         fields:
           - label:   "Social Links"
             label_singular: "Social Link"
@@ -310,7 +310,7 @@ collections:
     files:
       - label:       "CTA Buttons"
         name:        "ctas"
-        file:        "site/globals/ctas.json"
+        file:        "site/_globals/ctas.json"
         preview:     false
         fields:
           - label:    "Create a button"
