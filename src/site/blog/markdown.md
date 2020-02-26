@@ -9,7 +9,6 @@ image_caption: A cool Stream Site logo banner - this caption doubles as alt text
 tldr: >-
   Stream Sites come with a variety of markdown options to make writing with
   fancy flair easier.
-eleventyExcludeFromCollections: false
 seo:
   excerpt: >-
     Stream Sites come with a variety of markdown options to make writing with

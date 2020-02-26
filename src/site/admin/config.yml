@@ -17,7 +17,7 @@ collections:
     label:           "Blog"
     label_singular:  "Blog Post"
     description:     "Create or edit a blog post"
-    folder:          "site/blog"
+    folder:          "src/site/blog"
     create:          true
     slug:            "{{fields.slug}}"
     preview_path:    "blog/{{fields.slug}}"
@@ -30,7 +30,6 @@ collections:
       - { label: "Image Caption", name: "image_caption", widget: "string", required: false, hint: "Describe this image for anyone who can't see it. Also a great place to give credit where credit is due." }
       - { label: "TL;DR", name: "tldr", widget: "text", hint: "A short description of this post for people who don't want to read. Shown at the beginning of the post." }
       - { label: "Body", name: "body", widget: "markdown" }
-      - { label: "Set as draft?", name: "eleventyExcludeFromCollections", widget: "boolean", default: false, hint: "Default is no." }
       - label: "SEO"
         name: "seo"
         widget: "object"
@@ -42,7 +41,7 @@ collections:
     label:           "Video Highlights"
     label_singular:  "Video Highlight"
     description:     "Create or edit a video highlight"
-    folder:          "site/highlights"
+    folder:          "src/site/highlights"
     create:          true
     slug:            "{{fields.slug}}"
     preview_path:    "highlights/{{fields.slug}}"
@@ -76,7 +75,7 @@ collections:
     label:           "Pages"
     label_singular:  "Page"
     description:     "Create or edit a page"
-    folder:          "site/page"
+    folder:          "src/site/page"
     create:          true
     filter:          { field: "page_type", value: "default" }
     slug:            "{{fields.slug}}"
@@ -105,7 +104,7 @@ collections:
     files:
       - label:       "About"
         name:        "about"
-        file:        "site/page/about.md"
+        file:        "src/site/page/about.md"
         slug:        {{fields.slug}}
         preview:     true
         fields:
@@ -123,7 +122,7 @@ collections:
           - { label: "Template", name: "layout", widget: "hidden", default: "layouts/about.njk" }
       - label:       "Author Box"
         name:        "author"
-        file:        "site/_globals/author.json"
+        file:        "src/site/_globals/author.json"
         fields:
           - { label: "Use Author Box?", name: "display", widget: "boolean", default: true, hint: "Default is yes." }
           - { label: "Name", name: "name", widget: "string", hint: "The name you want people to call you, such as your Twitch name or IRL name." }
@@ -131,7 +130,7 @@ collections:
           - { label: "Avatar", name: "avatar", widget: "image", media_library: {config:{multiple: false}}, hint: "An image of you/your logotype. For best results use a square image at 500x500 pixels."}
       - label:       "Contact"
         name:        "contact"
-        file:        "site/page/contact.md"
+        file:        "src/site/page/contact.md"
         slug:        {{fields.slug}}
         preview:     true
         fields:
@@ -149,7 +148,7 @@ collections:
           - { label: "Template", name: "layout", widget: "hidden", default: "layouts/contact.njk" }
       - label:       "404 Page"
         name:        "404"
-        file:        "site/page/404.md"
+        file:        "src/site/page/404.md"
         slug:        {{fields.slug}}
         preview:     true
         fields:
@@ -165,7 +164,7 @@ collections:
           - { label: "Template", name: "layout", widget: "hidden", default: "layouts/404.njk" }
       - label:       "Privacy Policy"
         name:        "privacy"
-        file:        "site/page/privacy-policy.md"
+        file:        "src/site/page/privacy-policy.md"
         slug:        {{fields.slug}}
         preview:     true
         fields:
@@ -190,7 +189,7 @@ collections:
     files:
       - label:       "Content"
         name:        "linkinbio_content"
-        file:        "site/page/linkinbio.md"
+        file:        "src/site/page/linkinbio.md"
         preview:     true
         fields:
           - { label: "Title", name: "title", widget: "string" }
@@ -205,7 +204,7 @@ collections:
           - { label: "Template", name: "layout", widget: "hidden", default: "layouts/linkinbio.njk" }
       - label:       "Links"
         name:        "linkinbio_links"
-        file:        "site/_globals/linkinbio.json"
+        file:        "src/site/_globals/linkinbio.json"
         preview:     true
         fields:
           - label:   "Add a link"
@@ -224,7 +223,7 @@ collections:
     files:
       - label:       "Twitch"
         name:        "twitch"
-        file:        "site/_globals/twitch.json"
+        file:        "src/site/_globals/twitch.json"
         preview:     false
         fields:
           - { label: "Twitch Handle", name: "handle", widget: "string", hint: "Enter your Twitch handle." }
@@ -240,7 +239,7 @@ collections:
     files:
       - label:       "Branding"
         name:        "site"
-        file:        "site/_globals/site.json"
+        file:        "src/site/_globals/site.json"
         preview:     false
         fields:
           - { label: "Brand Name", name: "name", widget: "string", hint: "The name of your brand, community, or just your Twitch name." }
@@ -256,7 +255,7 @@ collections:
               - { label: "Accent Color", name: "accent", widget: "select", default: "pink", options: ["red", "orange", "yellow", "teal", "blue", "indigo", "purple", "pink"], hint: "Pick a secondary color for your site. Used on buttons and other accents." }
       - label:       "Navigation"
         name:        "nav"
-        file:        "site/_globals/navigation.json"
+        file:        "src/site/_globals/navigation.json"
         preview:     false
         fields:
           - label:    "Logo"
@@ -279,7 +278,7 @@ collections:
               - { label: "Button Link", name: "button_link", widget: "string", hint: "Where should the link go? Twitch? Your Discord? Include the https:// if you want to guarantee it works." }
       - label:       "SEO"
         name:        "seo"
-        file:        "site/_globals/seo.json"
+        file:        "src/site/_globals/seo.json"
         preview:     false
         fields:
           - { label: "Site Title", name: "site_title", widget: "string", required: false, hint: "Customize the title a search engine will see." }
@@ -289,7 +288,7 @@ collections:
           - { label: "Site Author", name: "site_author", widget: "string", required: false, hint: "Enter your Twitter handle to give yourself credit for your work." }
       - label:       "Social Links"
         name:        "social"
-        file:        "site/_globals/social.json"
+        file:        "src/site/_globals/social.json"
         fields:
           - label:   "Social Links"
             label_singular: "Social Link"
@@ -310,7 +309,7 @@ collections:
     files:
       - label:       "CTA Buttons"
         name:        "ctas"
-        file:        "site/_globals/ctas.json"
+        file:        "src/site/_globals/ctas.json"
         preview:     false
         fields:
           - label:    "Create a button"
