@@ -62,10 +62,11 @@ Follow the Roadmap on our [website](https://streamsites.xyz) or [progress update
 
 ### Roadmap TL;DR
 
-- Next/Prev post links
+- Next/Prev post links ([pending 11ty v.0.11.0](https://www.11ty.dev/docs/filters/collection-items/))
 - Collection for managing chat commands, sound effect previews, etc.
 - Support the Channel page for affiliations, donations, etc.
 - Webmentions
 - Manual Initialization for Netlify CMS (no more YML!!)
+- More icons for everything
 - Themes
 - Documentation
