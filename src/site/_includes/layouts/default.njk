@@ -1,10 +1,10 @@
 <!doctype html>
 <html lang="en" class="min-h-full antialiased">
   <head>
-    {# include our meta tags #}
+    {# Meta Tags #}
     {% include "components/meta.njk" %}
 
-    {# include styles #}
+    {# Styles #}
     <link rel="stylesheet" href="/css/main.css">
 
     {# Favicon #}
@@ -16,7 +16,12 @@
       if ("serviceWorker" in navigator)
         navigator.serviceWorker.register("/service-worker.js");
     </script>
+
+    {# Dark Mode Handler #}
     <script>(localStorage.getItem('darkMode') === 'true') && document.documentElement.classList.add('mode-dark');</script>
+
+    {# Netlify Identity for Login #}
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 
   </head>
 
@@ -41,7 +46,21 @@
 
     </div>
 
+    {# Load Scripts #}
     <script src="/js/main.js" defer></script>
+
+    {# Enable Netlify Identity Login #}
+    <script>
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", user => {
+          if (!user) {
+            window.netlifyIdentity.on("login", () => {
+              document.location.href = "/admin/";
+            });
+          }
+        });
+      }
+    </script>
 
   </body>
 </html>

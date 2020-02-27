@@ -11,7 +11,7 @@ const markdownItVideo = require('markdown-it-video');
 
 // Eleventy Plugins
 const pluginLazyImages = require('eleventy-plugin-lazyimages');
-const pluginPWA = require('eleventy-plugin-pwa');
+const pluginPwa = require('eleventy-plugin-pwa');
 const pluginReadingTime = require('eleventy-plugin-reading-time');
 const pluginRss = require('@11ty/eleventy-plugin-rss');
 const pluginSyntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
@@ -40,7 +40,7 @@ module.exports = function (eleventyConfig) {
     imgSelector: 'img', // custom image selector
     placeholderQuality: 75
   });
-  eleventyConfig.addPlugin(pluginPWA);
+  eleventyConfig.addPlugin(pluginPwa);
   eleventyConfig.addPlugin(pluginReadingTime);
   eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addPlugin(pluginSyntaxHighlight);
@@ -94,19 +94,23 @@ module.exports = function (eleventyConfig) {
   }
 
   // Collections
+  // Blog: posts created under Blog
   eleventyConfig.addCollection('blog', collection => {
     return collection.getFilteredByGlob('**/blog/*.md').reverse();
   });
-
   // only content in the latest `blog/` directory
   eleventyConfig.addCollection('postsLatest', collection => {
     return collection
       .getFilteredByGlob('**/blog/*.md')
       .slice(-9)
   });
-
+  // Highlights: posts created under Highlights
   eleventyConfig.addCollection('highlights', collection => {
     return collection.getFilteredByGlob('**/highlights/*.md').reverse();
+  });
+  // Feed: a single stream of Blog Posts and Highlights
+  eleventyConfig.addCollection('feed', collection => {
+    return collection.getFilteredByGlob(['**/blog/*.md', '**/highlights/*.md']).reverse();
   });
 
   // Copy static assests
@@ -140,7 +144,7 @@ module.exports = function (eleventyConfig) {
       output: 'dist' // the Publish directory
     },
     passthroughFileCopy: true,
-    templateFormats : ['njk', 'md', 'html', '11ty.js'],
+    templateFormats : ['njk', 'md', 'html', '11ty.js', 'txt'],
     htmlTemplateEngine : 'njk',
     markdownTemplateEngine : 'njk',
   };

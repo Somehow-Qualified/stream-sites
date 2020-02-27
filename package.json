@@ -2,6 +2,7 @@
 	"name": "streamsites",
 	"version": "0.0.1",
 	"description": "Stream Sites - a static site boilerplate for streamers.",
+	"url": "https://demo-streamsites.netlify.com",
 	"author": "Melanie E Magdalena",
 	"license": "MIT",
 	"repository": {

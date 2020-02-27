@@ -290,9 +290,11 @@ collections:
             name:    "social_links"
             widget:  "object"
             fields:
-              - { label: "Twitter", name: "twitter", widget: "string", hint: "https://twitter.com/yourhandle" }
-              - { label: "LinkedIn", name: "linkedin", widget: "string", hint: "https://linkedin.com/in/yourhandle" }
-              - { label: "Facebook", name: "facebook", widget: "string", hint: "https://facebook.com/yourpagename" }
+              - { label: "Twitter", name: "twitter", widget: "string", required: false, hint: "https://twitter.com/yourhandle" }
+              - { label: "Twitch", name: "twitter", widget: "string", required: false, hint: "https://twitch.tv/yourhandle" }
+              - { label: "YouTube", name: "twitter", widget: "string", required: false, hint: "https://youtube.com/channel/yourchannelhash" }
+              - { label: "LinkedIn", name: "linkedin", widget: "string", required: false, hint: "https://linkedin.com/in/yourhandle" }
+              - { label: "Facebook", name: "facebook", widget: "string", required: false, hint: "https://facebook.com/yourpagename" }
   - name:            "custom"
     label:           "Custom Modules"
     description:     "Manage your custom modules"

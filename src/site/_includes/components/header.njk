@@ -14,9 +14,9 @@
 		</a>
 
 	  <label for="menu-toggle" class="pointer-cursor lg:hidden block">
-			<svg class="fill-current text-white" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><title>menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path></svg>
+			<svg class="fill-current text-white" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><title>Toogle Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path></svg>
 		</label>
-	  <input class="hidden" type="checkbox" id="menu-toggle" />
+		<input class="sr-only" type="checkbox" id="menu-toggle" />
 
 	  <div class="hidden lg:flex lg:items-center lg:w-auto w-full" id="menu">
 	    <nav class="xs:w-full text-center">
@@ -26,15 +26,15 @@
 			        <a href="{{ item.url | safe }}" class="lg:p-4 py-3 px-0 block font-bold hover:text-{{ site.colors.accent }}-400">{{ item.label }}</a>
 			      </li>
 			    {% endfor %}
-					<button class="darkmodebtn js-darkmode-toggle" title="Toggle Dark Mode" role="switch" aria-checked="false">
+					<li><button class="darkmodebtn js-darkmode-toggle lg:p-4 py-3 px-0" title="Toggle Dark Mode" role="switch" aria-checked="false" tabindex="1">
 						<svg class="icon-light" fill="currentColor" stroke="currentColor" role="img" aria-hidden="true" width="18" height="18">
 							<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/icon-library.svg#icon-sun"></use>
 						</svg>
 						<svg class="icon-dark" fill="currentColor" stroke="currentColor" role="img" aria-hidden="true" width="18" height="18">
 		          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/icon-library.svg#icon-moon"></use>
 		        </svg>
-			    </button>
-		      <a class="inline-block rounded md:ml-3 py-3 px-6 text-white font-bold bg-{{ site.colors.accent }}-600 hover:bg-{{ site.colors.accent }}-400 no-underline" href="{{ navigation.nav_button.button_link | safe }}" target="_blank" rel="noopener">{{ navigation.nav_button.button_text }}</a>
+			    </button></li>
+		      <li><a class="inline-block rounded md:ml-3 py-3 px-6 text-white font-bold bg-{{ site.colors.accent }}-600 hover:bg-{{ site.colors.accent }}-400 no-underline" href="{{ navigation.nav_button.button_link | safe }}" target="_blank" rel="noopener">{{ navigation.nav_button.button_text }}</a></li>
 				</ul>
 	    </nav>
 		</div>

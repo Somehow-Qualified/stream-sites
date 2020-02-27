@@ -1,6 +1,6 @@
 /*
-A date formatter filter for Nunjucks
-*/
+ * A date formatter filter for Nunjucks
+ */
 module.exports = function (date, part) {
   var d = new Date(date);
   if (part == 'year') {
@@ -29,5 +29,5 @@ module.exports = function (date, part) {
     23: "rd",
     31: "st"
   };
-  return d.getDate() + (ordinal[d.getDate()] || "th") + " " + month[d.getMonth()] + " " + d.getUTCFullYear();
+  return d.getDate() + month[d.getMonth()] + " " + d.getUTCFullYear();
 }
