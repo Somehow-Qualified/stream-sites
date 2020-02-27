@@ -31,7 +31,6 @@ ss-core
     │   ├── sitemap.njk
     │   ├── webmanifest.11ty.js
     │   ├── _globals
-    │   │   ├── author.json
     │   │   ├── ctas.json
     │   │   ├── helpers.js
     │   │   ├── linkinbio.json
@@ -42,7 +41,6 @@ ss-core
     │   │   ├── stream.js
     │   │   └── twitch.json
     │   ├── _includes
-    │   │   ├── author.njk
     │   │   ├── form-contact.njk
     │   │   ├── footer.njk
     │   │   ├── header.njk

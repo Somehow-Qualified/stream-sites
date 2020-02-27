@@ -14,7 +14,7 @@ section: blog
           <span class="author">Clipped by {{ clipper }}</span>
           <span class="px-2">—</span>
         {% else %}
-          <span class="author">By {{ author.name }}</span>
+          <span class="author">By {{ site.author_name }}</span>
           <span class="px-2">—</span>
         {% endif %}
         <time datetime="{{ date }}">{{ date | dateDisplay }}</time>

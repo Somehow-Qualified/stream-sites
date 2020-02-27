@@ -27,7 +27,7 @@
           {% if post.data.video_type == "clip" %}
           Clipped by {{ post.data.clipper }},
           {% else %}
-          {{ author.name }},
+          {{ site.author_name }},
           {% endif %}
           <time datetime="{{ post.date }}" class="mb-0">{{ post.date | dateDisplay }}</time></p>
       </a>

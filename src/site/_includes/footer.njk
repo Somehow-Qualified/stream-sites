@@ -1,10 +1,12 @@
-<div class="footer-wrapper">
-  <footer id="footer" class="footer bg-{{ site.colors.main }}-900">
-    <div class="footer-inner container m-auto md:flex md:justify-between items-center py-10">
-      <p class="text-{{ site.colors.main }}-100 pb-8 md:pb-0 text-center">
-        © 2020 {{ site.name }}. Built with <a class="no-underline hover:text-{{ site.colors.accent }}-500" href="https://streamsites.xyz/">Stream Sites.</a>
-      </p>
-      {% include 'social-icons.njk' %}
-    </div>
-  </footer>
-</div>
+<footer id="footer" class="footer bg-{{ site.colors.main }}-900 h-card" role="contentinfo">
+  <div hidden>
+    <img class="u-photo" src="{{ site.author_avatar }}">
+    <p class="p-note">{{ site.author_bio }}</p>
+  </div>
+  <div class="footer-inner container m-auto md:flex md:justify-between items-center py-8">
+    <p class="text-{{ site.colors.main }}-100 pb-8 md:pb-0 text-center md:text-left text-sm">
+    © 2020 <a class="p-name u-url" rel="me" href="{{ site.url }}">{{ site.author_name }}</a>. Built with <a class="hover:text-{{ site.colors.accent }}-500" href="https://streamsites.xyz/">Stream Sites</a>.
+    </p>
+    {% include 'social-icons.njk' %}
+  </div>
+</footer>

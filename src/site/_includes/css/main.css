@@ -371,23 +371,18 @@ pre[class*="language-"] {
 ol.footnotes-list > li > p {
   display: contents;
 }
-
 ol.footnotes-list {
-  padding-top: 16px;
+  padding-top: 1rem;
 }
-
 hr.footnotes-sep {
-  margin-top: 32px;
+  margin-top: 2rem;
 }
-
 a.bookmark {
   display: none;
 }
-
 li.footnote-item {
-  padding-bottom: 16px;
+  padding-bottom: 1rem;
 }
-
 li.footnote-item:last-of-type {
-  padding-bottom: 0px;
+  padding-bottom: 0;
 }
