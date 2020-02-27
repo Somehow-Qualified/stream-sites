@@ -19,8 +19,8 @@ const pluginSyntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 module.exports = function (eleventyConfig) {
 
   // Layout aliases
-  eleventyConfig.addLayoutAlias('default', 'layouts/default.njk');
-  eleventyConfig.addLayoutAlias('post', 'layouts/post.njk');
+  eleventyConfig.addLayoutAlias('default', 'default.njk');
+  eleventyConfig.addLayoutAlias('post', 'post.njk');
 
   // Debug utility
   eleventyConfig.addFilter('dump', obj => {
@@ -140,6 +140,7 @@ module.exports = function (eleventyConfig) {
     dir: {
       input: 'src/site',
       includes: '_includes',
+      layouts: '_layouts',
       data: '_globals',
       output: 'dist' // the Publish directory
     },

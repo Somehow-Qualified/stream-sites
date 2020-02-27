@@ -9,7 +9,7 @@ seo:
     content!
   meta_title: About Stream Sites
 page_type: core
-layout: layouts/about.njk
+layout: about.njk
 ---
 Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil dolor ipsum voluptatum dicta eveniet commodi molestiae! Suscipit, magnam cumque, illum ab amet ipsum deserunt distinctio est dolore dolor ad ipsa cupiditate minus soluta, possimus accusamus.
 

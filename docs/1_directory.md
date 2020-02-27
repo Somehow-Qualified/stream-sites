@@ -42,29 +42,30 @@ ss-core
     │   │   ├── stream.js
     │   │   └── twitch.json
     │   ├── _includes
-    │   │   ├── components
-    │   │   │   ├── author.njk
-    │   │   │   ├── contact-form.njk
-    │   │   │   ├── footer.njk
-    │   │   │   ├── header.njk
-    │   │   │   ├── livealert.njk
-    │   │   │   ├── meta.njk
-    │   │   │   ├── postslist.njk
-    │   │   │   └── social-icons.njk
+    │   │   ├── author.njk
+    │   │   ├── form-contact.njk
+    │   │   ├── footer.njk
+    │   │   ├── header.njk
+    │   │   ├── livealert.njk
+    │   │   ├── meta.njk
+    │   │   ├── postslist.njk
+    │   │   ├── social-icons.njk
     │   │   ├── css
     │   │   │   └── main.css
-    │   │   ├── js
-    │   │   │   └── main.js
-    │   │   └── layouts
-    │   │       ├── 404.njk
-    │   │       ├── about.njk
-    │   │       ├── blog.njk
-    │   │       ├── contact.njk
-    │   │       ├── default.njk
-    │   │       ├── highlights.njk
-    │   │       ├── linkinbio.njk
-    │   │       ├── post.njk
-    │   │       └── privacy.njk
+    │   │   ├── fonts
+    │   │   │   └── Upload your custom fonts here  
+    │   │   └── js
+    │   │       └── main.js
+    │   ├── _layouts
+    │   │   ├── 404.njk
+    │   │   ├── about.njk
+    │   │   ├── blog.njk
+    │   │   ├── contact.njk
+    │   │   ├── default.njk
+    │   │   ├── highlights.njk
+    │   │   ├── linkinbio.njk
+    │   │   ├── post.njk
+    │   │   └── privacy.njk
     │   ├── admin
     │   │   ├── config.yml
     │   │   ├── index.html
@@ -76,8 +77,6 @@ ss-core
     │   ├── blog
     │   │   ├── blog.json
     │   │   └── sample-post.md
-    │   ├── fonts
-    │   │   └── Upload your custom fonts here
     │   ├── highlights
     │   │   ├── highlights.json
     │   │   └── sample-post.md

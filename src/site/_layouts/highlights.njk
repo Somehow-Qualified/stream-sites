@@ -1,6 +1,6 @@
 ---
 layout: default
-section: blog
+section: highlights
 ---
 <section id="blog-posts" class="flex-1 container ml-auto mr-auto">
 
@@ -11,8 +11,8 @@ section: blog
   </div>
 
   <div class="posts md:flex flex-1">
-    {% set postslist = collections.blog %}
-    {% include 'components/postslist.njk' %}
+    {% set postslist = collections.highlights %}
+    {% include 'postslist.njk' %}
   </div>
 
 </section>

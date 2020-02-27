@@ -14,7 +14,6 @@ seo:
     Stream Sites come with a variety of markdown options to make writing with
     fancy flair easier.
   meta_title: Getting started with Markdown on Stream Sites
-layout: post
 ---
 
 [[toc]]

@@ -6,7 +6,7 @@ seo:
   excerpt: Your privacy is important!
   meta_title: Privacy Policy
 page_type: core
-layout: layouts/privacy.njk
+layout: privacy.njk
 ---
 
 We keep this Privacy Policy posted on the Website and you should review it frequently, as it may change from time to time without notice. Any changes will be effective immediately upon the posting of the revised Privacy Policy. WHEN YOU ACCESS OUR WEBSITE, YOU AGREE TO THIS PRIVACY POLICY. IF YOU DO NOT AGREE TO THIS PRIVACY POLICY, OR TO ANY CHANGES WE MAY SUBSEQUENTLY MAKE, IMMEDIATELY STOP ACCESSING OUR WEBSITE.

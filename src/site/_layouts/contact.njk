@@ -1,9 +1,8 @@
 ---
 layout: default
-section: about
+section: contact
 ---
-
-<section class="flex-1">
+<section class="flex-1 container mx-auto">
 
   <h1 class="page-title text-5xl">{{ title }}</h1>
 
@@ -12,7 +11,7 @@ section: about
     {{ content | safe }}
 
     {% if form %}
-      {% include "components/contact-form.njk" %}
+      {% include "form-contact.njk" %}
     {% endif %}
 
   </div>

@@ -1,6 +1,7 @@
 {
-  "layout": "layouts/default.njk",
+  "layout": "default",
   "tags": "page",
+  "templateEngineOverride": "njk,md",
   "outputPath": "dist",
   "permalink": "{{ slug }}/index.html"
 }
