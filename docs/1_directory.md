@@ -93,6 +93,5 @@ ss-core
         ├── dates.js
         ├── filters.js
         ├── minify-html.js
-        ├── minify-js.js
-        └── timestamp.js
+        └── minify-js.js
 ```
