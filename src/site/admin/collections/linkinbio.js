@@ -1,0 +1,89 @@
+export default {
+  name: 'linkinbio',
+  label: 'Link In Bio',
+  label_singular: 'Link In Bio',
+  description: 'Edit your Link in Bio content and/or links',
+  create: false,
+  slug: '{{slug}}',
+  preview_path: '{{fields.slug}}',
+  files: [
+    {
+      label: 'Content',
+      name: 'linkinbio_content',
+      file: 'src/site/page/linkinbio.md',
+      preview: true,
+      fields: [
+        {
+          label: 'Title',
+          name: 'title',
+          widget: 'string'
+        },
+        {
+          label: 'Slug',
+          name: 'slug',
+          widget: 'string',
+          'default': 'link-in-bio'
+        },
+        {
+          label: 'Body',
+          name: 'body',
+          widget: 'markdown'
+        },
+        {
+          label: 'SEO',
+          name: 'seo',
+          widget: 'object',
+          fields: [
+            {
+              label: 'Meta Title',
+              name: 'meta_title',
+              widget: 'string',
+              required: false,
+              hint: 'A title to display on a Search result. (What do you want Google to see?)'
+            },
+            {
+              label: 'Meta Description',
+              name: 'excerpt',
+              widget: 'text',
+              required: false,
+              hint: 'A short description to tease this in a Search or Social Media preview.'
+            }
+          ]
+        },
+        {
+          label: 'Template',
+          name: 'layout',
+          widget: 'hidden',
+          'default': 'layouts/linkinbio.njk'
+        }
+      ]
+    },
+    {
+      label: 'Links',
+      name: 'linkinbio_links',
+      file: 'src/site/_globals/linkinbio.json',
+      preview: true,
+      fields: [
+        {
+          label: 'Add a link',
+          name: 'linkinbio',
+          widget: 'list',
+          fields: [
+            {
+              label: 'Label',
+              name: 'text',
+              widget: 'string',
+              hint: 'What should the text say?'
+            },
+            {
+              label: 'Link',
+              name: 'link',
+              widget: 'string',
+              hint: 'Where should the link go? Include the https:// if you want to guarantee it works.'
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

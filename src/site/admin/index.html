@@ -164,9 +164,18 @@
 
 <body>
   <!-- Include the script that builds the page and powers Netlify CMS -->
+  <script>
+    window.CMS_MANUAL_INIT = true;
+  </script>
   <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
+<!--  <script type="module" src="/admin/config.js"></script>-->
+  <script type="module">
+    const { CMS, initCMS: init } = window;
+    import config from '/admin/config.js';
+    init({config});
+  </script>
   <!-- Include preview templates -->
-  <script type="module" src="https://demo-streamsites.netlify.com/admin/preview-templates/index.js"></script>
+  <script type="module" src="/admin/preview-templates/index.js"></script>
   <!-- Enable Netlify Identity Login -->
   <script>
     if (window.netlifyIdentity) {
