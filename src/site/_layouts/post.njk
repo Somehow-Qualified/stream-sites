@@ -25,7 +25,7 @@ section: blog
           <span class="category">Posted in
             {% set separator = joiner(' +') %}
             {% for tag in tags %}
-              {%- if tag != "blog" -%}
+              {%- if tag != "post" -%}
                 {% set tagUrl %}/tags/{{ tag | slug }}/{% endset %}
                 {{ separator() }} <a href="{{ tagUrl | url }}" rel="tag" class="underline">{{ tag }}</a>
               {%- endif -%}
