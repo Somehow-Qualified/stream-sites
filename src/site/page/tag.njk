@@ -1,7 +1,6 @@
 ---
 pagination:
   data: collections
-  addAllPagesToCollections: true
   size: 1
   alias: tag
   filter:
@@ -13,6 +12,7 @@ pagination:
   - page
   - postsLatest
   - tagList
+  addAllPagesToCollections: true
 renderData:
   title: Tagged “{{ tag }}”
 permalink: /tags/{{ tag | slug }}/

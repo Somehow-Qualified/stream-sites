@@ -3,4 +3,5 @@ node_modules/
 dist/
 .env
 LocalValetDriver.php
-drafts/
+.notes.md
+.config.yml
