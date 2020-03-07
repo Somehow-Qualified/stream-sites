@@ -17,7 +17,10 @@ module.exports = {
 
   readableDate: function(date, format) {
     // default to America/Chicago Timezone
-    return DateTime.fromJSDate(dateObj, { zone: 'America/Chicago' }).toFormat('yyyy-LL-dd');
+    if (!format) {
+      format = 'dd MMMM yyyy';
+    }
+    return DateTime.fromJSDate(date, { zone: 'America/Chicago' }).toFormat(format);
   },
 
   fromIso: function(timestamp) {

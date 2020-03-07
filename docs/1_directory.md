@@ -28,7 +28,7 @@ ss-core
     ├── site
     │   ├── feed.njk
     │   ├── robots.txt
-    │   ├── sitemap.njk
+    │   ├── sitemap.xml.njk
     │   ├── webmanifest.11ty.js
     │   ├── _globals
     │   │   ├── ctas.json
@@ -88,10 +88,11 @@ ss-core
     │       ├── linkinbio.md
     │       ├── page.json
     │       ├── privacy-policy.md
+    │       ├── tag.njk
     │       └── tags.njk
     └── utils
-        ├── dates.js
-        ├── filters.js
+        ├── date.filters.js
         ├── minify-html.js
-        └── minify-js.js
+        ├── minify-js.js
+        └── tag-list.collection.js
 ```

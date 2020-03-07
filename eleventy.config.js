@@ -1,4 +1,3 @@
-const { DateTime } = require('luxon');
 const util         = require('util');
 const fs           = require('fs');
 
@@ -16,6 +15,8 @@ const pluginReadingTime = require('eleventy-plugin-reading-time');
 const pluginRss = require('@11ty/eleventy-plugin-rss');
 const pluginSyntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 
+const filters = require('./src/utils/date.filters');
+
 module.exports = function (eleventyConfig) {
 
   // Layout aliases
@@ -27,12 +28,9 @@ module.exports = function (eleventyConfig) {
     return util.inspect(obj)
   });
 
-  // Add a date formatter filter to Nunjucks
-  eleventyConfig.addFilter('dateDisplay', require('./src/utils/dates.js'));
-
-  // Format dates for computers
-  eleventyConfig.addFilter('htmlDateString', (dateObj) => {
-    return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat('yyyy-LL-dd');
+  // Load filters
+  Object.keys(filters).forEach(filterName => {
+    eleventyConfig.addFilter(filterName, filters[filterName])
   });
 
   // Load plugins
