@@ -30,7 +30,6 @@
 		"eleventy-plugin-pwa": "^1.0.8",
 		"eleventy-plugin-reading-time": "0.0.1",
 		"html-minifier": "^4.0.0",
-		"hyperterm-synthwave84": "^1.0.0",
 		"luxon": "^1.21.2",
 		"markdown-it": "^10.0.0",
 		"markdown-it-anchor": "^5.2.5",
