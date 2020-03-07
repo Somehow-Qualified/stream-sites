@@ -38,7 +38,7 @@ section: blog
     {# Hero Media #}
     {% if video_type %}
     <div class="resp-container twitch-embed mt-10 md:mt-8" data-id="{{ video_id }}"></div>
-    {% else %}
+    {% elif featured_image %}
     <figure class="mt-10 md:mt-8">
       <img src="{{ featured_image }}" alt="{{ image_caption }}">
       {% if image_caption %}
