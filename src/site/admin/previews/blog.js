@@ -12,9 +12,14 @@ const Blog = createClass({
     const meta_desc = this.props.widgetsFor('seo').getIn(['data', 'excerpt']) || '';
     const link_preview = '/blog/' + entry.getIn(['data', 'slug'], '');
 
-    const md = markdownIt();
+    const md = markdownIt({
+      html: true,
+      breaks: true,
+      linkify: true
+    });
     md.use(markdownItAttrs);
-    const body = {__html: md.render(this.props.widgetFor('body').props.value)};
+    const body = {__html: String(md.render(this.props.widgetFor('body').props.value))};
+    console.log(body);
 
     return html`
       <article>

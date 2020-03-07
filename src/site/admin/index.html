@@ -175,11 +175,20 @@
     const { CMS, initCMS: init } = window;
     import config from '/admin/config.js';
     init({config});
-  </script>
-  <!-- Include preview templates -->
-  <script type="module" src="/admin/preview-templates/index.js"></script>
-  <!-- Enable Netlify Identity Login -->
-  <script>
+
+    import Blog from './previews/blog.js';
+    import Page from './previews/page.js';
+
+    CMS.registerPreviewTemplate('blog', Blog);
+    CMS.registerPreviewTemplate('page', Page);
+
+    // Update this to a custom template
+    CMS.registerPreviewTemplate('about', Page);
+
+    CMS.registerPreviewStyle('./css/main.min.css');
+    CMS.registerPreviewStyle('./previews/inline.css');
+
+    // Enable Netlify Identity Login
     if (window.netlifyIdentity) {
       window.netlifyIdentity.on("init", user => {
         if (!user) {
