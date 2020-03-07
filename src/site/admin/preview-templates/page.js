@@ -4,18 +4,22 @@ const html = htm.bind(h);
 
 // Preview component for a Page
 const Page = createClass({
-  render() {
+  render: function () {
     const entry = this.props.entry;
-    var seo = entry.getIn(['data', 'seo']);
-    var meta_title = this.props.widgetsFor('seo').getIn(['data', 'meta_title']) || "";
-    var meta_desc = this.props.widgetsFor('seo').getIn(['data', 'excerpt']) || "";
-    var link_preview = entry.getIn(["data", "slug"], "");
+    // const seo = entry.getIn(['data', 'seo']);
+    const meta_title = this.props.widgetsFor('seo').getIn(['data', 'meta_title']) || '';
+    const meta_desc = this.props.widgetsFor('seo').getIn(['data', 'excerpt']) || '';
+    const link_preview = entry.getIn(['data', 'slug'], '');
+
+    const md = markdownIt();
+    md.use(markdownItAttrs);
+    const body = {__html: md.render(this.props.widgetFor('body').props.value)};
 
     return html`
       <article>
         <h1>${entry.getIn(["data", "title"], null)}</h1>
         <div class="featured-image"><img src="${entry.getIn(["data", "featured_image"], "")}" alt="${entry.getIn(["data", "image_caption"], "")}" /></div>
-        ${this.props.widgetFor("body")}
+        <div dangerouslySetInnerHTML=${body}></div>
       </article>
       <section class="seo">
         <h2>SEO Preview</h2>
