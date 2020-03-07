@@ -11,7 +11,11 @@ const Page = createClass({
     const meta_desc = this.props.widgetsFor('seo').getIn(['data', 'excerpt']) || '';
     const link_preview = entry.getIn(['data', 'slug'], '');
 
-    const md = markdownIt();
+    const md = markdownIt({
+      html: true,
+      breaks: true,
+      linkify: true
+    });
     md.use(markdownItAttrs);
     const body = {__html: md.render(this.props.widgetFor('body').props.value)};
 
