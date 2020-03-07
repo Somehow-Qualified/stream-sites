@@ -1,4 +1,7 @@
-const { DateTime } = require('luxon')
+// Notes:
+// Timezones - https://www.npmjs.com/package/countries-and-timezones
+
+const { DateTime } = require('luxon');
 
 module.exports = {
   format: function(date, format) {
@@ -14,11 +17,11 @@ module.exports = {
 
   readableDate: function(date, format) {
     // default to America/Chicago Timezone
-    return DateTime.fromJSDate(dateObj, {zone: 'UTC-6'}).toFormat('yyyy-LL-dd');
+    return DateTime.fromJSDate(dateObj, { zone: 'America/Chicago' }).toFormat('yyyy-LL-dd');
   },
 
   fromIso: function(timestamp) {
-    return DateTime.fromISO(timestamp, { zone: 'UTC-6' }).toJSDate();
+    return DateTime.fromISO(timestamp, { zone: 'America/Chicago' }).toJSDate();
   },
 
   dateToIso: function(dateObj) {

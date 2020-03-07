@@ -882,19 +882,28 @@ module.exports = {
 
   /*
   |-----------------------------------------------------------------------------
-  | Variants                         https://tailwindcss.com/docs/state-variants
+  | Variants                Default: https://tailwindcss.com/docs/state-variants
+  |             Dark mode: https://github.com/ChanceArthur/tailwindcss-dark-mode
   |-----------------------------------------------------------------------------
   |
   | Here is where you control which modules are generated and what variants are
   | generated for each of those modules.
   |
-  | Currently supported variants:
+  | Default variants supported:
   |   - responsive
   |   - hover
   |   - focus
   |   - focus-within
   |   - active
   |   - group-hover
+  |
+  | Dark Mode variants supported:
+  |   - dark (e.g. dark:bg-black)
+  |   - dark-hover
+  |   - dark-focus
+  |   - dark-focus-within
+  |   - dark-active
+  |   - dark-group-hover
   |
   | To disable a module completely, use `false` instead of an array.
   |
@@ -965,6 +974,25 @@ module.exports = {
     wordBreak: ['responsive'],
     width: ['responsive'],
     zIndex: ['responsive'],
+    gap: ['responsive'],
+    gridAutoFlow: ['responsive'],
+    gridTemplateColumns: ['responsive'],
+    gridColumn: ['responsive'],
+    gridColumnStart: ['responsive'],
+    gridColumnEnd: ['responsive'],
+    gridTemplateRows: ['responsive'],
+    gridRow: ['responsive'],
+    gridRowStart: ['responsive'],
+    gridRowEnd: ['responsive'],
+    transform: ['responsive'],
+    transformOrigin: ['responsive'],
+    scale: ['responsive', 'hover', 'focus'],
+    rotate: ['responsive', 'hover', 'focus'],
+    translate: ['responsive', 'hover', 'focus'],
+    skew: ['responsive', 'hover', 'focus'],
+    transitionProperty: ['responsive'],
+    transitionTimingFunction: ['responsive'],
+    transitionDuration: ['responsive'],
   },
 
   /*
@@ -979,10 +1007,36 @@ module.exports = {
   | Be sure to view the complete plugin documentation to learn more about how
   | the plugin system works.
   |
+  |-----------------------------------------------------------------------------
+  | Installed Plugins
+  |-----------------------------------------------------------------------------
+  | Custom Forms             Docs: https://tailwindcss-custom-forms.netlify.com/
+  |                         Source: https://github.com/tailwindcss/custom-forms/
+  |
+  | Simply add those classes to the corresponding HTML elements to apply some
+  | sensible default form styles that look the same in all browsers, and are
+  | easy to tweak with utilities.
+  |
+  | Text Input: apply `form-input` to <input>
+  | Textarea: apply `form-textarea` to <textarea>
+  | Select: apply `form-select` to <select>
+  | Multiselect: apply `form-multiselect` to <select multiple>
+  | Checkbox: apply `form-checkbox` to <input type="checkbox">
+  | Radio: apply `form-radio` to <input type="radio">
+  |
+  | For Checkbox and Radio:
+  | - use .text-{color} to apply color to checked state
+  | - use .h-{size} and .w-{size} for sizing
+  |
+  |-----------------------------------------------------------------------------
+  | Dark Mode Variants     https://github.com/ChanceArthur/tailwindcss-dark-mode
+  |-----------------------------------------------------------------------------
+  |
   */
 
   corePlugins: {},
   plugins: [
      require('tailwindcss-dark-mode')(),
+     require('@tailwindcss/custom-forms'),
   ],
 }
