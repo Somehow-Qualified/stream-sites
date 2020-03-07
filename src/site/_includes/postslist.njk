@@ -10,7 +10,7 @@
         <figure class="relative">
           <div class="absolute bottom-0 left-0 flex mx-3">
             {% for item in post.data.tags %}
-              {% set tagUrl %}/tags/{{ item }}/{% endset %}
+              {% set tagUrl %}/tags/{{ item | slug }}/{% endset %}
               <a href="{{ tagUrl | url }}" rel="tag"><p class="bg-{{ site.colors.accent }}-600 px-4 py-2 text-white text-xs font-bold rounded my-6 ml-3">{{ item }}</p></a>
             {% endfor %}
           </div>
@@ -29,7 +29,7 @@
           {% else %}
           {{ site.author_name }},
           {% endif %}
-          <time datetime="{{ post.date }}" class="mb-0">{{ post.date | dateDisplay }}</time></p>
+          <time datetime="{{ post.date }}" class="mb-0">{{ post.date | readableDate }}</time></p>
       </a>
 
     </article>

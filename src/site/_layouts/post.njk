@@ -17,7 +17,7 @@ section: blog
           <span class="author">By {{ site.author_name }}</span>
           <span class="px-2">—</span>
         {% endif %}
-        <time datetime="{{ date }}">{{ date | dateDisplay }}</time>
+        <time datetime="{{ date }}">{{ date | readableDate }}</time>
         <span class="px-2">—</span>
         <span class="author">Reading Time: {{ content | readingTime }}</span>
         <span class="px-2">—</span>
@@ -26,7 +26,7 @@ section: blog
             {% set separator = joiner(' +') %}
             {% for tag in tags %}
               {%- if tag != "blog" -%}
-                {% set tagUrl %}/tags/{{ tag }}/{% endset %}
+                {% set tagUrl %}/tags/{{ tag | slug }}/{% endset %}
                 {{ separator() }} <a href="{{ tagUrl | url }}" rel="tag" class="underline">{{ tag }}</a>
               {%- endif -%}
             {% endfor %}

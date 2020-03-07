@@ -1,32 +1,13 @@
 ---
-pagination:
-  data: collections
-  size: 1
-  alias: tag
-  filter:
-  - all
-  - blog
-  - feed
-  - highlights
-  - nav
-  - page
-  - postsLatest
-renderData:
-  title: Tagged “{{ tag }}”
-permalink: /tags/{{ tag }}/
-body_class: blog
+permalink: /tags/
 layout: default
 ---
-
 <section class="flex-1 container ml-auto mr-auto">
-
-  <h1 class="page-title text-3xl md:text-center md:text-5xl mb-16 lg:mb-24 lg:text-5xl">Tagged “{{ tag }}”</h1>
-
-  <div class="posts md:flex flex-1">
-
-    {% set postslist = collections[ tag ] %}
-    {% include 'postslist.njk' %}
-
-  </div>
-
+    <h1 class="page-title text-3xl md:text-center md:text-5xl mb-16 lg:mb-24 lg:text-5xl">Tags</h1>
+    <div class="posts md:flex flex-1">
+        {% for tag in collections.tagList %}
+            {% set tagUrl %}/tags/{{ tag | slug }}/{% endset %}
+            <a href="{{ tagUrl }}" class="tag">{{ tag }}</a>
+        {% endfor %}
+    </div>
 </section>
