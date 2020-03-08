@@ -1,14 +1,27 @@
 {
 	"name": "streamsites",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"description": "Stream Sites - a static site boilerplate for streamers.",
 	"url": "https://demo-streamsites.netlify.com",
-	"author": "Melanie E Magdalena",
+	"author": {
+    "name": "Melanie E Magdalena",
+    "email": "hello@melaniemagdalena.com",
+    "url": "https://melaniemagdalena.com/"
+  },
+	"contributors": [
+    {
+      "name": "Ethan Kellogg",
+      "url": "https://fatsackgaming.com"
+    },
+		{
+      "name": "Leo Lutz",
+      "url": "https://gitlab.com/skeemer"
+    }
+  ],
 	"license": "MIT",
-	"repository": {
-		"type": "git",
-		"url": "https://gitlab.com/stream-sites/ss-core.git"
-	},
+	"repository": "gitlab:stream-sites/ss-core",
+	"bugs": "https://gitlab.com/stream-sites/ss-core/-/issues",
+	"homepage": "https://streamsites.xyz",
 	"scripts": {
 		"build": "NODE_ENV=production npm-run-all build:html build:css build:css:admin",
 		"build:css": "postcss src/site/_includes/css/main.css -o dist/css/main.css",
