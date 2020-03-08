@@ -129,6 +129,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy('src/site/fonts');
   eleventyConfig.addPassthroughCopy('images');
   eleventyConfig.addPassthroughCopy('src/site/admin');
+  eleventyConfig.addPassthroughCopy('src/site/_redirects');
 
   // Browsersync Overrides
   eleventyConfig.setBrowserSyncConfig({

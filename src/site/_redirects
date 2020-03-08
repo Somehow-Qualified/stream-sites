@@ -1,0 +1,3 @@
+# Redirects from what the browser requests to what Netlify serves
+/home              /
+/linkinbio         /link-in-bio

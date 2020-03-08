@@ -26,6 +26,7 @@ ss-core
     ├── functions
     │   └── Add Netlify functions here
     ├── site
+    │   ├── _redirects
     │   ├── feed.njk
     │   ├── robots.txt
     │   ├── sitemap.xml.njk
@@ -57,7 +58,7 @@ ss-core
     │   │   ├── 404.njk
     │   │   ├── about.njk
     │   │   ├── archive.njk
-    │   │   ├── blank.njk 
+    │   │   ├── blank.njk
     │   │   ├── contact.njk
     │   │   ├── default.njk
     │   │   ├── home.njk    
