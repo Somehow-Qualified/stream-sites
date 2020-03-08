@@ -4,7 +4,6 @@ import highlights from './collections/highlights.js';
 import linkInBio from './collections/linkinbio.js';
 import modules from './collections/modules.js';
 import page from './collections/page.js';
-import powerups from './collections/powerups.js';
 import settings from './collections/settings.js';
 
 export default {

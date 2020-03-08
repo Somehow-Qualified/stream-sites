@@ -48,6 +48,13 @@ export default {
           hint: 'Example: @m2creates. Include the @! Give yourself credit for your work.'
         },
         {
+          label: 'Twitch Handle',
+          name: 'twitch_handle',
+          widget: 'string',
+          required: false,
+          hint: 'Enter your Twitch handle.'
+        },
+        {
           label: 'Theme',
           name: 'colors',
           widget: 'object',
