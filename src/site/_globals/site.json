@@ -14,5 +14,6 @@
   "logo": "/images/logo-ss-square.png",
   "card_image": "/images/ss-card.jpg",
   "favicon": "/images/logo-ss-square.png",
-  "card_image_alt": "Stream Sites logo"
+  "card_image_alt": "Stream Sites logo",
+  "twitch_handle": "m2creates"
 }

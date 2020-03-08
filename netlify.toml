@@ -3,6 +3,9 @@
   publish = "dist"
   # functions = "./src/functions"
 
+[template.environment]
+  TWITCH_CLIENT_ID = "Paste your Twitch App Client ID"
+
 [context.production]
   environment = { NODE_VERSION = "12", NODE_ENV = "production" }
 
