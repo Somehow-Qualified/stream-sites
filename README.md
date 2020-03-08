@@ -1,6 +1,5 @@
 # Stream Sites
 
-[![GitHub version](https://badge.fury.io/gh/boennemann%2Fbadges.svg)](http://badge.fury.io/gh/boennemann%2Fbadges)
 [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=102)](https://github.com/ellerbrock/open-source-badge/) [![Open Source Love](https://badges.frapsoft.com/os/mit/mit.svg?v=102)](https://github.com/ellerbrock/open-source-badge/) [![Netlify Status](https://api.netlify.com/api/v1/badges/f4455669-0ce8-40ea-8ff5-5c31f0aadfa5/deploy-status)](https://app.netlify.com/sites/demo-streamsites/deploys)
 
 A static site boilerplate built for streamers by streamers. Proudly #BuiltWith11ty!
@@ -17,15 +16,19 @@ You can deploy Stream Sites to Netlify with one click to be up and running in mi
 
 ### Method 2: Clone or Fork this Repo
 
-1. Clone or fork this repo: `git clone https://gitlab.com/stream-sites/ss-core.git your-site-name`
+1. Clone (or fork) this repo: `git clone https://gitlab.com/stream-sites/ss-core.git your-site-name`
 
-2. `cd` into the project directory (`your-site-name`) and run `npm install`
+2. Go into the project directory `cd your-site-name` and run `npm install`.
 
-3. Once all the dependencies are installed run `npm start`
+3. Optional: Edit `.env.sample` to connect with Twitch. Be sure to save this in Netlify too.
 
-4. Open your browser at http://localhost:8080 to see a live-reloading copy of your site while you make changes.
+4. Once all the dependencies are installed run `npm start`.
 
-5. Log into the CMS at http://localhost:8080/admin by following the prompts.
+5. Open your browser at http://localhost:8080 to see a live-reloading copy of your site while you make changes.
+
+6. Log into the CMS at http://localhost:8080/admin by following the prompts.
+
+> **Note:** The port may vary depending on your local setup. Your terminal should provide a link for easy access.
 
 > **For advanced users:** You can extend [Browsersync](https://www.browsersync.io/) settings in `eleventy.config.js` for your needs.
 
@@ -33,7 +36,7 @@ You can deploy Stream Sites to Netlify with one click to be up and running in mi
 
 ### Via Netlify Continuous Deployment
 
-Commit and push your changes to a branch connected to Netlify. Netlify will take care of the rest!
+Commit and push your changes to a branch connected to Netlify. Netlify will take care of the rest with `npm run netlify`.
 
 > With continuous deployment, Netlify will automatically deploy new versions of your site when you push commits to your connected Git repository. This also facilitates features like Deploy Previews. (Some features must be enabled in the Netlify UI.) - [Netlify Docs](https://docs.netlify.com/cli/get-started/#continuous-deployment)
 

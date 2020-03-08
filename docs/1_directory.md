@@ -7,6 +7,7 @@ ss-core
 ├── README.md
 ├── LICENSE
 ├── .gitignore
+├── .env.sample
 ├── eleventy.config.js
 ├── tailwind.config.js
 ├── postcss.config.js
