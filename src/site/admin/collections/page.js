@@ -24,7 +24,7 @@ export default {
     },
     {
       label: 'Featured Image',
-      name: 'featured_image',
+      name: 'image',
       widget: 'image',
       required: false,
       media_library: {

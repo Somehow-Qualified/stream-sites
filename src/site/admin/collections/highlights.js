@@ -23,7 +23,7 @@ export default {
     },
     {
       label: 'Video Thumbnail',
-      name: 'featured_image',
+      name: 'image',
       widget: 'image',
       required: false,
       media_library: {
@@ -72,6 +72,12 @@ export default {
       widget: 'datetime'
     },
     {
+      label: 'Last Modified',
+      name: 'dateMod',
+      widget: 'hidden',
+      'default': 'Last Modified'
+    },
+    {
       label: 'Game',
       name: 'tags',
       widget: 'list',
@@ -107,7 +113,7 @@ export default {
       label: 'Template',
       name: 'layout',
       widget: 'hidden',
-      'default': 'highlight'
+      'default': 'post'
     }
   ]
 }

@@ -1,6 +1,15 @@
----
-section: linkinbio
----
+{#
+You Are Here:
+- Link In Bio
+- src/site/_layouts/linkinbio.njk
+
+How It Works:
+- On build, this page lists all the Links for your Bio from
+  src/site/_globals/linkinbio.json
+
+Dynamic Data:
+- anything in {{ curly braces }} is a variable from src/site/_globals
+#}
 <!doctype html>
 <html lang="en" class="min-h-full antialiased">
   <head>
@@ -8,26 +17,24 @@ section: linkinbio
     {% include "meta.njk" %}
 
     {# include styles #}
-    <link rel="stylesheet" href="/css/main.min.css">
+    <link rel="stylesheet" href="/css/main.css">
 
     {# Favicon #}
     <link rel="icon" type="image/ico" href="{{ site.favicon }}">
 
-    {# Netlify Identity #}
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js" defer></script>
   </head>
 
-  <body {% if body_class %} id="{{ body_class }}" {% endif %} class="min-h-full font-sans text-lg text-{{ site.colors.main }}-900 leading-normal">
+  <body class="h-full w-full font-sans text-lg leading-normal bg-{{ site.colors.main }}-900 text-white px-6">
 
     <a href="#main" class="sr-skip-link">skip to main content</a>
 
-    <div id="wrapper" class="wrapper flex flex-col relative min-h-screen">
+    <div class="wrapper flex flex-col items-stretch min-h-full">
 
-      <header id="header" class="header bg-{{ site.colors.main }}-900 p-8 border-b border-{{ site.colors.main }}-900">
+      <header id="header" class="header bg-{{ site.colors.main }}-900 p-6 border-b border-{{ site.colors.main }}-900 flex-shrink-0">
       	<div class="container flex flex-wrap justify-center items-center m-auto">
       		<a class="company-logo-link block text-white font-bold text-3xl md:mb-0 no-underline" href="/" aria-label="Back to home">
       		  {% if navigation.nav_logo %}
-      		    <img src="{{ site.logo }}" alt="{{ site.name }}" class="h-16 w-auto">
+      		    <img src="{{ site.logo }}" alt="{{ site.name }}" class="h-12 w-auto">
       		  {% else %}
       		    {{ site.name }}
       		  {% endif %}
@@ -35,49 +42,31 @@ section: linkinbio
         </div>
       </header>
 
-      <main id="main" class="main container content m-auto py-10 px-6 lg:px-0 lg:py-20 text-center" role="main" tabindex="-1">
-        <section class="flex-1">
+      <main id="main" class="main flex flex-col m-auto lg:py-20 text-center md:w-4/5 flex-grow flex-shrink-0" role="main" tabindex="-1">
 
-          <h1 class="page-title text-5xl">{{ title }}</h1>
+        <h1 class="page-title text-2xl md:text-3xl mt-0">{{ title }}</h1>
 
-          {{ content | safe }}
+        <div class="text-sm md:text-base">{{ content | safe }}</div>
 
-          <ul class="content text-center text-white">
-            {% for item in linkinbio.linkinbio %}
-            <a href="{{ item.link | safe }}" target="_blank" class="lg:p-4 py-3 px-0 block font-bold hover:text-{{ site.colors.main }}-900 bg-{{ site.colors.accent }}-600 hover:bg-{{ site.colors.accent }}-400 mb-4"><li>{{ item.text }}</li></a>
-            {% endfor %}
-          </ul>
+        <ul class="content text-center text-white py-8 w-full">
+          {% for item in linkinbio.linkinbio %}
+          <a href="{{ item.link | safe }}" target="_blank" class="lg:p-4 py-3 px-0 block font-bold hover:text-{{ site.colors.main }}-900 bg-{{ site.colors.accent }}-600 hover:bg-{{ site.colors.accent }}-400 mb-4"><li>{{ item.text }}</li></a>
+          {% endfor %}
+        </ul>
 
-        </section>
       </main>
 
-      <div class="footer-wrapper">
-        <footer id="footer" class="footer bg-{{ site.colors.main }}-900">
-          <div class="footer-inner container m-auto md:flex justify-center items-center px-6 py-6">
-            <p class="text-white pb-0 text-center">
-              © 2019 {{ site.name }}. Built with <a class="no-underline hover:text-{{ site.colors.accent }}-500" href="https://streamsites.xyz/">Stream Sites.</a>
-            </p>
-          </div>
-        </footer>
-      </div>
+      <footer id="footer" class="footer h-card bg-{{ site.colors.main }}-900 flex-shrink-0" role="contentinfo">
+        <div hidden>
+          <img class="u-photo" src="{{ site.author_avatar }}">
+          <p class="p-note">{{ site.author_bio }}</p>
+        </div>
+        <div class="footer-inner container m-auto text-{{ site.colors.main }}-100 pb-8 md:pb-0 text-center text-xs md:text-sm">
+          <p>© 2020 <a class="p-name u-url" rel="me" href="{{ site.url }}">{{ site.author_name }}</a>. Built with <a class="hover:text-{{ site.colors.accent }}-500" href="https://streamsites.xyz/">Stream Sites</a>.</p>
+        </div>
+      </footer>
 
     </div>
-
-    {# include scripts #}
-    <script src="/javascript/main.min.js" defer></script>
-
-    <!-- Enable Netlify Identity Login -->
-    <script>
-      if (window.netlifyIdentity) {
-        window.netlifyIdentity.on("init", user => {
-          if (!user) {
-            window.netlifyIdentity.on("login", () => {
-              document.location.href = "/admin/";
-            });
-          }
-        });
-      }
-    </script>
 
   </body>
 </html>

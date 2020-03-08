@@ -5,5 +5,6 @@ seo:
   excerpt: A description about my video content.
   meta_title: Video Highlights
 page_type: core
-layout: highlights.njk
+layout: archive.njk
+collection: highlights
 ---

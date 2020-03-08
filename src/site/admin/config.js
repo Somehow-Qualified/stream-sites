@@ -23,7 +23,6 @@ export default {
     page,
     modules,
     linkInBio,
-    powerups,
     settings,
     custom
   ]

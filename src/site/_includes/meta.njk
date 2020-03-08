@@ -1,14 +1,42 @@
+{#
+You Are Here:
+- Site Meta
+- src/site/_includes/meta.njk
+
+How It Works:
+- On build, this is placed on every page with `{% include "meta.njk" %}`
+
+Dynamic Data:
+- anything in {{ curly braces }} is a variable from src/site/_globals
+- aliases are defined in `{% set %}`
+
+Gotchas:
+- You can't put Nunjucks code inside a <script>
+
+TODO:
+nunjucks does not work in ld+json section
+```json
+"sameAs":[
+  {% for link in social %}
+    "{{ link | safe }}",
+  {% endfor %}
+],
+```
+#}
+
 {% set metaTitle =  seo.meta_title or renderData.title or title or site.name %}
 {% set metaDescription = seo.meta_description or seo.excerpt or site.description %}
-{% set metaImage = featured_image or site.card_image %}
+{% set metaImage = image_card or site.card_image %}
 {% set metaImageAlt = image_caption or site.card_image_alt %}
+{% set authorName = site.author_name %}
+{% set authorTwitter = site.author_twitter %}
 
 {# Site #}
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{{ title }} | {{ site.name }}</title>
 <meta name="description" content="{{ metaDescription }}">
-<meta name="author" content="{{ site.author_name }}">
+<meta name="author" content="{{ authorName }}">
 <link rel="canonical" href="{{site.url}}{{ page.url }}">
 
 {% if layout == 'post' %}
@@ -32,8 +60,13 @@
 <meta name="og:site_name" content="{{ site.name }}">
 <meta name="og:url" content="{{ site.url }}{{ page.url }}">
 <meta name="og:locale" content="en_US">
-<meta name="twitter:site" content="{{ site.author_twitter }}">
-<meta name="twitter:creator" content="{{ site.author_twitter }}">
+<meta name="twitter:site" content="{{ authorTwitter }}">
+<meta name="twitter:creator" content="{{ authorTwitter }}">
+
+{# sameAs links #}
+{% for service, link in social %}
+<link href="{{ link }}" rel="me">
+{% endfor %}
 
 <script type="application/ld+json">
   {
@@ -41,17 +74,12 @@
     "description":"{{ metaDescription }}",
     "author": {
         "@type":"Person",
-        "name":"{{ site.author_name }}"
+        "name":"{{ authorName }}"
     },
     "@type":"WebSite",
-    "url":"{{ absolutePageUrl }}",
+    "url":"{{site.url}}{{ page.url }}",
     "image":"{{ site.url }}{{ metaImage }}",
     "headline":"{{ title }} | {{ site.name }}",
-    "sameAs":[
-      {% for link in social %}
-        "{{ link | safe }}",
-      {% endfor %}
-    ],
     "@context":"http://schema.org"
   }
 </script>

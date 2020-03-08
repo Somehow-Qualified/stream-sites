@@ -5,5 +5,6 @@ seo:
   excerpt: A description about my amazing blog content.
   meta_title: Blog
 page_type: core
-layout: blog.njk
+layout: archive.njk
+collection: blog
 ---

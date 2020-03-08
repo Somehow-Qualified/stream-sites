@@ -1,0 +1,43 @@
+---
+layout: default
+---
+{#
+You Are Here:
+- Archive
+- src/site/_layouts/archive.njk
+
+How It Works:
+- On build, this page adds a postslist of
+  1. src/site/blog
+  2. src/site/highlights
+  3. src/site/blog AND src/site/highlights
+
+Dynamic Data:
+- anything in {{ curly braces }} is a variable from:
+  (a) frontmatter in the associated markdown file (src/site/page/blog.md,
+      src/site/page/highlights.md, src/site/page/feed.md)
+  (b) src/site/_globals
+- aliases are defined in `{% set %}`
+#}
+<section class="mx-auto">
+
+  <h1 class="page-title text-5xl md:text-center">{{ title }}</h1>
+
+  <div class="content md:w-1/2 mx-auto">
+    {{ content | safe }}
+  </div>
+
+  <div class="posts md:flex py-8">
+    {% if collection === "blog" %}
+      {% set postslist = collections.blog %}
+      {% include 'postslist.njk' %}
+    {% elif collection === "highlights" %}
+      {% set postslist = collections.highlights %}
+      {% include 'postslist.njk' %}
+    {% else %}
+      {% set postslist = collections.feed %}
+      {% include 'postslist.njk' %}
+    {% endif %}
+  </div>
+
+</section>

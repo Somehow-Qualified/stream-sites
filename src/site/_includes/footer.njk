@@ -1,9 +1,24 @@
-<footer id="footer" class="footer bg-{{ site.colors.main }}-900 h-card" role="contentinfo">
+{#
+You Are Here:
+- Site Footer
+- src/site/_includes/footer.njk
+
+How It Works:
+- On build, this is placed on every page with `{% include "footer.njk" %}`
+
+Things to not touch:
+- `flex-shrink-0` keeps it happily in position on the page
+
+Dynamic Data:
+- anything in {{ curly braces }} is a variable from src/site/_globals
+#}
+
+<footer id="footer" class="h-card flex-shrink-0 bg-{{ site.colors.main }}-900 p-6" role="contentinfo">
   <div hidden>
     <img class="u-photo" src="{{ site.author_avatar }}">
     <p class="p-note">{{ site.author_bio }}</p>
   </div>
-  <div class="footer-inner container m-auto md:flex md:justify-between items-center py-8">
+  <div class="footer-inner m-auto md:flex md:justify-between items-center">
     <p class="text-{{ site.colors.main }}-100 pb-8 md:pb-0 text-center md:text-left text-sm">
     © 2020 <a class="p-name u-url" rel="me" href="{{ site.url }}">{{ site.author_name }}</a>. Built with <a class="hover:text-{{ site.colors.accent }}-500" href="https://streamsites.xyz/">Stream Sites</a>.
     </p>

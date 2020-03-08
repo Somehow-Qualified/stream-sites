@@ -1,3 +1,19 @@
+{#
+You Are Here:
+- Social Icons
+- src/site/_includes/social-icons.njk
+
+How It Works:
+- On build, this is placed on every page with `{% include "social-icons.njk" %}`
+- It is included in the footer by default
+- SVGs come from the sprite sheet: images/icons/icon-library.svg
+
+Dynamic Data:
+- anything in {{ curly braces }} is a variable from
+  (a) src/site/_globals/social.json (for icons, links)
+  (b) src/site/_globals (for anything else, like theme color)
+#}
+
 <ul class="flex list-reset justify-center list-none">
 
   <li class="mr-4 text-{{ site.colors.main }}-100">
@@ -9,7 +25,6 @@
   </li>
 
   {% for icon, link in social %}
-
   {% if link %}
   <li class="mr-4 text-{{ site.colors.main }}-100">
     <a href="{{ link | safe }}" class="block text-{{ site.colors.main }}-100" aria-label="{{ icon | capitalize }}" rel="me" title="{{ icon }}">
@@ -19,7 +34,6 @@
     </a>
   </li>
   {% endif %}
-
   {% endfor %}
 
 </ul>

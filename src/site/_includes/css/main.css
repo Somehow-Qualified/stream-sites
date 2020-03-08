@@ -1,5 +1,10 @@
 @tailwind base;
 
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
 /**
  * Links
  */
@@ -14,6 +19,7 @@ main a,
 main:focus {
   outline: none;
 }
+
 .sr-only {
   position: absolute;
   width: 1px;
@@ -24,6 +30,7 @@ main:focus {
   white-space: nowrap;
   border: 0;
 }
+
 .sr-only-focusable:active, .sr-only-focusable:focus {
   position: static;
   width: auto;
@@ -32,6 +39,7 @@ main:focus {
   clip: auto;
   white-space: normal;
 }
+
 .sr-skip-link {
   position: absolute;
   width: 1px;
@@ -42,6 +50,7 @@ main:focus {
   white-space: nowrap;
   border: 0;
 }
+
 .sr-skip-link:active, .sr-skip-link:focus {
   position: static;
   width: auto;
@@ -50,6 +59,7 @@ main:focus {
   clip: auto;
   white-space: normal;
 }
+
 .sr-skip-link:focus {
   position: absolute;
   left: 50%;
@@ -67,49 +77,57 @@ main:focus {
 .icon-light {
   display: none;
 }
+
 .mode-dark .icon-light,
 .icon-dark {
   display: block;
 }
 
-
 /**
  * Typography
  * These sizes apply to all NJK and MD files
  */
- h1,
- h2,
- h3,
- h4,
- h5,
- h6 {
- 	@apply font-bold leading-tight mt-6 mb-6;
- }
- h1 {
- 	@apply text-5xl;
- }
- h2 {
- 	@apply text-4xl;
- }
- h3 {
- 	@apply text-3xl;
- }
- h4 {
- 	@apply text-2xl;
- }
- h5 {
- 	@apply text-xl;
- }
- h6 {
- 	@apply text-lg;
- }
- code {
- 	@apply bg-black text-white px-2 py-1 text-sm;
- }
- code[class*="language-"],
- pre[class*="language-"] {
- 	font-size: 1rem;
- }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply font-bold leading-tight mt-6 mb-6;
+}
+
+h1 {
+  @apply text-5xl;
+}
+
+h2 {
+  @apply text-4xl;
+}
+
+h3 {
+  @apply text-3xl;
+}
+
+h4 {
+  @apply text-2xl;
+}
+
+h5 {
+  @apply text-xl;
+}
+
+h6 {
+  @apply text-lg;
+}
+
+code {
+  @apply bg-black text-white px-2 py-1 text-sm;
+}
+
+code[class*="language-"],
+pre[class*="language-"] {
+  font-size: 1rem;
+}
 
 /**
  * Syntax Highlight
@@ -121,45 +139,44 @@ main:focus {
  * Pick one from https://github.com/PrismJS/prism-themes
  * and replace the contents of this section
  */
-
 code[class*="language-"],
 pre[class*="language-"] {
-	background: transparent;
-	color: #c5c8c6;
-	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
-	font-family: Inconsolata, Monaco, Consolas, 'Courier New', Courier, monospace;
-	direction: ltr;
-	text-align: left;
-	white-space: pre;
-	word-spacing: normal;
-	word-break: normal;
-	line-height: 1.5;
-	-moz-tab-size: 4;
-	-o-tab-size: 4;
-	tab-size: 4;
-	-webkit-hyphens: none;
-	-moz-hyphens: none;
-	-ms-hyphens: none;
-	hyphens: none;
+  background: transparent;
+  color: #c5c8c6;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+  font-family: Inconsolata, Monaco, Consolas, 'Courier New', Courier, monospace;
+  direction: ltr;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  line-height: 1.5;
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
 }
 
 /* Code blocks */
 pre[class*="language-"] {
-	padding: 1em;
-	margin: .5em 0;
-	overflow: auto;
-	border-radius: 0.3em;
+  padding: 1em;
+  margin: .5em 0;
+  overflow: auto;
+  border-radius: 0.3em;
 }
 
-:not(pre) > code[class*="language-"],
+:not(pre)>code[class*="language-"],
 pre[class*="language-"] {
-	background: #1d1f21;
+  background: #1d1f21;
 }
 
 /* Inline code */
-:not(pre) > code[class*="language-"] {
-	padding: .1em;
-	border-radius: .3em;
+:not(pre)>code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
 }
 
 /* Tokens */
@@ -167,81 +184,101 @@ pre[class*="language-"] {
 .token.prolog,
 .token.doctype,
 .token.cdata {
-	color: #7C7C7C;
+  color: #7C7C7C;
 }
+
 .token.punctuation {
-	color: #c5c8c6;
+  color: #c5c8c6;
 }
+
 .namespace {
-	opacity: .7;
+  opacity: .7;
 }
+
 .token.property,
 .token.keyword,
 .token.tag {
-	color: #96CBFE;
+  color: #96CBFE;
 }
+
 .token.class-name {
-	color: #FFFFB6;
-	text-decoration: underline;
+  color: #FFFFB6;
+  text-decoration: underline;
 }
+
 .token.boolean,
 .token.constant {
-	color: #99CC99;
+  color: #99CC99;
 }
+
 .token.symbol,
 .token.deleted {
-	color: #f92672;
+  color: #f92672;
 }
+
 .token.number {
-	color: #FF73FD;
+  color: #FF73FD;
 }
+
 .token.selector,
 .token.attr-name,
 .token.string,
 .token.char,
 .token.builtin,
 .token.inserted {
-	color: #A8FF60;
+  color: #A8FF60;
 }
+
 .token.variable {
-	color: #C6C5FE;
+  color: #C6C5FE;
 }
+
 .token.operator {
-	color: #EDEDED;
+  color: #EDEDED;
 }
+
 .token.entity {
-	color: #FFFFB6;
-	/* text-decoration: underline; */
+  color: #FFFFB6;
+  /* text-decoration: underline; */
 }
+
 .token.url {
-	color: #96CBFE;
+  color: #96CBFE;
 }
+
 .language-css .token.string,
 .style .token.string {
-	color: #87C38A;
+  color: #87C38A;
 }
+
 .token.atrule,
 .token.attr-value {
-	color: #F9EE98;
+  color: #F9EE98;
 }
+
 .token.function {
-	color: #DAD085;
+  color: #DAD085;
 }
+
 .token.regex {
-	color: #E9C062;
+  color: #E9C062;
 }
+
 .token.important {
-	color: #fd971f;
+  color: #fd971f;
 }
+
 .token.important,
 .token.bold {
-	font-weight: bold;
+  font-weight: bold;
 }
+
 .token.italic {
-	font-style: italic;
+  font-style: italic;
 }
+
 .token.entity {
-	cursor: help;
+  cursor: help;
 }
 
 @tailwind components;
@@ -249,10 +286,10 @@ pre[class*="language-"] {
 /*
  * Blog
  */
-
 .content .intro {
-	@apply border-b border-gray-300 text-2xl pb-10 mb-10 font-light;
+  @apply border-b border-gray-300 text-2xl pb-10 mb-10 font-light;
 }
+
 /* for md: breakpoint and up */
 @media screen and (min-width: 768px) {
   .content .intro {
@@ -261,58 +298,58 @@ pre[class*="language-"] {
 }
 
 .md-toc {
- @apply bg-gray-100 p-4;
+  @apply p-4;
 }
 
 .md-toc-header {
- font-weight: 700;
+  font-weight: 700;
 }
 
-.content.post > ul,
+.content.post>ul,
 .md-toc ul {
- display: block;
- list-style-type: disc;
- margin-top: 1em;
- margin-bottom: 1em;
- margin-left: 0;
- margin-right: 0;
- padding-left: 40px;
+  display: block;
+  list-style-type: disc;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 40px;
 }
 
-.md-toc ul > li > * {
- @apply my-0;
+.md-toc ul>li>* {
+  @apply my-0;
 }
 
 .content .bookmark {
-	opacity: .75;
+  opacity: .75;
 }
 
 .content p {
-	@apply mb-8;
+  @apply mb-8;
 }
 
 .content p:last-of-type {
-	@apply mb-0;
+  @apply mb-0;
 }
 
-.content.post > img {
- width: 100%;
- height: auto;
+.content.post>img {
+  width: 100%;
+  height: auto;
 }
 
 .content ol,
 .footnotes-list {
- display: block;
- list-style-type: decimal;
- margin-top: 1em;
- margin-bottom: 1em;
- margin-left: 0;
- margin-right: 0;
- padding-left: 40px;
+  display: block;
+  list-style-type: decimal;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 40px;
 }
 
 .footnotes-sep {
- @apply mt-8 border-b border-gray-300 border-t-0 border-r-0 border-l-0;
+  @apply mt-8 border-b border-gray-300 border-t-0 border-r-0 border-l-0;
 }
 
 /*
@@ -322,67 +359,75 @@ pre[class*="language-"] {
 .resp-container,
 .embed-responsive,
 .embed-responsive-16by9 {
- position: relative;
- overflow: hidden;
- padding-top: 56.25%;
+  position: relative;
+  overflow: hidden;
+  padding-top: 56.25%;
 }
 
 .resp-container iframe,
 .embed-responsive iframe,
 .resp-iframe {
- position: absolute;
- top: 0;
- left: 0;
- width: 100%;
- height: 100%;
- border: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
 }
+
 .resp-container .preview-image {
- bottom: 0;
- display: block;
- left: 0;
- margin: auto;
- max-width: 100%;
- width: 100%;
- position: absolute;
- right: 0;
- top: 0;
- height: auto;
- cursor: pointer;
+  bottom: 0;
+  display: block;
+  left: 0;
+  margin: auto;
+  max-width: 100%;
+  width: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: auto;
+  cursor: pointer;
 }
+
 .resp-container .play-icon {
- height: 72px;
- width: 72px;
- left: 50%;
- top: 50%;
- margin-left: -36px;
- margin-top: -36px;
- position: absolute;
- background: url("../images/play_thumb.png") no-repeat;
- cursor: pointer;
+  height: 72px;
+  width: 72px;
+  left: 50%;
+  top: 50%;
+  margin-left: -36px;
+  margin-top: -36px;
+  position: absolute;
+  cursor: pointer;
+  background: url("../images/icons/play-circle.svg") no-repeat center center;
+  background-size: contain;
 }
 
 @tailwind utilities;
 
-#menu-toggle:checked + #menu {
+#menu-toggle:checked+#menu {
   display: block;
 }
 
-ol.footnotes-list > li > p {
+ol.footnotes-list>li>p {
   display: contents;
 }
+
 ol.footnotes-list {
   padding-top: 1rem;
 }
+
 hr.footnotes-sep {
   margin-top: 2rem;
 }
+
 a.bookmark {
   display: none;
 }
+
 li.footnote-item {
   padding-bottom: 1rem;
 }
+
 li.footnote-item:last-of-type {
   padding-bottom: 0;
 }

@@ -25,7 +25,7 @@ const Blog = createClass({
       <article>
         <h1>${entry.getIn(["data", "title"], "")}</h1>
         <figure>
-          <div><img src="${entry.getIn(["data", "featured_image"], "")}" alt="${entry.getIn(["data", "image_caption"], "")}" /></div>
+          <div><img src="${entry.getIn(["data", "image_card"], "")}" alt="${entry.getIn(["data", "image_caption"], "")}" /></div>
           <figcaption>${entry.getIn(["data", "image_caption"], "")}</figcaption>
         </figure>
         <p class="tldr">${entry.getIn(["data", "tldr"], "")}</p>
@@ -42,7 +42,7 @@ const Blog = createClass({
         <h3 class="preview-label"><span>Twitter Card</span></h3>
         <div class="seo-card">
           <div class="image">
-            <img src="${entry.getIn(["data", "featured_image"], "")}" alt="${entry.getIn(["data", "image_caption"], "")}" />
+            <img src="${entry.getIn(["data", "image_card"], "")}" alt="${entry.getIn(["data", "image_caption"], "")}" />
           </div>
           <div class="text">
             <p class="title">${meta_title}</p>
@@ -52,7 +52,7 @@ const Blog = createClass({
         </div>
         <h3 class="preview-label"><span>Open Graph/Facebook</span></h3>
         <div class="seo-og">
-          <div class="image"><img src="${entry.getIn(["data", "featured_image"], "")}" alt="${entry.getIn(["data", "image_caption"], "")}" /></div>
+          <div class="image"><img src="${entry.getIn(["data", "image_card"], "")}" alt="${entry.getIn(["data", "image_caption"], "")}" /></div>
           <div class="text">
             <p class="link">${link_preview}</p>
             <div class="content">

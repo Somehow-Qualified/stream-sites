@@ -1,22 +1,42 @@
 ---
 layout: default
-section: blog
 ---
-<section class="h-entry flex-1 container ml-auto mr-auto lg:px-32">
+{#
+You Are Here:
+- Posts List
+- src/site/_layouts/postslist.njk
+
+How It Works:
+- On build, this is placed on every page with `{% include "postslist.njk" %}`
+- It uses conditions to show Blog data vs Video data
+
+Dynamic Data:
+- anything in {{ curly braces }} is a variable from :
+  (a) frontmatter in a markdown file from src/site/blog or src/site/highlights
+  (b) src/site/_globals
+- aliases are defined in `{% set %}`
+
+Gotchas:
+- You can't put Nunjucks code inside a <script>
+
+TODO:
+1. Improve video script and make the thumbnail load properly (versus undefined)
+  - We want to apply the script only `{% if video_type %}`
+2. Remove `{{ tldr }} ` if its a video
+#}
+
+{% set postCredit = clipper or site.author_name %}
+
+<section class="h-entry flex-1 mx-auto lg:px-32">
 
   <div class="post-header mb-12 md:mb-20">
 
     <h1 class="page-title text-3xl md:text-center md:text-5xl lg:text-5xl">{{ title }}</h1>
 
-    <div class="text-sm md:text-base text-gray-600 flex justify-center">
+    <div class="text-sm md:text-base text-gray-600 dark:text-gray-100 flex justify-center">
       <p class="md:text-center">
-        {% if video_type == "clip" %}
-          <span class="author">Clipped by {{ clipper }}</span>
-          <span class="px-2">—</span>
-        {% else %}
-          <span class="author">By {{ site.author_name }}</span>
-          <span class="px-2">—</span>
-        {% endif %}
+        <span class="author">By {{ postCredit }}</span>
+        <span class="px-2">—</span>
         <time datetime="{{ date }}">{{ date | readableDate }}</time>
         <span class="px-2">—</span>
         <span class="author">Reading Time: {{ content | readingTime }}</span>
@@ -37,12 +57,13 @@ section: blog
 
     {# Hero Media #}
     {% if video_type %}
-    <div class="resp-container twitch-embed mt-10 md:mt-8" data-id="{{ video_id }}"></div>
-    {% elif featured_image %}
+    <div class="resp-container video-embed mt-10 md:mt-8" data-id="{{ video_id }}" data-type="{{ video_type }}" data-thumbnail="{{ image_card }}">
+    </div>
+    {% elif image_card %}
     <figure class="mt-10 md:mt-8">
-      <img src="{{ featured_image }}" alt="{{ image_caption }}">
+      <img src="{{ image_card }}" alt="{{ image_caption }}">
       {% if image_caption %}
-        <figcaption class="text-center text-sm italic text-gray-600 mt-4">{{ image_caption }}</figcaption>
+        <figcaption class="text-center text-sm italic text-gray-600 dark:text-gray-100 mt-4">{{ image_caption }}</figcaption>
       {% endif %}
     </figure>
     {% endif %}
@@ -56,11 +77,10 @@ section: blog
 
 </section>
 
-
 {% if video_type == "clip" %}
   <script>
     (function () {
-      let v = document.getElementsByClassName("twitch-embed");
+      let v = document.getElementsByClassName("video-embed");
       for (let n = 0; n < v.length; n++) {
         const p = document.createElement("div");
         p.innerHTML = previewThumb(v[n].dataset.id);
@@ -92,7 +112,7 @@ section: blog
 {% if video_type == "vod" %}
   <script>
     (function () {
-      let v = document.getElementsByClassName("twitch-embed");
+      let v = document.getElementsByClassName("video-embed");
       for (let n = 0; n < v.length; n++) {
         const p = document.createElement("div");
         p.innerHTML = previewThumb(v[n].dataset.id);
@@ -123,7 +143,7 @@ section: blog
 {% if video_type == "collection" %}
   <script>
     (function () {
-      let v = document.getElementsByClassName("twitch-embed");
+      let v = document.getElementsByClassName("video-embed");
       for (let n = 0; n < v.length; n++) {
         const p = document.createElement("div");
         p.innerHTML = previewThumb(v[n].dataset.id);

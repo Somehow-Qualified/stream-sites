@@ -1,3 +1,15 @@
+{#
+You Are Here:
+- Form
+- src/site/_includes/form.njk
+
+How It Works:
+- On build, this is placed on every page with `{% include "form.njk" %}`
+
+Dynamic Data:
+- anything in {{ curly braces }} is a variable from src/site/_globals
+#}
+
 <form name="contact" method="POST" data-netlify="true">
   <div class="mb-4">
     <label class="block text-{{ site.colors.main }}-900 dark:text-{{ site.colors.main }}-100 mb-2" for="name">Name</label>

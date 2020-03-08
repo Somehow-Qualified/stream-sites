@@ -24,6 +24,12 @@ export default {
       widget: 'datetime'
     },
     {
+      label: 'Last Modified',
+      name: 'dateMod',
+      widget: 'hidden',
+      'default': 'Last Modified'
+    },
+    {
       label: 'Tag',
       name: 'tags',
       widget: 'list',
@@ -31,7 +37,7 @@ export default {
     },
     {
       label: 'Featured Image',
-      name: 'featured_image',
+      name: 'image',
       widget: 'image',
       required: false,
       media_library: {

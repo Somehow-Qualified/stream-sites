@@ -15,19 +15,24 @@ pagination:
 renderData:
   title: Tagged “{{ tag }}”
 permalink: /tags/{{ tag | slug }}/
-body_class: blog
 layout: default
 ---
+{#
+You Are Here:
+- Tag
+- src/site/page/tag.njk
 
-<section class="flex-1 container ml-auto mr-auto">
+How It Works:
+- On build, this layout will generate 1 page for every Tag on the site
+  as a postlist.
+#}
+<section class="mx-auto">
 
-  <h1 class="page-title text-3xl md:text-center md:text-5xl mb-16 lg:mb-24 lg:text-5xl">Tagged “{{ tag }}”</h1>
+  <h1 class="page-title text-3xl md:text-center md:text-5xl mb-16 lg:mb-24 lg:text-5xl">{{ title }}</h1>
 
-  <div class="posts md:flex flex-1">
-
+  <div class="posts md:flex">
     {% set postslist = collections[ tag ] %}
     {% include 'postslist.njk' %}
-
   </div>
 
 </section>

@@ -1,8 +1,25 @@
 ---
 layout: default
 ---
+{#
+You Are Here:
+- Privacy
+- src/site/_layouts/privacy.njk
 
-<section class="flex-1">
+How It Works:
+- On build, this page fills in your name, site URL, and email address
+  from src/site/_globals/site.json
+
+Dynamic Data:
+- anything in {{ curly braces }} is a variable from:
+  (a) frontmatter in the associated markdown file (src/site/page/privacy.md)
+  (b) src/site/_globals
+- aliases are defined in `{% set %}`
+
+TODO:
+- Add LAST MODIFIED time instead of default date
+#}
+<section class="mx-auto">
 
   <h1 class="page-title text-5xl">{{ title }}</h1>
 
@@ -15,7 +32,7 @@ layout: default
     {{ content | safe }}
 
     <h2>Contact Us</h2>
-    <p>If you have any questions about this Privacy Policy, please contact us:</p>
+    <p>If you have any questions about this Privacy Policy, please contact:</p>
     <ul>
       <li>By email: {{ site.email }}</li>
     </ul>

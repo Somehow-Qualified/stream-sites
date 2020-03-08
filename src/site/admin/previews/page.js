@@ -22,7 +22,7 @@ const Page = createClass({
     return html`
       <article>
         <h1>${entry.getIn(["data", "title"], null)}</h1>
-        <div class="featured-image"><img src="${entry.getIn(["data", "featured_image"], "")}" alt="${entry.getIn(["data", "image_caption"], "")}" /></div>
+        <div class="featured-image"><img src="${entry.getIn(["data", "image_card"], "")}" alt="${entry.getIn(["data", "image_caption"], "")}" /></div>
         <div dangerouslySetInnerHTML=${body}></div>
       </article>
       <section class="seo">
@@ -36,7 +36,7 @@ const Page = createClass({
         <h3 class="preview-label"><span>Twitter Card</span></h3>
         <div class="seo-card">
           <div class="image">
-            <img src="${entry.getIn(["data", "featured_image"], "")}" alt="${entry.getIn(["data", "image_caption"], "")}" />
+            <img src="${entry.getIn(["data", "image_card"], "")}" alt="${entry.getIn(["data", "image_caption"], "")}" />
           </div>
           <div class="text">
             <p class="title">${meta_title}</p>
@@ -46,7 +46,7 @@ const Page = createClass({
         </div>
         <h3 class="preview-label"><span>Open Graph/Facebook</span></h3>
         <div class="seo-og">
-          <div class="image"><img src="${entry.getIn(["data", "featured_image"], "")}" alt="${entry.getIn(["data", "image_caption"], "")}" /></div>
+          <div class="image"><img src="${entry.getIn(["data", "image_card"], "")}" alt="${entry.getIn(["data", "image_caption"], "")}" /></div>
           <div class="text">
             <p class="link">${link_preview}</p>
             <div class="content">

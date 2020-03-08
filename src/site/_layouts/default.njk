@@ -1,3 +1,20 @@
+{#
+You Are Here:
+- Default
+- src/site/_layouts/default.njk
+
+How It Works:
+- THIS IS AN ESSENTIAL FILE. ALL LAYOUTS LOAD INTO HERE.
+- <head> includes the essentials: meta, stylesheet, favicon, manifest,
+  service worker, dark mode handler, Netlify Identity
+- <body> is your content. It includes header, any content via another
+  layout, footer, and scripts.
+
+Dynamic Data:
+- There is no dynamic data in this file beyond Theme Color
+  (src/site/_globals/site.json)
+#}
+
 <!doctype html>
 <html lang="en" class="min-h-full antialiased">
   <head>
@@ -25,25 +42,21 @@
 
   </head>
 
-  <body {% if body_class %} id="{{ body_class }}" {% endif %} class="min-h-full font-sans text-lg text-{{ site.colors.main }}-900 leading-normal dark:bg-{{ site.colors.main }}-900 dark:text-white">
+  <body class="font-sans text-lg leading-normal text-{{ site.colors.main }}-900 dark:text-white dark:bg-{{ site.colors.main }}-900">
 
     <a href="#main" class="sr-skip-link">skip to main content</a>
 
-    <div id="wrapper" class="hfeed wrapper flex flex-col relative min-h-screen">
-
-      {# include header #}
+    <div class="wrapper flex flex-col items-stretch min-h-full">
+      {# Include header #}
       {% include "header.njk" %}
 
-      <main id="main" class="main container content m-auto py-10 px-6 lg:px-0 lg:py-20" role="main" tabindex="-1">
-
-        {# include content #}
+      <main id="main" class="main hfeed mx-auto py-10 lg:w-4/5 flex-grow flex-shrink-0" role="main" tabindex="-1">
+        {# Templates and content load here! #}
         {{ content | safe }}
-
       </main>
 
-      {# include footer #}
+      {# Include footer #}
       {% include "footer.njk" %}
-
     </div>
 
     {# Load Scripts #}

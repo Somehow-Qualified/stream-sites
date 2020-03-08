@@ -56,10 +56,11 @@ ss-core
     │   ├── _layouts
     │   │   ├── 404.njk
     │   │   ├── about.njk
-    │   │   ├── blog.njk
+    │   │   ├── archive.njk
+    │   │   ├── blank.njk 
     │   │   ├── contact.njk
     │   │   ├── default.njk
-    │   │   ├── highlights.njk
+    │   │   ├── home.njk    
     │   │   ├── linkinbio.njk
     │   │   ├── post.njk
     │   │   └── privacy.njk
@@ -91,7 +92,7 @@ ss-core
     │       ├── blog.md
     │       ├── contact.md
     │       ├── highlights.md
-    │       ├── index.njk
+    │       ├── home.md
     │       ├── linkinbio.md
     │       ├── page.json
     │       ├── privacy-policy.md
