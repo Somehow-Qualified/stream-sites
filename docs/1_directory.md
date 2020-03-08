@@ -40,7 +40,7 @@ ss-core
     │   │   ├── social.json
     │   │   └── stream.js
     │   ├── _includes
-    │   │   ├── form-contact.njk
+    │   │   ├── form.njk
     │   │   ├── footer.njk
     │   │   ├── header.njk
     │   │   ├── livealert.njk
