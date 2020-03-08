@@ -11,3 +11,9 @@ Uncompiled CSS and unminified JS reside in the `site/_includes` folder. PostCSS 
 When you run the build command ready for deployment, Stream Sites will reference the minified version of the stylesheet `main.min.css` and scripts `main.min.js`.
 
 Purge will also run via the build command and will cross reference all of Tailwind's utility classes with your templates/HTML and will remove all the unused ones - pretty cool right?
+
+## Variables
+
+| Variable           | Where              |
+|--------------------|--------------------|
+| `TWITCH_CLIENT_ID` | Netlify & `.env`   |
