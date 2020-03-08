@@ -24,7 +24,7 @@ Dynamic Data:
 
   </head>
 
-  <body class="h-full w-full font-sans text-lg leading-normal bg-{{ site.colors.main }}-900 text-white px-6">
+  <body class="h-full w-full font-sans text-lg leading-normal bg-{{ site.colors.main }}-900 text-{{ site.colors.primary }}-100 px-6">
 
     <a href="#main" class="sr-skip-link">skip to main content</a>
 
@@ -32,7 +32,7 @@ Dynamic Data:
 
       <header id="header" class="header bg-{{ site.colors.main }}-900 p-6 border-b border-{{ site.colors.main }}-900 flex-shrink-0">
       	<div class="container flex flex-wrap justify-center items-center m-auto">
-      		<a class="company-logo-link block text-white font-bold text-3xl md:mb-0 no-underline" href="/" aria-label="Back to home">
+      		<a class="company-logo-link block text-{{ site.colors.primary }}-100 font-bold text-3xl md:mb-0 no-underline" href="/" aria-label="Back to home">
       		  {% if navigation.nav_logo %}
       		    <img src="{{ site.logo }}" alt="{{ site.name }}" class="h-12 w-auto">
       		  {% else %}
@@ -48,7 +48,7 @@ Dynamic Data:
 
         <div class="text-sm md:text-base">{{ content | safe }}</div>
 
-        <ul class="content text-center text-white py-8 w-full">
+        <ul class="content text-center text-{{ site.colors.primary }}-100 py-8 w-full">
           {% for item in linkinbio.linkinbio %}
           <a href="{{ item.link | safe }}" target="_blank" class="lg:p-4 py-3 px-0 block font-bold hover:text-{{ site.colors.main }}-900 bg-{{ site.colors.accent }}-600 hover:bg-{{ site.colors.accent }}-400 mb-4"><li>{{ item.text }}</li></a>
           {% endfor %}
