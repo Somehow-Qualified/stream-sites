@@ -103,7 +103,8 @@ export default {
             config: {
               multiple: false
             }
-          }
+          },
+          required: false,
         },
         {
           label: 'Favicon',
@@ -113,7 +114,8 @@ export default {
             config: {
               multiple: false
             }
-          }
+          },
+          required: false,
         },
         {
           label: 'Card Image',
@@ -125,6 +127,7 @@ export default {
               multiple: false
             }
           },
+          required: false,
           hint: 'A default image for sharing on Twitter/Facebook.'
         },
         {
