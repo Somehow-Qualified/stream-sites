@@ -5,15 +5,14 @@ Where everything lives...
 ```
 ss-core
 ├── README.md
+├── LICENSE
+├── .gitignore
 ├── eleventy.config.js
 ├── tailwind.config.js
 ├── postcss.config.js
-├── .gitignore
-├── .lazyimages.json
 ├── netlify.toml
 ├── package-lock.json
 ├── package.json
-├── LICENSE
 ├── .netlify
 │   └── state.json
 ├── dist
@@ -21,7 +20,7 @@ ss-core
 ├── images
 │   ├── icons
 │   │   └── icon-library.svg
-│   └── Your uploaded images live here
+│   └── Your image uploads live here
 └── src
     ├── functions
     │   └── Add Netlify functions here
@@ -38,8 +37,7 @@ ss-core
     │   │   ├── navigation.json
     │   │   ├── site.json
     │   │   ├── social.json
-    │   │   ├── stream.js
-    │   │   └── twitch.json
+    │   │   └── stream.js
     │   ├── _includes
     │   │   ├── form-contact.njk
     │   │   ├── footer.njk
@@ -65,9 +63,17 @@ ss-core
     │   │   ├── post.njk
     │   │   └── privacy.njk
     │   ├── admin
-    │   │   ├── config.yml
+    │   │   ├── config.js
     │   │   ├── index.html
-    │   │   └── preview-templates
+    │   │   ├── collections
+    │   │   │   ├── blog.js
+    │   │   │   ├── custom.js
+    │   │   │   ├── highlights.js
+    │   │   │   ├── linkinbio.js
+    │   │   │   ├── modules.js
+    │   │   │   ├── page.js
+    │   │   │   └── settings.js
+    │   │   └── previews
     │   │       ├── blog.js
     │   │       ├── index.js
     │   │       ├── inline.css

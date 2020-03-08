@@ -4,7 +4,7 @@
   # functions = "./src/functions"
 
 [template.environment]
-  TWITCH_CLIENT_ID = "Paste your Twitch App Client ID"
+  TWITCH_CLIENT_ID = "Add your Twitch App Client ID for live alerts"
 
 [context.production]
   environment = { NODE_VERSION = "12", NODE_ENV = "production" }
