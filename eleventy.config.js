@@ -28,6 +28,11 @@ module.exports = function (eleventyConfig) {
     return util.inspect(obj)
   });
 
+  // Use ENV for Development
+  if (process.env.NODE_ENV === 'local') {
+    require('dotenv').config();
+  }
+
   // Load filters
   Object.keys(filters).forEach(filterName => {
     eleventyConfig.addFilter(filterName, filters[filterName])

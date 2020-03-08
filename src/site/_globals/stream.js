@@ -1,5 +1,5 @@
 const axios = require('axios');
-const twitch = require('./site.json');
+const site = require('./site.json');
 
 module.exports = function(){
 
