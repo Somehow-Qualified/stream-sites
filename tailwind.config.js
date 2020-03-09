@@ -27,6 +27,39 @@ module.exports = {
   theme: {
 
     /*
+    |-----------------------------------------------------------------------------
+    | Extend       https://tailwindcss.com/docs/theme/#extending-the-default-theme
+    | Reference  https://tailwindcss.com/docs/theme/#referencing-the-default-theme
+    |-----------------------------------------------------------------------------
+    |
+    | If you'd like to preserve the default values for a theme option but also add
+    | new values, add your extensions under the theme.extend key.
+    |
+    | You can also reference a value in the default theme as well. This is useful
+    | when you want to add another Font Family to the stack. For example:
+    |
+    | extend: {
+    |   fontFamily: {
+    |     sans: [
+    |       'Inter',
+    |       ...defaultTheme.fontFamily.sans,
+    |     ]
+    |   }
+    | }
+    |
+    */
+
+    extend: {
+      spacing: {
+        '70':'21rem',
+      },
+      width: {
+        '30': '30%',
+        '45': '45%',
+      }
+    },
+
+    /*
     |-------------------------------------------------------------------------------
     | Colors                                    https://tailwindcss.com/docs/colors
     |-------------------------------------------------------------------------------
