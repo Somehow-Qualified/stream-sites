@@ -7,4 +7,5 @@ seo:
 page_type: core
 layout: archive.njk
 collection: highlights
+theme: postsList/cards.njk
 ---

@@ -7,7 +7,7 @@ You Are Here:
 - src/site/_layouts/archive.njk
 
 How It Works:
-- On build, this page adds a postslist of
+- On build, this page adds a postsList of
   1. src/site/blog
   2. src/site/highlights
   3. src/site/blog AND src/site/highlights
@@ -15,7 +15,7 @@ How It Works:
 Dynamic Data:
 - anything in {{ curly braces }} is a variable from:
   (a) frontmatter in the associated markdown file (src/site/page/blog.md,
-      src/site/page/highlights.md, src/site/page/feed.md)
+      src/site/page/highlights.md, src/site/page/archive.md)
   (b) src/site/_globals
 - aliases are defined in `{% set %}`
 #}
@@ -27,16 +27,16 @@ Dynamic Data:
     {{ content | safe }}
   </div>
 
-  <div class="posts md:flex py-8">
+  <div class="posts md:flex flex-wrap justify-center py-8">
     {% if collection === "blog" %}
-      {% set postslist = collections.blog %}
-      {% include 'postslist.njk' %}
+      {% set postsList = collections.blog %}
+      {% include theme %}
     {% elif collection === "highlights" %}
-      {% set postslist = collections.highlights %}
-      {% include 'postslist.njk' %}
+      {% set postsList = collections.highlights %}
+      {% include theme %}
     {% else %}
-      {% set postslist = collections.feed %}
-      {% include 'postslist.njk' %}
+      {% set postsList = collections.archive %}
+      {% include theme %}
     {% endif %}
   </div>
 
