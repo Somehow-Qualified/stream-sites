@@ -1,16 +1,16 @@
 {
   "archive": {
-    "theme": "postsList/cards-horizontal.njk"
+    "theme": "postslist/cards-horizontal.njk"
   },
   "blog": {
-    "theme": "postsList/cards-horizontal.njk"
+    "theme": "postslist/cards-horizontal.njk"
   },
   "highlights": {
-    "theme": "postsList/cards.njk"
+    "theme": "postslist/cards.njk"
   },
   "tag": {
     "heading": "Tagged",
-    "theme": "postsList/cards.njk",
+    "theme": "postslist/cards.njk",
     "layout": "default.njk"
   },
   "tags": {

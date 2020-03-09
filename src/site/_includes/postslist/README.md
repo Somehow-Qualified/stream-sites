@@ -1,12 +1,12 @@
 # Posts List
 
-You Are Here: `src/site/_includes/postsList/`
+You Are Here: `src/site/_includes/postslist/`
 
-This is where postsList variants live.
+This is where postslist variants live.
 
 ## How To Use This
 
-A posts list contains a collection. By default Blog, Highlights, and Archive pages use a post list. On their respective markdown files, define a postsList template to use.
+A posts list contains a collection. By default Blog, Highlights, and Archive pages use a post list. On their respective markdown files, define a postslist template to use.
 
 On build, the selected is placed on the three pages with `{% include theme %}`
 

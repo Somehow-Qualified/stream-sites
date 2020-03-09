@@ -7,7 +7,7 @@ You Are Here:
 - src/site/_layouts/archive.njk
 
 How It Works:
-- On build, this page adds a postsList of
+- On build, this page adds a postslist of
   1. src/site/blog
   2. src/site/highlights
   3. src/site/blog AND src/site/highlights
@@ -29,13 +29,13 @@ Dynamic Data:
 
   <div class="posts md:flex flex-wrap justify-center py-8">
     {% if collection === "blog" %}
-      {% set postsList = collections.blog %}
+      {% set postslist = collections.blog %}
       {% include theme.blog.theme %}
     {% elif collection === "highlights" %}
-      {% set postsList = collections.highlights %}
+      {% set postslist = collections.highlights %}
       {% include theme.highlights.theme %}
     {% else %}
-      {% set postsList = collections.archive %}
+      {% set postslist = collections.archive %}
       {% include theme.archive.theme %}
     {% endif %}
   </div>

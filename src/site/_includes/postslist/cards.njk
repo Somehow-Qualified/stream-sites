@@ -1,7 +1,7 @@
 {#
 You Are Here:
 - Posts List
-- src/site/_includes/postsList/cards.njk
+- src/site/_includes/postslist/cards.njk
 
 How It Works:
 - On build, this is placed on every page with `{% include template %}`
@@ -16,7 +16,7 @@ Dynamic Data:
 
 {# Image Cards #}
 
-{% for post in postsList %}
+{% for post in postslist %}
 
   {% set title = post.data.title %}
   {% set featuredImage = post.data.image_card %}

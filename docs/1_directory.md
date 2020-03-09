@@ -48,7 +48,7 @@ ss-core
     │   │   ├── livealert.njk
     │   │   ├── meta.njk
     │   │   ├── social-icons.njk
-    │   │   ├── postsList
+    │   │   ├── postslist
     │   │   │   ├── cards-horizontal.njk
     │   │   │   └── cards.njk
     │   │   ├── _css
