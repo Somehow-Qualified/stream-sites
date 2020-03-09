@@ -30,13 +30,13 @@ Dynamic Data:
   <div class="posts md:flex flex-wrap justify-center py-8">
     {% if collection === "blog" %}
       {% set postsList = collections.blog %}
-      {% include theme %}
+      {% include theme.blog.theme %}
     {% elif collection === "highlights" %}
       {% set postsList = collections.highlights %}
-      {% include theme %}
+      {% include theme.highlights.theme %}
     {% else %}
       {% set postsList = collections.archive %}
-      {% include theme %}
+      {% include theme.archive.theme %}
     {% endif %}
   </div>
 

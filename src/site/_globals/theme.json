@@ -1,4 +1,13 @@
 {
+  "archive": {
+    "theme": "postsList/cards-horizontal.njk"
+  },
+  "blog": {
+    "theme": "postsList/cards-horizontal.njk"
+  },
+  "highlights": {
+    "theme": "postsList/cards.njk"
+  },
   "tag": {
     "heading": "Tagged",
     "theme": "postsList/cards.njk",
