@@ -39,20 +39,23 @@ ss-core
     │   │   ├── navigation.json
     │   │   ├── site.json
     │   │   ├── social.json
-    │   │   └── stream.js
+    │   │   ├── stream.js
+    │   │   └── theme.json
     │   ├── _includes
     │   │   ├── form.njk
     │   │   ├── footer.njk
     │   │   ├── header.njk
     │   │   ├── livealert.njk
     │   │   ├── meta.njk
-    │   │   ├── postslist.njk
     │   │   ├── social-icons.njk
-    │   │   ├── css
+    │   │   ├── postsList
+    │   │   │   ├── cards-horizontal.njk
+    │   │   │   └── cards.njk
+    │   │   ├── _css
     │   │   │   └── main.css
-    │   │   ├── fonts
+    │   │   ├── _fonts
     │   │   │   └── Upload your custom fonts here  
-    │   │   └── js
+    │   │   └── _js
     │   │       └── main.js
     │   ├── _layouts
     │   │   ├── 404.njk
