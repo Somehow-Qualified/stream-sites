@@ -118,15 +118,15 @@ module.exports = function (eleventyConfig) {
     return collection.getFilteredByGlob('**/highlights/*.md').reverse();
   });
   // Feed: a single stream of Blog Posts and Highlights
-  eleventyConfig.addCollection('feed', collection => {
+  eleventyConfig.addCollection('archive', collection => {
     return collection.getFilteredByGlob(['**/blog/*.md', '**/highlights/*.md']).reverse();
   });
   // Tags
   eleventyConfig.addCollection('tagList', require('./src/utils/tag-list.collection'));
 
   // Copy static assests
-  eleventyConfig.addPassthroughCopy({ 'src/site/_includes/js': 'js' });
-  eleventyConfig.addPassthroughCopy('src/site/fonts');
+  eleventyConfig.addPassthroughCopy({ 'src/site/_includes/_js': 'js' });
+  eleventyConfig.addPassthroughCopy({ 'src/site/_includes/_fonts': 'fonts' });
   eleventyConfig.addPassthroughCopy('images');
   eleventyConfig.addPassthroughCopy('src/site/admin');
   eleventyConfig.addPassthroughCopy('src/site/_redirects');
