@@ -2,6 +2,8 @@
 
 You Are Here: `src/site/_includes/postsList/`
 
+This is where postsList variants live.
+
 ## How To Use This
 
 A posts list contains a collection. By default Blog, Highlights, and Archive pages use a post list. On their respective markdown files, define a postsList template to use.
