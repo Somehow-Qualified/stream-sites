@@ -1,7 +1,7 @@
 ---
-title: Tags
+renderData:
+  layout: {{ theme.tag.layout }}
 permalink: /tags/
-layout: default
 ---
 {#
 You Are Here:
@@ -11,10 +11,13 @@ You Are Here:
 How It Works:
 - On build, this layout will generate 1 page with a list of all the tags from
   your posts (blog & highlights)
+
+TODO:
+- Get tag quantity so it can be displayed OR ordered by volume.
 #}
 <section class="mx-auto">
 
-  <h1 class="page-title text-3xl md:text-center md:text-5xl mb-16 lg:mb-24 lg:text-5xl">{{ title }}</h1>
+  <h1 class="page-title text-3xl md:text-center md:text-5xl mb-16 lg:mb-24 lg:text-5xl">{{ theme.tags.heading }}</h1>
 
   <div class="tags flex flex-wrap md:justify-center">
     {% for tag in collections.tagList %}

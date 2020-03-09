@@ -1,0 +1,11 @@
+{
+  "tag": {
+    "heading": "Tagged",
+    "theme": "postsList/cards.njk",
+    "layout": "default.njk"
+  },
+  "tags": {
+    "heading": "Explore Tags",
+    "layout": "default.njk"
+  }
+}
