@@ -1,0 +1,16 @@
+---
+pagination:
+  data: collections.blog
+  size: 12
+  alias: posts
+  addAllPagesToCollections: true
+layout: archive.njk
+permalink: "{{ theme.blog.slug }}/{% if pagination.pageNumber > 0 %}page-{{ pagination.pageNumber + 1 }}/{% endif %}index.html"
+---
+
+{% set title = theme.blog.title %}
+{% set subheading = theme.blog.subheading %}
+{% set img_card = theme.blog.img_card %}
+{% set img_card_alt = theme.blog.img_card_alt %}
+{% set seo_title = theme.blog.seo_title %}
+{% set seo_desc = theme.blog.seo_desc %}

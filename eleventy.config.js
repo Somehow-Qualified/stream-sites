@@ -17,11 +17,13 @@ const pluginSyntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 
 const filters = require('./src/utils/date.filters');
 
-module.exports = function (eleventyConfig) {
+/**
+ * Import site configuration files
+ */
+const settings = require('./src/site/_globals/site.json');
+const config = require('./src/site/_globals/theme.json');
 
-  // Layout aliases
-  eleventyConfig.addLayoutAlias('default', 'default.njk');
-  eleventyConfig.addLayoutAlias('post', 'post.njk');
+module.exports = function (eleventyConfig) {
 
   // Debug utility
   eleventyConfig.addFilter('dump', obj => {
@@ -37,12 +39,18 @@ module.exports = function (eleventyConfig) {
   Object.keys(filters).forEach(filterName => {
     eleventyConfig.addFilter(filterName, filters[filterName])
   });
+  // Squash content for search.json
+  eleventyConfig.addFilter("squash", require("./src/utils/squash.filters") );
+  // Set a limiter for nunjucks FORs
+  eleventyConfig.addFilter('limit', function(arr, limit) {
+    return arr.slice(0, limit);
+  });
 
   // Load plugins
-  eleventyConfig.addPlugin(pluginLazyImages, {
-    imgSelector: 'img', // custom image selector
-    placeholderQuality: 75
-  });
+  // eleventyConfig.addPlugin(pluginLazyImages, {
+  //   imgSelector: 'img', // custom image selector
+  //   placeholderQuality: 75
+  // });
 
   if (process.env.NODE_ENV === 'production') {
     eleventyConfig.addPlugin(pluginPwa);
@@ -107,21 +115,15 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addCollection('blog', collection => {
     return collection.getFilteredByGlob('**/blog/*.md').reverse();
   });
-  // only content in the latest `blog/` directory
-  eleventyConfig.addCollection('postsLatest', collection => {
-    return collection
-      .getFilteredByGlob('**/blog/*.md')
-      .slice(-9)
-  });
   // Highlights: posts created under Highlights
   eleventyConfig.addCollection('highlights', collection => {
     return collection.getFilteredByGlob('**/highlights/*.md').reverse();
   });
-  // Feed: a single stream of Blog Posts and Highlights
+  // Archive: a single stream of Blog Posts and Highlights
   eleventyConfig.addCollection('archive', collection => {
     return collection.getFilteredByGlob(['**/blog/*.md', '**/highlights/*.md']).reverse();
   });
-  // Tags
+  // Tags: a list of every tag used
   eleventyConfig.addCollection('tagList', require('./src/utils/tag-list.collection'));
 
   // Copy static assests
@@ -152,7 +154,7 @@ module.exports = function (eleventyConfig) {
     dir: {
       input: 'src/site',
       includes: '_includes',
-      layouts: '_layouts',
+      layouts: `_themes/${config.theme}`,
       data: '_globals',
       output: 'dist' // the Publish directory
     },

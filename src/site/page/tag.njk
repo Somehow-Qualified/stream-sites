@@ -5,11 +5,13 @@ pagination:
   alias: tag
   filter:
   - all
-  - feed
+  - archive
   - nav
   - page
   - post
-  - postsLatest
+  - blogLatest
+  - highlightsLatest
+  - archiveLatest
   - tagList
   addAllPagesToCollections: true
 renderData:
@@ -23,19 +25,12 @@ You Are Here:
 - src/site/page/tag.njk
 
 How It Works:
-- On build, this layout will generate 1 page for every Tag on the site
-  as a postlist.
+- On build, this generates 1 page for every Tag on the site
+  as a postlist using your Theme template.
 
 TODO:
 - replace renderData with eleventyComputed with v.0.11
+- paginate it the right way
 #}
-<section class="mx-auto">
 
-  <h1 class="page-title text-3xl md:text-center md:text-5xl mb-16 lg:mb-24 lg:text-5xl">{{ theme.tag.heading }} “{{ tag }}”</h1>
-
-  <div class="posts md:flex">
-    {% set postslist = collections[ tag ] %}
-    {% include theme.tag.theme %}
-  </div>
-
-</section>
+{% include theme.tag.template %}

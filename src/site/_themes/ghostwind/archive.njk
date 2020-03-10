@@ -1,0 +1,60 @@
+---
+layout: default.njk
+---
+{#
+You Are Here:
+- Archive for Ghostwind
+- src/site/_themes/ghostwind/archive.njk
+
+How It Works:
+- On build, this page adds a postslist of
+  1. src/site/blog
+  2. src/site/highlights
+  3. src/site/blog AND src/site/highlights
+
+Dynamic Data:
+- anything in {{ curly braces }} is a variable from:
+  (a) frontmatter in the associated markdown file (src/site/page/blog.md,
+      src/site/page/highlights.md, src/site/page/archive.md)
+  (b) src/site/_globals
+- aliases are defined in `{% set %}`
+#}
+<section class="mx-auto">
+
+  {% block title %}
+  <div class="text-center py-16">
+    <h1 class="font-bold break-normal text-3xl md:text-5xl">{{ title }}</h1>
+  </div>
+  {% endblock %}
+
+  {% block content %}
+  <div class="content md:w-1/2 mx-auto">
+    {{ content | safe }}
+  </div>
+  {% endblock %}
+
+  <div class="w-full max-w-6xl mx-auto pb-8 px-6 md:px-0">
+    <div class="flex flex-wrap -mx-2">
+      {% block postslist %}
+      {% set postslist = posts %}
+      {% include "ghostwind/postslist.njk" %}
+      {% endblock %}
+    </div>
+  </div>
+
+  {% block pageNav %}
+  <nav aria-labelledby="post-navigation">
+    <p id="post-navigation" class="sr-only">Page Navigation</p>
+    <ol class="flex flex-row justify-center">
+      <li>{% if page.url != pagination.href.first %}<a href="{{ pagination.href.first }}">First</a>{% else %}First{% endif %}</li>
+      <li class="px-1">{% if pagination.href.previous %}<a href="{{ pagination.href.previous }}">Previous</a>{% else %}Previous{% endif %}</li>
+  {%- for pageEntry in pagination.pages %}
+      <li class="px-1"><a href="{{ pagination.hrefs[ loop.index0 ] }}"{% if page.url == pagination.hrefs[ loop.index0 ] %} aria-current="page"{% endif %}>Page {{ loop.index }}</a></li>
+  {%- endfor %}
+      <li class="px-1">{% if pagination.href.next %}<a href="{{ pagination.href.next }}">Next</a>{% else %}Next{% endif %}</li>
+      <li class="px-1">{% if page.url != pagination.href.last %}<a href="{{ pagination.href.last }}">Last</a>{% else %}Last{% endif %}</li>
+    </ol>
+  </nav>
+  {% endblock %}
+
+</section>

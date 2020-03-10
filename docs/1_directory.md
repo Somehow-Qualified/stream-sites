@@ -42,32 +42,36 @@ ss-core
     │   │   ├── stream.js
     │   │   └── theme.json
     │   ├── _includes
-    │   │   ├── form.njk
-    │   │   ├── footer.njk
-    │   │   ├── header.njk
-    │   │   ├── livealert.njk
-    │   │   ├── meta.njk
-    │   │   ├── social-icons.njk
-    │   │   ├── postslist
-    │   │   │   ├── cards-horizontal.njk
-    │   │   │   └── cards.njk
+    │   │   ├── Your custom theme components go here
+    │   │   ├── base
+    │   │   │   ├── form.njk
+    │   │   │   ├── footer.njk
+    │   │   │   ├── header.njk
+    │   │   │   ├── livealert.njk
+    │   │   │   ├── meta.njk
+    │   │   │   ├── social-icons.njk
+    │   │   │   └── postslist
+    │   │   │       ├── cards-horizontal.njk
+    │   │   │       └── cards.njk
     │   │   ├── _css
     │   │   │   └── main.css
     │   │   ├── _fonts
     │   │   │   └── Upload your custom fonts here  
     │   │   └── _js
     │   │       └── main.js
-    │   ├── _layouts
-    │   │   ├── 404.njk
-    │   │   ├── about.njk
-    │   │   ├── archive.njk
-    │   │   ├── blank.njk
-    │   │   ├── contact.njk
-    │   │   ├── default.njk
-    │   │   ├── home.njk    
-    │   │   ├── linkinbio.njk
-    │   │   ├── post.njk
-    │   │   └── privacy.njk
+    │   ├── _themes
+    │   │   ├── Your custom themes go here
+    │   │   └── base
+    │   │       ├── 404.njk
+    │   │       ├── about.njk
+    │   │       ├── archive.njk
+    │   │       ├── blank.njk
+    │   │       ├── contact.njk
+    │   │       ├── default.njk
+    │   │       ├── home.njk    
+    │   │       ├── linkinbio.njk
+    │   │       ├── post.njk
+    │   │       └── privacy.njk
     │   ├── admin
     │   │   ├── config.js
     │   │   ├── index.html

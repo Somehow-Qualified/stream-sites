@@ -1,0 +1,81 @@
+{#
+You Are Here:
+- Default
+- src/site/_themes/ghostwind/default.njk
+
+How It Works:
+- THIS IS AN ESSENTIAL FILE. ALL LAYOUTS LOAD INTO HERE.
+- <head> includes the essentials: meta, stylesheet, favicon, manifest,
+  service worker, dark mode handler, Netlify Identity
+- <body> is your content. It includes header, any content via another
+  layout, footer, and scripts.
+
+Dynamic Data:
+- There is no dynamic data in this file beyond Theme Color
+  (src/site/_globals/site.json)
+#}
+
+<!doctype html>
+<html lang="en" class="min-h-full antialiased">
+  <head>
+    {# Meta Tags #}
+    {% include "meta.njk" %}
+
+    {# Styles #}
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/ghostwind.css">
+
+    {# Favicon #}
+    <link rel="icon" type="image/ico" href="{{ site.favicon }}">
+
+    {# Service Worker #}
+    <link rel="manifest" href="/site.webmanifest">
+    <script>
+      if ("serviceWorker" in navigator)
+        navigator.serviceWorker.register("/service-worker.js");
+    </script>
+
+    {# Dark Mode Handler #}
+    <script>(localStorage.getItem('darkMode') === 'true') && document.documentElement.classList.add('mode-dark');</script>
+
+    {# Netlify Identity for Login #}
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
+  </head>
+
+  <body class="font-sans text-lg leading-normal text-{{ theme.colors.main }}-900 dark:text-{{ theme.colors.main }}-100 bg-{{ theme.colors.main }}-100 dark:bg-{{ theme.colors.main }}-900">
+
+    <a href="#main" class="sr-skip-link">skip to main content</a>
+
+    <div class="wrapper flex flex-col items-stretch min-h-full">
+      {# Include header #}
+      {% include "ghostwind/header.njk" %}
+
+      <main id="main" class="main hfeed flex-grow flex-shrink-0" role="main" tabindex="-1">
+        {# Templates and content load here! #}
+        {{ content | safe }}
+      </main>
+
+      {# Include footer #}
+      {% include "ghostwind/footer.njk" %}
+    </div>
+
+  {# Load Scripts #}
+  <script src="/js/main.js" defer></script>
+
+  {# Enable Netlify Identity Login #}
+  <script>
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", user => {
+        if (!user) {
+          window.netlifyIdentity.on("login", () => {
+            document.location.href = "/admin/";
+          });
+        }
+      });
+    }
+  </script>
+
+  </body>
+
+</html>

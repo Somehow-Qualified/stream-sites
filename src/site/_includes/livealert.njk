@@ -16,10 +16,10 @@ Dynamic Data:
 - anything in {{ curly braces }} is a variable from stream.js
 #}
 
-<div class="flex-shrink-0 w-full bg-{{ site.colors.main }}-800 text-center py-1 lg:px-4">
+<div class="flex-shrink-0 w-full bg-{{ theme.colors.main }}-800 text-center py-1 lg:px-4">
 	<a class="no-underline" href="https://twitch.tv/{{stream.user_name}}" target="_blank">
-		<div class="p-2 flex flex-wrap justify-center items-center text-{{ site.colors.main }}-100 leading-none text-base md:rounded-full md:inline-flex" role="alert">
-			<p class="flex rounded-full bg-{{ site.colors.accent }}-600 text-{{ site.colors.main }}-100 uppercase px-2 py-1 text-xs font-bold">Live</p>
+		<div class="p-2 flex flex-wrap justify-center items-center text-{{ theme.colors.main }}-100 leading-none text-base md:rounded-full md:inline-flex" role="alert">
+			<p class="flex rounded-full bg-{{ theme.colors.accent }}-600 text-{{ theme.colors.main }}-100 uppercase px-2 py-1 text-xs font-bold">Live</p>
 			<p class="font-bold text-left flex-auto text-base px-2 py-1">{{ stream.title }}</p>
 		</div>
 	</a>

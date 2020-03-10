@@ -1,7 +1,7 @@
 {#
 You Are Here:
 - Default
-- src/site/_layouts/default.njk
+- src/site/_themes/base/default.njk
 
 How It Works:
 - THIS IS AN ESSENTIAL FILE. ALL LAYOUTS LOAD INTO HERE.
@@ -42,7 +42,7 @@ Dynamic Data:
 
   </head>
 
-  <body class="font-sans text-lg leading-normal text-{{ site.colors.main }}-900 dark:text-{{ site.colors.main }}-100 bg-{{ site.colors.main }}-100 dark:bg-{{ site.colors.main }}-900">
+  <body class="font-sans text-lg leading-normal text-{{ theme.colors.main }}-900 dark:text-{{ theme.colors.main }}-100 bg-{{ theme.colors.main }}-100 dark:bg-{{ theme.colors.main }}-900">
 
     <a href="#main" class="sr-skip-link">skip to main content</a>
 
@@ -59,21 +59,22 @@ Dynamic Data:
       {% include "footer.njk" %}
     </div>
 
-    {# Load Scripts #}
-    <script src="/js/main.js" defer></script>
+  {# Load Scripts #}
+  <script src="/js/main.js" defer></script>
 
-    {# Enable Netlify Identity Login #}
-    <script>
-      if (window.netlifyIdentity) {
-        window.netlifyIdentity.on("init", user => {
-          if (!user) {
-            window.netlifyIdentity.on("login", () => {
-              document.location.href = "/admin/";
-            });
-          }
-        });
-      }
-    </script>
+  {# Enable Netlify Identity Login #}
+  <script>
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", user => {
+        if (!user) {
+          window.netlifyIdentity.on("login", () => {
+            document.location.href = "/admin/";
+          });
+        }
+      });
+    }
+  </script>
 
   </body>
+
 </html>

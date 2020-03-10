@@ -1,20 +1,49 @@
 {
+  "theme": "ghostwind",
+  "colors": {
+    "main": "purple",
+    "accent": "pink"
+  },
   "archive": {
-    "theme": "postslist/cards-horizontal.njk"
+    "heading": "Archive",
+    "subheading": "All of my awesome posts",
+    "slug": "archive",
+    "type": "core",
+    "collection": "archive",
+    "img_card": "",
+    "img_card_alt": "",
+    "seo_title": "Archive",
+    "seo_desc": "Read all of my awesome posts."
   },
   "blog": {
-    "theme": "postslist/cards-horizontal.njk"
+    "heading": "Blog",
+    "subheading": "My awesome posts",
+    "slug": "blog",
+    "type": "core",
+    "collection": "blog",
+    "img_card": "",
+    "img_card_alt": "",
+    "seo_title": "Blog",
+    "seo_desc": "Read all of my awesome posts."
   },
   "highlights": {
-    "theme": "postslist/cards.njk"
+    "heading": "Highlights",
+    "subheading": "Check out my highlights",
+    "slug": "highlights",
+    "type": "core",
+    "collection": "highlights",
+    "img_card": "",
+    "img_card_alt": "",
+    "seo_title": "Video Highlights",
+    "seo_desc": "Watch all of my awesome highlights."
   },
   "tag": {
     "heading": "Tagged",
-    "theme": "postslist/cards.njk",
-    "layout": "default.njk"
+    "template": "ghostwind/tag.njk",
+    "layout": "ghostwind/default.njk"
   },
   "tags": {
     "heading": "Explore Tags",
-    "layout": "default.njk"
+    "layout": "ghostwind/default.njk"
   }
 }

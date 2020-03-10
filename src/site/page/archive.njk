@@ -1,0 +1,16 @@
+---
+pagination:
+  data: collections.archive
+  size: 12
+  alias: posts
+  addAllPagesToCollections: true
+layout: archive.njk
+permalink: "{{ theme.archive.slug }}/{% if pagination.pageNumber > 0 %}page-{{ pagination.pageNumber + 1 }}/{% endif %}index.html"
+---
+
+{% set title = theme.archive.title %}
+{% set subheading = theme.archive.subheading %}
+{% set img_card = theme.archive.img_card %}
+{% set img_card_alt = theme.archive.img_card_alt %}
+{% set seo_title = theme.archive.seo_title %}
+{% set seo_desc = theme.archive.seo_desc %}

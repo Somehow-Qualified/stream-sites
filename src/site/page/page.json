@@ -1,5 +1,5 @@
 {
-  "layout": "default",
+  "layout": "default.njk",
   "tags": "page",
   "templateEngineOverride": "njk,md",
   "outputPath": "dist",

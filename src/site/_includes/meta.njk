@@ -27,8 +27,8 @@ nunjucks does not work in ld+json section
 {% set title = renderData.title or title %}
 {% set metaTitle =  seo.meta_title or renderData.title or title or site.name %}
 {% set metaDescription = seo.meta_description or seo.excerpt or site.description %}
-{% set metaImage = image_card or site.card_image %}
-{% set metaImageAlt = image_caption or site.card_image_alt %}
+{% set metaImage = image_card or site.image_card %}
+{% set metaImageAlt = image_caption or site.image_card_alt %}
 {% set authorName = site.author_name %}
 {% set authorTwitter = site.author_twitter %}
 

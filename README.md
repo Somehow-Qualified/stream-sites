@@ -24,11 +24,11 @@ You can deploy Stream Sites to Netlify with one click to be up and running in mi
 
 4. Once all the dependencies are installed run `npm start`.
 
-5. Open your browser at http://localhost:8080 to see a live-reloading copy of your site while you make changes.
+5. Open your browser at http://localhost:8181 to see a live-reloading copy of your site while you make changes.
 
-6. Log into the CMS at http://localhost:8080/admin by following the prompts.
+6. Log into the CMS at http://localhost:8181/admin by following the prompts.
 
-> **Note:** The port may vary depending on your local setup. Your terminal should provide a link for easy access.
+> **Note:** The port may vary depending on your local setup. You can modify it in `package.json` under `scripts: { "watch:html" : "... --port=8181" }`.
 
 > **For advanced users:** You can extend [Browsersync](https://www.browsersync.io/) settings in `eleventy.config.js` for your needs.
 
@@ -98,7 +98,7 @@ Additional features were made possible by the 11ty projects:
 
 - Dark mode is made possible by [tailwindcss-dark-mode](https://www.npmjs.com/package/tailwindcss-dark-mode).
 
-- Many shoutouts to [@skeemer](https://gitlab.com/skeemer) for many many JavaScript shenanigans!
+- Many shoutouts to [@skeemer](https://github.com/skeemer) for many many JavaScript shenanigans!
 
 - Shoutout to [@brob](https://twitter.com/brob) for his Twitch stream "Building a quick 11ty integration with the Twitch API" and the good luck of running into his [Tweet](https://twitter.com/brob/status/1232016529300037634). This combined with [Standard Library](https://build.stdlib.com/) made Twitch Live Alerts and Netlify Build Hooks possible!
 
@@ -109,11 +109,10 @@ Follow the journey on [Stream Sites](https://streamsites.xyz) or [the log](https
 ### Roadmap TL;DR
 
 - IN PROGRESS: Manual Initialization for Netlify CMS (no more YML!!)
-- IN PROGRESS: Dark Mode toggle
-- Next/Prev post links ([pending 11ty v.0.11.0](https://www.11ty.dev/docs/filters/collection-items/))
+- IN PROGRESS: Themes
+- STANDBY: Next/Prev post links ([pending 11ty v.0.11.0](https://www.11ty.dev/docs/filters/collection-items/))
 - Collection for managing chat commands, sound effect previews, etc.
 - Support the Channel page for affiliations, donations, etc.
 - Webmentions
 - More icons for everything
-- Themes
 - Documentation

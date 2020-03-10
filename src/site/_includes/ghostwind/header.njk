@@ -1,0 +1,109 @@
+{#
+You Are Here:
+- Site Header for Ghostwind
+- src/site/_includes/ghostwind/header.njk
+
+How It Works:
+- On build, this is placed on every page with `{% include "ghostwind/header.njk" %}`
+- If Twitch is available, it will add a Live Alert
+
+Things to not touch:
+- `flex-shrink-0` keeps it happily in position on the page
+
+Dynamic Data:
+- anything in {{ curly braces }} is a variable from src/site/_globals
+#}
+
+{# Main Nav #}
+<header class="flex-shrink-0 w-full bg-white dark:bg-{{ theme.colors.main }}-900 p-4 mt-0 shadow-md border-b-4 border-{{ theme.colors.accent }}-500">
+  <div class="container mx-auto flex items-center justify-between text-{{ theme.colors.main }}-900 dark:text-{{ theme.colors.main }}-100">
+    <div class="flex justify-start w-11/12">
+			{# Branding #}
+			<a class="flex items-center hover:text-{{ theme.colors.accent }}-600 dark-hover:text-{{ theme.colors.accent }}-600 hover:no-underline font-semibold" href="/">
+        {% if navigation.nav_brand === "logo" %}
+        <img src="{{ site.logo }}" alt="{{ site.name }}" class="h-8 w-auto mr-2">
+        {% elif navigation.nav_brand === "text" %}
+        <span class="w-0 md:w-auto md:block mr-2">{{ site.name }}</span>
+        {% elif navigation.nav_brand === "logoAndText" %}
+        <img src="{{ site.logo }}" alt="{{ site.name }}" class="h-8 w-auto mr-2">
+				<span class="hidden w-0 md:w-auto md:block mx-2">{{ site.name }}</span>
+        {% endif %}
+			</a>
+			{# Nav Items from _globals/navigation.json #}
+	    <nav class="flex">
+	      <ul class="flex justify-between flex-1 md:flex-none items-center text-sm sm:text-base">
+					{% for item in navigation.main %}
+					<li>
+            <span>&nbsp;/&nbsp;</span><a href="{{ item.url | safe }}" class="inline-block no-underline p-2 active:text-{{ theme.colors.accent }}-500">{{ item.label }}</a>{% if not loop.last %}{% else %}<span class="pr-2">&nbsp;/&nbsp;</span>{%- endif -%}
+					</li>
+					{% endfor %}
+          <li>
+            <a href="/search" id="search-link" title="Search"><svg class="icon-search" fill="currentColor" stroke="currentColor" role="img" aria-hidden="true" width="18" height="18">
+    					<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/icon-library.svg#icon-search"></use>
+    				</svg></a>
+          </li>
+	      </ul>
+
+	    </nav>
+		</div>
+		<div class="flex justify-end w-1/12">
+			{# Dark/Light Mode Toggle #}
+			<button class="darkmodebtn js-darkmode-toggle lg:p-4 py-3 px-0" title="Toggle Dark Mode" role="switch" aria-checked="false">
+				<svg class="icon-light" fill="currentColor" stroke="currentColor" role="img" aria-hidden="true" width="18" height="18">
+					<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/icon-library.svg#icon-sun"></use>
+				</svg>
+				<svg class="icon-dark" fill="currentColor" stroke="currentColor" role="img" aria-hidden="true" width="18" height="18">
+					<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/icon-library.svg#icon-moon"></use>
+				</svg>
+			</button>
+	  </div>
+	</div>
+</header>
+<div class="flex-shrink-0 search-ui hidden relative w-full bg-white shadow-xl z-10 relative">
+  <div class="container mx-auto py-4 text-{{ site.colors.main }}-900">
+    <input id="search-str" type="search" placeholder="Search..." autofocus="autofocus" class="search-str w-full text-{{ theme.colors.main }}-800 transition focus:outline-none focus:border-transparent p-2 appearance-none leading-normal text-xl lg:text-2xl">
+  </div>
+  <div class="container mx-auto"><ol class="search-results"></ol></div>
+</div>
+
+
+{# Live Alert #}
+{% if stream.type == "live" %}
+{% include 'livealert.njk' %}
+{% endif %}
+
+{# Scroll Progress Bar for Posts #}
+<div id="scrollHeader" class="bg-{{ theme.colors.accent }}-100 fixed w-full z-10 top-0 hidden animated flex-shrink-0">
+  <div class="bg-white dark:bg-{{ theme.colors.main }}-900">
+    <div class="flex flex-wrap items-center content-center">
+      <div class="flex w-1/2 justify-start text-white font-semibold">
+        <a class="flex items-center text-{{ theme.colors.main }}-900 dark:text-{{ theme.colors.main }}-100 no-underline hover:text-{{ theme.colors.accent }}-600 hover:no-underline pl-2" href="/">
+          {% if navigation.nav_brand === "logo" %}
+          <img src="{{ site.logo }}" alt="{{ site.name }}" class="h-8 w-auto mr-2">
+          <span class="hidden w-0 md:w-auto md:block pl-1">{{ site.name }}</span>
+          {% elif navigation.nav_brand === "logoAndText" %}
+          <img src="{{ site.logo }}" alt="{{ site.name }}" class="h-8 w-auto mr-2">
+          <span class="hidden w-0 md:w-auto md:block pl-1">{{ site.name }}</span>
+          {% else %}
+          <span class="w-0 md:w-auto md:block">{{ site.name }}</span>
+          {% endif %}
+        </a>
+      </div>
+      <div class="flex w-1/2 justify-end content-center">
+        <p class="hidden sm:block mr-2 text-center h-14 py-4 text-sm"><span class="pr-2">Share this</span>👉</p>
+        <a class="flex items-center justify-center text-white no-underline hover:text-white hover:text-underline text-center h-10 w-10 p-2 md:h-auto md:w-16 md:p-4" href="https://twitter.com/intent/tweet?url={{ site.url }}{{ page.url }}" target="_blank" style="background-color:#33b1ff;">
+          <svg class="block" fill="currentColor" role="img" aria-hidden="true" width="18" height="18">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/icon-library.svg#icon-twitter"></use>
+          </svg>
+        </a>
+        <a class="flex items-center justify-center text-white no-underline hover:text-white hover:text-underline text-center h-10 w-10 p-2 md:h-auto md:w-16 md:p-4" href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ page.url }}" target="_blank" style="background-color:#005e99">
+          <svg class="block" fill="currentColor" role="img" aria-hidden="true" width="18" height="18">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/icon-library.svg#icon-facebook"></use>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+  {# Scroll Progress Color Bar #}
+  <div id="progress" class="h-1 bg-{{ theme.colors.accent }}-100 shadow" style="background:linear-gradient(to right, {{ theme_ghostwind.colors.progress }} var(--scroll), transparent 0);"></div>
+</div>

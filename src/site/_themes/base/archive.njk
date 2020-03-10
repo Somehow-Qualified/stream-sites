@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: default.njk
 ---
 {#
 You Are Here:
@@ -30,13 +30,13 @@ Dynamic Data:
   <div class="posts md:flex flex-wrap justify-center py-8">
     {% if collection === "blog" %}
       {% set postslist = collections.blog %}
-      {% include theme.blog.theme %}
+      {% include "postslist/cards.njk" %}
     {% elif collection === "highlights" %}
       {% set postslist = collections.highlights %}
-      {% include theme.highlights.theme %}
+      {% include "postslist/cards.njk" %}
     {% else %}
       {% set postslist = collections.archive %}
-      {% include theme.archive.theme %}
+      {% include "postslist/cards.njk" %}
     {% endif %}
   </div>
 

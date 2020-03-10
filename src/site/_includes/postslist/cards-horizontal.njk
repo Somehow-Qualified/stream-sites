@@ -30,7 +30,7 @@ Dynamic Data:
           <img src="{{ featuredImage }}" alt="{{ featuredImageAlt }}" class="block object-cover absolute top-1/2 left-1/2 h-full transform-center">
         </figure>
         {% endif %}
-        <div class="block text-{{ site.colors.main }}-800 dark:text-{{ site.colors.main }}-100 dark:bg-{{ site.colors.main }}-800 no-underline p-6 {% if featuredImage %} w-3/4 {% else %} w-full {% endif %}">
+        <div class="block text-{{ theme.colors.main }}-800 dark:text-{{ theme.colors.main }}-100 dark:bg-{{ theme.colors.main }}-800 no-underline p-6 {% if featuredImage %} w-3/4 {% else %} w-full {% endif %}">
           <h2 class="text-xl md:text-2xl mt-0 mb-3">{{ title }}</h2>
           <p class="text-xs mb-1">By {{ postCredit }}, <time datetime="{{ publishDate }}" class="mb-0">{{ publishDate | readableDate }}</time></p>
           <p class="text-xs">

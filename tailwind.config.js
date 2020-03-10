@@ -53,10 +53,16 @@ module.exports = {
       spacing: {
         '70':'21rem',
       },
+      height: {
+        '75vh': '75vh',
+      },
       width: {
         '30': '30%',
         '45': '45%',
-      }
+      },
+      boxShadow: {
+        'md-top': '0 4px 6px -1px rgba(0, 0, 0, .1), 0 -6px 4px -1px rgba(0, 0, 0, .06)',
+      },
     },
 
     /*
@@ -745,7 +751,11 @@ module.exports = {
     |
     */
 
-    margin: theme => ({ auto: 'auto', ...theme('spacing') }),
+    margin: (theme, { negative }) => ({
+      auto: 'auto',
+      ...theme('spacing'),
+      ...negative(theme('spacing')),
+    }),
 
     /*
     |-----------------------------------------------------------------------------
@@ -955,7 +965,7 @@ module.exports = {
     borderStyle: ['responsive'],
     borderWidth: ['responsive'],
     cursor: ['responsive'],
-    display: ['responsive'],
+    display: ['responsive', 'hover', 'focus', 'dark-focus', 'dark-focus-within'],
     flexDirection: ['responsive'],
     flexWrap: ['responsive'],
     alignItems: ['responsive'],

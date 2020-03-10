@@ -289,6 +289,69 @@ pre[class*="language-"] {
 .content .intro {
   @apply border-b border-gray-300 text-2xl pb-10 mb-10 font-light;
 }
+/*WIP*/
+.content.highlight-blue a {
+  background-image: linear-gradient(180deg, transparent 70%, rgba(66, 153, 225, .3) 0);
+}
+html.mode-dark .content.highlight-blue a {
+  background-image: linear-gradient(180deg, transparent 70%, rgba(235, 248, 255, .3) 0);
+  color: #fff;
+}
+.content.highlight-blue a:hover,
+.content.highlight-blue a:active,
+.content.highlight-blue a:focus,
+html.mode-dark .content.highlight-blue a:hover,
+html.mode-dark .content.highlight-blue a:focus,
+html.mode-dark .content.highlight-blue a:active {
+  background-image: linear-gradient(180deg, transparent 70%, rgba(66, 153, 225, .7) 0);
+}
+.content.highlight-indigo a {
+  background-image: linear-gradient(180deg, transparent 70%, rgba(102, 126, 234, .3) 0);
+}
+html.mode-dark .content.highlight-indigo a {
+  background-image: linear-gradient(180deg, transparent 70%, rgba(235, 244, 255, .3) 0);
+  color: #fff;
+}
+.content.highlight-indigo a:hover,
+.content.highlight-indigo a:active,
+.content.highlight-indigo a:focus,
+html.mode-dark .content.highlight-indigo a:hover,
+html.mode-dark .content.highlight-indigo a:focus,
+html.mode-dark .content.highlight-indigo a:active {
+  background-image: linear-gradient(180deg, transparent 70%, rgba(102, 126, 234, .7) 0);
+}
+.content.highlight-purple a {
+  background-image: linear-gradient(180deg, transparent 70%, rgba(159, 122, 234, .3) 0);
+}
+html.mode-dark .content.highlight-purple a {
+  background-image: linear-gradient(180deg, transparent 70%, rgba(250, 245, 255, .3) 0);
+  color: #fff;
+}
+.content.highlight-purple a:hover,
+.content.highlight-purple a:active,
+.content.highlight-purple a:focus,
+html.mode-dark .content.highlight-purple a:hover,
+html.mode-dark .content.highlight-purple a:focus,
+html.mode-dark .content.highlight-purple a:active {
+  background-image: linear-gradient(180deg, transparent 70%, rgba(159, 122, 234, .7) 0);
+}
+
+.content.highlight-pink a {
+  background-image: linear-gradient(180deg, transparent 70%, rgba(213, 63, 140, .3) 0);
+  font-weight: 700;
+}
+html.mode-dark .content.highlight-pink a {
+  background-image: linear-gradient(180deg, transparent 70%, rgba(251, 182, 206, .3) 0);
+  color: #fff;
+}
+.content.highlight-pink a:hover,
+.content.highlight-pink a:active,
+.content.highlight-pink a:focus,
+html.mode-dark .content.highlight-pink a:hover,
+html.mode-dark .content.highlight-pink a:focus,
+html.mode-dark .content.highlight-pink a:active {
+  background-image: linear-gradient(180deg, transparent 70%, rgba(213, 63, 140, .7) 0);
+}
 
 /* for md: breakpoint and up */
 @media screen and (min-width: 768px) {
@@ -422,6 +485,10 @@ hr.footnotes-sep {
 
 a.bookmark {
   display: none;
+}
+
+a.footnote-backref {
+  background: none !important;
 }
 
 li.footnote-item {

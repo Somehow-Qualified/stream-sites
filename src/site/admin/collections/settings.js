@@ -119,7 +119,7 @@ export default {
         },
         {
           label: 'Card Image',
-          name: 'card_image',
+          name: 'image_card',
           widget: 'image',
           required: false,
           media_library: {
@@ -132,7 +132,7 @@ export default {
         },
         {
           label: 'Card Image Alt Text',
-          name: 'card_image_alt',
+          name: 'image_card_alt',
           widget: 'string',
           required: false,
           hint: 'Describe the site image for those who can\'t see it.'
@@ -146,11 +146,25 @@ export default {
       preview: false,
       fields: [
         {
-          label: 'Logo',
-          name: 'nav_logo',
-          widget: 'boolean',
-          'default': true,
-          hint: 'Choose whether or not to display your logo in the site header. You can upload/change your logo in Settings: Branding.'
+          label: 'Branding',
+          name: 'nav_brand',
+          widget: 'select',
+          'default': 'logoAndText',
+          options: [
+            {
+              label: "Logo Only",
+              value: "logo"
+            },
+            {
+              label: "Text Only",
+              value: "text"
+            },
+            {
+              label: "Logo and Text",
+              value: "logoAndText"
+            }
+          ],
+          hint: 'Display your logo and/or brand name in the site header. You can upload/change your logo in Settings: Branding.'
         },
         {
           label: 'Menu Links',
@@ -173,24 +187,25 @@ export default {
           ]
         },
         {
-          label: 'Menu Button',
-          name: 'nav_button',
-          widget: 'object',
+          label: 'Footer Links',
+          label_singular: 'Footer Link',
+          name: 'footer',
+          widget: 'list',
           fields: [
             {
-              label: 'Button Text',
-              name: 'button_text',
+              label: 'Label',
+              name: 'label',
               widget: 'string',
-              hint: 'Something clickbaity'
+              hint: 'What text should be displayed?'
             },
             {
-              label: 'Button Link',
-              name: 'button_link',
+              label: 'Link',
+              name: 'url',
               widget: 'string',
-              hint: 'Where should the link go? Twitch? Your Discord? Include the https:// if you want to guarantee it works.'
+              hint: 'What should this link to?'
             }
           ]
-        }
+        },
       ]
     },
     {

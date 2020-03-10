@@ -1,17 +1,17 @@
 ---
-layout: default
+layout: default.njk
 ---
 {#
 You Are Here:
-- 404
-- src/site/_layouts/404.njk
+- Contact
+- src/site/_layouts/contact.njk
 
 How It Works:
-- On build, this page makes a 404 destination when a page is not found
+- On build, this page adds a form (if enabled)
 
 Dynamic Data:
 - anything in {{ curly braces }} is a variable from:
-  (a) frontmatter in the associated markdown file (src/site/page/404.md)
+  (a) frontmatter in the associated markdown file (src/site/page/contact.md)
   (b) src/site/_globals
 #}
 <section class="mx-auto">
@@ -21,9 +21,10 @@ Dynamic Data:
   <div class="content">
 
     {{ content | safe }}
-    <p>
-      <a href="/">Take me back to the homepage</a>
-    </p>
+
+    {% if form %}
+      {% include "form.njk" %}
+    {% endif %}
 
   </div>
 
