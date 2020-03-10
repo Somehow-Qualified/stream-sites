@@ -28,6 +28,7 @@
 		"build:css": "postcss src/site/_includes/_css/main.css -o dist/css/main.css",
 		"build:css:admin": "NODE_ENV=admin postcss src/site/_includes/_css/main.css -o dist/admin/css/main.min.css",
 		"build:html": "eleventy --config=eleventy.config.js",
+		"debug": "DEBUG=Eleventy* npm run build:html",
 		"watch": "NODE_ENV=local npm-run-all --parallel watch:css watch:html",
 		"watch:css": "postcss src/site/_includes/_css/main.css -o dist/css/main.css --watch",
 		"watch:html": "eleventy --config=eleventy.config.js --serve --port=8181",
