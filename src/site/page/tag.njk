@@ -9,14 +9,12 @@ pagination:
   - nav
   - page
   - post
-  - blogLatest
-  - highlightsLatest
-  - archiveLatest
   - tagList
   addAllPagesToCollections: true
 renderData:
   title: Tagged "{{ tag}}"
-  layout: {{ theme.tag.layout }}
+layout: default.njk
+key: tagged
 permalink: /tags/{{ tag | slug }}/
 ---
 {#

@@ -13,7 +13,6 @@ module.exports = function (collection) {
           case "nav":
           case "page":
           case "post":
-          case "postsLatest":
             return false;
         }
         return true;

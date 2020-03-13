@@ -4,9 +4,19 @@
     "main": "purple",
     "accent": "pink"
   },
+  "404": {
+    "heading": "404",
+    "subheading": "Page Not Found",
+    "type": "core",
+    "collection": "system",
+    "img_card": "",
+    "img_card_alt": "",
+    "seo_title": "404",
+    "seo_desc": "Page Not Found"
+  },
   "archive": {
     "heading": "Archive",
-    "subheading": "All of my awesome posts",
+    "subheading": "Browse everything",
     "slug": "archive",
     "type": "core",
     "collection": "archive",
@@ -28,7 +38,7 @@
   },
   "highlights": {
     "heading": "Highlights",
-    "subheading": "Check out my highlights",
+    "subheading": "Check out my videos",
     "slug": "highlights",
     "type": "core",
     "collection": "highlights",
@@ -39,11 +49,27 @@
   },
   "tag": {
     "heading": "Tagged",
+    "subheading": "",
+    "slug": "",
+    "type": "core",
+    "collection": "tags",
+    "img_card": "",
+    "img_card_alt": "",
+    "seo_title": "Tagged {{ tag }}",
+    "seo_desc": "All posts tagged {{ tag }}",
     "template": "ghostwind/tag.njk",
     "layout": "ghostwind/default.njk"
   },
   "tags": {
     "heading": "Explore Tags",
+    "subheading": "",
+    "slug": "",
+    "type": "core",
+    "collection": "tags",
+    "img_card": "",
+    "img_card_alt": "",
+    "seo_title": "Tags",
+    "seo_desc": "All tagged posts",
     "layout": "ghostwind/default.njk"
   }
 }

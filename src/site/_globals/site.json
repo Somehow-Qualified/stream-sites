@@ -7,9 +7,15 @@
   "author_bio": "Founder, Scientist, Unicorn",
   "author_twitter": "@m2creates",
   "author_email": "hello@streamsites.xyz",
+  "privacy_email": "privacy@streamsites.xyz",
   "logo": "/images/logo-ss-square.png",
   "favicon": "/images/logo-ss-square.png",
   "image_card": "/images/ss-card.jpg",
   "image_card_alt": "Stream Sites logo",
-  "twitch_handle": "m2creates"
+  "twitch_handle": "m2creates",
+  "theme": "ghostwind",
+  "colors": {
+    "main": "purple",
+    "accent": "pink"
+  }
 }

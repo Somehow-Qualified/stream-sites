@@ -1,6 +1,6 @@
 ---
 title: Privacy Policy
-date: 2019-09-30
+date: 2020-03-03
 slug: privacy
 seo:
   excerpt: Your privacy is important!
@@ -43,7 +43,7 @@ Examples of Cookies we use:
 
 ## Use of Data
 
-- Fatsack Gaming uses the collected data for various purposes:
+{{ site.name }} uses the collected data for various purposes:
 - To provide and maintain the Website
 - To notify you about changes to our Website
 - To allow you to participate in interactive features of our Website when you choose to do so
@@ -92,11 +92,3 @@ We have no control over and assume no responsibility for the content, privacy po
 Our Website does not address anyone under the age of 18 ("Children").
 
 We do not knowingly collect personally identifiable information from anyone under the age of 18. If you are a parent or guardian and you are aware that your Children has provided us with Personal Data, please contact us. If we become aware that we have collected Personal Data from children without verification of parental consent, we take steps to remove that information from our servers.
-
-## Changes To This Privacy Policy
-
-We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page.
-
-We will let you know via email and/or a prominent notice on our Website, prior to the change becoming effective and update the "effective date" at the bottom of this Privacy Policy.
-
-You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective when they are posted on this page.

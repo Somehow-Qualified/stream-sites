@@ -38,6 +38,27 @@ Dynamic Data:
     {# Dark Mode Handler #}
     <script>(localStorage.getItem('darkMode') === 'true') && document.documentElement.classList.add('mode-dark');</script>
 
+    {# Twitch Live Alert #}
+    {# <style>
+    twitch-promo {
+      --color-text: "#000";
+      --color-text-hover: "#000";
+      --color-bg: "#fff";
+      --color-bg-hover: "#e0cdfb";
+      --color-border: "#000";
+      --color-close: "#000";
+    }
+    html.mode-dark twitch-promo {
+      --dark-color-text: "#fff";
+      --dark-color-text-hover: "#000";
+      --dark-color-bg: "#000";
+      --dark-color-bg-hover: "#e0cdfb";
+      --dark-color-border: "#fff";
+      --dark-color-close: "#fff":
+    }
+    </style>
+    <script src="/js/twitch.js" defer></script> #}
+
     {# Netlify Identity for Login #}
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 

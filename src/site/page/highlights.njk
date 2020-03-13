@@ -4,13 +4,12 @@ pagination:
   size: 12
   alias: posts
   addAllPagesToCollections: true
+renderData:
+  title: "{{ theme.highlights.seo_title }}"
+  desc: "{{ theme.highlights.seo_desc }}"
+  heading: "{{ theme.highlights.heading }}"
+  subheading: "{{ theme.highlights.subheading }}"
 layout: archive.njk
+key: archives
 permalink: "{{ theme.highlights.slug }}/{% if pagination.pageNumber > 0 %}page-{{ pagination.pageNumber + 1 }}/{% endif %}index.html"
 ---
-
-{% set title = theme.highlights.title %}
-{% set subheading = theme.highlights.subheading %}
-{% set img_card = theme.highlights.img_card %}
-{% set img_card_alt = theme.highlights.img_card_alt %}
-{% set seo_title = theme.highlights.seo_title %}
-{% set seo_desc = theme.highlights.seo_desc %}

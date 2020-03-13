@@ -3,6 +3,7 @@ export default {
   label: 'Blog',
   label_singular: 'Blog Post',
   description: 'Create or edit a blog post',
+  summary: "{{fields.title}}",
   folder: 'src/site/blog',
   create: true,
   slug: '{{fields.slug}}',
@@ -82,7 +83,11 @@ export default {
           name: 'excerpt',
           widget: 'text',
           required: false,
-          hint: 'A short description to tease this in a Search or Social Media preview.'
+          hint: 'A short description to tease this in a Search or Social Media preview.',
+          pattern: [
+            '.{,240}',
+            'Max 240 characters'
+          ]
         }
       ]
     },
