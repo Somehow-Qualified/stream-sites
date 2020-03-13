@@ -24,7 +24,7 @@ nunjucks does not work in ld+json section
 ```
 #}
 
-{% set title = renderData.title or title %}
+{% set title = archive_title or heading or title %}
 {% set metaTitle =  seo.meta_title or renderData.title or title or site.name %}
 {% set metaDescription = seo.meta_description or seo.excerpt or renderData.desc or site.description %}
 {% set metaImage = image_card or site.image_card %}
@@ -35,7 +35,7 @@ nunjucks does not work in ld+json section
 {# Site #}
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>{{ title }} | {{ site.name }}</title>
+<title>{% if title %}{{ title }} | {% endif %}{{ site.name }}</title>
 <meta name="description" content="{{ metaDescription }}">
 <meta name="author" content="{{ authorName }}">
 <link rel="canonical" href="{{site.url}}{{ page.url }}">

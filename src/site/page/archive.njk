@@ -4,11 +4,16 @@ pagination:
   size: 12
   alias: posts
   addAllPagesToCollections: true
-renderData:
-  title: "{{ theme.archive.seo_title }}"
-  desc: "{{ theme.archive.seo_desc }}"
-  heading: "{{ theme.archive.heading }}"
-  subheading: "{{ theme.archive.subheading }}"
+eleventyComputed:
+  heading: >-
+    {{ theme.archive.heading }}
+  subheading: >-
+    {{ theme.archive.subheading }}
+  seo:
+    excerpt: >-
+      {{ theme.archive.seo_desc }}
+    meta_title: >-
+      {{ theme.archive.seo_title }}
 layout: archive.njk
 key: archives
 permalink: "{{ theme.archive.slug }}/{% if pagination.pageNumber > 0 %}page-{{ pagination.pageNumber + 1 }}/{% endif %}index.html"

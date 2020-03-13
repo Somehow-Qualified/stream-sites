@@ -4,15 +4,16 @@
     "main": "purple",
     "accent": "pink"
   },
-  "404": {
-    "heading": "404",
-    "subheading": "Page Not Found",
+  "about": {
+    "heading": "Meet m2creates",
+    "subheading": "About",
+    "slug": "about",
     "type": "core",
-    "collection": "system",
+    "collection": "about",
     "img_card": "",
     "img_card_alt": "",
-    "seo_title": "404",
-    "seo_desc": "Page Not Found"
+    "seo_title": "About m2creates",
+    "seo_desc": "Get to know m2creates!"
   },
   "archive": {
     "heading": "Archive",
@@ -36,6 +37,17 @@
     "seo_title": "Blog",
     "seo_desc": "Read all of my awesome posts."
   },
+  "contact": {
+    "heading": "Get In Touch",
+    "subheading": "Contact",
+    "slug": "contact",
+    "type": "core",
+    "collection": "contact",
+    "img_card": "",
+    "img_card_alt": "",
+    "seo_title": "Contact",
+    "seo_desc": "Get in touch with m2creates by email or on social media."
+  },
   "highlights": {
     "heading": "Highlights",
     "subheading": "Check out my videos",
@@ -47,29 +59,49 @@
     "seo_title": "Video Highlights",
     "seo_desc": "Watch all of my awesome highlights."
   },
+  "search": {
+    "heading": "Search",
+    "subheading": "Discover",
+    "slug": "search",
+    "type": "core",
+    "collection": "core",
+    "img_card": "",
+    "img_card_alt": "",
+    "seo_title": "Search Stream Sites",
+    "seo_desc": "Lets see what you discover!"
+  },
   "tag": {
     "heading": "Tagged",
     "subheading": "",
-    "slug": "",
+    "slug": "tags/",
     "type": "core",
-    "collection": "tags",
+    "collection": "tag",
     "img_card": "",
     "img_card_alt": "",
-    "seo_title": "Tagged {{ tag }}",
-    "seo_desc": "All posts tagged {{ tag }}",
-    "template": "ghostwind/tag.njk",
-    "layout": "ghostwind/default.njk"
+    "seo_title": "Tagged",
+    "seo_desc": "All posts tagged",
+    "template": "ghostwind/tag.njk"
   },
   "tags": {
-    "heading": "Explore Tags",
-    "subheading": "",
-    "slug": "",
+    "heading": "Explore by Tag",
+    "subheading": "Tag Archive",
+    "slug": "tags",
     "type": "core",
     "collection": "tags",
     "img_card": "",
     "img_card_alt": "",
     "seo_title": "Tags",
-    "seo_desc": "All tagged posts",
-    "layout": "ghostwind/default.njk"
+    "seo_desc": "All posts tagged"
+  },
+  "page_404": {
+    "heading": "404",
+    "subheading": "Page Not Found",
+    "slug": 404,
+    "type": "core",
+    "collection": "system",
+    "img_card": "",
+    "img_card_alt": "",
+    "seo_title": "Page Not Found",
+    "seo_desc": "We can't find that page. Try searching instead."
   }
 }

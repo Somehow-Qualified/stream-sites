@@ -6,13 +6,25 @@ pagination:
   filter:
   - all
   - archive
+  - blog
+  - highlights
   - nav
   - page
   - post
   - tagList
   addAllPagesToCollections: true
-renderData:
-  title: Tagged "{{ tag}}"
+eleventyComputed:
+  archive_title: >-
+    Tagged "{{ tag }}"
+  heading: >-
+    {{ theme.tag.heading }}
+  subheading: >-
+    {{ tag }}
+  seo:
+    excerpt: >-
+      {{ theme.tag.seo_desc}} "{{ tag }}"
+    meta_title: >-
+      Tagged "{{ tag }}"
 layout: default.njk
 key: tagged
 permalink: /tags/{{ tag | slug }}/

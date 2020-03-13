@@ -16,8 +16,8 @@ Dynamic Data:
 #}
 <section class="mx-auto">
   <div class="text-center pt-20 pb-12">
-    <p class="text-sm md:text-base text-{{ theme.colors.accent }}-600 dark:text-{{ theme.colors.main }}-100 font-bold {{ fontMeta }}">{{ heading }}</p>
-    <h1 class="font-bold break-normal text-3xl md:text-5xl">{{ subheading }}</h1>
+    <p class="text-sm md:text-base text-{{ theme.colors.accent }}-600 dark:text-{{ theme.colors.main }}-100 font-bold {{ fontMeta }}">{{ theme.page_404.heading | upper }}</p>
+    <h1 class="font-bold break-normal text-3xl md:text-5xl">{{ theme.page_404.subheading }}</h1>
   </div>
   <div class="container content highlight-{{ theme.colors.accent }} max-w-5xl mx-auto mb-16">
     <div>{{ content | safe }}</div>
