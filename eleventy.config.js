@@ -35,10 +35,10 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addCollection(collectionName, collections[collectionName])
   });
 
-  // Transforms
-  Object.keys(transforms).forEach(transformName => {
-    eleventyConfig.addTransform(transformName, transforms[transformName])
-  });
+  // WIP: Transforms
+  // Object.keys(transforms).forEach(transformName => {
+  //   eleventyConfig.addTransform(transformName, transforms[transformName])
+  // });
 
   // Load plugins
   // eleventyConfig.addPlugin(pluginLazyImages, {
@@ -96,7 +96,7 @@ module.exports = function (eleventyConfig) {
   // Prepare assets for production
   if (process.env.NODE_ENV === 'production') {
     // Minify the html output when building production
-    eleventyConfig.addTransform('htmlmin', require('./src/utils/minify-html.js') );
+    eleventyConfig.addTransform('htmlmin', require('./src/utils/htmlmin.js') );
     // CSS is handled via postcss-cli in package.json
     // JavaScript is handled by terser is package.json
   }
