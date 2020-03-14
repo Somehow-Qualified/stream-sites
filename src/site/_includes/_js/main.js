@@ -71,6 +71,7 @@ class DarkMode {
 if (window.CSS && CSS.supports('color', 'var(--fake-var)')) {
   new DarkMode()
 }
+
 /*
  * Search by Phil Hawksworth
  * Source: https://github.com/philhawksworth/hawksworx.com/blob/master/src/js/search.js

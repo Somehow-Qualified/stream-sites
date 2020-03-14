@@ -1,12 +1,12 @@
 export default {
-  name: 'highlights',
+  name: 'video',
   label: 'Video Highlights',
   label_singular: 'Video Highlight',
   description: 'Create or edit a video highlight',
-  folder: 'src/site/highlights',
+  folder: 'src/site/video',
   create: true,
   slug: '{{fields.slug}}',
-  preview_path: 'highlights/{{fields.slug}}',
+  preview_path: 'video/{{fields.slug}}',
   editor: {
     preview: false
   },
@@ -57,7 +57,7 @@ export default {
           value: 'vod'
         }
       ],
-      hint: 'Select the type of video to embed. Vods include highlights and past broadcasts.'
+      hint: 'Select the type of video to embed. Vods include video and past broadcasts.'
     },
     {
       label: 'Clipped By',

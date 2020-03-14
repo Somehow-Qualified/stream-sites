@@ -10,14 +10,11 @@ How It Works:
 - On build, this layout will generate 1 page with a list of all the tags from
   your posts (blog & video)
 #}
-<section class="mx-auto">
+<section class="container max-w-5xl mx-auto mb-16">
 
-  <div class="text-center pt-20 pb-12">
-    <p class="text-sm md:text-base text-{{ theme.colors.accent }}-600 dark:text-{{ theme.colors.main }}-100 font-bold">{{ theme.tags.subheading | upper }}</p>
-    <h1 class="font-bold break-normal text-3xl md:text-5xl">{{ theme.tags.heading }}</h1>
-  </div>
+  <h1 class="page-title text-5xl text-center">{{ theme.tags.heading }}</h1>
 
-  <div class="text-center tags">
+  <div class="content text-center tags">
     <ul>
     {% for tag in collections.tagList %}
         {% set tagUrl %}/tags/{{ tag | slug }}/{% endset %}

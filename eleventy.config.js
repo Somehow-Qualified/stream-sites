@@ -17,10 +17,7 @@ const pluginSyntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 
 const filters = require('./src/utils/date.filters');
 
-/**
- * Import site configuration files
- */
-const settings = require('./src/site/_globals/site.json');
+// Include theme config
 const config = require('./src/site/_globals/theme.json');
 
 module.exports = function (eleventyConfig) {
@@ -116,12 +113,12 @@ module.exports = function (eleventyConfig) {
     return collection.getFilteredByGlob('**/blog/*.md').reverse();
   });
   // Highlights: posts created under Highlights
-  eleventyConfig.addCollection('highlights', collection => {
-    return collection.getFilteredByGlob('**/highlights/*.md').reverse();
+  eleventyConfig.addCollection('video', collection => {
+    return collection.getFilteredByGlob('**/video/*.md').reverse();
   });
   // Archive: a single stream of Blog Posts and Highlights
   eleventyConfig.addCollection('archive', collection => {
-    return collection.getFilteredByGlob(['**/blog/*.md', '**/highlights/*.md']).reverse();
+    return collection.getFilteredByGlob(['**/blog/*.md', '**/video/*.md']).reverse();
   });
   // Tags: a list of every tag used
   eleventyConfig.addCollection('tagList', require('./src/utils/tag-list.collection'));

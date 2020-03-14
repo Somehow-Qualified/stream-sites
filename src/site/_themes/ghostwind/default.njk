@@ -21,9 +21,12 @@ Dynamic Data:
     {# Meta Tags #}
     {% include "meta.njk" %}
 
-    {# Styles #}
+    {# Stylesheet #}
     <link rel="stylesheet" href="/css/main.css">
-    <link rel="stylesheet" href="/css/ghostwind.css">
+    {# for Twitch Live Alert #}
+    {% if site.twitch_client %}
+    <link rel="stylesheet" href="/css/twitch.css">
+    {% endif %}
 
     {# Favicon #}
     <link rel="icon" type="image/ico" href="{{ site.favicon }}">
@@ -38,27 +41,6 @@ Dynamic Data:
     {# Dark Mode Handler #}
     <script>(localStorage.getItem('darkMode') === 'true') && document.documentElement.classList.add('mode-dark');</script>
 
-    {# Twitch Live Alert #}
-    {# <style>
-    twitch-promo {
-      --color-text: "#000";
-      --color-text-hover: "#000";
-      --color-bg: "#fff";
-      --color-bg-hover: "#e0cdfb";
-      --color-border: "#000";
-      --color-close: "#000";
-    }
-    html.mode-dark twitch-promo {
-      --dark-color-text: "#fff";
-      --dark-color-text-hover: "#000";
-      --dark-color-bg: "#000";
-      --dark-color-bg-hover: "#e0cdfb";
-      --dark-color-border: "#fff";
-      --dark-color-close: "#fff":
-    }
-    </style>
-    <script src="/js/twitch.js" defer></script> #}
-
     {# Netlify Identity for Login #}
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 
@@ -72,7 +54,7 @@ Dynamic Data:
       {# Include header #}
       {% include "ghostwind/header.njk" %}
 
-      <main id="main" class="main hfeed flex-grow flex-shrink-0" role="main" tabindex="-1">
+      <main id="main" class="main hfeed flex-grow flex-shrink-0 container mx-auto" role="main" tabindex="-1">
         {# Templates and content load here! #}
         {{ content | safe }}
       </main>
@@ -81,8 +63,15 @@ Dynamic Data:
       {% include "ghostwind/footer.njk" %}
     </div>
 
+    {% if site.twitch_client %}
+    {% include "twitch-component.njk" %}
+    {% endif %}
+
   {# Load Scripts #}
   <script src="/js/main.js" defer></script>
+  {% if site.twitch_client %}
+  <script src="/js/twitch.js" defer></script>
+  {% endif %}
 
   {# Enable Netlify Identity Login #}
   <script>

@@ -66,12 +66,6 @@ Dynamic Data:
   <div class="container mx-auto"><ol class="search-results text-{{ theme.colors.main }}-800"></ol></div>
 </div>
 
-
-{# Live Alert #}
-{% if stream.type == "live" %}
-{% include 'livealert.njk' %}
-{% endif %}
-
 {# Scroll Progress Bar for Posts #}
 <div id="scrollHeader" class="bg-{{ theme.colors.accent }}-100 fixed w-full z-10 top-0 hidden animated flex-shrink-0">
   <div class="bg-white dark:bg-{{ theme.colors.main }}-900">

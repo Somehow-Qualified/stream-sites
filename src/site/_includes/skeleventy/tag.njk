@@ -1,7 +1,7 @@
 {#
 You Are Here:
 - Tag
-- src/site/_includes/ghostwind/tag.njk
+- src/site/_includes/skeleventy/tag.njk
 
 How It Works:
 - On build, this layout will generate a postlist for every Tag.
@@ -15,7 +15,7 @@ How It Works:
     <div class="w-full max-w-6xl mx-auto px-2 pt-24 pb-8">
       <div class="flex flex-wrap -mx-2">
         {% set postslist = collections[ tag ] %}
-        {% include "postslist/cards.njk" %}
+        {% include "skeleventy/postslist.njk" %}
       </div>
     </div>
   </div>

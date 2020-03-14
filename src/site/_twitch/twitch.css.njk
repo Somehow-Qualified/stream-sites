@@ -1,0 +1,39 @@
+---
+permalink: css/twitch.css
+---
+{# TODO: Expose all options as variables
+- position
+- padding
+- flex?
+#}
+/* Light mode (default; prefers-color-scheme: light) */
+twitch-promo {
+
+	/* Define your colors */
+	--color-text: #000;
+	--color-text-hover: #fff;
+	--color-bg: #fff;
+	--color-bg-hover: #8e45f8;
+	--color-border: #000;
+	--close-icon-size: 20px;
+	--font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+	/* How to use font property: https://developer.mozilla.org/en-US/docs/Web/CSS/font */
+	/* font: font-style font-variant font-weight font-size/line-height font-family */
+	--font-headline: normal normal 700 0.85rem/1.5 var(--font-stack);
+	--font-title: italic normal normal 0.75rem var(--font-stack);
+
+	/* Twitch Branding */
+	--twitch-icon-bg: #8e45f8;
+	--twitch-icon-color: #fff;
+	--twitch-icon-size: 20px;
+}
+
+/* Dark Mode Adjustments (toggle; prefers-color-scheme: dark) */
+.mode-dark twitch-promo {
+	--color-text: #fff;
+	--color-text-hover: #fff;
+	--color-bg: #000;
+	--color-bg-hover: #8e45f8;
+	--color-border: #fff;
+}

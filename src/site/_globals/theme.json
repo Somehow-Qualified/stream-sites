@@ -1,5 +1,5 @@
 {
-  "theme": "ghostwind",
+  "theme": "skeleventy",
   "colors": {
     "main": "purple",
     "accent": "pink"
@@ -48,17 +48,6 @@
     "seo_title": "Contact",
     "seo_desc": "Get in touch with m2creates by email or on social media."
   },
-  "highlights": {
-    "heading": "Highlights",
-    "subheading": "Check out my videos",
-    "slug": "highlights",
-    "type": "core",
-    "collection": "highlights",
-    "img_card": "",
-    "img_card_alt": "",
-    "seo_title": "Video Highlights",
-    "seo_desc": "Watch all of my awesome highlights."
-  },
   "search": {
     "heading": "Search",
     "subheading": "Discover",
@@ -92,6 +81,17 @@
     "img_card_alt": "",
     "seo_title": "Tags",
     "seo_desc": "All posts tagged"
+  },
+  "video": {
+    "heading": "Video Highlights",
+    "subheading": "Check out my videos",
+    "slug": "video",
+    "type": "core",
+    "collection": "video",
+    "img_card": "",
+    "img_card_alt": "",
+    "seo_title": "Video Highlights",
+    "seo_desc": "Watch all of my awesome video."
   },
   "page_404": {
     "heading": "404",

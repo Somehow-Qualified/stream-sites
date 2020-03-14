@@ -1,0 +1,20 @@
+---
+pagination:
+  data: collections.video
+  size: 12
+  alias: posts
+  addAllPagesToCollections: true
+eleventyComputed:
+  heading: >-
+    {{ theme.video.heading }}
+  subheading: >-
+    {{ theme.video.subheading }}
+  seo:
+    excerpt: >-
+      {{ theme.video.seo_desc }}
+    meta_title: >-
+      {{ theme.video.seo_title }}
+layout: archive.njk
+key: archives
+permalink: "{{ theme.video.slug }}/{% if pagination.pageNumber > 0 %}page-{{ pagination.pageNumber + 1 }}/{% endif %}index.html"
+---

@@ -1,7 +1,7 @@
 {#
 You Are Here:
 - Posts List
-- src/site/_includes/postslist/cards.njk
+- src/site/_includes/skeleventy/postslist.njk
 
 How It Works:
 - On build, this is placed on every page with `{% include template %}`
@@ -10,7 +10,7 @@ How It Works:
 
 Dynamic Data:
 - anything in {{ curly braces }} is a variable from frontmatter in a
-  markdown file from src/site/blog or src/site/highlights
+  markdown file from src/site/blog or src/site/video
 - aliases are defined in `{% set %}`
 #}
 
@@ -19,7 +19,7 @@ Dynamic Data:
 {% for post in postslist %}
 
   {% set title = post.data.title %}
-  {% set featuredImage = post.data.image_card %}
+  {% set featuredImage = post.data.image_card or site.image_card %}
   {% set featuredImageAlt = 'Video clip thumbnail' or post.data.image_caption %}
   {% set postCredit = post.data.clipper or site.author_name %}
   {% set publishDate = post.data.date %}
@@ -27,7 +27,7 @@ Dynamic Data:
   <article class="post mb-6 md:mx-3 rounded-lg overflow-hidden shadow-md hover:shadow-lg w-full md:w-45 lg:w-30">
     {% if featuredImage %}
     <figure class="relative overflow-hidden h-40 sm:h-70 md:h-56 lg:h-40 xl:h-48 w-full">
-      <div class="absolute bottom-0 left-0 flex mx-3 z-10 lg:mb-1 flex-wrap">
+      <div class="absolute bottom-0 left-0 flex mx-3 z-1 lg:mb-1 flex-wrap">
         {% for tag in post.data.tags %}
           {%- if tag != "post" -%}
             <a href="/tags/{{ tag }}/" rel="tag">
@@ -43,7 +43,7 @@ Dynamic Data:
     {% endif %}
     <a class="block text-{{ theme.colors.main }}-800 dark:text-{{ theme.colors.main }}-100 dark:bg-{{ theme.colors.main }}-800 no-underline px-6 py-8 h-full" href="{{ post.url }}">
       <h2 class="text-xl md:text-2xl mt-0 mb-3">{{ title }}</h2>
-      <p class="text-sm md:text-sm">By {{ postCredit }}, <time datetime="{{ publishDate }}" class="mb-0">{{ publishDate | readableDate }}</time></p>
+      <p class="text-sm md:text-sm">{% if collections.video %}Clipped by{% else %}By{% endif %}&nbsp;{{ postCredit }}, <time datetime="{{ publishDate }}" class="mb-0">{{ publishDate | readableDate }}</time></p>
     </a>
   </article>
 

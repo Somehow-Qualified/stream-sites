@@ -14,17 +14,13 @@ Dynamic Data:
   (a) frontmatter in the associated markdown file (src/site/page/about.md)
   (b) src/site/_globals
 #}
-<section class="mx-auto">
+<section class="container max-w-5xl mx-auto mb-16">
 
   <h1 class="page-title text-5xl">{{ title }}</h1>
 
-  <div class="content">
+  <div class="content highlight-{{ theme.colors.accent }}">
 
     {{ content | safe }}
-
-    {% if form %}
-      {% include "form.njk" %}
-    {% endif %}
 
   </div>
 

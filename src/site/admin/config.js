@@ -1,6 +1,6 @@
 import blog from './collections/blog.js';
 import custom from './collections/custom.js';
-import highlights from './collections/highlights.js';
+import video from './collections/video.js';
 import linkInBio from './collections/linkinbio.js';
 import modules from './collections/modules.js';
 import page from './collections/page.js';
@@ -19,7 +19,7 @@ export default {
   show_preview_links: true,
   collections: [
     blog,
-    highlights,
+    video,
     page,
     modules,
     linkInBio,

@@ -52,7 +52,7 @@ ss-core
     │   │   │   ├── social-icons.njk
     │   │   │   └── postslist
     │   │   │       ├── cards-horizontal.njk
-    │   │   │       └── cards.njk
+    │   │   │       └── postslist.njk
     │   │   ├── _css
     │   │   │   └── main.css
     │   │   ├── _fonts
@@ -78,7 +78,7 @@ ss-core
     │   │   ├── collections
     │   │   │   ├── blog.js
     │   │   │   ├── custom.js
-    │   │   │   ├── highlights.js
+    │   │   │   ├── video.js
     │   │   │   ├── linkinbio.js
     │   │   │   ├── modules.js
     │   │   │   ├── page.js
@@ -91,15 +91,15 @@ ss-core
     │   ├── blog
     │   │   ├── blog.json
     │   │   └── sample-post.md
-    │   ├── highlights
-    │   │   ├── highlights.json
+    │   ├── video
+    │   │   ├── video.json
     │   │   └── sample-post.md
     │   └── page
     │       ├── 404.md
     │       ├── about.md
     │       ├── blog.md
     │       ├── contact.md
-    │       ├── highlights.md
+    │       ├── video.md
     │       ├── home.md
     │       ├── linkinbio.md
     │       ├── page.json
