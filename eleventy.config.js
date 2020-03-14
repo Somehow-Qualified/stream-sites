@@ -27,17 +27,14 @@ module.exports = function (eleventyConfig) {
     return util.inspect(obj)
   });
 
-  // Use ENV for Development
-  if (process.env.NODE_ENV === 'local') {
-    require('dotenv').config();
-  }
-
   // Load filters
   Object.keys(filters).forEach(filterName => {
     eleventyConfig.addFilter(filterName, filters[filterName])
   });
+
   // Squash content for search.json
   eleventyConfig.addFilter("squash", require("./src/utils/squash.filters") );
+
   // Set a limiter for nunjucks FORs
   eleventyConfig.addFilter('limit', function(arr, limit) {
     return arr.slice(0, limit);
@@ -60,7 +57,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.setDataDeepMerge(true);
 
   // Markdown-It and Plugins
-  let markdownIt = require("markdown-it");
+  let markdownIt = require('markdown-it');
   let markdownItConfig = {
     html: true,
     breaks: true,
@@ -99,14 +96,6 @@ module.exports = function (eleventyConfig) {
     .use(markdownItVideo, markdownItVideoConfig);
   eleventyConfig.setLibrary("md", markdownItLib);
 
-  // Compress and combine JS files
-  eleventyConfig.addFilter('jsmin', require('./src/utils/minify-js.js') );
-
-  // Minify the html output when building production
-  if (process.env.NODE_ENV === 'production') {
-    eleventyConfig.addTransform('htmlmin', require('./src/utils/minify-html.js') );
-  }
-
   // Collections
   // Blog: posts created under Blog
   eleventyConfig.addCollection('blog', collection => {
@@ -123,8 +112,14 @@ module.exports = function (eleventyConfig) {
   // Tags: a list of every tag used
   eleventyConfig.addCollection('tagList', require('./src/utils/tag-list.collection'));
 
+  // Prepare assets for production
+  // CSS is handled via CLI in package.json
+  if (process.env.NODE_ENV === 'production') {
+    // Minify the html output when building production
+    eleventyConfig.addTransform('htmlmin', require('./src/utils/minify-html.js') );
+  }
+
   // Copy static assests
-  eleventyConfig.addPassthroughCopy({ 'src/site/_includes/_js': 'js' });
   eleventyConfig.addPassthroughCopy({ 'src/site/_includes/_fonts': 'fonts' });
   eleventyConfig.addPassthroughCopy('images');
   eleventyConfig.addPassthroughCopy('src/site/admin');
@@ -135,7 +130,6 @@ module.exports = function (eleventyConfig) {
     callbacks: {
       ready: function(err, browserSync) {
         const content_404 = fs.readFileSync('dist/404/index.html');
-
         browserSync.addMiddleware("*", (req, res) => {
           // Provides the 404 content without redirect.
           res.write(content_404);
@@ -151,7 +145,7 @@ module.exports = function (eleventyConfig) {
     dir: {
       input: 'src/site',
       includes: '_includes',
-      layouts: `_themes/${config.theme}`,
+      layouts: `_themes/${config.theme}`, // .eleventyignore the rest
       data: '_globals',
       output: 'dist' // the Publish directory
     },

@@ -22,7 +22,7 @@ Dynamic Data:
     {% include "meta.njk" %}
 
     {# Stylesheet #}
-    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/main.min.css">
     {# for Twitch Live Alert #}
     {% if site.twitch_client %}
     <link rel="stylesheet" href="/css/twitch.css">
@@ -68,7 +68,7 @@ Dynamic Data:
     {% endif %}
 
   {# Load Scripts #}
-  <script src="/js/main.js" defer></script>
+  <script src="/js/main.min.js" defer></script>
   {% if site.twitch_client %}
   <script src="/js/twitch.js" defer></script>
   {% endif %}
