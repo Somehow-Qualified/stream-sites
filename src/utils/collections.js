@@ -1,6 +1,8 @@
 /*
 |----------------------------------------------------------------
 | Collections
+|
+| 11ty Docs: https://www.11ty.dev/docs/collections/
 |----------------------------------------------------------------
 */
 
@@ -10,13 +12,13 @@ module.exports = {
   tagList: collection => {
     let tagSet = new Set();
     collection.getAll().forEach(function(item) {
-      if( "tags" in item.data ) {
+      if ("tags" in item.data) {
         let tags = item.data.tags;
-        if( typeof tags === "string" ) {
+        if (typeof tags === "string") {
           tags = [tags];
         }
         tags = tags.filter(function(item) {
-          switch(item) {
+          switch (item) {
             // this list should match the `filter` list in tag.njk
             case "all":
             case "archive":
@@ -35,19 +37,41 @@ module.exports = {
         }
       }
     });
-    return [...tagSet].sort(function (a, b) {
+    return [...tagSet].sort(function(a, b) {
       return a.toLowerCase().localeCompare(b.toLowerCase());
     });
   },
 
   // Blog: posts created under Blog
   blog: collection => {
-    return collection.getFilteredByGlob('**/blog/*.md').reverse();
+    const blog = collection.getFilteredByGlob('**/blog/*.md');
+
+    for (let i = 0; i < blog.length; i++) {
+      const prevPost = blog[i - 1]
+      const nextPost = blog[i + 1]
+
+      blog[i].data["prevPost"] = prevPost
+      blog[i].data["nextPost"] = nextPost
+    }
+
+    return blog.reverse()
+    // return collection.getFilteredByGlob('**/blog/*.md').reverse();
   },
 
   // Video: posts created under Video
   video: collection => {
-    return collection.getFilteredByGlob('**/video/*.md').reverse();
+    const video = collection.getFilteredByGlob('**/video/*.md');
+
+    for (let i = 0; i < video.length; i++) {
+      const prevPost = video[i - 1]
+      const nextPost = video[i + 1]
+
+      video[i].data["prevPost"] = prevPost
+      video[i].data["nextPost"] = nextPost
+    }
+
+    return video.reverse()
+    // return collection.getFilteredByGlob('**/video/*.md').reverse();
   },
 
   // Archive: a single stream of Blog Posts and Highlights

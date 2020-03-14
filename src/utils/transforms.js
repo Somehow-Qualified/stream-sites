@@ -4,11 +4,14 @@
 |
 | CSS is handled via postcss-cli in package.json
 | JavaScript is handled by terser is package.json
+|
+| Maybe this can help?
+| https://github.com/jeremenichelli/personal-site/blob/master/.eleventy.js
+| https://github.com/jeremenichelli/personal-site/blob/master/.eleventy/transforms.js
 |----------------------------------------------------------------
 */
 
 const htmlmin = require('html-minifier');
-const helpers = require('./helpers.js');
 
 module.exports = {
 

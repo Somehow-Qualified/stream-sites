@@ -22,7 +22,7 @@ Dynamic Data:
     {% include "meta.njk" %}
 
     {# Stylesheet #}
-    <link rel="stylesheet" href="{{ '/css/main.min.css' | url | cacheBuster }}">
+    <link rel="stylesheet" href="{{ '/css/main.css' | url | cacheBuster }}">
     {# for Twitch Live Alert #}
     {% if site.twitch_client %}
     <link rel="stylesheet" href="{{ '/css/twitch.css' | url | cacheBuster }}">

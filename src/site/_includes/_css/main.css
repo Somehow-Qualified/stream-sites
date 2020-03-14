@@ -336,20 +336,20 @@ html.mode-dark .content.highlight-purple a:active {
   background-image: linear-gradient(180deg, transparent 70%, rgba(159, 122, 234, .7) 0);
 }
 
-.content.highlight-pink a {
+.highlight-pink a {
   background-image: linear-gradient(180deg, transparent 70%, rgba(213, 63, 140, .3) 0);
   font-weight: 700;
 }
-html.mode-dark .content.highlight-pink a {
+html.mode-dark .highlight-pink a {
   background-image: linear-gradient(180deg, transparent 70%, rgba(251, 182, 206, .3) 0);
   color: #fff;
 }
-.content.highlight-pink a:hover,
-.content.highlight-pink a:active,
-.content.highlight-pink a:focus,
-html.mode-dark .content.highlight-pink a:hover,
-html.mode-dark .content.highlight-pink a:focus,
-html.mode-dark .content.highlight-pink a:active {
+.highlight-pink a:hover,
+.highlight-pink a:active,
+.highlight-pink a:focus,
+html.mode-dark .highlight-pink a:hover,
+html.mode-dark .highlight-pink a:focus,
+html.mode-dark .highlight-pink a:active {
   background-image: linear-gradient(180deg, transparent 70%, rgba(213, 63, 140, .7) 0);
 }
 

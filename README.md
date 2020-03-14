@@ -106,13 +106,49 @@ Additional features were made possible by the 11ty projects:
 
 Follow the journey on [Stream Sites](https://streamsites.xyz) or [the log](https://airtable.com/shryN9sES7sNSBlGs/tblKH3jM73HsOUDBu?backgroundColor=pink&layout=card&blocks=hide).
 
-### Roadmap TL;DR
+### Up Next
 
-- IN PROGRESS: Manual Initialization for Netlify CMS (no more YML!!)
-- IN PROGRESS: Themes
-- STANDBY: Next/Prev post links ([pending 11ty v.0.11.0](https://www.11ty.dev/docs/filters/collection-items/))
-- Collection for managing chat commands, sound effect previews, etc.
-- Support the Channel page for affiliations, donations, etc.
-- Webmentions
-- More icons for everything
-- Documentation
+- [ ] Search page
+- [ ] Better 404 page with Search
+- [ ] RSS **and** Atom feeds for archive, blog, video - give people all the choices for consumption
+- [ ] **In Progress:** Manual Initialization for Netlify CMS (no more YML!!)
+- [ ] **In Progress:** Styled Previews in Netlify CMS.
+- [ ] **In Progress:** Themes (starting with 2, maybe 3)
+- [ ] Collection for managing chat commands, sound effect previews, etc.
+- [ ] Support the Channel page for affiliations, donations, etc.
+- [ ] Home pages
+- [ ] More icons for everything
+- [ ] Documentation, also looking into Storybook
+
+### Needs fine tuning
+- [ ] I somehow broke(?) the script that loads iframes for the video collection... it no longer shows you the image placeholder, only the play button icon.
+- [ ] Twitch Live Alert JS - make it smart when closed, so it knows when to pop up again (game changed, new stream)
+- [ ] Sitemap - set <lastmod> to file modified date, not build date
+- [ ] ld+json is missing `sameas`, which needs to be queried from  `_globals`
+- [ ] conditional logic for dev vs prod CSS and JS would be great, the [Skeleventy](https://github.com/josephdyer/skeleventy/blob/master/site/includes/layouts/default.njk#L14) version isn't working for me.
+
+### Done!
+
+- [x] Next/Prev links for posts
+- [x] Next/Prev links for archives
+- [x] Site search
+- [x] Light/Dark mode
+- [x] Styled Previews for Netlify CMS:  Posts, Pages
+- [x] Archive collection (all posts)
+- [x] Lazy loading
+- [x] SEO options, and a ton of meta tags
+- [x] CMS config
+- [x] Link in Bio (minus ongoing theme versions)
+- [x] Tags
+- [x] Contact form
+- [x] Blog and Video collections
+- [x] Core pages - About, Contact, Privacy
+
+### Other Ideas
+- [ ] Make it easy to add TailwindCSS options via `extend`; i.e. load a custom color palette through Netlify CMS. (I think the `list` widget with a child `code` widget _might_ work)
+- [ ] Make it easier to "install" custom fonts. Upload to the font directory, add it to `extend`, etc. all from Netlify CMS.
+- [ ] Tag list - filter for most popular
+- [ ] Twitch Live Alert CSS - expose more styles as CSS variables for easy style modification
+- [ ] Webmentions
+- [ ] Pull in latest Tweets - [example](https://www.d-hagemeier.com/en/articles/embed-twitter/)
+- [ ] [Mobile nav [?]](https://github.com/josephdyer/skeleventy/blob/master/site/includes/components/mobile-nav.njk)
