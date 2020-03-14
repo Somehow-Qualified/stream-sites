@@ -27,3 +27,15 @@ export default {
     custom
   ]
 }
+
+import Blog from './previews/blog.js';
+import Page from './previews/page.js';
+
+CMS.registerPreviewTemplate('blog', Blog);
+CMS.registerPreviewTemplate('page', Page);
+
+// Update this to a custom template
+CMS.registerPreviewTemplate('about', Page);
+
+CMS.registerPreviewStyle('./css/tailwind.min.css');
+CMS.registerPreviewStyle('./previews/inline.css');

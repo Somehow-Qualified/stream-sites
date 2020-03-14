@@ -22,10 +22,10 @@ Dynamic Data:
     {% include "meta.njk" %}
 
     {# Stylesheet #}
-    <link rel="stylesheet" href="/css/main.min.css">
+    <link rel="stylesheet" href="{{ '/css/main.min.css' | url | cacheBuster }}">
     {# for Twitch Live Alert #}
     {% if site.twitch_client %}
-    <link rel="stylesheet" href="/css/twitch.css">
+    <link rel="stylesheet" href="{{ '/css/twitch.css' | url | cacheBuster }}">
     {% endif %}
 
     {# Favicon #}
@@ -40,9 +40,6 @@ Dynamic Data:
 
     {# Dark Mode Handler #}
     <script>(localStorage.getItem('darkMode') === 'true') && document.documentElement.classList.add('mode-dark');</script>
-
-    {# Netlify Identity for Login #}
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 
   </head>
 
@@ -68,23 +65,10 @@ Dynamic Data:
     {% endif %}
 
   {# Load Scripts #}
-  <script src="/js/main.min.js" defer></script>
+  <script src="{{ '/js/main.min.js' | url | cacheBuster }}" defer></script>
   {% if site.twitch_client %}
-  <script src="/js/twitch.js" defer></script>
+  <script src="{{ '/js/twitch.js' | url | cacheBuster }}" defer></script>
   {% endif %}
-
-  {# Enable Netlify Identity Login #}
-  <script>
-    if (window.netlifyIdentity) {
-      window.netlifyIdentity.on("init", user => {
-        if (!user) {
-          window.netlifyIdentity.on("login", () => {
-            document.location.href = "/admin/";
-          });
-        }
-      });
-    }
-  </script>
 
   </body>
 
