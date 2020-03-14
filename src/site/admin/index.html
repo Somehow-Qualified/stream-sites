@@ -181,19 +181,8 @@
     // Update this to a custom template
     CMS.registerPreviewTemplate('about', Page);
 
-    CMS.registerPreviewStyle('./css/main.min.css');
+    CMS.registerPreviewStyle('./css/tailwind.min.css');
     CMS.registerPreviewStyle('./previews/inline.css');
-
-    // Enable Netlify Identity Login
-    if (window.netlifyIdentity) {
-      window.netlifyIdentity.on("init", user => {
-        if (!user) {
-          window.netlifyIdentity.on("login", () => {
-            document.location.href = "/admin/";
-          });
-        }
-      });
-    }
   </script>
 </body>
 
