@@ -8,7 +8,7 @@ layout: default.njk
 {% set fontAuthor = theme_ghostwind.fonts.post.author %}
 {% set colorFooter = theme_ghostwind.colors.postFooter %}
 
-<section>
+<article>
 
   {# Title, Date, Tags #}
   <div class="text-center pt-20 pb-12">
@@ -77,30 +77,12 @@ layout: default.njk
     </div>
   </div>
 
-  {% if collection === "blog" %}
-    {% set currentPost = collections.blog | getCollectionItem(page) %}
-    {% set previousPost = collections.blog | getPreviousCollectionItem(page) %}
-    {% set nextPost = collections.blog | getNextCollectionItem(page) %}
-    <div>
-      <p>{% if previousPost %}Previous Post: <a href="{{ previousPost.url }}">{{ previousPost.data.title }}</a>{% endif %}</p>
-      <p>{% if nextPost %}Next Post: <a href="{{ nextPost.url }}">{{ nextPost.data.title }}</a>{% endif %}</p>
-    </div>
-  {% elif collection === "video" %}
-    {% set currentPost = collections.video | getCollectionItem(page) %}
-    {% set previousPost = collections.video | getPreviousCollectionItem(page) %}
-    {% set nextPost = collections.video | getNextCollectionItem(page) %}
-    <div>
-      <p>{% if previousPost %}Previous Post: <a href="{{ previousPost.url }}">{{ previousPost.data.title }}</a>{% endif %}</p>
-      <p>{% if nextPost %}Next Post: <a href="{{ nextPost.url }}">{{ nextPost.data.title }}</a>{% endif %}</p>
-    </div>
-  {% endif %}
-
-  <div class="flex flex-row w-full justify-between">
-    <p class="w-1/2">{% if previousPost %}Newer<br><a href="{{ previousPost.url }}">{{ previousPost.data.title }}</a>{% endif %}</p>
-    <p class="w-1/2">{% if nextPost %}Older<br><a href="{{ nextPost.url }}">{{ nextPost.data.title }}</a>{% endif %}</p>
+  <div class="flex flex-row items-center w-full p-8 md:px-24 highlight-{{ theme.colors.accent }}">
+    <p class="w-1/2 text-sm text-left block mb-0">{% if prevPost %}<span>Previous:</span><br><a href="{{ prevPost.url }}">{{ prevPost.data.title }}</a>{% endif %}</p>
+    <p class="w-1/2 text-sm text-right block mb-0">{% if nextPost %}<span>Next:</span><br><a href="{{ nextPost.url }}">{{ nextPost.data.title }}</a>{% endif %}</p>
   </div>
 
-</section>
+</article>
 
 {# More Posts #}
 <section class="w-full bg-{{ theme.colors.accent }}-200 dark:bg-{{ theme.colors.main }}-800 px-6 pt-24 pb-8">
