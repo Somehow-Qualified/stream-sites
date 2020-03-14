@@ -1,6 +1,14 @@
 const util         = require('util');
 const fs           = require('fs');
 
+// Theme Config
+const config = require('./src/site/_globals/theme.json');
+
+// 11ty Files
+const filters = require('./src/utils/filters.js');
+const collections = require('./src/utils/collections.js');
+const transforms = require('./src/utils/transforms.js');
+
 // Markdown Plugins
 const markdownItAnchor = require('markdown-it-anchor');
 const markdownItAttrs = require('markdown-it-attrs');
@@ -8,36 +16,28 @@ const markdownItFootnote = require('markdown-it-footnote');
 const markdownItToc = require('markdown-it-table-of-contents');
 const markdownItVideo = require('markdown-it-video');
 
-// Eleventy Plugins
+// 11ty Plugins
 const pluginLazyImages = require('eleventy-plugin-lazyimages');
 const pluginPwa = require('eleventy-plugin-pwa');
 const pluginReadingTime = require('eleventy-plugin-reading-time');
 const pluginRss = require('@11ty/eleventy-plugin-rss');
 const pluginSyntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 
-const filters = require('./src/utils/date.filters');
-
-// Include theme config
-const config = require('./src/site/_globals/theme.json');
-
 module.exports = function (eleventyConfig) {
 
-  // Debug utility
-  eleventyConfig.addFilter('dump', obj => {
-    return util.inspect(obj)
-  });
-
-  // Load filters
+  // Filters
   Object.keys(filters).forEach(filterName => {
     eleventyConfig.addFilter(filterName, filters[filterName])
   });
 
-  // Squash content for search.json
-  eleventyConfig.addFilter("squash", require("./src/utils/squash.filters") );
+  // Collections
+  Object.keys(collections).forEach(collectionName => {
+    eleventyConfig.addCollection(collectionName, collections[collectionName])
+  });
 
-  // Set a limiter for nunjucks FORs
-  eleventyConfig.addFilter('limit', function(arr, limit) {
-    return arr.slice(0, limit);
+  // Transforms
+  Object.keys(transforms).forEach(transformName => {
+    eleventyConfig.addTransform(transformName, transforms[transformName])
   });
 
   // Load plugins
@@ -45,14 +45,12 @@ module.exports = function (eleventyConfig) {
   //   imgSelector: 'img', // custom image selector
   //   placeholderQuality: 75
   // });
-
-  if (process.env.NODE_ENV === 'production') {
-    eleventyConfig.addPlugin(pluginPwa);
-  }
-
   eleventyConfig.addPlugin(pluginReadingTime);
   eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addPlugin(pluginSyntaxHighlight);
+  if (process.env.NODE_ENV === 'production') {
+    eleventyConfig.addPlugin(pluginPwa);
+  }
 
   eleventyConfig.setDataDeepMerge(true);
 
@@ -71,10 +69,9 @@ module.exports = function (eleventyConfig) {
     permalinkSymbol: '#'
   };
   let markdownItAttrsConfig = {
-    // optional, these are default options
     leftDelimiter: '{',
     rightDelimiter: '}',
-    allowedAttributes: []  // empty array = all attributes are allowed
+    allowedAttributes: []
   };
   let markdownItTocConfig = {
     containerClass: 'md-toc',
@@ -96,27 +93,12 @@ module.exports = function (eleventyConfig) {
     .use(markdownItVideo, markdownItVideoConfig);
   eleventyConfig.setLibrary("md", markdownItLib);
 
-  // Collections
-  // Blog: posts created under Blog
-  eleventyConfig.addCollection('blog', collection => {
-    return collection.getFilteredByGlob('**/blog/*.md').reverse();
-  });
-  // Highlights: posts created under Highlights
-  eleventyConfig.addCollection('video', collection => {
-    return collection.getFilteredByGlob('**/video/*.md').reverse();
-  });
-  // Archive: a single stream of Blog Posts and Highlights
-  eleventyConfig.addCollection('archive', collection => {
-    return collection.getFilteredByGlob(['**/blog/*.md', '**/video/*.md']).reverse();
-  });
-  // Tags: a list of every tag used
-  eleventyConfig.addCollection('tagList', require('./src/utils/tag-list.collection'));
-
   // Prepare assets for production
-  // CSS is handled via CLI in package.json
   if (process.env.NODE_ENV === 'production') {
     // Minify the html output when building production
     eleventyConfig.addTransform('htmlmin', require('./src/utils/minify-html.js') );
+    // CSS is handled via postcss-cli in package.json
+    // JavaScript is handled by terser is package.json
   }
 
   // Copy static assests
@@ -125,7 +107,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy('src/site/admin');
   eleventyConfig.addPassthroughCopy('src/site/_redirects');
 
-  // Browsersync Overrides
+  // Browsersync for localhost:8181
   eleventyConfig.setBrowserSyncConfig({
     callbacks: {
       ready: function(err, browserSync) {
