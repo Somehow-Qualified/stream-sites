@@ -110,6 +110,11 @@ nunjucks does not work in ld+json section
     "url":"{{site.url}}{{ page.url }}",
     "image":"{{ site.url }}{{ metaImage }}",
     "headline":"{{ title }} | {{ site.name }}",
-    "@context":"http://schema.org"
+    "@context":"http://schema.org",
+    "sameAs": [
+      {%- for network, link in social %}
+      "{{ link }}"{%- if not loop.last %},{%- else %}{%- endif %}
+      {%- endfor %}
+    ]
   }
 </script>
