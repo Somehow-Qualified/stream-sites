@@ -77,10 +77,10 @@ layout: default.njk
     </div>
   </div>
 
-  <div class="flex flex-row items-center w-full p-8 md:px-24 highlight-{{ theme.colors.accent }}">
+  <nav class="flex flex-row items-center w-full p-8 md:px-24 highlight-{{ theme.colors.accent }}" aria-label="Post Navigation">
     <p class="w-1/2 text-sm text-left block mb-0">{% if prevPost %}<span>Previous:</span><br><a href="{{ prevPost.url }}">{{ prevPost.data.title }}</a>{% endif %}</p>
     <p class="w-1/2 text-sm text-right block mb-0">{% if nextPost %}<span>Next:</span><br><a href="{{ nextPost.url }}">{{ nextPost.data.title }}</a>{% endif %}</p>
-  </div>
+  </nav>
 
 </article>
 
