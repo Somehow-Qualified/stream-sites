@@ -1,19 +1,26 @@
 {
   "name": "Stream Sites",
   "description": "My awesome Stream Site",
+  "keywords": "twitch, 11ty, tailwindcss",
   "url": "https://demo.streamsites.xyz",
+  "language": "en-US",
   "author_name": "Melanie E Magdalena",
   "author_avatar": "/images/author.jpg",
   "author_bio": "Founder, Scientist, Unicorn",
   "author_twitter": "@m2creates",
   "author_email": "hello@streamsites.xyz",
-  "colors": {
-    "main": "purple",
-    "accent": "pink"
-  },
+  "privacy_email": "privacy@streamsites.xyz",
   "logo": "/images/logo-ss-square.png",
-  "card_image": "/images/ss-card.jpg",
   "favicon": "/images/logo-ss-square.png",
-  "card_image_alt": "Stream Sites logo",
-  "twitch_handle": "m2creates"
+  "image_card": "/images/ss-card.jpg",
+  "image_card_alt": "Stream Sites logo",
+  "twitch_handle": "monstercat",
+  "twitch_client": "",
+  "google_verification": "",
+  "footer_credit": true,
+  "robots": {
+    "pinterest": "allow",
+    "twitter": "disallow",
+    "search_crawler": "follow"
+  }
 }

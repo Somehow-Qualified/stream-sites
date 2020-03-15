@@ -5,7 +5,7 @@ date: 2020-03-08T05:15:01.446Z
 dateMod: Last Modified
 tags:
   - editorial-workflow
-image_card: /images/ss-card.jpg
+image_card: /images/post-2.jpg
 image_caption: A cool Stream Site logo banner - this caption doubles as alt text.
 tldr: >-
   Netlify CMS Beta: Editorial Workflow with GitLab

@@ -1,0 +1,6 @@
+{
+  "layout": "post.njk",
+  "tags": "post",
+  "templateEngineOverride": "njk,md",
+  "outputPath": "dist/video/"
+}

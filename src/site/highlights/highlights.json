@@ -1,6 +1,0 @@
-{
-  "layout": "post",
-  "tags": "post",
-  "templateEngineOverride": "njk,md",
-  "outputPath": "dist/highlights/"
-}

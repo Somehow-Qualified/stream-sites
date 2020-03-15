@@ -1,0 +1,228 @@
+---
+permalink: js/twitch.js
+---
+{# TODO: Remember if the alert was closed
+ - save TWITCH_DATA started_at and game_id to local storage
+ - on close click, add "closed" value to storage
+ - on page load, check if started_at or game_id has changed
+ - if started_at is greater than, remove "closed" from storage
+ - or if game_id is differt, remove "closed" from storage
+#}
+
+class TwitchPromo extends HTMLElement {
+  constructor() {
+    super();
+    this.attachShadow({
+      mode: "open"
+    });
+    this.username = this.getAttribute("username");
+    this.clientId = this.getAttribute("clientid");
+  }
+
+  async connectedCallback() {
+    this.TWITCH_DATA = await this.getTwitchContent();
+    // console.log("2. Received stream data!", this.TWITCH_DATA);
+    this.GAME_DATA = await this.getTwitchGame();
+    // console.log("4. Got game data!", this.GAME_DATA);
+    if (this.TWITCH_DATA) this.render();
+  }
+
+  async getTwitchContent() {
+    const url = `https://api.twitch.tv/helix/streams?user_login=${this.username}`;
+    const request = new Request(url, {
+      method: "GET",
+      headers: {
+        "Client-ID": this.clientId
+      }
+    });
+    const response = await fetch(request);
+    const json = await response.json();
+    // console.log("1. Connected to /streams", json.data[0]);
+    if (json.data) return json.data[0];
+  }
+
+  async getTwitchGame() {
+    const streamData = this.TWITCH_DATA;
+    const url = `https://api.twitch.tv/helix/games?id=${streamData.game_id}`
+    const request = new Request(url, {
+      method: "GET",
+      headers: {
+        "Client-ID": this.clientId
+      }
+    });
+    const response = await fetch(request);
+    const json = await response.json();
+    // console.log("3. Connected to /games", json.data[0]);
+    if (json.data) return json.data[0];
+  }
+
+  styleComponent() {
+    let styleString = `
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: var(--font-stack);
+    }
+    .twitch-alert-container {
+      position: fixed;
+      bottom: 1rem;
+      right: 1rem;
+      width: max-content;
+      max-width: calc(100% - 1rem);
+      left: 50%;
+      transform: translateX(-50%);
+      border: 3px solid var(--color-border, #000);
+      color: var(--color-text, #000);
+      background-color: var(--color-bg, #fff);
+      transition: all .5s ease-out;
+      z-index: 9999; /* stay on top */
+    }
+    .twitch-alert-container:hover .twitch-alert-stream {
+      color: var(--color-text-hover, #fff);
+      transition: all .25s ease;
+    }
+    .twitch-alert-container:after {
+      position: absolute;
+      content: "";
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 100%;
+      background: var(--twitch-icon-bg, #fff);
+      transition: all .45s;
+    }
+    .twitch-alert-container:hover:after {
+      width: 100%;
+    }
+    .twitch-alert-wrapper {
+      position: relative;
+      z-index: 10;
+    }
+    .twitch-alert {
+      display: flex;
+      flex-direction: row;
+      align-items: stretch;
+      font-size: .85rem;
+      line-height: 1.3em;
+      color: var(--color-text, #000);
+      text-decoration: none;
+    }
+    .twitch-alert > * + * {
+      margin-top: .85rem;
+    }
+    .twitch-brand-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.25rem;
+      padding: 1.5rem;
+      background-color: var(--twitch-icon-bg);
+    }
+    .twitch-brand-icon {
+      color: var(--twitch-brand-icon, #fff);
+      width: var(--twitch-icon-size, 24px);
+      height: var(--twitch-icon-size, 24px);
+    }
+    .twitch-alert-stream {
+      text-align: left;
+      padding: 1rem;
+      color: var(--color-text, #000);
+    }
+    .twitch-alert-stream-headline {
+      font: var(--font-headline, 0.75rem);
+      line-height: 1.5;
+    }
+    .twitch-alert-stream-title {
+      font: var(--font-title, 0.75rem);
+    }
+    .twitch-alert-close-button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      transform: translate(50%,-50%);
+      border: 0;
+      border-radius: 100%;
+      width: var(--close-icon-size, 24px);
+      height: var(--close-icon-size, 24px);
+      font-size: 1.1rem;
+      background: var(--color-border, #000);
+      line-height: 1em;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-border, #000);
+      cursor: pointer;
+    }
+    .twitch-alert-close-button-icon {
+      width: var(--close-icon-size, 24px);
+      height: var(--close-icon-size, 24px);
+      fill: var(--color-bg, #fff);
+    }
+    .twitch-alert > * {
+      margin: 0;
+    }
+  `;
+    return styleString;
+  }
+
+  async render() {
+    const stream = this.TWITCH_DATA;
+    // console.log("5. Loaded stream data!", stream);
+
+    const game = this.GAME_DATA;
+    // console.log("6. Loaded game data!", game);
+
+    // Viewer Count
+    const viewerLang = (count, noun, suffix = 's') => `${count} ${noun}${count !== 1 ? suffix : ''}`;
+    const viewerCount = viewerLang(stream.viewer_count, 'viewer');
+
+    if (stream) {
+      this.shadowRoot.innerHTML = `
+      <style>
+        ${this.styleComponent()}
+      </style>
+      <div class="twitch-alert-container">
+        <div class="twitch-alert-wrapper">
+          <a href="https://twitch.tv/${stream.user_name}" target="_blank" class="twitch-alert">
+            <div class="twitch-brand-container">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor"
+              class="twitch-brand-icon" aria-labelledby="twitch-icon-name">
+              <title id="twitch-icon-name">Twitch</title>
+              <path d="M391.17,103.47H352.54v109.7h38.63ZM285,103H246.37V212.75H285ZM120.83,0,24.31,91.42V420.58H140.14V512l96.53-91.42h77.25L487.69,256V0ZM449.07,237.75l-77.22,73.12H294.61l-67.6,64v-64H140.14V36.58H449.07Z"/>
+              </svg>
+            </div>
+            <div class="twitch-alert-stream">
+              <p class="twitch-alert-stream-headline">${stream.user_name} is live with ${game.name}!</p>
+              <p class="twitch-alert-stream-title">${stream.title} with ${viewerCount}</p>
+            </div>
+          </a>
+          <button class="twitch-alert-close-button">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="twitch-alert-close-button-icon" aria-labelledby="twitch-close-title" focusable="false">
+            <title id="twitch-close-title">Close</title>
+            <circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line>
+            </svg>
+          </button>
+        </div>
+      </div>
+    `;
+      this.afterRender();
+    }
+  }
+  afterRender() {
+    this.closeButton = this.shadowRoot.querySelector(
+      ".twitch-alert-close-button"
+    );
+    let element = this;
+    this.closeButton.addEventListener("click", function(evt) {
+      evt.preventDefault();
+      element.remove();
+    });
+  }
+}
+
+if ("customElements" in window) {
+customElements.define("twitch-promo", TwitchPromo);
+}

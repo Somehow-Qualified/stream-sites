@@ -1,0 +1,41 @@
+---
+layout: default.njk
+---
+{#
+You Are Here:
+- Archive for Ghostwind
+- src/site/_themes/ghostwind/archive.njk
+
+How It Works:
+- On build, this page adds a postslist of
+  1. src/site/blog
+  2. src/site/video
+  3. src/site/blog AND src/site/video
+
+Dynamic Data:
+- anything in {{ curly braces }} is a variable from:
+  (a) frontmatter in the associated markdown file (src/site/page/blog.md,
+      src/site/page/video.md, src/site/page/archive.md)
+  (b) src/site/_globals
+- aliases are defined in `{% set %}`
+#}
+<section class="mx-auto px-6 pb-20">
+
+  {% include "ghostwind/hero.njk" %}
+
+  <div class="w-full max-w-6xl mx-auto pb-8 md:px-0">
+    <div class="flex flex-wrap -mx-2">
+      {% set postslist = posts %}
+      {% include "ghostwind/postslist.njk" %}
+    </div>
+  </div>
+
+  <nav class="flex flex-row items-center w-full justify-center md:px-24" aria-label="Archive Navigation">
+    {% if pagination.href.previous %}<p class="text-sm mb-0 px-2"><a href="{{ pagination.href.previous }}">Previous</a></p>{% endif %}
+    {%- for pageEntry in pagination.pages %}
+    {%- if not loop.last %}<p class="text-sm mb-0 px-2"><a href="{{ pagination.hrefs[ loop.index0 ] }}"{% if page.url == pagination.hrefs[ loop.index0 ] %} aria-current="page" class="highlight-{{ theme.colors.accent }}"{% endif %}>Page {{ loop.index }}</a></p>{% endif %}
+    {%- endfor %}
+    {% if pagination.href.next %}<p class="text-sm mb-0 px-2"><a href="{{ pagination.href.next }}">Next</a></p>{% endif %}
+  </nav>
+
+</section>

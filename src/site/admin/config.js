@@ -1,6 +1,6 @@
 import blog from './collections/blog.js';
 import custom from './collections/custom.js';
-import highlights from './collections/highlights.js';
+import video from './collections/video.js';
 import linkInBio from './collections/linkinbio.js';
 import modules from './collections/modules.js';
 import page from './collections/page.js';
@@ -19,7 +19,7 @@ export default {
   show_preview_links: true,
   collections: [
     blog,
-    highlights,
+    video,
     page,
     modules,
     linkInBio,
@@ -27,3 +27,15 @@ export default {
     custom
   ]
 }
+
+import Blog from './previews/blog.js';
+import Page from './previews/page.js';
+
+CMS.registerPreviewTemplate('blog', Blog);
+CMS.registerPreviewTemplate('page', Page);
+
+// Update this to a custom template
+CMS.registerPreviewTemplate('about', Page);
+
+CMS.registerPreviewStyle('./css/tailwind.min.css');
+CMS.registerPreviewStyle('./previews/inline.css');

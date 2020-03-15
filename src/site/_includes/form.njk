@@ -10,23 +10,25 @@ Dynamic Data:
 - anything in {{ curly braces }} is a variable from src/site/_globals
 #}
 
-<form name="contact" method="POST" data-netlify="true">
-  <div class="mb-4">
-    <label class="block text-{{ site.colors.main }}-900 dark:text-{{ site.colors.main }}-100 mb-2" for="name">Name</label>
-    <input class="form-input appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline" id="name" type="text">
+<form name="contact" method="POST" data-netlify="true" class="dark:text-{{ theme.colors.main }}-900">
+  <div class="flex flex-row flex-wrap -mx-3">
+    <div class="mb-4 px-3 w-full md:w-1/2">
+      <label class="block text-{{ theme.colors.main }}-900 dark:text-{{ theme.colors.main }}-100 mb-2" for="name">Name</label>
+      <input class="form-input appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline" id="name" type="text">
+    </div>
+
+    <div class="mb-4 px-3 w-full md:w-1/2">
+      <label class="block text-{{ theme.colors.main }}-900 dark:text-{{ theme.colors.main }}-100 mb-2" for="email">Email</label>
+      <input class="form-input appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline" id="email" type="text">
+    </div>
   </div>
 
   <div class="mb-4">
-    <label class="block text-{{ site.colors.main }}-900 dark:text-{{ site.colors.main }}-100 mb-2" for="email">Email</label>
-    <input class="form-input appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline" id="email" type="text">
-  </div>
-
-  <div class="mb-4">
-    <label class="block text-{{ site.colors.main }}-900 dark:text-{{ site.colors.main }}-100 mb-2" for="message">Message</label>
+    <label class="block text-{{ theme.colors.main }}-900 dark:text-{{ theme.colors.main }}-100 mb-2" for="message">Message</label>
     <textarea class="form-textarea appearance-none border rounded w-full py-2 px-3 h-32 leading-tight focus:outline-none focus:shadow-outline" id="message"></textarea>
   </div>
 
   <div class="mb-4">
-    <button class="inline-block rounded py-4 px-6 text-{{ site.colors.main }}-100 font-bold bg-{{ site.colors.accent }}-600 hover:bg-{{ site.colors.accent }}-400" type="submit">Send message!</button>
+    <button class="inline-block bg-transparent border border-{{ theme.colors.accent }}-500 hover:bg-{{ theme.colors.accent }}-400 text-sm text-{{ theme.colors.main }}-900 dark:text-{{ theme.colors.main }}-100 dark-hover:text-{{ theme.colors.main }}-900 font-bold py-2 px-4 rounded-full" type="submit">Send message!</button>
   </div>
 </form>

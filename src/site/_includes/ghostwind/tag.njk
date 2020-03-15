@@ -1,0 +1,24 @@
+{#
+You Are Here:
+- Tag for Ghostwind
+- src/site/_includes/ghostwind/tag.njk
+
+How It Works:
+- On build, this layout will generate a postlist for every Tag.
+#}
+
+<section class="mx-auto">
+
+  <div class="text-center  pt-20 pb-12">
+    <p class="text-sm md:text-base text-{{ theme.colors.accent }}-600 dark:text-{{ theme.colors.main }}-100 font-bold">{{ theme.tag.heading | upper }}</p>
+    <h1 class="font-bold break-normal text-3xl md:text-5xl">“{{ tag }}”</h1>
+  </div>
+
+  <div class="w-full max-w-6xl mx-auto pb-8 px-6 md:px-0">
+    <div class="flex flex-wrap -mx-2">
+      {% set postslist = collections[ tag ] | reverse %}
+      {% include "ghostwind/postslist.njk" %}
+    </div>
+  </div>
+
+</section>

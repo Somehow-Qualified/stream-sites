@@ -41,7 +41,7 @@
     aside a[href="#/collections/blog"] span::before {
       content: "\f304";
     }
-    aside a[href="#/collections/highlights"] span::before {
+    aside a[href="#/collections/video"] span::before {
       content: "\f008";
     }
     aside a[href="#/collections/page"] span::before {
@@ -167,25 +167,12 @@
     window.CMS_MANUAL_INIT = true;
   </script>
   <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
-<!--  <script type="module" src="/admin/config.js"></script>-->
   <script type="module">
     const { CMS, initCMS: init } = window;
     import config from '/admin/config.js';
     init({config});
-
-    import Blog from './previews/blog.js';
-    import Page from './previews/page.js';
-
-    CMS.registerPreviewTemplate('blog', Blog);
-    CMS.registerPreviewTemplate('page', Page);
-
-    // Update this to a custom template
-    CMS.registerPreviewTemplate('about', Page);
-
-    CMS.registerPreviewStyle('./css/main.min.css');
-    CMS.registerPreviewStyle('./previews/inline.css');
-
-    // Enable Netlify Identity Login
+  </script>
+  <script>
     if (window.netlifyIdentity) {
       window.netlifyIdentity.on("init", user => {
         if (!user) {

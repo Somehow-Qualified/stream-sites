@@ -1,0 +1,24 @@
+---
+layout: default.njk
+---
+{#
+You Are Here:
+- Tags
+- src/site/page/tags.njk
+
+How It Works:
+- On build, this layout will generate 1 page with a list of all the tags from
+  your posts (blog & video)
+#}
+<section class="mx-auto px-6">
+
+  <div class="text-center pt-20 pb-12">
+    <p class="text-sm md:text-base text-{{ theme.colors.accent }}-600 dark:text-{{ theme.colors.main }}-100 font-bold">{{ theme.tags.subheading | upper }}</p>
+    <h1 class="font-bold break-normal text-3xl md:text-5xl">{{ theme.tags.heading }}</h1>
+  </div>
+
+  <div class="text-center tags">
+    {% include "taglist.njk" %}
+  </div>
+
+</section>

@@ -1,0 +1,30 @@
+---
+layout: default.njk
+---
+{#
+You Are Here:
+- 404 for Ghostwind
+- src/site/_themes/ghostwind/404.njk
+
+How It Works:
+- On build, this page makes a 404 destination when a page is not found
+
+Dynamic Data:
+- anything in {{ curly braces }} is a variable from:
+  (a) frontmatter in the associated markdown file (src/site/page/404.md)
+  (b) src/site/_globals
+#}
+<section class="mx-auto px-6">
+  <div class="text-center pt-20 pb-12">
+    <p class="text-sm md:text-base text-{{ theme.colors.accent }}-600 dark:text-{{ theme.colors.main }}-100 font-bold {{ fontMeta }}">{{ theme.search.subheading | upper }}</p>
+    <h1 class="font-bold break-normal text-3xl md:text-5xl">{{ theme.search.heading }}</h1>
+  </div>
+  <div class="container max-w-5xl mx-auto pb-20 dark:text-{{ theme.colors.main }}-100 text-center">
+    <div class="pb-16 w-full">
+      <p class="mb-1">Search the site:</p>
+      {% include "search.njk" %}
+    </div>
+    <p class="mb-1">Browse by tag:</p>
+    {% include "taglist.njk" %}
+  </div>
+</section>

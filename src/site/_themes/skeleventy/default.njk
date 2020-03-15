@@ -1,0 +1,75 @@
+{#
+You Are Here:
+- Default
+- src/site/_themes/base/default.njk
+
+How It Works:
+- THIS IS AN ESSENTIAL FILE. ALL LAYOUTS LOAD INTO HERE.
+- <head> includes the essentials: meta, stylesheet, favicon, manifest,
+  service worker, dark mode handler, Netlify Identity
+- <body> is your content. It includes header, any content via another
+  layout, footer, and scripts.
+
+Dynamic Data:
+- There is no dynamic data in this file beyond Theme Color
+  (src/site/_globals/site.json)
+#}
+
+<!doctype html>
+<html lang="en" class="min-h-full antialiased">
+  <head>
+    {# Meta Tags #}
+    {% include "meta.njk" %}
+
+    {# Stylesheet #}
+    <link rel="stylesheet" href="{{ '/css/main.min.css' | url | cacheBuster }}">
+    {# for Twitch Live Alert #}
+    {% if site.twitch_client %}
+    <link rel="stylesheet" href="{{ '/css/twitch.css' | url | cacheBuster }}">
+    {% endif %}
+
+    {# Favicon #}
+    <link rel="icon" type="image/ico" href="{{ site.favicon }}">
+
+    {# Service Worker #}
+    <link rel="manifest" href="/site.webmanifest">
+    <script>
+      if ("serviceWorker" in navigator)
+        navigator.serviceWorker.register("/service-worker.js");
+    </script>
+
+    {# Dark Mode Handler #}
+    <script>(localStorage.getItem('darkMode') === 'true') && document.documentElement.classList.add('mode-dark');</script>
+
+  </head>
+
+  <body class="font-sans text-lg leading-normal text-{{ theme.colors.main }}-900 dark:text-{{ theme.colors.main }}-100 bg-{{ theme.colors.main }}-100 dark:bg-{{ theme.colors.main }}-900">
+
+    <a href="#main" class="sr-skip-link">skip to main content</a>
+
+    <div class="wrapper flex flex-col items-stretch min-h-full">
+      {# Include header #}
+      {% include "skeleventy/header.njk" %}
+
+      <main id="main" class="main hfeed md:mx-6 px-6 py-10 flex-grow flex-shrink-0" role="main" tabindex="-1">
+        {# Templates and content load here! #}
+        {{ content | safe }}
+      </main>
+
+      {# Include footer #}
+      {% include "skeleventy/footer.njk" %}
+    </div>
+
+    {% if site.twitch_client %}
+    {% include "twitch-component.njk" %}
+    {% endif %}
+
+  {# Load Scripts #}
+  <script src="{{ '/js/main.min.js' | url | cacheBuster }}" defer></script>
+  {% if site.twitch_client %}
+  <script src="{{ '/js/twitch.js' | url | cacheBuster }}" defer></script>
+  {% endif %}
+
+  </body>
+
+</html>

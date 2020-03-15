@@ -1,0 +1,44 @@
+---
+layout: default.njk
+---
+{#
+You Are Here:
+- Privacy
+- src/site/_layouts/privacy.njk
+
+How It Works:
+- On build, this page fills in your name, site URL, and email address
+  from src/site/_globals/site.json
+
+Dynamic Data:
+- anything in {{ curly braces }} is a variable from:
+  (a) frontmatter in the associated markdown file (src/site/page/privacy.md)
+  (b) src/site/_globals
+- aliases are defined in `{% set %}`
+
+TODO:
+- Add LAST MODIFIED time instead of default date
+#}
+<section class="container max-w-5xl mx-auto mb-16">
+
+  <h1 class="page-title text-5xl">{{ title }}</h1>
+
+  <div class="content highlight-{{ theme.colors.accent }}">
+
+    <p>{{ site.name }} ("us", "we", or "our") operates the {{ site.url }} website (the "Website").</p>
+    <p>This page informs you of our policies regarding the collection, use, and disclosure of personal data when you use our Website and the choices you have associated with that data.</p>
+    <p>We use your data to provide and improve the Website. By using the Website, you agree to the collection and use of information in accordance with this policy.</p>
+
+    {{ content | safe }}
+
+    <h2>Contact Us</h2>
+    <p>If you have any questions about this Privacy Policy, please contact:</p>
+    <ul>
+      <li>By email: {{ site.email }}</li>
+    </ul>
+
+    <p class="text-right"><em>Effective as of: {{ date | readableDate }}</em></p>
+
+  </div>
+
+</section>

@@ -1,5 +1,5 @@
 {
-  "nav_logo": true,
+  "nav_brand": "logoAndText",
   "main": [
     {
       "label": "About",
@@ -7,7 +7,7 @@
     },
     {
       "label": "Videos",
-      "url": "/highlights/"
+      "url": "/video/"
     },
     {
       "label": "Blog",
@@ -18,8 +18,14 @@
       "url": "/contact/"
     }
   ],
-  "nav_button": {
-    "button_text": "Go to Twitch",
-    "button_link": "https://twitch.tv/m2creates"
-  }
+  "footer": [
+    {
+      "label": "Archive",
+      "url": "/archive/"
+    },
+    {
+      "label": "Privacy",
+      "url": "/privacy/"
+    }
+  ]
 }

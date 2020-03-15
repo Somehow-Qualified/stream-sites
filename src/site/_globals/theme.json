@@ -1,20 +1,108 @@
 {
+  "theme": "ghostwind",
+  "colors": {
+    "main": "purple",
+    "accent": "pink",
+    "pwa": "#6b46c1"
+  },
+  "about": {
+    "heading": "Meet m2creates",
+    "subheading": "About",
+    "slug": "about",
+    "type": "core",
+    "collection": "about",
+    "img_card": "",
+    "img_card_alt": "",
+    "seo_title": "About m2creates",
+    "seo_desc": "Get to know m2creates!"
+  },
   "archive": {
-    "theme": "postslist/cards-horizontal.njk"
+    "heading": "Archive",
+    "subheading": "Browse everything",
+    "slug": "archive",
+    "type": "core",
+    "collection": "archive",
+    "img_card": "",
+    "img_card_alt": "",
+    "seo_title": "Archive",
+    "seo_desc": "Read all of my awesome posts."
   },
   "blog": {
-    "theme": "postslist/cards-horizontal.njk"
+    "heading": "Blog",
+    "subheading": "My awesome posts",
+    "slug": "blog",
+    "type": "core",
+    "collection": "blog",
+    "img_card": "",
+    "img_card_alt": "",
+    "seo_title": "Blog",
+    "seo_desc": "Read all of my awesome posts."
   },
-  "highlights": {
-    "theme": "postslist/cards.njk"
+  "contact": {
+    "heading": "Get In Touch",
+    "subheading": "Contact",
+    "slug": "contact",
+    "type": "core",
+    "collection": "contact",
+    "img_card": "",
+    "img_card_alt": "",
+    "seo_title": "Contact",
+    "seo_desc": "Get in touch with m2creates by email or on social media."
+  },
+  "search": {
+    "heading": "Search",
+    "subheading": "Discover",
+    "slug": "search",
+    "type": "core",
+    "collection": "core",
+    "img_card": "",
+    "img_card_alt": "",
+    "seo_title": "Search Stream Sites",
+    "seo_desc": "Lets see what you discover!"
   },
   "tag": {
     "heading": "Tagged",
-    "theme": "postslist/cards.njk",
-    "layout": "default.njk"
+    "subheading": "",
+    "slug": "tags/",
+    "type": "core",
+    "collection": "tag",
+    "img_card": "",
+    "img_card_alt": "",
+    "seo_title": "Tagged",
+    "seo_desc": "All posts tagged",
+    "template": "ghostwind/tag.njk"
   },
   "tags": {
-    "heading": "Explore Tags",
-    "layout": "default.njk"
+    "heading": "Explore by Tag",
+    "subheading": "Tag Archive",
+    "slug": "tags",
+    "type": "core",
+    "collection": "tags",
+    "img_card": "",
+    "img_card_alt": "",
+    "seo_title": "Tags",
+    "seo_desc": "All posts tagged"
+  },
+  "video": {
+    "heading": "Video Highlights",
+    "subheading": "Check out my videos",
+    "slug": "video",
+    "type": "core",
+    "collection": "video",
+    "img_card": "",
+    "img_card_alt": "",
+    "seo_title": "Video Highlights",
+    "seo_desc": "Watch all of my awesome video higlights."
+  },
+  "page_404": {
+    "heading": "404",
+    "subheading": "Page Not Found",
+    "slug": 404,
+    "type": "core",
+    "collection": "system",
+    "img_card": "",
+    "img_card_alt": "",
+    "seo_title": "Page Not Found",
+    "seo_desc": "We can't find that page. Try searching instead."
   }
 }

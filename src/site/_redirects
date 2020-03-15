@@ -1,3 +1,6 @@
 # Redirects from what the browser requests to what Netlify serves
-/home              /
-/linkinbio         /link-in-bio
+/home             /
+/linkinbio        /link-in-bio
+/rss              /rss.xml
+/atom             /atom.xml
+/sitemap          /sitemap.xml

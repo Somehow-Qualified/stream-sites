@@ -1,0 +1,20 @@
+{
+  "colors": {
+    "progress": "#d53f8c",
+    "postFooter": ""
+  },
+  "fonts": {
+    "post": {
+      "title": "font-sans",
+      "meta": "font-sans",
+      "tldr": "font-serif",
+      "author": "font-sans"
+    },
+    "postslist": {
+      "title": "font-sans",
+      "tags": "font-sans",
+      "excerpt": "font-sans",
+      "date": "font-sans"
+    }
+  }
+}

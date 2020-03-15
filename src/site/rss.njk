@@ -1,0 +1,38 @@
+---
+permalink: rss.xml
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" ?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+<channel>
+  <title>{{ site.name }}</title>
+  <link>{{ site.url }}/</link>
+  <description>{{ site.description }}</description>
+  <atom:link href="{{ site.url }}/atom.xml" rel="self" type="application/atom+xml" />
+	<lastBuildDate>{{ page.date | toRFC2822 }}</lastBuildDate>
+	<language>{{ site.language }}</language>
+	<generator>https://11ty.dev/</generator>
+	<image>
+		<url>{{ site.url }}{{ site.favicon }}</url>
+		<title>{{ site.name }}</title>
+		<link>{{ site.url }}/</link>
+		<width>144</width>
+		<height>144</height>
+	</image>
+	{%- for post in collections.archive %}
+	{% set absolutePostUrl %}{{ post.url | url | absoluteUrl(site.url) }}{% endset %}
+	<item>
+		<title>{{ post.data.title }}</title>
+		<link>{{ absolutePostUrl }}</link>
+		<pubDate>{{ post.date | toRFC2822 }}</pubDate>
+    <guid isPermaLink="true">{{ absolutePostUrl }}</guid>
+    <dc:creator>{{ site.author_name }}</dc:creator>
+    {%- if post.data.tags %}{%- for tag in post.data.tags %}{%- if tag != "post" %}
+		<category>{{ tag }}</category>
+		{%- endif %}{%- endfor %}{%- endif %}
+		<description><![CDATA[
+			{{ post.templateContent | htmlToAbsoluteUrls(absolutePostUrl) }}
+		]]></description>
+	</item>
+	{%- endfor %}
+</channel>
+</rss>
