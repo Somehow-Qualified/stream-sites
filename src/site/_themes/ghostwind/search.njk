@@ -16,12 +16,12 @@ Dynamic Data:
 #}
 <section class="mx-auto px-6">
   <div class="text-center pt-20 pb-12">
-    <p class="text-sm md:text-base text-{{ theme.colors.accent }}-600 dark:text-{{ theme.colors.main }}-100 font-bold {{ fontMeta }}">{{ theme.page_404.heading | upper }}</p>
-    <h1 class="font-bold break-normal text-3xl md:text-5xl">{{ theme.page_404.subheading }}</h1>
+    <p class="text-sm md:text-base text-{{ theme.colors.accent }}-600 dark:text-{{ theme.colors.main }}-100 font-bold {{ fontMeta }}">{{ theme.search.heading | upper }}</p>
+    <h1 class="font-bold break-normal text-3xl md:text-5xl">{{ theme.search.subheading }}</h1>
   </div>
   <div class="container max-w-5xl mx-auto pb-20 dark:text-{{ theme.colors.main }}-100 text-center">
     <div class="pb-16 w-full">
-      <p class="mb-1">Try searching instead:</p>
+      <p class="mb-1">Search the site:</p>
       <form action="https://www.google.com/search" method="get" class="search w-full mx-auto">
         <div class="flex items-center border-b border-b-2 border-{{ theme.colors.accent }}-500 py-2 max-w-sm mx-auto">
           <input type="hidden" name="q" id="q" value="site:{{ site.url }}">
@@ -33,12 +33,11 @@ Dynamic Data:
       </form>
     </div>
     <p class="mb-1">Browse by tag:</p>
-    <ul class="flex flex-row flex-wrap justify-center pb-16 -mx-2">
+    <ul class="flex flex-row flex-wrap justify-center -mx-2">
     {% for tag in collections.tagList %}
         {% set tagUrl %}/tags/{{ tag | slug }}/{% endset %}
         <li class="px-2 inline-block"><a href="{{ tagUrl }}" class="tag pb-4 underline">{{ tag }}</a> ({{ collections[tag].length }})</li>
     {% endfor %}
     </ul>
-    <p class="highlight-{{ theme.colors.accent }}"><a href="/">Or go back to the homepage</a></p>
   </div>
 </section>

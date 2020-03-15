@@ -81,7 +81,6 @@ Follow the journey on [Stream Sites](https://streamsites.xyz) or [the log](https
 ### Up Next
 
 - [ ] Search page
-- [ ] Better 404 page with Search
 - [ ] Collection for managing emotes, chat commands, point redemptions, sound effect previews, etc.; include copy-to-clipboard and searching on front-end
 - [ ] Support the Channel collection + page for affiliate links, donations, etc.
 - [ ] Merch collection + page (maybe this is the same as Support?)
@@ -107,6 +106,7 @@ Follow the journey on [Stream Sites](https://streamsites.xyz) or [the log](https
 
 ### Done!
 
+- [x] Search page for no-JS fallback
 - [x] RSS and Atom feeds
 - [x] Next/Prev links for posts
 - [x] Next/Prev links for archives
