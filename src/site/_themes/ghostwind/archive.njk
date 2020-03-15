@@ -33,7 +33,7 @@ Dynamic Data:
   <nav class="flex flex-row items-center w-full justify-center md:px-24" aria-label="Archive Navigation">
     {% if pagination.href.previous %}<p class="text-sm mb-0 px-2"><a href="{{ pagination.href.previous }}">Previous</a></p>{% endif %}
     {%- for pageEntry in pagination.pages %}
-    <p class="text-sm mb-0 px-2"><a href="{{ pagination.hrefs[ loop.index0 ] }}"{% if page.url == pagination.hrefs[ loop.index0 ] %} aria-current="page" class="highlight-{{ theme.colors.accent }}"{% endif %}>Page {{ loop.index }}</a></p>
+    {%- if not loop.last %}<p class="text-sm mb-0 px-2"><a href="{{ pagination.hrefs[ loop.index0 ] }}"{% if page.url == pagination.hrefs[ loop.index0 ] %} aria-current="page" class="highlight-{{ theme.colors.accent }}"{% endif %}>Page {{ loop.index }}</a></p>{% endif %}
     {%- endfor %}
     {% if pagination.href.next %}<p class="text-sm mb-0 px-2"><a href="{{ pagination.href.next }}">Next</a></p>{% endif %}
   </nav>
