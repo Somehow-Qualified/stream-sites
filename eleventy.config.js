@@ -18,7 +18,6 @@ const markdownItVideo = require('markdown-it-video');
 
 // 11ty Plugins
 const pluginLazyImages = require('eleventy-plugin-lazyimages');
-const pluginPwa = require('eleventy-plugin-pwa');
 const pluginReadingTime = require('eleventy-plugin-reading-time');
 const pluginRss = require('@11ty/eleventy-plugin-rss');
 const pluginSyntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
@@ -103,24 +102,6 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy('images');
   eleventyConfig.addPassthroughCopy('src/site/admin');
   eleventyConfig.addPassthroughCopy('src/site/_redirects');
-
-  if (process.env.NODE_ENV === 'production') {
-    eleventyConfig.addPlugin(pluginPwa, {
-      cleanupOutdatedCaches: true,
-      clientsClaim: true,
-      globPatterns: [
-        'css/**',
-        'index.html',
-        'js/**',
-        '{404,about,blog,video,archive}/*.html'
-      ],
-      globIgnores: [
-        "admin/**",
-        "css/main.css"
-      ],
-      skipWaiting: false
-    });
-  }
 
   // Browsersync for localhost:8181
   eleventyConfig.setBrowserSyncConfig({
