@@ -1,4 +1,4 @@
-{% if video_type == "clip" %}
+{%- if video_type == "clip" %}
   <script>
     (function () {
       let v = document.getElementsByClassName("video-embed");
@@ -10,7 +10,7 @@
       }
     })();
     function previewThumb(id) {
-      return '<img class="preview-image" src="{{ featured_image }}"><div class="play-icon"></div>';
+      return '<img class="preview-image" src="{{ image_card }}"><div class="play-icon"></div>';
     }
     function previewIframe() {
       var iframe = document.createElement("iframe");
@@ -28,9 +28,9 @@
       this.parentNode.replaceChild(iframe, this);
     }
   </script>
-{% endif %}
+{%- endif %}
 
-{% if video_type == "vod" %}
+{%- if video_type == "vod" %}
   <script>
     (function () {
       let v = document.getElementsByClassName("video-embed");
@@ -42,7 +42,7 @@
       }
     })();
     function previewThumb(id) {
-      return '<img class="preview-image" src="{{ featured_image }}"><div class="play-icon"></div>';
+      return '<img class="preview-image" src="{{ image_card }}"><div class="play-icon"></div>';
     }
     function previewIframe() {
       var iframe = document.createElement("iframe");
@@ -59,9 +59,9 @@
       this.parentNode.replaceChild(iframe, this);
     }
   </script>
-{% endif %}
+{%- endif %}
 
-{% if video_type == "collection" %}
+{%- if video_type == "collection" %}
   <script>
     (function () {
       let v = document.getElementsByClassName("video-embed");
@@ -73,7 +73,7 @@
       }
     })();
     function previewThumb(id) {
-      return '<img class="preview-image" src="{{ featured_image }}"><div class="play-icon"></div>';
+      return '<img class="preview-image" src="{{ image_card }}"><div class="play-icon"></div>';
     }
     function previewIframe() {
       var iframe = document.createElement("iframe");
@@ -90,4 +90,4 @@
       this.parentNode.replaceChild(iframe, this);
     }
   </script>
-{% endif %}
+{%- endif %}
