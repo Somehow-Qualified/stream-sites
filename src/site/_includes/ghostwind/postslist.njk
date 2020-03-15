@@ -30,7 +30,7 @@ Dynamic Data:
         <div class="p-6 h-auto md:h-48">
           <p class="text-{{ theme.colors.main }}-800 text-xs md:text-sm {{ theme_ghostwind.fonts.postslist.tags }}">
           {% for tag in post.data.tags %}
-            {%- if tag != "post" -%}
+            {%- if (tag != "post") and (tag != "page") -%}
               <span class="inline-block mr-2">{{ tag | upper }}</span>
             {%- endif -%}
           {% endfor %}
