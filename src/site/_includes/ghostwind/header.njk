@@ -17,7 +17,7 @@ Dynamic Data:
 {# Main Nav #}
 <header class="flex-shrink-0 w-full bg-white dark:bg-{{ theme.colors.main }}-900 p-4 mt-0 shadow-md border-b-4 border-{{ theme.colors.accent }}-500">
   <div class="container mx-auto flex items-center justify-between text-{{ theme.colors.main }}-900 dark:text-{{ theme.colors.main }}-100">
-    <div class="flex justify-start w-11/12">
+    <div class="flex justify-start">
 			{# Branding #}
 			<a class="flex items-center hover:text-{{ theme.colors.accent }}-600 dark-hover:text-{{ theme.colors.accent }}-600 hover:no-underline font-semibold" href="/">
         {% if navigation.nav_brand === "logo" %}
@@ -25,13 +25,13 @@ Dynamic Data:
         {% elif navigation.nav_brand === "text" %}
         <span class="w-0 md:w-auto md:block mr-2">{{ site.name }}</span>
         {% elif navigation.nav_brand === "logoAndText" %}
-        <img src="{{ site.logo }}" alt="{{ site.name }}" class="h-8 w-auto mr-2">
-				<span class="hidden w-0 md:w-auto md:block mx-2">{{ site.name }}</span>
+        <img src="{{ site.logo }}" alt="{{ site.name }}" class="h-8 w-auto mr-4">
+				<span class="hidden w-0 md:w-auto md:block -ml-2 mr-2">{{ site.name }}</span>
         {% endif %}
 			</a>
 			{# Nav Items from _globals/navigation.json #}
-	    <nav class="flex">
-	      <ul class="flex justify-between flex-1 md:flex-none items-center text-sm sm:text-base">
+	    <nav class="block mx-3 md:mx-0">
+	      <ul class="flex flex-wrap md:justify-between flex-1 md:flex-none items-center text-sm sm:text-base">
 					{% for item in navigation.main %}
 					<li>
             <span>&nbsp;/&nbsp;</span><a href="{{ item.url | safe }}" class="inline-block no-underline p-2 active:text-{{ theme.colors.accent }}-500">{{ item.label }}</a>{% if not loop.last %}{% else %}<span class="pr-2">&nbsp;/&nbsp;</span>{%- endif -%}
@@ -46,9 +46,9 @@ Dynamic Data:
 
 	    </nav>
 		</div>
-		<div class="flex justify-end w-1/12">
+		<div class="flex justify-end -mx-2">
 			{# Dark/Light Mode Toggle #}
-			<button class="darkmodebtn js-darkmode-toggle lg:p-4 py-3 px-0" title="Toggle Dark Mode" role="switch" aria-checked="false">
+			<button class="darkmodebtn js-darkmode-toggle lg:p-4 py-3 pr-2" title="Toggle Dark Mode" role="switch" aria-checked="false">
 				<svg class="icon-light" fill="currentColor" stroke="currentColor" role="img" aria-hidden="true" width="18" height="18">
 					<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/icon-library.svg#icon-sun"></use>
 				</svg>
