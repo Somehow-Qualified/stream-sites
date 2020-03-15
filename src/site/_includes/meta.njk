@@ -69,6 +69,10 @@ nunjucks does not work in ld+json section
 <link href="{{ link }}" rel="me">
 {% endfor %}
 
+{# Feeds #}
+<link rel="alternate" type="application/rss+xml" href="{{ site.url}}/rss.xml" title="{{ site.name }} RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="{{ site.url}}/atom.xml" title="{{ site.name }} Atom Feed">
+
 <script type="application/ld+json">
   {
     "name":"{{ title }} | {{ site.name }}",

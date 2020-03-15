@@ -75,6 +75,13 @@ module.exports = {
   },
 
   /**
+   * For RSS Feed
+   */
+  toRFC2822: function(date) {
+    return DateTime.fromJSDate(date).toRFC2822();
+  },
+
+  /**
    * Squash by Phil Hawksworth
    *
    * Make a search index string by removing duplicated words and removing less useful, common short words
