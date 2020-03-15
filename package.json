@@ -23,7 +23,7 @@
 	"bugs": "https://gitlab.com/stream-sites/ss-core/-/issues",
 	"homepage": "https://streamsites.xyz",
 	"scripts": {
-		"netlify": "NODE_ENV=production npm-run-all build:html build:css build:css:admin",
+		"netlify": "NODE_ENV=production npm-run-all build:html build:css build:css:admin build:js",
 		"build": "npm-run-all build:html build:css build:css:admin build:js",
 		"build:html": "NODE_ENV=production eleventy --config=eleventy.config.js",
 		"build:css": "NODE_ENV=production postcss src/site/_includes/_css/main.css -o dist/css/main.min.css",
@@ -43,7 +43,6 @@
 		"@tailwindcss/custom-forms": "^0.2.1",
 		"autoprefixer": "^9.7.4",
 		"cssnano": "^4.1.10",
-		"dotenv": "^8.2.0",
 		"eleventy-plugin-lazyimages": "^1.0.3",
 		"eleventy-plugin-pwa": "^1.0.8",
 		"eleventy-plugin-reading-time": "0.0.1",
