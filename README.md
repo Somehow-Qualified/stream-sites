@@ -88,10 +88,7 @@ Follow the journey on [Stream Sites](https://streamsites.xyz) or [the log](https
 - [ ] Netlify CMS Manual Init - make SEO settings and preview reusable across all collection types
 - [ ] Netlify CMS Styled Previews - one for each default page, linkinbio
 - [ ] Home page modules
-- [ ] Meta:Twitter - optional do not track flag, enabled by default
-- [ ] Meta:Pinterest - site verification; optional do not pin flag
-- [ ] Meta:Google - site verification
-- [ ] Meta Extended - Rich snippet structured data (articles, videos) with [schema markup](https://schema.org/docs/gs.html) and [JSON-LD](https://json-ld.org/playground/)
+- [ ] Rich snippet structured data (articles, videos) with [schema markup](https://schema.org/docs/gs.html) and [JSON-LD](https://json-ld.org/playground/)
 - [ ] [Microformats](http://microformats.org/wiki/microformats2) for IndieWeb
 - [ ] [Webmentions](https://mxb.dev/blog/using-webmentions-on-static-sites/)
 
@@ -105,6 +102,7 @@ Follow the journey on [Stream Sites](https://streamsites.xyz) or [the log](https
 
 ### Done!
 
+- [x] Meta Extended: Privacy settings for search crawlers, Twitter, Pinterest; optional Google Site verification string
 - [x] Robots.txt to let the bots in (or block them)
 - [x] Search page for no-JS fallback
 - [x] RSS and Atom feeds
