@@ -23,11 +23,14 @@ Dynamic Data:
 
   <div class="container max-w-5xl mx-auto mb-16">
 
-    <div class="content highlight-{{ theme.colors.accent }} text-xl leading-normal">
+    <div class="content w-full highlight-{{ theme.colors.accent }} text-xl leading-normal">
       {{ content | safe }}
-      {% if form %}
-        {% include "form.njk" %}
-      {% endif %}
+    </div>
+
+    <div class="w-4/5 mx-auto mt-16">
+    {% if form %}
+      {% include "form.njk" %}
+    {% endif %}
     </div>
 
   </div>

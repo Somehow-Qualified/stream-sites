@@ -34,8 +34,8 @@ layout: default.njk
 
   {# Hero Media #}
   {% if video_type %}
-  <div class="resp-container video-embed md:rounded overflow-hidden" data-id="{{ video_id }}" data-type="{{ video_type }}" data-thumbnail="{{ image_card }}">
-  </div>
+  <div class="max-w-6xl mx-auto mb-16"><div class="resp-container video-embed md:rounded overflow-hidden" data-id="{{ video_id }}" data-type="{{ video_type }}" data-thumbnail="{{ image_card }}">
+  </div></div>
   {% elif image_card %}
   <div class="w-full max-w-6xl mx-auto bg-white bg-cover md:rounded overflow-hidden" style="height: 75vh; background-image:url('{{ image_card }}'); background-position: center center; background-repeat: no-repeat; background-size: cover;"></div>
   {% endif %}
@@ -73,7 +73,7 @@ layout: default.njk
       <p class="p-note text-sm md:text-base">{{ site.author_bio }}</p>
     </div>
     <div class="justify-end">
-      <a href="/about" class="bg-transparent border border-{{ theme.colors.main }}-500 hover:border-{{ theme.colors.accent }}-500 text-sm text-{{ theme.colors.main }}-500 hover:bg-{{ theme.colors.accent }}-500 font-bold py-2 px-4 rounded-full">Read More</a>
+      <a href="/about" class="bg-transparent border border-{{ theme.colors.accent }}-500 hover:bg-{{ theme.colors.accent }}-400 text-sm text-{{ theme.colors.main }}-900 dark:text-{{ theme.colors.main }}-100 dark-hover:text-{{ theme.colors.main }}-900 font-bold py-2 px-4 rounded-full">Read More</a>
     </div>
   </div>
 
