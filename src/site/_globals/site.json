@@ -14,5 +14,6 @@
   "image_card": "/images/ss-card.jpg",
   "image_card_alt": "Stream Sites logo",
   "twitch_handle": "monstercat",
-  "twitch_client": ""
+  "twitch_client": "",
+  "footer_credit": true
 }
