@@ -41,6 +41,7 @@ nunjucks does not work in ld+json section
 <meta name="keywords" content="{{ keywords }}"/>
 <meta name="author" content="{{ authorName }}">
 <meta name="copyright" content="{{ authorName }}, {{ site.name }}">
+<meta name="theme-color" content="{{ theme.colors.pwa }}"/>
 <link rel="canonical" href="{{site.url}}{{ page.url }}">
 {%- if site.google_verification %}
 <meta name="google-site-verification" content="{{ site.google_verification }}">
@@ -86,6 +87,13 @@ nunjucks does not work in ld+json section
 {# Feeds #}
 <link rel="alternate" type="application/rss+xml" href="{{ site.url}}/rss.xml" title="{{ site.name }} RSS Feed">
 <link rel="alternate" type="application/atom+xml" href="{{ site.url}}/atom.xml" title="{{ site.name }} Atom Feed">
+
+{# Icons #}
+<link rel="icon" type="image/ico" href="{{ site.favicon }}">
+<link rel="apple-touch-icon" href="{{ site.favicon }}">
+
+{# Service Worker #}
+<link rel="manifest" href="/site.webmanifest">
 
 {# Robots #}
 <meta name="robots" content="{{ site.robots.search_crawler }}"/>

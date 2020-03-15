@@ -28,12 +28,6 @@ Dynamic Data:
     <link rel="stylesheet" href="{{ '/css/twitch.css' | url | cacheBuster }}" preload>
     {% endif %}
 
-    {# Favicon #}
-    <link rel="icon" type="image/ico" href="{{ site.favicon }}">
-
-    {# Service Worker #}
-    <link rel="manifest" href="/site.webmanifest">
-
   </head>
 
   <body class="font-sans text-lg leading-normal text-{{ theme.colors.main }}-900 dark:text-{{ theme.colors.main }}-100 bg-{{ theme.colors.main }}-100 dark:bg-{{ theme.colors.main }}-900 transition-all duration-200 ease-in-out">
@@ -59,8 +53,14 @@ Dynamic Data:
 
     {# Service Worker #}
     <script>
-      if ("serviceWorker" in navigator)
-        navigator.serviceWorker.register("/service-worker.js");
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker
+          .register("/service-worker.js")
+          .then(function() {
+            console.log("ServiceWorker has been registered!");
+          })
+          .catch(console.error);
+      }
     </script>
     {# Dark Mode Handler #}
     <script>(localStorage.getItem('darkMode') === 'true') && document.documentElement.classList.add('mode-dark');</script>

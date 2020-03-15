@@ -2,7 +2,8 @@
   "theme": "ghostwind",
   "colors": {
     "main": "purple",
-    "accent": "pink"
+    "accent": "pink",
+    "pwa": "#6b46c1"
   },
   "about": {
     "heading": "Meet m2creates",

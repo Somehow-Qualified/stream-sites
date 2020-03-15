@@ -33,7 +33,7 @@ Dynamic Data:
         {% for icon, link in social %}
           {% if link %}
           <li>
-            <a href="{{ link | safe }}" class="block p-2 -mb-1 hover:text-{{ theme.colors.accent }}-500" aria-label="{{ icon | capitalize }}" rel="me" title="{{ icon }}" target="_blank">
+            <a href="{{ link | safe }}" class="block p-2 -mb-1 hover:text-{{ theme.colors.accent }}-500" aria-label="{{ icon | capitalize }}" rel="me noopener noreferrer" title="{{ icon }}" target="_blank">
               <svg class="block" fill="currentColor" role="img" aria-hidden="true" width="16" height="16">
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/icon-library.svg#icon-{{ icon }}"></use>
               </svg>

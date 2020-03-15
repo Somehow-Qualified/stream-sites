@@ -41,16 +41,13 @@ module.exports = function (eleventyConfig) {
   // });
 
   // Load plugins
-  // eleventyConfig.addPlugin(pluginLazyImages, {
-  //   imgSelector: 'img', // custom image selector
-  //   placeholderQuality: 75
-  // });
+  eleventyConfig.addPlugin(pluginLazyImages, {
+    imgSelector: 'img', // custom image selector
+    placeholderQuality: 75
+  });
   eleventyConfig.addPlugin(pluginReadingTime);
   eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addPlugin(pluginSyntaxHighlight);
-  if (process.env.NODE_ENV === 'production') {
-    eleventyConfig.addPlugin(pluginPwa);
-  }
 
   eleventyConfig.setDataDeepMerge(true);
 
@@ -106,6 +103,24 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy('images');
   eleventyConfig.addPassthroughCopy('src/site/admin');
   eleventyConfig.addPassthroughCopy('src/site/_redirects');
+
+  if (process.env.NODE_ENV === 'production') {
+    eleventyConfig.addPlugin(pluginPwa, {
+      cleanupOutdatedCaches: true,
+      clientsClaim: true,
+      globPatterns: [
+        'css/**',
+        'index.html',
+        'js/**',
+        '{404,about,blog,video,archive}/*.html'
+      ],
+      globIgnores: [
+        "admin/**",
+        "css/main.css"
+      ],
+      skipWaiting: false
+    });
+  }
 
   // Browsersync for localhost:8181
   eleventyConfig.setBrowserSyncConfig({
