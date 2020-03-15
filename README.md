@@ -162,7 +162,7 @@ Additional features were made possible by scrounging through the internet for aw
 
 - **Lazy loading images** is courtesy of [eleventy-plugin-lazyimages](https://www.npmjs.com/package/eleventy-plugin-lazyimages).
 
-- **PWA mode** is courtesy of [eleventy-plugin-pwa](https://www.npmjs.com/package/eleventy-plugin-pwa).
+- **PWA mode** is courtesy of [workbox-cli](https://www.npmjs.com/package/workbox-cli).
 
 - **Dark mode** is made possible by [tailwindcss-dark-mode](https://www.npmjs.com/package/tailwindcss-dark-mode).
 

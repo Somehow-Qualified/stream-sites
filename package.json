@@ -23,7 +23,7 @@
 	"bugs": "https://gitlab.com/stream-sites/ss-core/-/issues",
 	"homepage": "https://streamsites.xyz",
 	"scripts": {
-		"netlify": "NODE_ENV=production npm-run-all build:html build:css build:css:admin build:js build:sw",
+		"netlify": "npm-run-all build:html build:css build:css:admin build:js build:sw",
 		"build": "npm-run-all build:html build:css build:css:admin build:js build:sw",
 		"build:html": "NODE_ENV=production eleventy --config=eleventy.config.js",
 		"build:css": "NODE_ENV=production postcss src/site/_includes/_css/main.css -o dist/css/main.min.css",
