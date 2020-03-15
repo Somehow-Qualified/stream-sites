@@ -93,15 +93,13 @@ Follow the journey on [Stream Sites](https://streamsites.xyz) or [the log](https
 - [ ] [Webmentions](https://mxb.dev/blog/using-webmentions-on-static-sites/)
 
 ### Needs fine tuning
-- [ ] I somehow broke(?) the script that loads iframes for the video collection... it no longer shows you the image placeholder, only the play button icon.
 - [ ] Twitch Live Alert JS - make it smart when closed, so it knows when to pop up again (game changed, new stream)
 - [ ] Sitemap - set <lastmod> to file modified date, not build date; same for RSS and Atom feeds
-- [ ] ld+json is missing `sameas`, which needs to be queried from  `_globals`
-- [ ] If there's only one page of posts (/blog, /video, /archive), the next/prev page nav should not exist
-- [ ] conditional logic for dev vs prod CSS and JS would be great, the [Skeleventy](https://github.com/josephdyer/skeleventy/blob/master/site/includes/layouts/default.njk#L14) version isn't working for me...
+- `watch:html` is ignoring changes in /templates so you have restart the live server to see changes, each time you want to _see_ changes.
 
 ### Done!
 
+- [x] LD-JSON: Page level complete
 - [x] Meta Extended: Privacy settings for search crawlers, Twitter, Pinterest; optional Google Site verification string
 - [x] Robots.txt to let the bots in (or block them)
 - [x] Search page for no-JS fallback
