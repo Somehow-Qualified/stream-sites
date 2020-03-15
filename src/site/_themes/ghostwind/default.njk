@@ -22,10 +22,10 @@ Dynamic Data:
     {% include "meta.njk" %}
 
     {# Stylesheet #}
-    <link rel="stylesheet" href="{{ '/css/main.min.css' | url | cacheBuster }}">
+    <link rel="stylesheet" href="{{ '/css/main.min.css' | url | cacheBuster }}" preload>
     {# for Twitch Live Alert #}
     {% if site.twitch_client %}
-    <link rel="stylesheet" href="{{ '/css/twitch.css' | url | cacheBuster }}">
+    <link rel="stylesheet" href="{{ '/css/twitch.css' | url | cacheBuster }}" preload>
     {% endif %}
 
     {# Favicon #}
@@ -33,17 +33,10 @@ Dynamic Data:
 
     {# Service Worker #}
     <link rel="manifest" href="/site.webmanifest">
-    <script>
-      if ("serviceWorker" in navigator)
-        navigator.serviceWorker.register("/service-worker.js");
-    </script>
-
-    {# Dark Mode Handler #}
-    <script>(localStorage.getItem('darkMode') === 'true') && document.documentElement.classList.add('mode-dark');</script>
 
   </head>
 
-  <body class="font-sans text-lg leading-normal text-{{ theme.colors.main }}-900 dark:text-{{ theme.colors.main }}-100 bg-{{ theme.colors.main }}-100 dark:bg-{{ theme.colors.main }}-900">
+  <body class="font-sans text-lg leading-normal text-{{ theme.colors.main }}-900 dark:text-{{ theme.colors.main }}-100 bg-{{ theme.colors.main }}-100 dark:bg-{{ theme.colors.main }}-900 transition-all duration-200 ease-in-out">
 
     <a href="#main" class="sr-skip-link">skip to main content</a>
 
@@ -64,11 +57,18 @@ Dynamic Data:
     {% include "twitch-component.njk" %}
     {% endif %}
 
-  {# Load Scripts #}
-  <script src="{{ '/js/main.min.js' | url | cacheBuster }}" defer></script>
-  {% if site.twitch_client %}
-  <script src="{{ '/js/twitch.js' | url | cacheBuster }}" defer></script>
-  {% endif %}
+    {# Service Worker #}
+    <script>
+      if ("serviceWorker" in navigator)
+        navigator.serviceWorker.register("/service-worker.js");
+    </script>
+    {# Dark Mode Handler #}
+    <script>(localStorage.getItem('darkMode') === 'true') && document.documentElement.classList.add('mode-dark');</script>
+    {# Other Scripts #}
+    <script src="{{ '/js/main.min.js' | url | cacheBuster }}" defer></script>
+    {% if site.twitch_client %}
+    <script src="{{ '/js/twitch.js' | url | cacheBuster }}" defer></script>
+    {% endif %}
 
   </body>
 
