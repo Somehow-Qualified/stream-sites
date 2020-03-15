@@ -19,18 +19,18 @@ Dynamic Data:
   (b) src/site/_globals
 - aliases are defined in `{% set %}`
 #}
-<section class="mx-auto">
+<section class="mx-auto px-6">
 
   {% include "ghostwind/hero.njk" %}
 
-  <div class="w-full max-w-6xl mx-auto pb-8 px-6 md:px-0">
+  <div class="w-full max-w-6xl mx-auto pb-8 md:px-0">
     <div class="flex flex-wrap -mx-2">
       {% set postslist = posts %}
       {% include "ghostwind/postslist.njk" %}
     </div>
   </div>
 
-  <nav class="flex flex-row items-center w-full justify-center p-8 md:px-24" aria-label="Archive Navigation">
+  <nav class="flex flex-row items-center w-full justify-center py-8 md:px-24" aria-label="Archive Navigation">
     {% if pagination.href.previous %}<p class="text-sm mb-0 px-2"><a href="{{ pagination.href.previous }}">Previous</a></p>{% endif %}
     {%- for pageEntry in pagination.pages %}
     <p class="text-sm mb-0 px-2"><a href="{{ pagination.hrefs[ loop.index0 ] }}"{% if page.url == pagination.hrefs[ loop.index0 ] %} aria-current="page" class="highlight-{{ theme.colors.accent }}"{% endif %}>Page {{ loop.index }}</a></p>

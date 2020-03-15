@@ -162,10 +162,11 @@ pre[class*="language-"] {
 
 /* Code blocks */
 pre[class*="language-"] {
-  padding: 1em;
-  margin: .5em 0;
+  padding: 1rem;
+  margin: 1rem 0;
   overflow: auto;
   border-radius: 0.3em;
+  max-width: calc(100vw - 14vw);
 }
 
 :not(pre)>code[class*="language-"],
@@ -439,16 +440,16 @@ html.mode-dark .highlight-pink a:active {
 }
 
 .resp-container .preview-image {
-  bottom: 0;
-  display: block;
-  left: 0;
-  margin: auto;
-  max-width: 100%;
-  width: 100%;
   position: absolute;
-  right: 0;
-  top: 0;
+  display: block;
+  width: 100%;
+  max-width: 100%;
   height: auto;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   cursor: pointer;
 }
 

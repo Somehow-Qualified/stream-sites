@@ -8,7 +8,7 @@ layout: default.njk
 {% set fontAuthor = theme_ghostwind.fonts.post.author %}
 {% set colorFooter = theme_ghostwind.colors.postFooter %}
 
-<article>
+<article class="mx-auto">
 
   {# Title, Date, Tags #}
   <div class="text-center pt-20 pb-12">
@@ -41,7 +41,7 @@ layout: default.njk
   {% endif %}
 
   {# Post Content #}
-  <div class="container max-w-5xl mx-auto {% if image_card %}-mt-32{% endif %} mb-16 bg-{{ theme.colors.main }}-100 dark:bg-{{ theme.colors.main }}-900">
+  <div class="container w-full max-w-5xl mx-auto {% if image_card %}-mt-32{% endif %} mb-16 bg-{{ theme.colors.main }}-100 dark:bg-{{ theme.colors.main }}-900">
 
     {# Post Content #}
     <div class="content highlight-{{ theme.colors.accent }} w-full md:px-24 {% if image_card %}p-8 md:pt-24{% else %}px-8 pb-8{% endif %} text-xl leading-normal">
@@ -57,18 +57,23 @@ layout: default.njk
   </div>
 
   {# CTA #}
-  <div class="container text-{{ theme.colors.main }}-100 bg-{{ theme.colors.main }}-800 p-4 md:p-24 text-center rounded w-full mx-auto shadow-md hover:shadow-lg">
+  <div class="container text-{{ theme.colors.main }}-100 bg-{{ theme.colors.main }}-800 p-4 md:p-24 text-center md:rounded w-11/12 md:w-full mx-auto shadow-md hover:shadow-lg">
     <h2 class="font-bold break-normal text-2xl md:text-4xl">Subscribe to {{ site.name }}</h2>
-    <h3 class="font-bold break-normal font-normal text-base md:text-xl">Get the latest posts delivered right to your feed reader.</h3>
-    <div class="w-full text-center pt-4">
-      <p><a href="feed.xml">Atom Feed</a> | <a href="rss.xml">RSS Feed</a></p>
+    <p class="font-bold break-normal font-normal text-base md:text-xl">Get the latest posts delivered right to your feed reader.</p>
+    <div class="w-full text-center py-4 flex -mx-3 justify-center">
+      <a href="/atom.xml" title="Subscribe via Atom" class="bg-transparent border border-{{ theme.colors.accent }}-500 hover:bg-{{ theme.colors.accent }}-400 text-sm text-{{ theme.colors.main }}-900 hover:text-{{ theme.colors.main }}-900 dark:text-{{ theme.colors.main }}-100 dark-hover:text-{{ theme.colors.main }}-900 font-bold py-2 px-4 rounded-full mx-3">Atom <svg class="inline-block font-normal" fill="currentColor" role="img" aria-hidden="true" width="10" height="10">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/icon-library.svg#icon-subscribe"></use>
+      </svg></a>
+      <a href="/rss.xml" title="Subscribe via RSS" class="bg-transparent border border-{{ theme.colors.accent }}-500 hover:bg-{{ theme.colors.accent }}-400 text-sm text-{{ theme.colors.main }}-900 hover:text-{{ theme.colors.main }}-900 dark:text-{{ theme.colors.main }}-100 dark-hover:text-{{ theme.colors.main }}-900 font-bold py-2 px-4 rounded-full mx-3">RSS <svg class="inline-block font-normal" fill="currentColor" role="img" aria-hidden="true" width="10" height="10">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/icon-library.svg#icon-subscribe"></use>
+      </svg></a>
     </div>
   </div>
 
   {# Author Box #}
-  <div class="h-card container max-w-5xl mx-auto flex w-full items-center p-8 md:px-24 py-12 text-{{ theme.colors.main }}-800 dark:text-{{ theme.colors.main }}-100">
+  <div class="h-card container max-w-5xl mx-auto flex w-full items-center p-8 md:px-24 py-12">
     <img class="u-photo w-10 h-10 rounded-full mr-4" src="{{ site.author_avatar }}" alt="Avatar of {{ site.author_name }}">
-    <div class="flex-1 {{ fontAuthor }}">
+    <div class="flex-1 {{ fontAuthor }} text-{{ theme.colors.main }}-900 dark:text-{{ theme.colors.main }}-100">
       <p class="p-name text-base md:text-lg font-bold leading-none">{{ site.author_name }}</p>
       <p class="p-note text-sm md:text-base">{{ site.author_bio }}</p>
     </div>
