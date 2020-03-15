@@ -22,23 +22,10 @@ Dynamic Data:
   <div class="container max-w-5xl mx-auto pb-20 dark:text-{{ theme.colors.main }}-100 text-center">
     <div class="pb-16 w-full">
       <p class="mb-1">Try searching instead:</p>
-      <form action="https://www.google.com/search" method="get" class="search w-full mx-auto">
-        <div class="flex items-center border-b border-b-2 border-{{ theme.colors.accent }}-500 py-2 max-w-sm mx-auto">
-          <input type="hidden" name="q" id="q" value="site:{{ site.url }}">
-          <input class="appearance-none bg-transparent border-none w-full mr-3 py-1 px-2 leading-tight focus:outline-none" type="text" name="q" id="search-str" placeholder="Search with Google" aria-label="Search this site on Google via keyword">
-          <button class="flex-shrink-0 bg-{{ theme.colors.accent }}-500 hover:bg-{{ theme.colors.accent }}-700 border-{{ theme.colors.accent }}-500 hover:border-{{ theme.colors.accent }}-700 text-sm border-4 text-white py-1 px-2 rounded" type="button">
-            Search
-          </button>
-        </div>
-      </form>
+      {% include "search.njk" %}
     </div>
     <p class="mb-1">Browse by tag:</p>
-    <ul class="flex flex-row flex-wrap justify-center pb-16 -mx-2">
-    {% for tag in collections.tagList %}
-        {% set tagUrl %}/tags/{{ tag | slug }}/{% endset %}
-        <li class="px-2 inline-block"><a href="{{ tagUrl }}" class="tag pb-4 underline">{{ tag }}</a> ({{ collections[tag].length }})</li>
-    {% endfor %}
-    </ul>
-    <p class="highlight-{{ theme.colors.accent }}"><a href="/">Or go back to the homepage</a></p>
+    {% include "taglist.njk" %}
+    <p class="highlight-{{ theme.colors.accent }} pt-16"><a href="/">Or go back to the homepage</a></p>
   </div>
 </section>
