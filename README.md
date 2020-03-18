@@ -93,12 +93,14 @@ Follow the journey on [Stream Sites](https://streamsites.xyz) or [the log](https
 - [ ] [Webmentions](https://mxb.dev/blog/using-webmentions-on-static-sites/)
 
 ### Needs fine tuning
-- [ ] Twitch Live Alert JS - make it smart when closed, so it knows when to pop up again (game changed, new stream)
-- [ ] Sitemap - set <lastmod> to file modified date, not build date; same for RSS and Atom feeds
-- `watch:html` is ignoring changes in /templates so you have restart the live server to see changes, each time you want to _see_ changes.
+- **Bug - Sitemap**: Set <lastmod> to file modified date, not build date; same for RSS and Atom feeds
+- **Performance/Build**: Inline SVGs from icon-library.svg at build to minimize network response time.
+- **Twitch Live Alert JS** - Make it smart when closed, so it knows when to pop up again (game changed, new stream); Also, need to look into the [OAuth Implications](https://discuss.dev.twitch.tv/t/requiring-oauth-for-helix-twitch-api-endpoints/23916)
+- **Dev**: `watch:html` is ignoring changes in /templates so you have restart the live server to see changes, each time you want to _see_ changes.
 
 ### Done!
 
+- [x] iframe rendering for Twitch Clips, Twitch Vods, Twitch Collections, YouTube videos, YouTube playlists, and Vimeo
 - [x] LD-JSON: Page level complete
 - [x] Meta Extended: Privacy settings for search crawlers, Twitter, Pinterest; optional Google Site verification string
 - [x] Robots.txt to let the bots in (or block them)

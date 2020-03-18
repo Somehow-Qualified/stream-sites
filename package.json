@@ -22,6 +22,7 @@
 	"repository": "gitlab:stream-sites/ss-core",
 	"bugs": "https://gitlab.com/stream-sites/ss-core/-/issues",
 	"homepage": "https://streamsites.xyz",
+	"main": "index.js",
 	"scripts": {
 		"netlify": "npm-run-all build:html build:css build:css:admin build:js build:sw",
 		"build": "npm-run-all build:html build:css build:css:admin build:js build:sw",
