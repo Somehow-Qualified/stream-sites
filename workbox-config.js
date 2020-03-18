@@ -4,7 +4,7 @@ module.exports = {
     "index.html",
     "about/*.html",
     "{blog,video}/index.html",
-    "**/*.{css,js}"
+    "**/*.css"
   ],
   "globIgnores": [
     "admin/**/*",
