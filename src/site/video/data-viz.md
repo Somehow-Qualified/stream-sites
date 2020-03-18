@@ -1,5 +1,5 @@
 ---
-title: Data Viz Breakdown
+title: Data Viz Breakdown (Clip)
 slug: data-viz-breakdown
 image_card: /images/ss-card.jpg
 video_id: BlatantModernPeanutKlappa
@@ -16,3 +16,5 @@ seo:
 I break down Data Viz for Airtable after making it work.
 
 You can [check out the landing page](https://dataviz-airtable.carrd.co/) for the end result and the download link to install it on Chrome!
+
+![Test Image](/images/post-2.jpg)

@@ -1,26 +1,20 @@
 ---
-title: Sample Page
-slug: sample
+title: Sample Page 2
+slug: sample2
 date: 2020-03-08T05:15:01.446Z
 dateMod: Last Modified
 tags:
   - editorial-workflow
 image_card: /images/post-2.jpg
 image_caption: A cool Stream Site logo banner - this caption doubles as alt text.
-tldr: >-
-  Testing out the default page layout + building responsive privacy-focused iframes.
 seo:
   excerpt: >-
     This is a sample page
   meta_title: Sample Page
 ---
-Let's see what we've got.
+Page 2 without the defaults.
 
 ## Twitch Clip
-
-**Default**
-
-https://www.twitch.tv/m2creates/clip/BlatantModernPeanutKlappa
 
 **m2 version**
 
@@ -28,19 +22,11 @@ https://www.twitch.tv/m2creates/clip/BlatantModernPeanutKlappa
 
 ## Twitch Vod
 
-**Default**
-
-<iframe src="https://player.twitch.tv/?autoplay=false&video=v337381988" frameborder="0" allowfullscreen="true" scrolling="no" height="378" width="620"></iframe><a href="https://www.twitch.tv/videos/337381988?tt_content=text_link&tt_medium=vod_embed" style="padding:2px 0px 4px; display:block; width:345px; font-weight:normal; font-size:10px; text-decoration:underline;">Watch Let's launch a #24hrstartup | Airtable - DataViz from m2creates on www.twitch.tv</a>
-
 **m2 version**
 
 <div style="position: relative; overflow: hidden; padding-top: 56.25%;"><iframe src="https://player.twitch.tv/?autoplay=false&video=v337381988" frameborder="0" allowfullscreen="true" scrolling="no" height="378" width="620" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;"></iframe></div>
 
 ## Twitch Collection
-
-**Default**
-
-<iframe src="https://player.twitch.tv/?autoplay=false&video=v366779762" frameborder="0" allowfullscreen="true" scrolling="no" height="378" width="620"></iframe><a href="https://www.twitch.tv/videos/366779762?tt_content=text_link&tt_medium=vod_embed" style="padding:2px 0px 4px; display:block; width:345px; font-weight:normal; font-size:10px; text-decoration:underline;">Watch Shatter - A Stream Broadcast Graphics Collection from m2creates on www.twitch.tv</a>
 
 **m2 version**
 
@@ -48,30 +34,17 @@ https://www.twitch.tv/m2creates/clip/BlatantModernPeanutKlappa
 
 ## YouTube Video
 
-**Default**
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/BtWwCWsGrjY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
 **m2 version**
 
 <div style="position: relative; overflow: hidden; padding-top: 56.25%;"><iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/BtWwCWsGrjY" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;"></iframe></div>
 
 ## YouTube Playlist
 
-**Default** - if you go dig it up
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLHMOMsjE6LxSzKwT0c8lUcxD2I5HuQm4x" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
 **m2 version**
 
 <div style="position: relative; overflow: hidden; padding-top: 56.25%;"><iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/videoseries?list=PLHMOMsjE6LxSzKwT0c8lUcxD2I5HuQm4x" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;"></iframe></div>
 
 ## Vimeo
-
-**Default**
-
-<iframe src="https://player.vimeo.com/video/38201921" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-<p><a href="https://vimeo.com/38201921">Zilker Kite Festival 2012</a> from <a href="https://vimeo.com/user10773547">Melanie Magdalena</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
 
 **m2 version**
 

@@ -8,12 +8,6 @@ html, body {
 /**
  * Links
  */
-main a:-webkit-any-link,
-main a,
-#footer a:-webkit-any-link,
-#footer a {
-  color: inherit;
-}
 
 .sr-skip-link:focus,
 main:focus {

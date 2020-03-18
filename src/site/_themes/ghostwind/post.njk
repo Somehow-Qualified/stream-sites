@@ -7,6 +7,7 @@ layout: default.njk
 {% set fontTldr = theme_ghostwind.fonts.post.tldr %}
 {% set fontAuthor = theme_ghostwind.fonts.post.author %}
 {% set colorFooter = theme_ghostwind.colors.postFooter %}
+{% set previewImage = image_card or site.image_card %}
 
 <article class="mx-auto">
 
@@ -34,13 +35,25 @@ layout: default.njk
 
   {# Hero Media #}
   {% if video_type %}
-  <div class="max-w-6xl mx-auto mb-16"><div class="resp-container video-embed md:rounded overflow-hidden" data-id="{{ video_id }}" data-type="{{ video_type }}" data-thumbnail="{{ image_card }}">
-  </div></div>
+  <div class="max-w-6xl mx-auto mb-16">
+    <div id="video-frame" class="resp-container video-embed md:rounded overflow-hidden" data-id="{{ video_id }}" data-type="{{ video_type }}">
+      <div id="video-preview">
+        {% if video_type === "youtube" and image_card %}
+          <img class="preview-image" src="{{ previewImage }}">
+        {% elif video_type === "youtube" %}
+          <img class="preview-image" src="http://i3.ytimg.com/vi/{{ video_id }}/maxresdefault.jpg">
+        {% else %}
+          <img class="preview-image" src="{{ previewImage }}">
+        {% endif %}
+        <div class="play-icon"></div>
+      </div>
+    </div>
+  </div>
   {% elif image_card %}
   <div class="w-full max-w-6xl mx-auto bg-white bg-cover md:rounded overflow-hidden" style="height: 75vh; background-image:url('{{ image_card }}'); background-position: center center; background-repeat: no-repeat; background-size: cover;"></div>
   {% endif %}
 
-  {# Post Content #}
+  {# Content Wrapper #}
   <div class="container w-full max-w-5xl mx-auto {% if image_card %}-mt-32{% endif %} mb-16 bg-{{ theme.colors.main }}-100 dark:bg-{{ theme.colors.main }}-900">
 
     {# Post Content #}
@@ -134,4 +147,5 @@ layout: default.njk
 
 </script>
 
+{% set video_type = video_type %}
 {% include "iframe-loader.njk" %}
