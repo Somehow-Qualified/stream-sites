@@ -6,7 +6,7 @@ eleventyExcludeFromCollections: true
 <feed xmlns="http://www.w3.org/2005/Atom">
 	<title>{{ site.name }}</title>
 	<subtitle>{{ site.description }}</subtitle>
-	<link href="{{ site.url }}{{ page.url }}" rel="self"/>
+	<link href="{{ site.url }}{{ page.url }}" rel="self" type="application/atom+xml"/>
 	<link href="{{ site.url }}/"/>
 	<updated>{{ page.date | dateToIso }}</updated>
 	<id>{{ site.url }}/</id>
