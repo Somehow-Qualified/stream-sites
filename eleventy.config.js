@@ -17,16 +17,6 @@ const markdownItFootnote = require('markdown-it-footnote');
 const markdownItToc = require('markdown-it-table-of-contents');
 const markdownItVideo = require('markdown-it-video');
 
-const anchorSlugify = s =>
-    encodeURIComponent(
-        'h-' +
-            String(s)
-                .trim()
-                .toLowerCase()
-                .replace(/[.,\/#!$%\^&\*;:{}=_`~()]/g, '')
-                .replace(/\s+/g, '-')
-    );
-
 // 11ty Plugins
 const pluginLazyImages = require('eleventy-plugin-lazyimages');
 const pluginReadingTime = require('eleventy-plugin-reading-time');
@@ -72,8 +62,7 @@ module.exports = function (eleventyConfig) {
         permalinkSymbol: '#',
         permalinkClass: 'bookmark',
         permalinkBefore: true,
-        level: 2,
-        slugify: anchorSlugify
+        level: 2
       }).use(markdownItAttrs, {
         leftDelimiter: '{',
         rightDelimiter: '}',
