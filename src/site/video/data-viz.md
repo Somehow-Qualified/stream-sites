@@ -7,14 +7,13 @@ video_type: clip
 clipper: fatsack51
 date: 2018-11-17
 dateMod: Last Modified
+excerpt: I break down Data Viz for Airtable after making it work.
+teaser: I break down Data Viz for Airtable after making it work.
 tags:
   - 24hrstartup
-seo:
-  meta_description: I break down Data Viz for Airtable after making it work.
-  meta_title: Data Viz Breakdown
+seo_title: Data Viz Breakdown
+seo_desc: I break down Data Viz for Airtable after making it work live.
 ---
-I break down Data Viz for Airtable after making it work.
-
-You can [check out the landing page](https://dataviz-airtable.carrd.co/) for the end result and the download link to install it on Chrome!
+You can [check out the landing page](https://dataviz-airtable.carrd.co/) for the end result and the download link to install it on Chrome.
 
 ![Test Image](/images/post-2.jpg)

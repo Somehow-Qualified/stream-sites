@@ -1,3 +1,5 @@
+{# iFrame Loader #}
+{% if video_type %}
 <script>
   (function () {
     let video = document.getElementById("video-frame");
@@ -16,7 +18,7 @@
       } else if (videoType === "youtube"){
         return "https://www.youtube-nocookie.com/embed/";
       } else if (videoType === "playlist") {
-        return "https://www.youtube-nocookie.com/embed/videoseries?list="
+        return "https://www.youtube-nocookie.com/embed/videoseries?list=";
       } else if (videoType === "vimeo") {
         return "https://player.vimeo.com/video/";
       } else {
@@ -24,9 +26,18 @@
       }
       return videoType;
     }
+    function getParams() {
+      if (videoType === "vimeo") {
+        return "?dnt=true&autoplay=false";
+      } else {
+        return "";
+      }
+      return params;
+    }
     let videoSource = getUrl();
+    let videoParams = getParams();
     let iframe = document.createElement("iframe");
-    iframe.setAttribute("src", videoSource + this.parentNode.dataset.id);
+    iframe.setAttribute("src", videoSource + this.parentNode.dataset.id + videoParams);
     iframe.setAttribute("height", "480");
     iframe.setAttribute("width", "854");
     iframe.setAttribute("frameborder", "0");
@@ -40,26 +51,4 @@
   }
 </script>
 
-{# Notes:
-- [ ] Twitch Clips: Set autoplay to false
-- [x] YouTube: Use no-cookie by default - https://www.youtube-nocookie.com
-- [ ] Vimeo: Add dnt and autoplay to URL - ?dnt=true&autoplay=false
-      Example: https://player.vimeo.com/video/${videoIdFromDataId}?dnt=true&autoplay=false
-
-Docs:
-
-Twitch Clip
-Sample: They only give you a link
-  https://www.twitch.tv/m2creates/clip/BlatantModernPeanutKlappa
-
-Twitch Highlight/Vod
-Sample:
-  <iframe src="https://player.twitch.tv/?autoplay=false&video=v337381988" frameborder="0" allowfullscreen="true" scrolling="no" height="378" width="620"></iframe><a href="https://www.twitch.tv/videos/337381988?tt_content=text_link&tt_medium=vod_embed" style="padding:2px 0px 4px; display:block; width:345px; font-weight:normal; font-size:10px; text-decoration:underline;">Watch Let's launch a #24hrstartup | Airtable - DataViz from m2creates on www.twitch.tv</a>
-
-Twitch Collection https://player.twitch.tv/?autoplay=false&collection=0WkbOP5xexWgGw
-Sample:
-  <iframe src="https://player.twitch.tv/?autoplay=false&video=v366779762" frameborder="0" allowfullscreen="true" scrolling="no" height="378" width="620"></iframe><a href="https://www.twitch.tv/videos/366779762?tt_content=text_link&tt_medium=vod_embed" style="padding:2px 0px 4px; display:block; width:345px; font-weight:normal; font-size:10px; text-decoration:underline;">Watch Shatter - A Stream Broadcast Graphics Collection from m2creates on www.twitch.tv</a>
-
-YouTube: https://developers.google.com/youtube/player_parameters
-Vimeo: https://vimeo.zendesk.com/hc/en-us/articles/360001494447-Using-Player-Parameters
-#}
+{% endif %}

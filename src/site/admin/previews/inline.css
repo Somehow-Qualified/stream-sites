@@ -62,9 +62,51 @@ figure, .featured-image {
 figcaption {
 	font-style: italic;
 }
+
+blockquote {
+  margin: 0 0 1.5rem;
+  padding: 0 1.5rem;
+  border-left: 3px solid #E2E8F0;
+}
+
+blockquote p {
+  margin: 0 0 1rem;
+  color: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  font-style: italic;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+ol,
+ul {
+  padding-left: 1.3rem;
+  padding-right: 1.5rem;
+}
+
+ol {
+  list-style: decimal;
+}
+
+ul {
+  list-style: disc;
+}
+
+li {
+  margin: .5rem 0;
+  padding-left: .3rem;
+  word-break: break-word;
+}
+
+li:last-child {
+  margin-bottom: 2rem;
+}
 /* Blog Styles */
 .tldr {
-  font-size: 125% !important;
+  font-size: 2rem !important;
 }
 /* SEO Labels */
 .preview-label {

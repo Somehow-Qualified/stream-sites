@@ -1,15 +1,11 @@
 ---
+title: Explore by Tag
+subtitle: Tag Archive
 slug: tags
-eleventyComputed:
-  heading: >-
-    {{ theme.tags.heading }}
-  subheading: >-
-    {{ theme.tags.subheading }}
-  seo:
-    excerpt: >-
-      {{ theme.tags.seo_desc }}
-    meta_title: >-
-      {{ theme.tags.seo_title }}
-page_type: core
+image_card:
+image_card_alt:
+seo_title: Tags
+seo_desc: Explore posts by tag
 layout: tags.njk
+type: core
 ---

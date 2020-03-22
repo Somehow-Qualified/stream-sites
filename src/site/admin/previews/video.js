@@ -11,19 +11,21 @@ const md = new markdownIt(options).use(markdownItAttrs);
 const html= htm.bind(h);
 
 // Preview component for a Post
-const Page = createClass({
+const Video = createClass({
   render() {
 
     const entry = this.props.entry;
 
     const title = entry.getIn(['data', 'title'], null);
-    const subtitle = entry.getIn(['data', 'subtitle'], null);
-    // TODO: show the tags
+    // TODO: show the date and tags
+    // const date = entry.getIn(['data', 'date'], null);
     // const tags = entry.getIn(['data', 'tags'], null);
 
     const image_card = entry.getIn(['data', 'image_card'], null);
     const image_card_alt = entry.getIn(['data', 'image_card_alt'], null);
     const image_card_credit = entry.getIn(['data', 'image_card_credit'], null);
+
+    // TODO: show the video embed and clipper if Clip
 
     const tldr = entry.getIn(['data', 'excerpt'], null);
     const tldrRendered = md.render(tldr || '');
@@ -33,11 +35,10 @@ const Page = createClass({
 
     const seo_title = entry.getIn(['data', 'seo_title'], null);
     const seo_desc = entry.getIn(['data', 'seo_desc'], null);
-    const link_preview = entry.getIn(['data', 'slug'], '');
+    const link_preview = '/blog/' + entry.getIn(['data', 'slug'], '');
 
     return html`
       <article>
-        <p>${subtitle}</p>
         <h1>${title}</h1>
         <figure>
           <div><img src="${image_card}" alt="${image_card_alt}" /></div>
@@ -81,4 +82,4 @@ const Page = createClass({
   }
 });
 
-export default Page;
+export default Video;

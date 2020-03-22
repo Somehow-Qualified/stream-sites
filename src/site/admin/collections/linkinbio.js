@@ -4,14 +4,17 @@ export default {
   label_singular: 'Link In Bio',
   description: 'Edit your Link in Bio content and/or links',
   create: false,
+  delete: false,
   slug: '{{slug}}',
   preview_path: '{{fields.slug}}',
+  editor: {
+    preview: false
+  },
   files: [
     {
-      label: 'Content',
+      label: 'Link in Bio Page',
       name: 'linkinbio_content',
       file: 'src/site/page/linkinbio.md',
-      preview: true,
       fields: [
         {
           label: 'Title',
@@ -25,44 +28,59 @@ export default {
           'default': 'link-in-bio'
         },
         {
+          label: 'Image Card',
+          name: 'image_card',
+          widget: 'image',
+          required: false,
+          media_library: {
+            config: {
+              multiple: false
+            }
+          },
+          hint: 'Recommended size: 1200×628 pixels'
+        },
+        {
+          label: 'Image Card Alt Text',
+          name: 'image_card_alt',
+          widget: 'string',
+          required: false,
+          hint: 'Describe this image for anyone who can\'t see it.'
+        },
+        {
           label: 'Body',
           name: 'body',
           widget: 'markdown'
         },
         {
-          label: 'SEO',
-          name: 'seo',
-          widget: 'object',
-          fields: [
-            {
-              label: 'Meta Title',
-              name: 'meta_title',
-              widget: 'string',
-              required: false,
-              hint: 'A title to display on a Search result. (What do you want Google to see?)'
-            },
-            {
-              label: 'Meta Description',
-              name: 'excerpt',
-              widget: 'text',
-              required: false,
-              hint: 'A short description to tease this in a Search or Social Media preview.'
-            }
+          label: 'SEO Title',
+          name: 'seo_title',
+          widget: 'string',
+          required: false,
+          hint: 'A title to display on a Search result. (What do you want Google to see?)'
+        },
+        {
+          label: 'SEO Description',
+          name: 'seo_desc',
+          widget: 'text',
+          required: false,
+          hint: 'A short description to tease this in a Search or Social Media preview.',
+          pattern: [
+            '.{,240}',
+            'Max 240 characters'
           ]
         },
         {
           label: 'Template',
           name: 'layout',
           widget: 'hidden',
-          'default': 'layouts/linkinbio.njk'
+          'default': 'linkinbio.njk'
         }
       ]
     },
     {
-      label: 'Links',
+      label: 'Links for the Page',
       name: 'linkinbio_links',
       file: 'src/site/_globals/linkinbio.json',
-      preview: true,
       fields: [
         {
           label: 'Add a link',

@@ -10,6 +10,7 @@ const collections = require('./src/utils/collections.js');
 const transforms = require('./src/utils/transforms.js');
 
 // Markdown Plugins
+const markdownIt = require('markdown-it');
 const markdownItAnchor = require('markdown-it-anchor');
 const markdownItAttrs = require('markdown-it-attrs');
 const markdownItFootnote = require('markdown-it-footnote');
@@ -50,44 +51,39 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.setDataDeepMerge(true);
 
-  // Markdown-It and Plugins
-  let markdownIt = require('markdown-it');
-  let markdownItConfig = {
-    html: true,
-    breaks: true,
-    linkify: true
-  };
-  let markdownItAnchorConfig = {
-    permalink: true,
-    permalinkBefore: true,
-    permalinkClass: 'bookmark',
-    permalinkSpace: true,
-    permalinkSymbol: '#'
-  };
-  let markdownItAttrsConfig = {
-    leftDelimiter: '{',
-    rightDelimiter: '}',
-    allowedAttributes: []
-  };
-  let markdownItTocConfig = {
-    containerClass: 'md-toc',
-    includeLevel: [2, 3, 4, 5, 6],
-    listType: 'ul',
-    containerHeaderHtml: '<p class="md-toc-header">Contents</p>'
-  };
-  let markdownItVideoConfig = {
-    youtube: { width: 640, height: 390 },
-    vimeo: { width: 500, height: 281 },
-    vine: { width: 600, height: 600, embed: 'simple' },
-    prezi: { width: 550, height: 400 }
-  };
-  let markdownItLib = markdownIt(markdownItConfig)
-    .use(markdownItAnchor, markdownItAnchorConfig)
-    .use(markdownItAttrs, markdownItAttrsConfig)
-    .use(markdownItFootnote)
-    .use(markdownItToc, markdownItTocConfig)
-    .use(markdownItVideo, markdownItVideoConfig);
-  eleventyConfig.setLibrary("md", markdownItLib);
+  // Markdown Parsing
+  eleventyConfig.setLibrary('md',
+      markdownIt({
+        html: true,
+        breaks: true,
+        typographer: true
+      }).use(markdownItAnchor, {
+        permalink: true,
+        permalinkSymbol: '#',
+        permalinkClass: 'bookmark',
+        permalinkBefore: true,
+        level: 2
+      }).use(markdownItAttrs, {
+        leftDelimiter: '{',
+        rightDelimiter: '}',
+        allowedAttributes: []
+      }).use(markdownItToc, {
+        containerClass: 'md-toc',
+        includeLevel: [2, 3, 4, 5, 6],
+        listType: 'ul',
+        containerHeaderHtml: '<p class="md-toc-header">Table of Contents</p>'
+      }).use(markdownItVideo, {
+        youtube: { width: 640, height: 390 },
+        vimeo: { width: 500, height: 281 },
+        vine: { width: 600, height: 600, embed: 'simple' },
+        prezi: { width: 550, height: 400 }
+      }).use(markdownItFootnote)
+  );
+  // For inline excerpts/TLDRs
+  // const mdRender = new markdownIt({});
+  // eleventyConfig.addFilter('renderMarkdownInline', (rawString) => {
+	// 	return mdRender.renderInline(rawString);
+	// });
 
   // Prepare assets for production
   if (process.env.NODE_ENV === 'production') {

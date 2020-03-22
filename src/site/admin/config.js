@@ -30,12 +30,21 @@ export default {
 
 import Blog from './previews/blog.js';
 import Page from './previews/page.js';
+import Video from './previews/video.js';
 
-CMS.registerPreviewTemplate('blog', Blog);
-CMS.registerPreviewTemplate('page', Page);
-
-// Update this to a custom template
 CMS.registerPreviewTemplate('about', Page);
+CMS.registerPreviewTemplate('archive', Page);
+CMS.registerPreviewTemplate('blog', Blog);
+CMS.registerPreviewTemplate('blog_page', Page);
+CMS.registerPreviewTemplate('contact', Page);
+CMS.registerPreviewTemplate('page', Page);
+CMS.registerPreviewTemplate('privacy', Page);
+CMS.registerPreviewTemplate('search', Page);
+CMS.registerPreviewTemplate('tag', Page);
+CMS.registerPreviewTemplate('tags', Page);
+CMS.registerPreviewTemplate('video', Video);
+CMS.registerPreviewTemplate('video_page', Page);
+CMS.registerPreviewTemplate('404_page', Page);
 
 CMS.registerPreviewStyle('./css/tailwind.min.css');
 CMS.registerPreviewStyle('./previews/inline.css');
