@@ -90,8 +90,7 @@ TODO, FIXME, CHANGED, XXX, IDEA, HACK, NOTE, REVIEW, NB, BUG, QUESTION, COMBAK, 
 - [ ] Merch collection + page (maybe this is the same as Support?)
 - [ ] Better social links and icon management
 - [ ] Tag list - add a filter for "most popular"
-- [ ] Netlify CMS Manual Init - make SEO settings and preview reusable across all collection types
-- [ ] Netlify CMS Styled Previews - one for each default page, linkinbio
+- [ ] Netlify CMS Styled Previews - Link In Bio, improve others
 - [ ] Home page modules
 - [ ] Rich snippet structured data (articles, videos) with [schema markup](https://schema.org/docs/gs.html) and [JSON-LD](https://json-ld.org/playground/)
 - [ ] [Microformats](http://microformats.org/wiki/microformats2) for IndieWeb
@@ -105,7 +104,7 @@ TODO, FIXME, CHANGED, XXX, IDEA, HACK, NOTE, REVIEW, NB, BUG, QUESTION, COMBAK, 
 
 ### Done!
 
-- [x] Map core page fields to CMS
+- [x] CMS: Map core fields
 - [x] iframe rendering for Twitch Clips, Twitch Vods, Twitch Collections, YouTube videos, YouTube playlists, and Vimeo
 - [x] LD-JSON: Page level complete
 - [x] Meta Extended: Privacy settings for search crawlers, Twitter, Pinterest; optional Google Site verification string
@@ -122,7 +121,7 @@ TODO, FIXME, CHANGED, XXX, IDEA, HACK, NOTE, REVIEW, NB, BUG, QUESTION, COMBAK, 
 - [x] Light/Dark mode
 - [x] Archive collection (all posts)
 - [x] All of the Markdown options
-- [x] Styled Previews for Netlify CMS: Posts, Pages
+- [x] Styled Previews for Netlify CMS: Posts (Blog, Video), Pages (Core, Custom)
 - [x] Lazy loading images
 - [x] Meta: Google Schema, Twitter, Open Graph (Facebook), sameAs, feeds, JSON-LD
 - [x] Per post/page SEO settings and site level fallback
