@@ -8,19 +8,39 @@
     "postFooter": "pink"
   },
   "fonts": {
+<<<<<<< HEAD
     "post": [
+||||||| merged common ancestors
+    "post": {
+=======
+    "post": [{
+>>>>>>> ceddd697ad9e9560eabd3bd0e0121969915eb4cd
       "title": "font-sans",
       "meta": "font-sans",
       "tldr": "font-serif",
       "author": "font-sans"
+<<<<<<< HEAD
     ],
     "postslist": [
       {
+||||||| merged common ancestors
+    },
+    "postslist": {
+=======
+    }],
+    "postslist": [{
+>>>>>>> ceddd697ad9e9560eabd3bd0e0121969915eb4cd
       "title": "font-sans",
       "tags": "font-sans",
       "excerpt": "font-serif",
       "date": "font-sans"
+<<<<<<< HEAD
     }
   ]
+||||||| merged common ancestors
+    }
+=======
+    }]
+>>>>>>> ceddd697ad9e9560eabd3bd0e0121969915eb4cd
   }
 }
