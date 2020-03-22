@@ -80,10 +80,10 @@ module.exports = function (eleventyConfig) {
       }).use(markdownItFootnote)
   );
   // For inline excerpts/TLDRs
-  // const mdRender = new markdownIt({});
-  // eleventyConfig.addFilter('renderMarkdownInline', (rawString) => {
-	// 	return mdRender.renderInline(rawString);
-	// });
+  const mdRender = new markdownIt({});
+  eleventyConfig.addFilter('renderMarkdownInline', (rawString) => {
+		return mdRender.renderInline(rawString);
+	});
 
   // Prepare assets for production
   if (process.env.NODE_ENV === 'production') {
