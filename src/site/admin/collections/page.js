@@ -116,12 +116,6 @@ export default {
       name: 'layout',
       widget: 'hidden',
       'default': 'default'
-    },
-    {
-      label: 'Page Type',
-      name: 'page_type',
-      widget: 'hidden',
-      'default': 'default'
     }
   ]
 }

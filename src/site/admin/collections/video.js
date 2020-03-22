@@ -136,12 +136,6 @@ export default {
         '.{,240}',
         'Max 240 characters'
       ]
-    },
-    {
-      label: 'Template',
-      name: 'layout',
-      widget: 'hidden',
-      'default': 'post.njk'
     }
   ]
 }

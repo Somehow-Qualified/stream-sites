@@ -95,15 +95,9 @@ export default {
       required: false,
       hint: 'A short description to tease this in a Search or Social Media preview.',
       pattern: [
-        '.{,240}',
+        '.{0,240}',
         'Max 240 characters'
       ]
-    },
-    {
-      label: 'Template',
-      name: 'layout',
-      widget: 'hidden',
-      'default': 'post.njk'
     }
   ]
 }
