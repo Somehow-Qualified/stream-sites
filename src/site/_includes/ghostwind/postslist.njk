@@ -1,18 +1,4 @@
-{#
-You Are Here:
-- Posts List for Ghostwind
-- src/site/_includes/ghostwind/postslist.njk
-
-How It Works:
-- On build, this is placed on every page with `{% include template %}`
-- Use `{% set postslist = VALUE %}` to choose what it displays
-- This template can be selected for Archive, Blog, and Highlights
-
-Dynamic Data:
-- anything in {{ curly braces }} is a variable from frontmatter in a
-  markdown file from src/site/blog or src/site/video
-- aliases are defined in `{% set %}`
-#}
+{# Posts List  #}
 
 {% for post in postslist %}
 
@@ -28,7 +14,7 @@ Dynamic Data:
       <div class="relative pb-16/9">
         <img src="{{ featuredImage }}" class="absolute h-full w-full rounded-t object-cover">
       </div>
-      <div class="px-6 pt-6 h-auto max-h-32 flex-grow">
+      <div class="px-6 pt-6 h-auto min-h-32 flex-grow">
         <p class="text-{{ theme.colors.main }}-800 text-xs md:text-sm {{ theme_ghostwind.fonts.postslist.tags }}">
         {% for tag in post.data.tags %}
           {%- if (tag != "post") and (tag != "page") -%}
