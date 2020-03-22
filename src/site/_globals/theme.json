@@ -3,8 +3,8 @@
   "colors": {
     "main": "purple",
     "accent": "pink",
-    "pwa": "#6b46c1",
-    "progress": "#d53f8c",
+    "pwa": "#6B46C1",
+    "progress": "#D53F8C",
     "postFooter": "pink"
   },
   "fonts": {
