@@ -7,15 +7,15 @@ video_type: collection
 clipper:
 date: 2019-01-19
 dateMod: Last Modified
+excerpt: >-
+  **The challenge:** Ship something for [Ship Saturday](https://shipstreams.com/events/ship-saturday) by [Shipstreams](https://shipstreams.com/)!
+teaser: I built an overlay with Figma for OBS!
 tags:
   - graphic design
   - figma
-seo:
-  meta_description: Creating a Twitch overlay and panels package with Figma.
-  meta_title: Ship Saturday Shenanigans | Let's Create an Overlay!
+seo_title: Ship Saturday Shenanigans | Let's Create an Overlay!
+seo_desc: Creating a Twitch overlay and panels package with Figma.
 ---
-
-**The challenge:** Ship something for [Ship Saturday](https://shipstreams.com/events/ship-saturday) by [Shipstreams](https://shipstreams.com/)!
 
 I put out a poll on Friday to see what I should create and a Twitch stream package won! In a comment, [Dave Craige](https://twitter.com/davecraige) asked if I'd tried out [Figma](https://www.figma.com/) yet - which I had, but hadn't given it much love since I tend to hop into code... It's faster for me to write CSS than fight software to draw a button. Since my new project would involve designing graphics, I started from scratch in Figma to design what would become **Shatter**.
 
@@ -87,8 +87,6 @@ Once your desired frames are selected, choose **2x** and **PNG** from the **Expo
 ![Export your frames](https://blog.melaniemagdalena.com/images/figma-2x-export.png "Export frames at 2x for PNG")
 
 > By exporting at 2X resolution, your images will scale down to a *crisp* output on both your broadcasting software and Twitch's upload UI.
-
----
 
 Thanks for reading and trying out Shatter! If you get stuck, DM me on [Twitter](https://twitter.com/messages/1232581862-1232581862?recipient_id=1232581862&text=) or Discord (tag: eli_archgirl#4635) so I can help you out.
 

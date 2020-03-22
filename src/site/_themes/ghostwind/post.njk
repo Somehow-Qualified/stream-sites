@@ -2,12 +2,13 @@
 layout: default.njk
 ---
 
-{% set fontMeta = theme_ghostwind.fonts.post.meta %}
-{% set fontTitle = theme_ghostwind.fonts.post.title %}
-{% set fontTldr = theme_ghostwind.fonts.post.tldr %}
-{% set fontAuthor = theme_ghostwind.fonts.post.author %}
-{% set colorFooter = theme_ghostwind.colors.postFooter %}
+{% set fontMeta = theme.fonts.post.meta %}
+{% set fontTitle = theme.fonts.post.title %}
+{% set fontTldr = theme.fonts.post.tldr %}
+{% set fontAuthor = theme.fonts.post.author %}
+{% set colorFooter = theme.colors.postFooter %}
 {% set previewImage = image_card or site.image_card %}
+{% set tldr = excerpt %}
 
 <article class="mx-auto">
 
@@ -54,32 +55,23 @@ layout: default.njk
   {% endif %}
 
   {# Content Wrapper #}
-  <div class="container w-full max-w-5xl mx-auto {% if image_card %}-mt-32{% endif %} mb-16 bg-{{ theme.colors.main }}-100 dark:bg-{{ theme.colors.main }}-900">
+  <div class="container w-full md:min-w-5xl max-w-5xl mx-auto {% if image_card %}-mt-32{% endif %} bg-{{ theme.colors.main }}-100 dark:bg-{{ theme.colors.main }}-900">
 
     {# Post Content #}
     <div class="content highlight-{{ theme.colors.accent }} w-full md:px-24 {% if image_card %}p-8 md:pt-24{% else %}px-8 pb-8{% endif %} text-xl leading-normal">
 
+      {% if tldr %}
       <p class="text-2xl md:text-3xl mb-5 {{ fontTldr }}">
-        {{ tldr }}
+        {{ tldr | renderMarkdownInline | safe }}
       </p>
+      {% endif %}
+      {% if image_card_credit %}
+      <p class="text-sm"><em>Image courtesy of: {{ image_card_credit | renderMarkdownInline | safe }}</em></p>
+      {% endif %}
 
       {# Markdown #}
       {{ content | safe }}
 
-    </div>
-  </div>
-
-  {# CTA #}
-  <div class="container text-{{ theme.colors.main }}-100 bg-{{ theme.colors.main }}-800 p-4 md:p-24 text-center md:rounded w-11/12 md:w-full mx-auto shadow-md hover:shadow-lg">
-    <h2 class="font-bold break-normal text-2xl md:text-4xl">Subscribe to {{ site.name }}</h2>
-    <p class="font-bold break-normal font-normal text-base md:text-xl">Get the latest posts delivered right to your feed reader.</p>
-    <div class="w-full text-center py-4 flex -mx-3 justify-center">
-      <a href="/atom.xml" title="Subscribe via Atom" class="bg-transparent border border-{{ theme.colors.accent }}-500 hover:bg-{{ theme.colors.accent }}-400 text-sm text-{{ theme.colors.main }}-900 hover:text-{{ theme.colors.main }}-900 dark:text-{{ theme.colors.main }}-100 dark-hover:text-{{ theme.colors.main }}-900 font-bold py-2 px-4 rounded-full mx-3">Atom <svg class="inline-block font-normal" fill="currentColor" role="img" aria-hidden="true" width="10" height="10">
-        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/icon-library.svg#icon-subscribe"></use>
-      </svg></a>
-      <a href="/rss.xml" title="Subscribe via RSS" class="bg-transparent border border-{{ theme.colors.accent }}-500 hover:bg-{{ theme.colors.accent }}-400 text-sm text-{{ theme.colors.main }}-900 hover:text-{{ theme.colors.main }}-900 dark:text-{{ theme.colors.main }}-100 dark-hover:text-{{ theme.colors.main }}-900 font-bold py-2 px-4 rounded-full mx-3">RSS <svg class="inline-block font-normal" fill="currentColor" role="img" aria-hidden="true" width="10" height="10">
-        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/icon-library.svg#icon-subscribe"></use>
-      </svg></a>
     </div>
   </div>
 
@@ -95,7 +87,21 @@ layout: default.njk
     </div>
   </div>
 
-  <nav class="flex flex-row items-center w-full p-8 md:px-24 highlight-{{ theme.colors.accent }}" aria-label="Post Navigation">
+  {# CTA #}
+  <div class="container text-{{ theme.colors.main }}-100 bg-{{ theme.colors.main }}-800 p-4 md:p-24 text-center md:rounded w-11/12 md:w-full mx-auto shadow-md hover:shadow-lg">
+    <h2 class="font-bold break-normal text-2xl md:text-4xl">Subscribe to {{ site.name }}</h2>
+    <p class="font-bold break-normal font-normal text-base md:text-xl">Get the latest posts delivered to your feed reader.</p>
+    <div class="w-full text-center py-4 flex -mx-3 justify-center">
+      <a href="/atom.xml" title="Subscribe via Atom" class="bg-transparent border border-{{ theme.colors.accent }}-500 hover:bg-{{ theme.colors.accent }}-400 text-sm text-{{ theme.colors.main }}-100 hover:text-{{ theme.colors.main }}-900 dark:text-{{ theme.colors.main }}-100 dark-hover:text-{{ theme.colors.main }}-900 font-bold py-2 px-4 rounded-full mx-3">Atom <svg class="inline-block font-normal" fill="currentColor" role="img" aria-hidden="true" width="10" height="10">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/icon-library.svg#icon-subscribe"></use>
+      </svg></a>
+      <a href="/rss.xml" title="Subscribe via RSS" class="bg-transparent border border-{{ theme.colors.accent }}-500 hover:bg-{{ theme.colors.accent }}-400 text-sm text-{{ theme.colors.main }}-100 hover:text-{{ theme.colors.main }}-900 dark:text-{{ theme.colors.main }}-100 dark-hover:text-{{ theme.colors.main }}-900 font-bold py-2 px-4 rounded-full mx-3">RSS <svg class="inline-block font-normal" fill="currentColor" role="img" aria-hidden="true" width="10" height="10">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/icon-library.svg#icon-subscribe"></use>
+      </svg></a>
+    </div>
+  </div>
+
+  <nav class="flex flex-row items-top w-full p-8 md:px-24 highlight-{{ theme.colors.accent }}" aria-label="Post Navigation">
     <p class="w-1/2 text-sm text-left block mb-0">{% if nextPost %}<span>Next:</span><br><a href="{{ nextPost.url }}">{{ nextPost.data.title }}</a>{% endif %}</p>
     <p class="w-1/2 text-sm text-right block mb-0">{% if prevPost %}<span>Previous:</span><br><a href="{{ prevPost.url }}">{{ prevPost.data.title }}</a>{% endif %}</p>
   </nav>

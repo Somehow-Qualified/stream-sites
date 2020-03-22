@@ -7,9 +7,6 @@ export default {
   create: true,
   slug: '{{fields.slug}}',
   preview_path: 'video/{{fields.slug}}',
-  editor: {
-    preview: false
-  },
   fields: [
     {
       label: 'Title',
@@ -22,8 +19,25 @@ export default {
       widget: 'string'
     },
     {
+      label: 'Publish Date',
+      name: 'date',
+      widget: 'datetime'
+    },
+    {
+      label: 'Last Modified',
+      name: 'dateMod',
+      widget: 'hidden',
+      'default': 'Last Modified'
+    },
+    {
+      label: 'Tag',
+      name: 'tags',
+      widget: 'list',
+      hint: 'We recommend what game it\'s of. Apply tags to create archives of posts that are similar and/or related. Separate multiple with a comma: i.e. Tag 1, Tag 2, Tag 3'
+    },
+    {
       label: 'Video Thumbnail',
-      name: 'image',
+      name: 'image_card',
       widget: 'image',
       required: false,
       media_library: {
@@ -31,13 +45,20 @@ export default {
           multiple: false
         }
       },
-      hint: 'Recommended size: 1280x720 pixels'
+      hint: 'Recommended size: 1280x720 pixels (16:9)'
+    },
+    {
+      label: 'Video Thumbnail Alt Text',
+      name: 'image_card_alt',
+      widget: 'string',
+      required: false,
+      hint: 'Describe this image for anyone who can\'t see it.'
     },
     {
       label: 'Video ID',
       name: 'video_id',
       widget: 'string',
-      hint: 'Get this from the Twitch video URL. Clip example: HedonisticConsiderateOrcaWutFace'
+      hint: 'Get this from the video URL. Clip example: HedonisticConsiderateOrcaWutFace'
     },
     {
       label: 'Video Type',
@@ -55,6 +76,18 @@ export default {
         {
           label: 'Twitch Vod',
           value: 'vod'
+        },
+        {
+          label: 'Vimeo',
+          value: 'vimeo'
+        },
+        {
+          label: 'YouTube Video',
+          value: 'youtube'
+        },
+        {
+          label: 'YouTube Playlist',
+          value: 'playlist'
         }
       ],
       hint: 'Select the type of video to embed. Vods include video and past broadcasts.'
@@ -67,21 +100,19 @@ export default {
       hint: 'Give credit to the user who clipped this.'
     },
     {
-      label: 'Date Aired',
-      name: 'date',
-      widget: 'datetime'
+      label: 'TL;DR',
+      name: 'excerpt',
+      widget: 'markdown',
+      buttons: '',
+      required: false,
+      hint: 'A short description of this post for people who don\'t want to read. Shown at the beginning of the post. You can use Markdown!'
     },
     {
-      label: 'Last Modified',
-      name: 'dateMod',
-      widget: 'hidden',
-      'default': 'Last Modified'
-    },
-    {
-      label: 'Game',
-      name: 'tags',
-      widget: 'list',
-      hint: 'Use the name of the game this clip is from for sorting purposes.'
+      label: 'Teaser',
+      name: 'teaser',
+      widget: 'text',
+      required: false,
+      hint: 'A short plain text preview shown on cards.'
     },
     {
       label: 'Body',
@@ -89,31 +120,28 @@ export default {
       widget: 'markdown'
     },
     {
-      label: 'SEO',
-      name: 'seo',
-      widget: 'object',
-      fields: [
-        {
-          label: 'Meta Title',
-          name: 'meta_title',
-          widget: 'string',
-          required: false,
-          hint: 'A title to display on a Search result. (What do you want Google to see?)'
-        },
-        {
-          label: 'Meta Description',
-          name: 'meta_description',
-          widget: 'text',
-          required: false,
-          hint: 'A short description to tease this in a Search or Social Media preview.'
-        }
+      label: 'SEO Title',
+      name: 'seo_title',
+      widget: 'string',
+      required: false,
+      hint: 'A title to display on a Search result. (What do you want Google to see?)'
+    },
+    {
+      label: 'SEO Description',
+      name: 'seo_desc',
+      widget: 'text',
+      required: false,
+      hint: 'A short description to tease this in a Search or Social Media preview.',
+      pattern: [
+        '.{,240}',
+        'Max 240 characters'
       ]
     },
     {
       label: 'Template',
       name: 'layout',
       widget: 'hidden',
-      'default': 'post'
+      'default': 'post.njk'
     }
   ]
 }

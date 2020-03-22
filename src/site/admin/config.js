@@ -30,12 +30,15 @@ export default {
 
 import Blog from './previews/blog.js';
 import Page from './previews/page.js';
+import Video from './previews/video.js';
 
 CMS.registerPreviewTemplate('blog', Blog);
 CMS.registerPreviewTemplate('page', Page);
-
-// Update this to a custom template
 CMS.registerPreviewTemplate('about', Page);
+CMS.registerPreviewTemplate('contact', Page);
+CMS.registerPreviewTemplate('404', Page);
+CMS.registerPreviewTemplate('privacy', Page);
+CMS.registerPreviewTemplate('video', Video);
 
 CMS.registerPreviewStyle('./css/tailwind.min.css');
 CMS.registerPreviewStyle('./previews/inline.css');

@@ -8,7 +8,6 @@ html, body {
 /**
  * Links
  */
-
 .sr-skip-link:focus,
 main:focus {
   outline: none;
@@ -87,7 +86,7 @@ h3,
 h4,
 h5,
 h6 {
-  @apply font-bold leading-tight mt-6 mb-6;
+  @apply font-bold leading-tight mt-10 mb-6;
 }
 
 h1 {
@@ -121,6 +120,268 @@ code {
 code[class*="language-"],
 pre[class*="language-"] {
   font-size: 1rem;
+}
+
+@tailwind components;
+
+/*
+ * Link Highlights
+ */
+
+.highlight-blue a {
+  background-image: linear-gradient(180deg, transparent 70%, rgba(66, 153, 225, .3) 0);
+}
+
+.mode-dark .highlight-blue a {
+  background-image: linear-gradient(180deg, transparent 70%, rgba(235, 248, 255, .3) 0);
+  color: #fff;
+}
+
+.highlight-blue a:hover,
+.highlight-blue a:active,
+.highlight-blue a:focus,
+.mode-dark .highlight-blue a:hover,
+.mode-dark .highlight-blue a:focus,
+.mode-dark .highlight-blue a:active {
+  background-image: linear-gradient(180deg, transparent 70%, rgba(66, 153, 225, .7) 0);
+}
+
+.highlight-indigo a {
+  background-image: linear-gradient(180deg, transparent 70%, rgba(102, 126, 234, .3) 0);
+}
+
+.mode-dark .highlight-indigo a {
+  background-image: linear-gradient(180deg, transparent 70%, rgba(235, 244, 255, .3) 0);
+  color: #fff;
+}
+
+.highlight-indigo a:hover,
+.highlight-indigo a:active,
+.highlight-indigo a:focus,
+.mode-dark .highlight-indigo a:hover,
+.mode-dark .highlight-indigo a:focus,
+.mode-dark .highlight-indigo a:active {
+  background-image: linear-gradient(180deg, transparent 70%, rgba(102, 126, 234, .7) 0);
+}
+
+.highlight-purple a {
+  background-image: linear-gradient(180deg, transparent 70%, rgba(159, 122, 234, .3) 0);
+}
+
+.mode-dark .highlight-purple a {
+  background-image: linear-gradient(180deg, transparent 70%, rgba(250, 245, 255, .3) 0);
+  color: #fff;
+}
+
+.highlight-purple a:hover,
+.highlight-purple a:active,
+.highlight-purple a:focus,
+.mode-dark .highlight-purple a:hover,
+.mode-dark .highlight-purple a:focus,
+.mode-dark .highlight-purple a:active {
+  background-image: linear-gradient(180deg, transparent 70%, rgba(159, 122, 234, .7) 0);
+}
+
+.highlight-pink a {
+  background-image: linear-gradient(180deg, transparent 70%, rgba(213, 63, 140, .3) 0);
+  font-weight: 700;
+}
+
+.mode-dark .highlight-pink a {
+  background-image: linear-gradient(180deg, transparent 70%, rgba(251, 182, 206, .3) 0);
+  color: #fff;
+}
+
+.highlight-pink a:hover,
+.highlight-pink a:active,
+.highlight-pink a:focus,
+.mode-dark .highlight-pink a:hover,
+.mode-dark .highlight-pink a:focus,
+.mode-dark .highlight-pink a:active {
+  background-image: linear-gradient(180deg, transparent 70%, rgba(213, 63, 140, .7) 0);
+}
+
+/* Markdown Formatting */
+
+.content p {
+  @apply mb-8;
+}
+
+.content img {
+  @apply w-full;
+}
+
+.content blockquote {
+  margin: 0 0 1.5rem;
+  padding: 0 1.5rem;
+  border-left: 3px solid #E2E8F0;
+}
+
+.content blockquote p {
+  margin: 0 0 1rem;
+  color: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  font-style: italic;
+}
+
+.content blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+.content ol,
+.content ul {
+  padding-left: 1.3rem;
+  padding-right: 1.5rem;
+}
+
+.content ol {
+  list-style: decimal;
+}
+
+.content ul {
+  list-style: disc;
+}
+
+.content li {
+  margin: .5rem 0;
+  padding-left: .3rem;
+  word-break: break-word;
+}
+
+.content li:last-child {
+  @apply mb-8;
+}
+
+/* Bookmark Anchors */
+
+.content h2:focus>.bookmark,
+.content h2:hover>.bookmark,
+.content h3:focus>.bookmark,
+.content h3:hover>.bookmark,
+.content h4:focus>.bookmark,
+.content h4:hover>.bookmark {
+  opacity: .75;
+}
+
+.bookmark {
+  display: none;
+  position: absolute;
+  margin-left: -2rem;
+  opacity: 0;
+  background-image: none !important;
+}
+
+.bookmark:focus,
+.bookmark:hover {
+  opacity: 1 !important;
+}
+
+@media (min-width: 670px) {
+  .content .bookmark {
+    display: block;
+  }
+}
+
+/* Table of Contents */
+
+.md-toc {
+  @apply p-4;
+  border: 1px dashed;
+}
+
+.md-toc-header {
+  font-weight: 700;
+}
+
+.md-toc ul>li>* {
+  @apply my-0;
+}
+
+/* Footnotes */
+
+.footnotes-sep {
+  @apply mt-8 border-b border-gray-300 border-t-0 border-r-0 border-l-0;
+}
+
+ol.footnotes-list>li>p {
+  display: contents;
+}
+
+ol.footnotes-list {
+  padding-top: 1rem;
+}
+
+hr.footnotes-sep {
+  margin-top: 2rem;
+}
+
+a.footnote-backref {
+  background: none !important;
+}
+
+li.footnote-item {
+  padding-bottom: 1rem;
+}
+
+li.footnote-item:last-of-type {
+  padding-bottom: 0;
+}
+
+/*
+ * Responsive iframes
+ * always ignored for purgecss
+ */
+.resp-container,
+.embed-responsive,
+.embed-responsive-16by9 {
+  position: relative;
+  overflow: hidden;
+  padding-top: 56.25%;
+}
+
+.resp-container iframe,
+.embed-responsive iframe,
+.resp-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.resp-container .preview-image {
+  position: absolute;
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  cursor: pointer;
+}
+
+.resp-container .play-icon {
+  height: 72px;
+  width: 72px;
+  left: 50%;
+  top: 50%;
+  margin-left: -36px;
+  margin-top: -36px;
+  position: absolute;
+  cursor: pointer;
+  background: url("../images/icons/play-circle.svg") no-repeat center center;
+  background-size: contain;
+}
+
+@tailwind utilities;
+
+#menu-toggle:checked+#menu {
+  display: block;
 }
 
 /**
@@ -274,222 +535,4 @@ pre[class*="language-"] {
 
 .token.entity {
   cursor: help;
-}
-
-@tailwind components;
-
-/*
- * Blog
- */
-.content .intro {
-  @apply border-b border-gray-300 text-2xl pb-10 mb-10 font-light;
-}
-/*WIP*/
-.content.highlight-blue a {
-  background-image: linear-gradient(180deg, transparent 70%, rgba(66, 153, 225, .3) 0);
-}
-html.mode-dark .content.highlight-blue a {
-  background-image: linear-gradient(180deg, transparent 70%, rgba(235, 248, 255, .3) 0);
-  color: #fff;
-}
-.content.highlight-blue a:hover,
-.content.highlight-blue a:active,
-.content.highlight-blue a:focus,
-html.mode-dark .content.highlight-blue a:hover,
-html.mode-dark .content.highlight-blue a:focus,
-html.mode-dark .content.highlight-blue a:active {
-  background-image: linear-gradient(180deg, transparent 70%, rgba(66, 153, 225, .7) 0);
-}
-.content.highlight-indigo a {
-  background-image: linear-gradient(180deg, transparent 70%, rgba(102, 126, 234, .3) 0);
-}
-html.mode-dark .content.highlight-indigo a {
-  background-image: linear-gradient(180deg, transparent 70%, rgba(235, 244, 255, .3) 0);
-  color: #fff;
-}
-.content.highlight-indigo a:hover,
-.content.highlight-indigo a:active,
-.content.highlight-indigo a:focus,
-html.mode-dark .content.highlight-indigo a:hover,
-html.mode-dark .content.highlight-indigo a:focus,
-html.mode-dark .content.highlight-indigo a:active {
-  background-image: linear-gradient(180deg, transparent 70%, rgba(102, 126, 234, .7) 0);
-}
-.content.highlight-purple a {
-  background-image: linear-gradient(180deg, transparent 70%, rgba(159, 122, 234, .3) 0);
-}
-html.mode-dark .content.highlight-purple a {
-  background-image: linear-gradient(180deg, transparent 70%, rgba(250, 245, 255, .3) 0);
-  color: #fff;
-}
-.content.highlight-purple a:hover,
-.content.highlight-purple a:active,
-.content.highlight-purple a:focus,
-html.mode-dark .content.highlight-purple a:hover,
-html.mode-dark .content.highlight-purple a:focus,
-html.mode-dark .content.highlight-purple a:active {
-  background-image: linear-gradient(180deg, transparent 70%, rgba(159, 122, 234, .7) 0);
-}
-
-.highlight-pink a {
-  background-image: linear-gradient(180deg, transparent 70%, rgba(213, 63, 140, .3) 0);
-  font-weight: 700;
-}
-html.mode-dark .highlight-pink a {
-  background-image: linear-gradient(180deg, transparent 70%, rgba(251, 182, 206, .3) 0);
-  color: #fff;
-}
-.highlight-pink a:hover,
-.highlight-pink a:active,
-.highlight-pink a:focus,
-html.mode-dark .highlight-pink a:hover,
-html.mode-dark .highlight-pink a:focus,
-html.mode-dark .highlight-pink a:active {
-  background-image: linear-gradient(180deg, transparent 70%, rgba(213, 63, 140, .7) 0);
-}
-
-/* for md: breakpoint and up */
-@media screen and (min-width: 768px) {
-  .content .intro {
-    @apply text-3xl;
-  }
-}
-
-.md-toc {
-  @apply p-4;
-}
-
-.md-toc-header {
-  font-weight: 700;
-}
-
-.content.post>ul,
-.md-toc ul {
-  display: block;
-  list-style-type: disc;
-  margin-top: 1em;
-  margin-bottom: 1em;
-  margin-left: 0;
-  margin-right: 0;
-  padding-left: 40px;
-}
-
-.md-toc ul>li>* {
-  @apply my-0;
-}
-
-.content .bookmark {
-  opacity: .75;
-}
-
-.content p {
-  @apply mb-8;
-}
-
-.content p:last-of-type {
-  @apply mb-0;
-}
-
-.content.post>img {
-  width: 100%;
-  height: auto;
-}
-
-.content ol,
-.footnotes-list {
-  display: block;
-  list-style-type: decimal;
-  margin-top: 1em;
-  margin-bottom: 1em;
-  margin-left: 0;
-  margin-right: 0;
-  padding-left: 40px;
-}
-
-.footnotes-sep {
-  @apply mt-8 border-b border-gray-300 border-t-0 border-r-0 border-l-0;
-}
-
-/*
- * Responsive iframes
- * always ignored for purgecss
- */
-.resp-container,
-.embed-responsive,
-.embed-responsive-16by9 {
-  position: relative;
-  overflow: hidden;
-  padding-top: 56.25%;
-}
-
-.resp-container iframe,
-.embed-responsive iframe,
-.resp-iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: 0;
-}
-
-.resp-container .preview-image {
-  position: absolute;
-  display: block;
-  width: 100%;
-  max-width: 100%;
-  height: auto;
-  margin: auto;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  cursor: pointer;
-}
-
-.resp-container .play-icon {
-  height: 72px;
-  width: 72px;
-  left: 50%;
-  top: 50%;
-  margin-left: -36px;
-  margin-top: -36px;
-  position: absolute;
-  cursor: pointer;
-  background: url("../images/icons/play-circle.svg") no-repeat center center;
-  background-size: contain;
-}
-
-@tailwind utilities;
-
-#menu-toggle:checked+#menu {
-  display: block;
-}
-
-ol.footnotes-list>li>p {
-  display: contents;
-}
-
-ol.footnotes-list {
-  padding-top: 1rem;
-}
-
-hr.footnotes-sep {
-  margin-top: 2rem;
-}
-
-a.bookmark {
-  display: none;
-}
-
-a.footnote-backref {
-  background: none !important;
-}
-
-li.footnote-item {
-  padding-bottom: 1rem;
-}
-
-li.footnote-item:last-of-type {
-  padding-bottom: 0;
 }

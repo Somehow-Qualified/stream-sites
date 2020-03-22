@@ -1,7 +1,6 @@
 {
   "name": "Stream Sites",
   "description": "My awesome Stream Site",
-  "keywords": "twitch, 11ty, tailwindcss",
   "url": "https://demo.streamsites.xyz",
   "language": "en-US",
   "author_name": "Melanie E Magdalena",
@@ -17,10 +16,11 @@
   "twitch_handle": "monstercat",
   "twitch_client": "",
   "google_verification": "",
-  "footer_credit": true,
+  "footer_credit": "yes",
   "robots": {
     "pinterest": "allow",
     "twitter": "disallow",
     "search_crawler": "follow"
-  }
+  },
+  "search_engine": "https://duckduckgo.com/"
 }

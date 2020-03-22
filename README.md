@@ -78,6 +78,11 @@ Todo... (Looking into Storybook.js for it.)
 
 Follow the journey on [Stream Sites](https://streamsites.xyz) or [the log](https://airtable.com/shryN9sES7sNSBlGs/tblKH3jM73HsOUDBu?backgroundColor=pink&layout=card&blocks=hide).
 
+### For Atom
+
+Use the following to generate the Todo list:
+TODO, FIXME, CHANGED, XXX, IDEA, HACK, NOTE, REVIEW, NB, BUG, QUESTION, COMBAK, TEMP
+
 ### Up Next
 
 - [ ] Collection for managing emotes, chat commands, point redemptions, sound effect previews, etc.; include copy-to-clipboard and searching on front-end
@@ -100,6 +105,7 @@ Follow the journey on [Stream Sites](https://streamsites.xyz) or [the log](https
 
 ### Done!
 
+- [x] Map core page fields to CMS
 - [x] iframe rendering for Twitch Clips, Twitch Vods, Twitch Collections, YouTube videos, YouTube playlists, and Vimeo
 - [x] LD-JSON: Page level complete
 - [x] Meta Extended: Privacy settings for search crawlers, Twitter, Pinterest; optional Google Site verification string

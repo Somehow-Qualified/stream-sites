@@ -1,17 +1,18 @@
 ---
 title: Inked - A 5,000 Year Old Tradition (YouTube)
 slug: presentation-inked
-image_card: 
+image_card:
 video_id: BtWwCWsGrjY
 video_type: youtube
 clipper:
 date: 2014-04-05
 dateMod: Last Modified
+excerpt:
+teaser: My presentation at AGSU in 2014 about tattoos in archaeology.
 tags:
   - anthropology
-seo:
-  meta_description: My presentation at AGSU in 2014 about tattoos in archaeology.
-  meta_title: Inked - A 5,000 Year Old Tradition
+seo_title: Inked - A 5,000 Year Old Tradition
+seo_desc: My presentation at AGSU in 2014 about tattoos in archaeology.
 ---
 Presented by Melanie E Magdalena, University of New Mexico, Department of Anthropology, at AGSU, 05 April 2014.
 

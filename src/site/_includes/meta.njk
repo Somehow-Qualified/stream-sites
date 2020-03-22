@@ -1,28 +1,4 @@
-{#
-You Are Here:
-- Site Meta
-- src/site/_includes/meta.njk
-
-How It Works:
-- On build, this is placed on every page with `{% include "meta.njk" %}`
-
-Dynamic Data:
-- anything in {{ curly braces }} is a variable from src/site/_globals
-- aliases are defined in `{% set %}`
-
-Gotchas:
-- You can't put Nunjucks code inside a <script>
-
-TODO:
-nunjucks does not work in ld+json section
-```json
-"sameAs":[
-  {% for link in social %}
-    "{{ link | safe }}",
-  {% endfor %}
-],
-```
-#}
+{# Site Meta: src/site/_includes/meta.njk #}
 
 {% set title = archive_title or heading or title %}
 {% set metaTitle =  seo.meta_title or renderData.title or title or site.name %}
@@ -38,7 +14,6 @@ nunjucks does not work in ld+json section
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{% if title %}{{ title }} | {% endif %}{{ site.name }}</title>
 <meta name="description" content="{{ metaDescription }}">
-<meta name="keywords" content="{{ keywords }}"/>
 <meta name="author" content="{{ authorName }}">
 <meta name="copyright" content="{{ authorName }}, {{ site.name }}">
 <meta name="theme-color" content="{{ theme.colors.pwa }}"/>

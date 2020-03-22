@@ -1,8 +1,9 @@
 ---
 layout: default.njk
 ---
-{% set fontTitle = theme_ghostwind.fonts.post.title %}
-{% set fontTldr = theme_ghostwind.fonts.post.tldr %}
+{% set fontTitle = theme.fonts.post.title %}
+{% set fontTldr = theme.fonts.post.tldr %}
+{% set tldr = excerpt %}
 
 <section class="px-6 mx-auto">
 
@@ -15,7 +16,7 @@ layout: default.njk
   </div>
 
   {# Content Wrapper #}
-  <div class="container w-full max-w-5xl mx-auto pb-20">
+  <div class="container w-full md:min-w-5xl max-w-5xl mx-auto pb-20">
 
     {# Post Content #}
     <div class="content highlight-{{ theme.colors.accent }} w-full md:px-24 p-8 text-xl leading-normal">
@@ -29,7 +30,15 @@ layout: default.njk
       {# Markdown #}
       {{ content | safe }}
 
+      {# Contact Form #}
+      {% if form %}
+      <div class="mt-16">
+        {% include "form.njk" %}
+      </div>
+      {% endif %}
+
     </div>
+
   </div>
 
 </section>

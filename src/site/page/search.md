@@ -1,16 +1,13 @@
 ---
+title: Search
+subtitle: Discover
 slug: search
-form: true
-eleventyComputed:
-  title: >-
-    {{ theme.search.heading }}
-  subheading: >-
-    {{ theme.search.subheading }}
-  seo:
-    excerpt: >-
-      {{ theme.search.seo_desc }}
-    meta_title: >-
-      {{ theme.search.seo_title }}
-page_type: core
+image_card:
+image_card_alt:
+seo_title: Search Stream Sites
+seo_desc: Lets see what you discover!
+heading_form: Search the site
+heading_tags: Browse by tag
+type: core
 layout: search.njk
 ---

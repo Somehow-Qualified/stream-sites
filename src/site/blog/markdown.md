@@ -6,15 +6,16 @@ dateMod: Last Modified
 tags:
   - getting-started
 image_card: /images/post-3.jpg
-image_caption: A cool Stream Site logo banner - this caption doubles as alt text.
-tldr: >-
-  Stream Sites come with a variety of markdown options to make writing with
-  fancy flair easier.
-seo:
-  excerpt: >-
+image_card_alt: A cool Stream Site logo banner.
+image_card_credit: >-
+  [Unsplash](https://unsplash.com)
+excerpt: >-
+  Stream Sites come with a variety of markdown options to make writing with fancy flair easier.
+teaser: Check out the many ways to add flair to your Markdown posts.
+seo_title: Getting started with Markdown on Stream Sites
+seo_desc: >-
     Stream Sites come with a variety of markdown options to make writing with
     fancy flair easier.
-  meta_title: Getting started with Markdown on Stream Sites
 ---
 
 [[toc]]

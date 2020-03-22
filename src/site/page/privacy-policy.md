@@ -2,10 +2,12 @@
 title: Privacy Policy
 date: 2020-03-03
 slug: privacy
-seo:
-  excerpt: Your privacy is important!
-  meta_title: Privacy Policy
-page_type: core
+form: true
+image_card:
+image_card_alt:
+seo_title: Privacy Policy
+seo_desc: Your privacy is important!
+type: core
 layout: privacy.njk
 ---
 

@@ -30,7 +30,7 @@ Dynamic Data:
 
   </head>
 
-  <body class="font-sans text-lg leading-normal text-{{ theme.colors.main }}-900 dark:text-{{ theme.colors.main }}-100 bg-{{ theme.colors.main }}-100 dark:bg-{{ theme.colors.main }}-900 transition-all duration-200 ease-in-out">
+  <body class="font-sans text-lg leading-normal text-{{ theme.colors.main }}-900 dark:text-{{ theme.colors.main }}-100 bg-{{ theme.colors.main }}-100 dark:bg-{{ theme.colors.main }}-900">
 
     <a href="#main" class="sr-skip-link">skip to main content</a>
 
@@ -89,6 +89,9 @@ Dynamic Data:
     {% if site.twitch_client %}
     <script src="{{ '/js/twitch.js' | url | cacheBuster }}" defer></script>
     {% endif %}
+    {# Metomic - https://metomic.io/ #}
+    <script src="https://config.metomic.io/config.js?id=prj:dd25acac-40e8-4583-b7a4-603f493a8d90" crossorigin charset="utf-8" defer></script>
+    <script src="https://consent-manager.metomic.io/embed.js" crossorigin charset="utf-8" defer></script>
 
   </body>
 
