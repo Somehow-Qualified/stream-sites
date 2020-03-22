@@ -7,7 +7,7 @@ export default {
   create: true,
   filter: {
     field: 'page_type',
-    value: 'default'
+    value: 'custom'
   },
   slug: '{{fields.slug}}',
   preview_path: '{{fields.slug}}',
@@ -112,10 +112,10 @@ export default {
       hint: 'Default is no.'
     },
     {
-      label: 'Template',
-      name: 'layout',
+      label: 'Page Type',
+      name: 'page_type',
       widget: 'hidden',
-      'default': 'default'
+      'default': 'custom'
     }
   ]
 }
