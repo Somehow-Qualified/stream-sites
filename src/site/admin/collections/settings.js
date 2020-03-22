@@ -418,7 +418,7 @@ export default {
           fields: [
             {
               label: 'Post Fonts',
-              name: 'main',
+              name: 'post',
               widget: 'object',
               fields: [
                 {
@@ -469,7 +469,7 @@ export default {
             },
             {
               label: 'Post Preview Card Fonts',
-              name: 'main',
+              name: 'postslist',
               widget: 'object',
               fields: [
                 {
