@@ -28,7 +28,6 @@
 		"build": "npm-run-all build:html build:css build:css:admin build:js build:sw",
 		"build:html": "NODE_ENV=production eleventy --config=eleventy.config.js",
 		"build:css": "NODE_ENV=production postcss src/site/_includes/_css/main.css -o dist/css/main.min.css",
-		"build:admin": "rollup --config",
 		"build:css:admin": "NODE_ENV=admin postcss src/site/_includes/_css/main.css -o dist/admin/css/tailwind.min.css",
 		"build:js": "terser src/site/_includes/_js/main.js -c -o dist/js/main.min.js",
 		"build:sw": "workbox generateSW workbox-config.js",
@@ -39,7 +38,7 @@
 		"start": "npm run watch"
 	},
 	"dependencies": {
-		"@11ty/eleventy": "^v0.11.0-beta.1",
+		"@11ty/eleventy": "^v0.10.0-beta.1",
 		"@11ty/eleventy-plugin-rss": "^1.0.7",
 		"@11ty/eleventy-plugin-syntaxhighlight": "^3.0.1",
 		"@fullhuman/postcss-purgecss": "^2.1.0",
@@ -48,7 +47,6 @@
 		"cssnano": "^4.1.10",
 		"eleventy-plugin-lazyimages": "^1.0.6",
 		"eleventy-plugin-reading-time": "0.0.1",
-		"htm": "^3.0.3",
 		"html-minifier": "^4.0.0",
 		"luxon": "^1.22.0",
 		"markdown-it": "^10.0.0",
