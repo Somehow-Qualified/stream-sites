@@ -1,11 +1,13 @@
 ---
 title: Link In Bio
+subtitle:
 slug: link-in-bio
-eleventyExcludeFromCollections: false
-seo:
-  excerpt: Get in touch!
-  meta_title: Link In Bio
-page_type: core
+image_card:
+image_card_alt:
+excerpt: Pick a link, any link!
+seo_title: Link In Bio
+seo_desc: Get in touch!
+type: core
 layout: linkinbio.njk
 ---
 

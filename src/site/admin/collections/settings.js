@@ -35,6 +35,13 @@ export default {
           hint: 'What is the URL of your site? I.e. https://streamsites.xyz'
         },
         {
+          label: 'Langauge',
+          name: 'language',
+          widget: 'string',
+          hint: 'What language is your website in?',
+          default: 'en-US'
+        },
+        {
           label: 'Email address',
           name: 'author_email',
           widget: 'string',
@@ -134,6 +141,112 @@ export default {
           widget: 'string',
           required: false,
           hint: 'Describe the site image for those who can\'t see it.'
+        },
+        {
+          label: 'Search Engine',
+          name: 'search_engine',
+          widget: 'select',
+          options: [
+            {
+              label: 'Duck Duck Go',
+              value: 'https://duckduckgo.com/'
+            },
+            {
+              label: 'Google',
+              value: 'https://www.google.com/search'
+            },
+            {
+              label: 'Bing',
+              value: 'https://www.bing.com/search'
+            }
+          ],
+          hint: 'Select which search engine to use for your Search forms.'
+        },
+        {
+          label: 'Footer Credit',
+          name: 'footer_credit',
+          widget: 'select',
+          options: [
+            {
+              label: 'Yes',
+              value: 'yes'
+            },
+            {
+              label: 'No',
+              value: 'no'
+            }
+          ],
+          required: false,
+          hint: 'Show your love or Stream Sites in the footer.'
+        },
+        {
+          label: 'Privacy Options (Advanced Users)',
+          name: 'robots',
+          widget: 'object',
+          hint: 'Control how robots interact with your content. The defaults are privacy focused.',
+          fields: [
+            {
+              label: 'Let Pinterest pin your images?',
+              name: 'pinterest',
+              widget: 'select',
+              options: [
+                {
+                  label: 'Allow',
+                  value: 'allow'
+                },
+                {
+                  label: 'Disallow',
+                  value: 'disallow'
+                }
+              ]
+            },
+            {
+              label: 'Let Twitter track your visitors?',
+              name: 'twitter',
+              widget: 'select',
+              options: [
+                {
+                  label: 'Allow',
+                  value: 'allow'
+                },
+                {
+                  label: 'Disallow',
+                  value: 'disallow'
+                }
+              ]
+            },
+            {
+              label: 'Let search engines crawl your website?',
+              name: 'search_crawler',
+              widget: 'select',
+              options: [
+                {
+                  label: 'Follow',
+                  value: 'follow'
+                },
+                {
+                  label: 'No Index',
+                  value: 'noindex'
+                },
+                {
+                  label: 'No Follow',
+                  value: 'nofollow'
+                },
+                {
+                  label: 'Index, No Follow',
+                  value: 'index,nofollow'
+                },
+                {
+                  label: 'Index, Follow',
+                  value: 'index,follow'
+                },
+                {
+                  label: 'No Index, No Follow',
+                  value: 'noindex,nofollow'
+                }
+              ]
+            }
+          ]
         }
       ]
     },
@@ -188,68 +301,222 @@ export default {
                 'pink'
               ],
               hint: 'Pick a secondary color for your site. Used on buttons and other accents.'
+            },
+            {
+              label: 'PWA Color',
+              name: 'pwa',
+              widget: 'select',
+              'default': 'purple',
+              options: [
+                {
+                  label: 'red',
+                  value: '#C53030'
+                },
+                {
+                  label: 'orange',
+                  value: '#C05621'
+                },
+                {
+                  label: 'yellow',
+                  value: '#B7791F'
+                },
+                {
+                  label: 'green',
+                  value: '#2F855A'
+                },
+                {
+                  label: 'teal',
+                  value: '#2C7A7B'
+                },
+                {
+                  label: 'blue',
+                  value: '#2B6CB0'
+                },
+                {
+                  label: 'indigo',
+                  value: '#4C51BF'
+                },
+                {
+                  label: 'purple',
+                  value: '#6B46C1'
+                },
+                {
+                  label: 'pink',
+                  value: '#B83280'
+                }
+              ],
+              hint: 'Pick a color for the background of your website when viewed as a PWA.'
+            },
+            {
+              label: 'Scroll Progress Bar',
+              name: 'progress',
+              widget: 'select',
+              'default': 'pink',
+              options: [
+                {
+                  label: 'red',
+                  value: '#E53E3E'
+                },
+                {
+                  label: 'orange',
+                  value: '#DD6B20'
+                },
+                {
+                  label: 'yellow',
+                  value: '#D69E2E'
+                },
+                {
+                  label: 'green',
+                  value: '#38A169'
+                },
+                {
+                  label: 'teal',
+                  value: '#319795'
+                },
+                {
+                  label: 'blue',
+                  value: '#3182CE'
+                },
+                {
+                  label: 'indigo',
+                  value: '#5A67D8'
+                },
+                {
+                  label: 'purple',
+                  value: '#805AD5'
+                },
+                {
+                  label: 'pink',
+                  value: '#D53F8C'
+                }
+              ],
+              hint: 'Pick a color for the scroll progress bar on posts.'
+            },
+            {
+              label: 'Post Pre-Footer Background',
+              name: 'postFooter',
+              widget: 'select',
+              'default': 'pink',
+              options: [
+                'red',
+                'orange',
+                'yellow',
+                'teal',
+                'blue',
+                'indigo',
+                'purple',
+                'pink'
+              ],
+              hint: 'Pick a background color for the recommended posts at the end of a post.'
             }
           ]
         },
         {
-          label: 'About Page',
-          name: 'about',
+          label: 'Fonts',
+          name: 'fonts',
           widget: 'object',
           fields: [
             {
-              label: 'Heading',
-              name: 'heading',
-              widget: 'string',
-              'default': 'About',
-              hint: 'The page title for /about'
-            },
-            {
-              label: 'Sub Heading',
-              name: 'subheading',
-              widget: 'string',
-              'default': 'Nice to meet you',
-              hint: 'A subtitle for your heading used in some themes.'
-            },
-            {
-              label: 'Slug',
-              name: 'slug',
-              widget: 'string',
-              'default': 'about',
-              hint: 'Default: about'
-            },
-            {
-              label: 'Card Image',
-              name: 'image_card',
-              widget: 'image',
-              required: false,
-              media_library: {
-                config: {
-                  multiple: false
+              label: 'Post Fonts',
+              name: 'main',
+              widget: 'object',
+              fields: [
+                {
+                  label: 'Title',
+                  name: 'title',
+                  widget: 'select',
+                  'default': 'font-sans',
+                  options: [
+                    'font-sans',
+                    'font-serif',
+                    'font-mono'
+                  ]
+                },
+                {
+                  label: 'Meta',
+                  name: 'meta',
+                  widget: 'select',
+                  'default': 'font-sans',
+                  options: [
+                    'font-sans',
+                    'font-serif',
+                    'font-mono'
+                  ]
+                },
+                {
+                  label: 'TLDR',
+                  name: 'tldr',
+                  widget: 'select',
+                  'default': 'font-serif',
+                  options: [
+                    'font-sans',
+                    'font-serif',
+                    'font-mono'
+                  ]
+                },
+                {
+                  label: 'Author',
+                  name: 'author',
+                  widget: 'select',
+                  'default': 'font-sans',
+                  options: [
+                    'font-sans',
+                    'font-serif',
+                    'font-mono'
+                  ]
                 }
-              },
-              required: false,
-              hint: 'A default image for sharing on Twitter/Facebook.'
+              ]
             },
             {
-              label: 'Card Image Alt Text',
-              name: 'image_card_alt',
-              widget: 'string',
-              required: false,
-              hint: 'Describe the site image for those who can\'t see it.'
-            },
-            {
-              label: 'SEO Title',
-              name: 'seo_title',
-              widget: 'string',
-              required: false,
-              hint: 'A page title for search engines.'
-            },
-            {
-              label: 'SEO Description',
-              name: 'seo_desc',
-              widget: 'text',
-              required: false,
-              hint: 'Write a description to appear on via search results and the social media card preview.'
+              label: 'Post Preview Card Fonts',
+              name: 'main',
+              widget: 'object',
+              fields: [
+                {
+                  label: 'Title',
+                  name: 'title',
+                  widget: 'select',
+                  'default': 'font-sans',
+                  options: [
+                    'font-sans',
+                    'font-serif',
+                    'font-mono'
+                  ]
+                },
+                {
+                  label: 'Tags',
+                  name: 'tags',
+                  widget: 'select',
+                  'default': 'font-sans',
+                  options: [
+                    'font-sans',
+                    'font-serif',
+                    'font-mono'
+                  ]
+                },
+                {
+                  label: 'Teaser',
+                  name: 'excerpt',
+                  widget: 'select',
+                  'default': 'font-serif',
+                  options: [
+                    'font-sans',
+                    'font-serif',
+                    'font-mono'
+                  ]
+                },
+                {
+                  label: 'Date',
+                  name: 'date',
+                  widget: 'select',
+                  'default': 'font-sans',
+                  options: [
+                    'font-sans',
+                    'font-serif',
+                    'font-mono'
+                  ]
+                }
+              ]
             }
           ]
         }

@@ -5,20 +5,20 @@
     "accent": "pink",
     "pwa": "#6b46c1",
     "progress": "#d53f8c",
-    "postFooter": ""
+    "postFooter": "pink"
   },
   "fonts": {
-    "post": {
+    "post": [
       "title": "font-sans",
       "meta": "font-sans",
       "tldr": "font-serif",
       "author": "font-sans"
-    },
-    "postslist": {
+    ],
+    "postslist": [
       "title": "font-sans",
       "tags": "font-sans",
       "excerpt": "font-serif",
       "date": "font-sans"
-    }
+    ]
   }
 }
