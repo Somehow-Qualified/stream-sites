@@ -9,7 +9,7 @@ import settings from './collections/settings.js';
 export default {
   backend: {
     name: 'git-gateway',
-    branch: 'workflow-cms'
+    branch: 'master'
   },
   load_config_file: false,
   publish_mode: 'editorial_workflow',
