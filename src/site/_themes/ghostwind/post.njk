@@ -55,7 +55,7 @@ layout: default.njk
   {% endif %}
 
   {# Content Wrapper #}
-  <div class="container w-full md:min-w-5xl max-w-5xl mx-auto {% if image_card %}-mt-32{% endif %} bg-{{ theme.colors.main }}-100 dark:bg-{{ theme.colors.main }}-900">
+  <div class="container w-full max-w-5xl mx-auto {% if image_card %}-mt-32{% endif %} bg-{{ theme.colors.main }}-100 dark:bg-{{ theme.colors.main }}-900">
 
     {# Post Content #}
     <div class="content highlight-{{ theme.colors.accent }} w-full md:px-24 {% if image_card %}p-8 md:pt-24{% else %}px-8 pb-8{% endif %} text-xl leading-normal">
@@ -110,7 +110,7 @@ layout: default.njk
 
 {# More Posts #}
 <section class="w-full bg-{{ theme.colors.accent }}-200 dark:bg-{{ theme.colors.main }}-800 px-6 pt-24 pb-8">
-  <div class="flex flex-wrap -mx-2 justify-center">
+  <div class="flex flex-wrap mx-auto max-w-6xl justify-center">
     {% set postslist = collections.archive | limit(3) %}
     {% include "ghostwind/postslist.njk" %}
   </div>
