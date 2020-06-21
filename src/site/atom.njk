@@ -18,7 +18,7 @@ eleventyExcludeFromCollections: true
 	<generator uri="https://11ty.dev/">11ty</generator>
 	<icon>{{ site.favicon }}</icon>
 	<logo>{{ site.logo }}</logo>
-	{%- for post in collections.archive %}
+	{%- for post in collections.posts %}
 	{% set absolutePostUrl %}{{ post.url | url | absoluteUrl(site.url) }}{% endset %}
 	<entry>
 		<title>{{ post.data.title }}</title>
