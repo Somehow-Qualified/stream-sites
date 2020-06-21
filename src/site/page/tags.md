@@ -7,5 +7,6 @@ image_card_alt:
 seo_title: Tags
 seo_desc: Explore posts by tag
 layout: tags.njk
+key: tagged
 type: core
 ---

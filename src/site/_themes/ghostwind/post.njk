@@ -6,37 +6,37 @@ layout: default.njk
 {% set fontTitle = theme.fonts.post.title %}
 {% set fontTldr = theme.fonts.post.tldr %}
 {% set fontAuthor = theme.fonts.post.author %}
+{% set fontMorePosts = theme.fonts.post.morePosts %}
 {% set colorFooter = theme.colors.postFooter %}
 {% set previewImage = image_card or site.image_card %}
 {% set tldr = excerpt %}
+{% set nextPostLabel = theme.labels.nextPost or "Newer: " %}
+{% set prevPostLabel = theme.labels.prevPost or "Older: " %}
+{% set authorLink = theme.labels.authorLink or "Read More" %}
+{% set morePosts = theme.labels.morePosts or "More Posts to Peruse" %}
 
 <article class="mx-auto">
 
   {# Title, Date, Tags #}
-  <div class="text-center pt-20 pb-12">
-    <p class="text-sm md:text-base text-{{ theme.colors.accent }}-600 dark:text-{{ theme.colors.main }}-100 font-bold {{ fontMeta }}">
+  <div class="text-center pt-20 pb-12 flex flex-col">
+    <h1 class="order-2 font-bold break-normal text-3xl md:text-5xl mb-0 {{ fontTitle }}">{{ title }}</h1>
+    <p class="order-1 text-sm md:text-base text-{{ theme.colors.accent }}-600 dark:text-{{ theme.colors.main }}-100 font-bold {{ fontMeta }}">
       <time datetime="{{ date }}">{{ date | readableDate | upper }}</time>
       <span class="px-1 text-{{ theme.colors.main }}-900 dark:text-{{ theme.colors.main }}-100">/</span>
       <span class="uppercase">{{ content | readingTime | upper }} read</span>
-      {% if tags %}
+      {% if category %}
       <span class="px-1 text-{{ theme.colors.main }}-900 dark:text-{{ theme.colors.main }}-100">/</span>
         <span class="category">
-          {% set separator = joiner(' +') %}
-          {% for tag in tags %}
-            {%- if tag != "post" -%}
-              {% set tagUrl %}/tags/{{ tag | slug }}/{% endset %}
-              {{ separator() }} <a href="{{ tagUrl | url }}" rel="tag" class="no-underline">{{ tag | upper }}</a>
-            {%- endif -%}
-          {% endfor %}
+          {% set catUrl %}/category/{{ category | slug }}/{% endset %}
+          <a href="{{ catUrl | url }}" rel="category" class="no-underline">{{ category | upper }}</a>
         </span>
       {% endif %}
     </p>
-    <h1 class="font-bold break-normal text-3xl md:text-5xl mb-0 {{ fontTitle }}">{{ title }}</h1>
   </div>
 
   {# Hero Media #}
   {% if video_type %}
-  <div class="max-w-6xl mx-auto mb-16">
+  <div class="max-w-6xl mx-auto mb-32">
     <div id="video-frame" class="resp-container video-embed md:rounded overflow-hidden" data-id="{{ video_id }}" data-type="{{ video_type }}">
       <div id="video-preview">
         {% if video_type === "youtube" and image_card %}
@@ -51,14 +51,14 @@ layout: default.njk
     </div>
   </div>
   {% elif image_card %}
-  <div class="w-full max-w-6xl mx-auto bg-white bg-cover md:rounded overflow-hidden" style="height: 75vh; background-image:url('{{ image_card }}'); background-position: center center; background-repeat: no-repeat; background-size: cover;"></div>
+  <div class="w-full max-w-6xl mx-auto bg-white bg-cover md:rounded overflow-hidden" style="height: 50vh; background-image:url('{{ image_card }}'); background-position: center center; background-repeat: no-repeat; background-size: cover;"></div>
   {% endif %}
 
   {# Content Wrapper #}
   <div class="container w-full max-w-5xl mx-auto {% if image_card %}-mt-32{% endif %} bg-{{ theme.colors.main }}-100 dark:bg-{{ theme.colors.main }}-900">
 
     {# Post Content #}
-    <div class="content highlight-{{ theme.colors.accent }} w-full md:px-24 {% if image_card %}p-8 md:pt-24{% else %}px-8 pb-8{% endif %} text-xl leading-normal">
+    <div class="content highlight-{{ theme.colors.accent }} w-full md:px-24 {% if image_card %}p-8 md:pt-24{% else %}px-8{% endif %} pb-0 text-xl leading-normal">
 
       {% if tldr %}
       <p class="text-2xl md:text-3xl mb-5 {{ fontTldr }}">
@@ -71,54 +71,56 @@ layout: default.njk
 
       <hr class="pb-8" />
 
-      {# Markdown #}
+      {# Markdown Content #}
       {{ content | safe }}
+
+      {# Pagination Block #}
+      <nav class="flex flex-row flex-wrap items-top w-full highlight-{{ theme.colors.accent }} mt-16 pt-8 border-solid border-t border-b" aria-label="Post Navigation">
+        {% if tags %}
+        <p class="order-3 md:order-2 w-full md:w-1/3 md:px-4 block mb-0 text-base text-{{ theme.colors.main }}-900 dark:text-{{ theme.colors.main }}-100 md:text-center">Tagged:<br class="hidden md:block">
+          <span class="tag">
+            {% set separator = joiner(' +') %}
+            {% for tag in tags %}
+              {%- if tag != "post" -%}
+                {% set tagUrl %}/tags/{{ tag | slug }}/{% endset %}
+                {{ separator() }} <a href="{{ tagUrl | url }}" rel="tag" class="no-underline">{{ tag }}</a>
+              {%- endif -%}
+            {% endfor %}
+          </span>
+        </p>
+        {% endif %}
+        <p class="order-1 md:order-1 w-full md:w-1/3 text-base block mb-0">{% if nextPost %}<span>{{ nextPostLabel }}</span><br class="hidden md:block"><a href="{{ nextPost.url }}">{{ nextPost.data.title }}</a>{% endif %}</p>
+        <p class="order-2 md:order-3 w-full md:w-1/3 text-base md:text-right block mb-0">{% if prevPost %}<span>{{ prevPostLabel }}</span><br class="hidden md:block"><a href="{{ prevPost.url }}">{{ prevPost.data.title }}</a>{% endif %}</p>
+      </nav>
 
     </div>
   </div>
 
-  {# Author Box #}
-  <div class="h-card container max-w-5xl mx-auto flex w-full items-center p-8 md:px-24 py-12">
+  {# Author Block #}
+  <div class="h-card container max-w-5xl mx-auto flex w-full items-center px-8 md:px-24 pt-12 pb-20">
     <img class="u-photo w-10 h-10 rounded-full mr-4" src="{{ site.author_avatar }}" alt="Avatar of {{ site.author_name }}">
     <div class="flex-1 {{ fontAuthor }} text-{{ theme.colors.main }}-900 dark:text-{{ theme.colors.main }}-100">
       <p class="p-name text-base md:text-lg font-bold leading-none">{{ site.author_name }}</p>
       <p class="p-note text-sm md:text-base">{{ site.author_bio }}</p>
     </div>
     <div class="justify-end">
-      <a href="/about" class="bg-transparent border border-{{ theme.colors.accent }}-500 hover:bg-{{ theme.colors.accent }}-400 text-sm text-{{ theme.colors.main }}-900 dark:text-{{ theme.colors.main }}-100 dark-hover:text-{{ theme.colors.main }}-900 font-bold py-2 px-4 rounded-full">Read More</a>
+      <a href="/about" class="bg-transparent border border-{{ theme.colors.accent }}-500 hover:bg-{{ theme.colors.accent }}-400 text-sm text-{{ theme.colors.main }}-900 dark:text-{{ theme.colors.main }}-100 dark-hover:text-{{ theme.colors.main }}-900 font-bold py-2 px-4 rounded-full">{{ authorLink }}</a>
     </div>
   </div>
-
-  {# CTA #}
-  <div class="container text-{{ theme.colors.main }}-100 bg-{{ theme.colors.main }}-800 p-4 md:p-24 text-center md:rounded w-11/12 md:w-full mx-auto shadow-md hover:shadow-lg">
-    <h2 class="font-bold break-normal text-2xl md:text-4xl">Subscribe to {{ site.name }}</h2>
-    <p class="font-bold break-normal font-normal text-base md:text-xl">Get the latest posts delivered to your feed reader.</p>
-    <div class="w-full text-center py-4 flex -mx-3 justify-center">
-      <a href="/atom.xml" title="Subscribe via Atom" class="bg-transparent border border-{{ theme.colors.accent }}-500 hover:bg-{{ theme.colors.accent }}-400 text-sm text-{{ theme.colors.main }}-100 hover:text-{{ theme.colors.main }}-900 dark:text-{{ theme.colors.main }}-100 dark-hover:text-{{ theme.colors.main }}-900 font-bold py-2 px-4 rounded-full mx-3">Atom <svg class="inline-block font-normal" fill="currentColor" role="img" aria-hidden="true" width="10" height="10">
-        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/icon-library.svg#icon-subscribe"></use>
-      </svg></a>
-      <a href="/rss.xml" title="Subscribe via RSS" class="bg-transparent border border-{{ theme.colors.accent }}-500 hover:bg-{{ theme.colors.accent }}-400 text-sm text-{{ theme.colors.main }}-100 hover:text-{{ theme.colors.main }}-900 dark:text-{{ theme.colors.main }}-100 dark-hover:text-{{ theme.colors.main }}-900 font-bold py-2 px-4 rounded-full mx-3">RSS <svg class="inline-block font-normal" fill="currentColor" role="img" aria-hidden="true" width="10" height="10">
-        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/icon-library.svg#icon-subscribe"></use>
-      </svg></a>
-    </div>
-  </div>
-
-  <nav class="flex flex-row items-top w-full p-8 md:px-24 highlight-{{ theme.colors.accent }}" aria-label="Post Navigation">
-    <p class="w-1/2 text-sm text-left block mb-0">{% if nextPost %}<span>Next:</span><br><a href="{{ nextPost.url }}">{{ nextPost.data.title }}</a>{% endif %}</p>
-    <p class="w-1/2 text-sm text-right block mb-0">{% if prevPost %}<span>Previous:</span><br><a href="{{ prevPost.url }}">{{ prevPost.data.title }}</a>{% endif %}</p>
-  </nav>
 
 </article>
 
 {# More Posts #}
-<section class="w-full bg-{{ theme.colors.accent }}-200 dark:bg-{{ theme.colors.main }}-800 px-6 pt-24 pb-8">
+<section class="w-full bg-{{ theme.colors.main }}-800 px-6 py-8">
+  <h2 class="{{ fontMorePosts }} text-2xl md:text-3xl px-8 m-0 py-12 text-center text-{{ theme.colors.accent }}-100">{{ morePosts }}</h2>
   <div class="flex flex-wrap mx-auto max-w-6xl justify-center">
-    {% set postslist = collections.archive | limit(3) %}
+    {% set postslist = collections.posts | limit(3) %}
     {% include "ghostwind/postslist.njk" %}
   </div>
 </section>
 
-{# Scroll Progress Script #}
+{# Scroll Progress Script
+TODO: move to default.njk #}
 <script>
   /* Progress bar */
   //Source: https://alligator.io/js/progress-bar-javascript-css-variables/
@@ -142,18 +144,19 @@ layout: default.njk
 
     if(scrollpos > 100){
       header.classList.remove("hidden");
-    header.classList.remove("fadeOutUp");
-    header.classList.add("slideInDown");
+      header.classList.remove("fadeOutUp");
+      header.classList.add("slideInDown");
     }
     else {
-    header.classList.remove("slideInDown");
+      header.classList.remove("slideInDown");
       header.classList.add("fadeOutUp");
-    header.classList.add("hidden");
+      header.classList.add("hidden");
     }
 
   });
 
 </script>
 
-{% set video_type = video_type %}
+{% if post_type === "video" %}
 {% include "iframe-loader.njk" %}
+{% endif %}

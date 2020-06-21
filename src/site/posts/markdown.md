@@ -3,6 +3,8 @@ title: Getting Started with Markdown
 slug: markdown
 date: 2019-10-29T03:48:22.013Z
 dateMod: Last Modified
+post_type: article
+category: tutorial
 tags:
   - getting-started
 image_card: /images/post-3.jpg

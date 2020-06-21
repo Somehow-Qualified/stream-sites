@@ -2,5 +2,5 @@
   "layout": "post.njk",
   "tags": "post",
   "templateEngineOverride": "njk,md",
-  "outputPath": "dist/blog/"
+  "outputPath": "dist/posts/"
 }

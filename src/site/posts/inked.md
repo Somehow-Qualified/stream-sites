@@ -9,6 +9,8 @@ date: 2014-04-05
 dateMod: Last Modified
 excerpt:
 teaser: My presentation at AGSU in 2014 about tattoos in archaeology.
+post_type: video
+category: presentation
 tags:
   - anthropology
 seo_title: Inked - A 5,000 Year Old Tradition

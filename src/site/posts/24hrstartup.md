@@ -10,6 +10,8 @@ dateMod: Last Modified
 excerpt: >-
   Using my brain, and the collective brain of the internet, I've created a data visualization extension that allows you to quickly see your Airtable data in a chart on every new tab you open.
 teaser: My 24hrstartup weekend adventure.
+post_type: video
+category: vod
 tags:
   - 24hrstartup
 seo_title: Let's launch a 24hrstartup | Airtable - DataViz

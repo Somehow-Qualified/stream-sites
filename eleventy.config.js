@@ -18,7 +18,7 @@ const markdownItToc = require('markdown-it-table-of-contents');
 const markdownItVideo = require('markdown-it-video');
 
 // 11ty Plugins
-const pluginLazyImages = require('eleventy-plugin-lazyimages');
+// const pluginLazyImages = require('eleventy-plugin-lazyimages');
 const pluginReadingTime = require('eleventy-plugin-reading-time');
 const pluginRss = require('@11ty/eleventy-plugin-rss');
 const pluginSyntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
@@ -41,10 +41,10 @@ module.exports = function (eleventyConfig) {
   // });
 
   // Load plugins
-  eleventyConfig.addPlugin(pluginLazyImages, {
-    imgSelector: 'img', // custom image selector
-    placeholderQuality: 75
-  });
+  // eleventyConfig.addPlugin(pluginLazyImages, {
+  //   imgSelector: 'img', // custom image selector
+  //   placeholderQuality: 75
+  // });
   eleventyConfig.addPlugin(pluginReadingTime);
   eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addPlugin(pluginSyntaxHighlight);

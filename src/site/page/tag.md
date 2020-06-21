@@ -17,7 +17,7 @@ pagination:
   - video
   - nav
   - page
-  - post
+  - posts
   - tagList
   addAllPagesToCollections: true
 eleventyComputed:

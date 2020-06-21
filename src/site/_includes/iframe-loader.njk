@@ -1,6 +1,8 @@
 {# iFrame Loader #}
+{% set video_type = video_type %}
 {% if video_type %}
 <script>
+// TODO: Refactor using maps https://hmiller.dev/posts/front-end-practices-that-changed-my-life/
   (function () {
     let video = document.getElementById("video-frame");
     let videoPreview = document.getElementById("video-preview");
@@ -26,6 +28,9 @@
       }
       return videoType;
     }
+    /* TODO: add Twitch parent param... &parent=currentdomain.com
+    remove protocol from site.url with regex?... url.replace(/(^\w+:|^)\/\//, '');
+    */
     function getParams() {
       if (videoType === "vimeo") {
         return "?dnt=true&autoplay=false";

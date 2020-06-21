@@ -21,12 +21,11 @@ module.exports = {
           switch (item) {
             // this list should match the `filter` list in tag.njk
             case "all":
-            case "archive":
-            case "blog":
+            case "category":
+            case "catList":
             case "nav":
             case "page":
             case "post":
-            case "video":
             case "tagList":
               return false;
           }
@@ -42,41 +41,57 @@ module.exports = {
     });
   },
 
-  // Blog: posts created under Blog
-  blog: collection => {
-    const blog = collection.getFilteredByGlob('**/blog/*.md');
-
-    for (let i = 0; i < blog.length; i++) {
-      const prevPost = blog[i - 1]
-      const nextPost = blog[i + 1]
-
-      blog[i].data["prevPost"] = prevPost
-      blog[i].data["nextPost"] = nextPost
-    }
-
-    return blog.reverse()
-    // return collection.getFilteredByGlob('**/blog/*.md').reverse();
+  // Categories: A list of every category
+  catList: collection => {
+    let catSet = new Set();
+    collection.getAll().forEach(function(item) {
+      if ("category" in item.data) {
+        let categories = item.data.category;
+        if (typeof categories === "string") {
+          categories = [categories];
+        }
+        for (const category of categories) {
+          catSet.add(category);
+        }
+      }
+    });
+    return [...catSet].sort(function(a, b) {
+      return a.toLowerCase().localeCompare(b.toLowerCase());
+    });
   },
 
-  // Video: posts created under Video
-  video: collection => {
-    const video = collection.getFilteredByGlob('**/video/*.md');
+  // Return a collection for each Category
+  category: collection => {
+    let categories = {}
+    collection.getAllSorted().forEach(item => {
 
-    for (let i = 0; i < video.length; i++) {
-      const prevPost = video[i - 1]
-      const nextPost = video[i + 1]
+      let category = item.data.category;
 
-      video[i].data["prevPost"] = prevPost
-      video[i].data["nextPost"] = nextPost
-    }
+      if (typeof category !== "string")
+        return
+      if (Array.isArray(categories[category]))
+        categories[category].push(item)
+      else
+        categories[category] = [item]
+    })
 
-    return video.reverse()
-    // return collection.getFilteredByGlob('**/video/*.md').reverse();
+    return categories
   },
 
-  // Archive: a single stream of Blog Posts and Highlights
-  archive: collection => {
-    return collection.getFilteredByGlob(['**/blog/*.md', '**/video/*.md']).reverse();
+  // Posts
+  posts: collection => {
+    const post = collection.getFilteredByGlob('**/posts/*.md');
+
+    for (let i = 0; i < post.length; i++) {
+      const prevPost = post[i - 1]
+      const nextPost = post[i + 1]
+
+      post[i].data["prevPost"] = prevPost
+      post[i].data["nextPost"] = nextPost
+    }
+
+    return post.reverse()
+    // return collection.getFilteredByGlob('**/post/*.md').reverse();
   }
 
 }

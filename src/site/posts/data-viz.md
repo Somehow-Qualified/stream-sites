@@ -9,6 +9,8 @@ date: 2018-11-17
 dateMod: Last Modified
 excerpt: I break down Data Viz for Airtable after making it work.
 teaser: I break down Data Viz for Airtable after making it work.
+post_type: video
+category: clip
 tags:
   - 24hrstartup
 seo_title: Data Viz Breakdown

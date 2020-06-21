@@ -10,13 +10,15 @@ dateMod: Last Modified
 excerpt: >-
   **The challenge:** Ship something for [Ship Saturday](https://shipstreams.com/events/ship-saturday) by [Shipstreams](https://shipstreams.com/)!
 teaser: I built an overlay with Figma for OBS!
+post_type: video
+category: tutorial
 tags:
   - graphic design
   - figma
 seo_title: Ship Saturday Shenanigans | Let's Create an Overlay!
 seo_desc: Creating a Twitch overlay and panels package with Figma.
 ---
-
+[[toc]]
 I put out a poll on Friday to see what I should create and a Twitch stream package won! In a comment, [Dave Craige](https://twitter.com/davecraige) asked if I'd tried out [Figma](https://www.figma.com/) yet - which I had, but hadn't given it much love since I tend to hop into code... It's faster for me to write CSS than fight software to draw a button. Since my new project would involve designing graphics, I started from scratch in Figma to design what would become **Shatter**.
 
 ![Shatter](https://blog.melaniemagdalena.com/images/Shatter-Promo.png)

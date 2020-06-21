@@ -6,12 +6,8 @@
       "url": "/about/"
     },
     {
-      "label": "Videos",
-      "url": "/video/"
-    },
-    {
-      "label": "Blog",
-      "url": "/blog/"
+      "label": "Posts",
+      "url": "/posts/"
     },
     {
       "label": "Contact",
@@ -19,10 +15,6 @@
     }
   ],
   "footer": [
-    {
-      "label": "Archive",
-      "url": "/archive/"
-    },
     {
       "label": "Privacy",
       "url": "/privacy/"

@@ -20,19 +20,19 @@ Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Etiam porta
 
 **m2 version**
 
-<div style="position: relative; overflow: hidden; padding-top: 56.25%;"><iframe src="https://clips.twitch.tv/embed?clip=BlatantModernPeanutKlappa" autoplay="0" frameborder="0" scrolling="0" allowfullscreen="1" muted="0" preload="metadata" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;"></iframe></div>
+<div style="position: relative; overflow: hidden; padding-top: 56.25%;"><iframe src="https://clips.twitch.tv/embed?clip=BlatantModernPeanutKlappa&parent=demo.streamsites.xyz" autoplay="0" frameborder="0" scrolling="0" allowfullscreen="1" muted="0" preload="metadata" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;"></iframe></div>
 
 ## Twitch Vod
 
 **m2 version**
 
-<div style="position: relative; overflow: hidden; padding-top: 56.25%;"><iframe src="https://player.twitch.tv/?autoplay=false&video=v337381988" frameborder="0" allowfullscreen="true" scrolling="no" height="378" width="620" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;"></iframe></div>
+<div style="position: relative; overflow: hidden; padding-top: 56.25%;"><iframe src="https://player.twitch.tv/?autoplay=false&video=v337381988&parent=demo.streamsites.xyz" frameborder="0" allowfullscreen="true" scrolling="no" height="378" width="620" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;"></iframe></div>
 
 ## Twitch Collection
 
 **m2 version**
 
-<div style="position: relative; overflow: hidden; padding-top: 56.25%;"><iframe src="https://player.twitch.tv/?autoplay=false&collection=0WkbOP5xexWgGw" frameborder="0" allowfullscreen="true" scrolling="no" height="378" width="620" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;"></iframe></div>
+<div style="position: relative; overflow: hidden; padding-top: 56.25%;"><iframe src="https://player.twitch.tv/?autoplay=false&collection=0WkbOP5xexWgGw&parent=demo.streamsites.xyz" frameborder="0" allowfullscreen="true" scrolling="no" height="378" width="620" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;"></iframe></div>
 
 ## YouTube Video
 

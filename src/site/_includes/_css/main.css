@@ -404,7 +404,11 @@ pre[class*="language-"] {
 .md-toc ul {
   margin: 0 1rem;
   padding: 0;
-  list-style-type: "✓";
+  /* list-style-type: "✓"; */
+}
+
+.md-toc ul > li > ul > li:last-child {
+  @apply mb-0;
 }
 
 .md-toc ul>li>* {
