@@ -43,8 +43,8 @@ How It Works:
   <div class="text-center tags">
     <ul class="flex flex-row flex-wrap justify-center -mx-2">
     {% for category in collections.catList %}
-        {% set catUrl %}/tags/{{ category | slug }}/{% endset %}
-        <li class="px-2 inline-block"><a href="{{ tagUrl }}" class="tag pb-4 underline">{{ category }}</a> ({{ collections[category].length }})</li>
+        {% set catUrl %}/category/{{ category | slug }}/{% endset %}
+        <li class="px-2 inline-block"><a href="{{ catUrl }}" class="tag pb-4 underline">{{ category }}</a> ({{ collections.category[category].length }})</li>
     {% endfor %}
     </ul>
 

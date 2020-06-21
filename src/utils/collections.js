@@ -9,6 +9,7 @@
 module.exports = {
 
   // Tags: A list of every tag used on a post or page
+  // https://github.com/nhoizey/zellwk.com/blob/master/.eleventy.js#L64
   tagList: collection => {
     let tagSet = new Set();
     collection.getAll().forEach(function(item) {
