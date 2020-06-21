@@ -28,7 +28,7 @@ export default {
     post,
     page,
     modules,
-    linkinbio,
+    linkInBio,
     settings,
     custom
   ]
