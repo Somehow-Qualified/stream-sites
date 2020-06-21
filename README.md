@@ -78,10 +78,9 @@ Todo... (Looking into Storybook.js for it.)
 
 Follow the journey on [Stream Sites](https://streamsites.xyz) or [the log](https://airtable.com/shryN9sES7sNSBlGs/tblKH3jM73HsOUDBu?backgroundColor=pink&layout=card&blocks=hide).
 
-### For Atom
+### Internal Dev Comment Flags
 
-Use the following to generate the Todo list:
-TODO, FIXME, CHANGED, XXX, IDEA, HACK, NOTE, REVIEW, NB, BUG, QUESTION, COMBAK, TEMP
+The following to generate the [Todo list for Atom](https://atom.io/packages/todo-show): `TODO, FIXME, CHANGED, XXX, IDEA, HACK, NOTE, REVIEW, NB, BUG, QUESTION, COMBAK, TEMP`
 
 ### Up Next
 
@@ -180,3 +179,5 @@ Additional features were made possible by scrounging through the internet for aw
 - **Search** is a combination of Tailwind Toolbox's [Searchy](https://www.tailwindtoolbox.com/components/searchy) and Phil Hawksworth's [Adding Search to a JAMstack Site](https://www.hawksworx.com/blog/adding-search-to-a-jamstack-site/).
 
 - **Previous and Next Links on posts** come from [this reply](https://github.com/11ty/eleventy/issues/529#issuecomment-568257426) by [pascalw](https://github.com/pascalw).
+
+- **Categories** are based on Philip Borenstein's [Implementing Categories](https://www.pborenstein.com/posts/categories/).

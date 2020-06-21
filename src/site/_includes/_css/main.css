@@ -119,6 +119,7 @@ code {
 
 code[class*="language-"],
 pre[class*="language-"] {
+  @apply px-0;
   font-size: 1rem;
 }
 
@@ -127,6 +128,114 @@ pre[class*="language-"] {
 /*
  * Link Highlights
  */
+
+.highlight-gray a {
+    background-image: linear-gradient(180deg, transparent 70%, rgba(160, 174, 192, .3) 0);
+}
+
+.mode-dark .highlight-gray a {
+    background-image: linear-gradient(180deg, transparent 70%, rgba(247, 250, 252, .3) 0);
+    color: #fff;
+}
+
+.highlight-gray a:hover,
+.highlight-gray a:active,
+.highlight-gray a:focus,
+.mode-dark .highlight-gray a:hover,
+.mode-dark .highlight-gray a:focus,
+.mode-dark .highlight-gray a:active {
+    background-image: linear-gradient(180deg, transparent 70%, rgba(160, 174, 192, .7) 0);
+}
+
+.highlight-red a {
+    background-image: linear-gradient(180deg, transparent 70%, rgba(245, 101, 101, .3) 0);
+}
+
+.mode-dark .highlight-red a {
+    background-image: linear-gradient(180deg, transparent 70%, rgba(255, 245, 245, .3) 0);
+    color: #fff;
+}
+
+.highlight-red a:hover,
+.highlight-red a:active,
+.highlight-red a:focus,
+.mode-dark .highlight-red a:hover,
+.mode-dark .highlight-red a:focus,
+.mode-dark .highlight-red a:active {
+    background-image: linear-gradient(180deg, transparent 70%, rgba(245, 101, 101, .7) 0);
+}
+
+.highlight-orange a {
+    background-image: linear-gradient(180deg, transparent 70%, rgba(237, 137, 54, .3) 0);
+}
+
+.mode-dark .highlight-orange a {
+    background-image: linear-gradient(180deg, transparent 70%, rgba(255, 250, 240, .3) 0);
+    color: #fff;
+}
+
+.highlight-orange a:hover,
+.highlight-orange a:active,
+.highlight-orange a:focus,
+.mode-dark .highlight-orange a:hover,
+.mode-dark .highlight-orange a:focus,
+.mode-dark .highlight-orange a:active {
+    background-image: linear-gradient(180deg, transparent 70%, rgba(237, 137, 54, .7) 0);
+}
+
+.highlight-yellow a {
+   background-image: linear-gradient(180deg, transparent 70%, rgba(236, 201, 75, .3) 0);
+}
+
+.mode-dark .highlight-yellow a {
+   background-image: linear-gradient(180deg, transparent 70%, rgba(255, 255, 240, .3) 0);
+   color: #fff;
+}
+
+.highlight-yellow a:hover,
+.highlight-yellow a:active,
+.highlight-yellow a:focus,
+.mode-dark .highlight-yellow a:hover,
+.mode-dark .highlight-yellow a:focus,
+.mode-dark .highlight-yellow a:active {
+   background-image: linear-gradient(180deg, transparent 70%, rgba(236, 201, 75, .7) 0);
+}
+
+.highlight-green a {
+   background-image: linear-gradient(180deg, transparent 70%, rgba(72, 187, 120, .3) 0);
+}
+
+.mode-dark .highlight-green a {
+   background-image: linear-gradient(180deg, transparent 70%, rgba(240, 255, 244, .3) 0);
+   color: #fff;
+}
+
+.highlight-green a:hover,
+.highlight-green a:active,
+.highlight-green a:focus,
+.mode-dark .highlight-green a:hover,
+.mode-dark .highlight-green a:focus,
+.mode-dark .highlight-green a:active {
+   background-image: linear-gradient(180deg, transparent 70%, rgba(72, 187, 120, .7) 0);
+}
+
+.highlight-teal a {
+   background-image: linear-gradient(180deg, transparent 70%, rgba(56, 178, 172, .3) 0);
+}
+
+.mode-dark .highlight-teal a {
+   background-image: linear-gradient(180deg, transparent 70%, rgba(230, 255, 250, .3) 0);
+   color: #fff;
+}
+
+.highlight-teal a:hover,
+.highlight-teal a:active,
+.highlight-teal a:focus,
+.mode-dark .highlight-teal a:hover,
+.mode-dark .highlight-teal a:focus,
+.mode-dark .highlight-teal a:active {
+   background-image: linear-gradient(180deg, transparent 70%, rgba(56, 178, 172, .7) 0);
+}
 
 .highlight-blue a {
   background-image: linear-gradient(180deg, transparent 70%, rgba(66, 153, 225, .3) 0);
@@ -284,14 +393,18 @@ pre[class*="language-"] {
 }
 
 /* Table of Contents */
-
 .md-toc {
-  @apply p-4;
-  border: 1px dashed;
+  @apply px-4 pb-4 -mt-4 border-b border-solid;
 }
 
 .md-toc-header {
   font-weight: 700;
+}
+
+.md-toc ul {
+  margin: 0 1rem;
+  padding: 0;
+  list-style-type: "✓";
 }
 
 .md-toc ul>li>* {

@@ -1,8 +1,9 @@
 ---
 permalink: search.json
+eleventyExcludeFromCollections: true
 ---
 {"search" : [
-{%- for item in collections.archive %}
+{%- for item in collections.all %}
 {%- if item.data.sitemapIgnore !== true %}
   {
     "url" : "{{ item.url }}",

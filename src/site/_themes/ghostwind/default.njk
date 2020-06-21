@@ -54,45 +54,16 @@ Dynamic Data:
     {% include "twitch-component.njk" %}
     {% endif %}
 
-    {# Service Worker #}
-    <script>
-      if ("serviceWorker" in navigator) {
-        navigator.serviceWorker
-          .register("/sw.js")
-          .then(function() {
-            console.log("ServiceWorker has been registered!");
-          })
-          .catch(console.error);
-      }
-    </script>
-    {# Service Worker Kill Switch #}
-    {# <script>
-    navigator.serviceWorker.getRegistrations().then(
-      function(registrations) {
-          for(let registration of registrations) {
-              registration.unregister()
-                .then(function() {
-                  return self.clients.matchAll();
-                })
-                .then(function(clients) {
-                  clients.forEach(client => {
-                    if (client.url && "navigate" in client){
-                      client.navigate(client.url);
-                    }
-                  })
-                })
-            };
-            }
-        );
-    </script> #}
     {# Other Scripts #}
     <script src="{{ '/js/main.min.js' | url | cacheBuster }}" defer></script>
     {% if site.twitch_client %}
     <script src="{{ '/js/twitch.js' | url | cacheBuster }}" defer></script>
     {% endif %}
+    {% if site.metomic === "true" %}
     {# Metomic - https://metomic.io/ #}
-    {# <script src="https://config.metomic.io/config.js?id=prj:dd25acac-40e8-4583-b7a4-603f493a8d90" crossorigin charset="utf-8" defer></script>
-    <script src="https://consent-manager.metomic.io/embed.js" crossorigin charset="utf-8" defer></script> #}
+    <script src="https://config.metomic.io/config.js?id=prj:dd25acac-40e8-4583-b7a4-603f493a8d90" crossorigin charset="utf-8" defer></script>
+    <script src="https://consent-manager.metomic.io/embed.js" crossorigin charset="utf-8" defer></script>
+    {% endif %}
 
   </body>
 
