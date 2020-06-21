@@ -136,6 +136,7 @@ export default {
       label: 'TL;DR',
       name: 'excerpt',
       widget: 'markdown',
+      buttons: ['bold', 'italic', 'code', 'link', 'bulleted-list', 'numbered-list'],
       required: false,
       hint: 'A short description of this post for people who don\'t want to read. Shown at the beginning of the post. You can use Markdown!'
     },

@@ -464,6 +464,17 @@ export default {
                     'font-serif',
                     'font-mono'
                   ]
+                },
+                {
+                  label: 'More Posts Heading',
+                  name: 'morePosts',
+                  widget: 'select',
+                  'default': 'font-sans',
+                  options: [
+                    'font-sans',
+                    'font-serif',
+                    'font-mono'
+                  ]
                 }
               ]
             },
@@ -515,6 +526,41 @@ export default {
                     'font-serif',
                     'font-mono'
                   ]
+                }
+              ]
+            },
+            {
+              label: 'Labels on Posts',
+              name: 'labels',
+              widget: 'object',
+              fields: [
+                {
+                  label: 'Next Post',
+                  name: 'nextPost',
+                  widget: 'string',
+                  'default': 'Up Next: ',
+                  hint: 'Pagination label at the end of a post that goes to the next newest post.'
+                },
+                {
+                  label: 'Previous Post',
+                  name: 'prevPost',
+                  widget: 'string',
+                  'default': 'Previously: ',
+                  hint: 'Pagination label at the end of a post that goes to the next oldest post.'
+                },
+                {
+                  label: 'Author Block Button Text',
+                  name: 'authorLink',
+                  widget: 'string',
+                  'default': 'Read More',
+                  hint: 'Choose the text for the button. Links to /about'
+                },
+                {
+                  label: 'More Posts Title Text',
+                  name: 'morePosts',
+                  widget: 'string',
+                  'default': 'More Posts to Read!',
+                  hint: 'Header text above the suggested posts row at the end of a post.'
                 }
               ]
             }
@@ -611,14 +657,14 @@ export default {
             },
             {
               label: 'Twitch',
-              name: 'twitter',
+              name: 'twitch',
               widget: 'string',
               required: false,
               hint: 'https://twitch.tv/yourhandle'
             },
             {
               label: 'YouTube',
-              name: 'twitter',
+              name: 'youtube',
               widget: 'string',
               required: false,
               hint: 'https://youtube.com/channel/yourchannelhash'
