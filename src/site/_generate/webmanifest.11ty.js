@@ -6,7 +6,7 @@ class WebAppManifest {
   }
 
   render(data) {
-    const tailwind = require('../../tailwind.config.js');
+    const tailwind = require('../../../tailwind.config.js');
     const mainColor = tailwind.theme.colors[data.theme.colors.main]['700'];
 
     const content = {
@@ -24,7 +24,7 @@ class WebAppManifest {
       "background_color": mainColor,
       "display": "standalone",
       "start_url": "/",
-      "scope": "/"      
+      "scope": "/"
     };
     return JSON.stringify(content);
   }

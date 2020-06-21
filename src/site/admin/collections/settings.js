@@ -12,7 +12,7 @@ export default {
     {
       label: 'Site & Branding',
       name: 'site',
-      file: 'src/site/_globals/site.json',
+      file: 'src/site/_data/site.json',
       preview: false,
       fields: [
         {
@@ -253,7 +253,7 @@ export default {
     {
       label: 'Theme Settings',
       name: 'theme',
-      file: 'src/site/_globals/theme.json',
+      file: 'src/site/_data/theme.json',
       preview: false,
       fields: [
         {
@@ -571,7 +571,7 @@ export default {
     {
       label: 'Navigation',
       name: 'nav',
-      file: 'src/site/_globals/navigation.json',
+      file: 'src/site/_data/navigation.json',
       preview: false,
       fields: [
         {
@@ -640,7 +640,7 @@ export default {
     {
       label: 'Social Links',
       name: 'social',
-      file: 'src/site/_globals/social.json',
+      file: 'src/site/_data/social.json',
       fields: [
         {
           label: 'Social Links',

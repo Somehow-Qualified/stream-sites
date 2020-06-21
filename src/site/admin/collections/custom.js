@@ -12,7 +12,7 @@ export default {
     {
       label: 'CTA Buttons',
       name: 'ctas',
-      file: 'src/site/_globals/ctas.json',
+      file: 'src/site/_data/ctas.json',
       preview: false,
       fields: [
         {

@@ -2,7 +2,7 @@ const util         = require('util');
 const fs           = require('fs');
 
 // Theme Config
-const config = require('./src/site/_globals/theme.json');
+const config = require('./src/site/_data/theme.json');
 
 // 11ty Files
 const filters = require('./src/utils/filters.js');
@@ -120,7 +120,7 @@ module.exports = function (eleventyConfig) {
       input: 'src/site',
       includes: '_includes',
       layouts: `_themes/${config.theme}`, // .eleventyignore the rest
-      data: '_globals',
+      data: '_data',
       output: 'dist' // the Publish directory
     },
     passthroughFileCopy: true,

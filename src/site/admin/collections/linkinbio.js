@@ -80,7 +80,7 @@ export default {
     {
       label: 'Links for the Page',
       name: 'linkinbio_links',
-      file: 'src/site/_globals/linkinbio.json',
+      file: 'src/site/_data/linkinbio.json',
       fields: [
         {
           label: 'Add a link',

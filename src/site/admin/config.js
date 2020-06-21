@@ -1,5 +1,5 @@
 // Import Locale if not English
-// TODO: import, export, and register locale as defined in _globals/site.json
+// TODO: import, export, and register locale as defined in _data/site.json
 // import { en } from 'netlify-cms-locales';
 
 // Import Collections
@@ -19,7 +19,7 @@ export default {
   media_folder: 'images',
   site_url: `${window.location.protocol}//${window.location.host}`,
   display_url: `${window.location.protocol}//${window.location.host}`,
-  // TODO: import logo from _globals/site.json
+  // TODO: import logo from _data/site.json
   // logo_url: `${window.location.protocol}//${window.location.host}${site.logo}`,
   // Export locale if not English
   // locale: 'en',
