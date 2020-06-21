@@ -38,7 +38,7 @@
 
 {# Open Graph #}
 <meta property="og:title" content="{{ metaTitle }}">
-{%- if collections.archive %}
+{%- if collections.posts %}
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="{{ page.date | dateToIso }}">
 {%- for tag in tags %}{%- if (tag != "post") and (tag != "page") %}
