@@ -27,7 +27,10 @@ export default {
   collections: [
     post,
     page,
-    settings
+    modules,
+    linkinbio,
+    settings,
+    custom
   ]
 }
 
