@@ -33,7 +33,7 @@ const Blog = createClass({
 
     const seo_title = entry.getIn(['data', 'seo_title'], null);
     const seo_desc = entry.getIn(['data', 'seo_desc'], null);
-    const link_preview = '/blog/' + entry.getIn(['data', 'slug'], '');
+    const link_preview = '/posts/' + entry.getIn(['data', 'slug'], '');
 
     return html`
       <article>

@@ -1,12 +1,25 @@
 export default {
-  name: 'video',
-  label: 'Video Highlights',
-  label_singular: 'Video Highlight',
-  description: 'Create or edit a video highlight',
-  folder: 'src/site/video',
+  name: 'post',
+  label: 'Posts',
+  label_singular: 'Post',
+  description: 'Create or edit a post.',
+  folder: 'src/site/posts',
   create: true,
   slug: '{{fields.slug}}',
-  preview_path: 'video/{{fields.slug}}',
+  preview_path: 'posts/{{fields.slug}}',
+  sortableFields: ['title', 'date'],
+  view_filters: [
+    {
+      label: "Articles",
+      field: "post_type",
+      pattern: "article"
+    },
+    {
+      label: "Videos",
+      field: "post_type",
+      pattern: "video"
+    }
+  ],
   fields: [
     {
       label: 'Title',
@@ -30,13 +43,33 @@ export default {
       'default': 'Last Modified'
     },
     {
+      label: 'Post Style',
+      name: 'post_type',
+      widget: 'select',
+      options: [
+        {
+          label: 'Image Header',
+          value: 'article'
+        },
+        {
+          label: 'Video Header',
+          value: 'video'
+        }
+      ]
+    },
+    {
+      label: 'Category',
+      name: 'category',
+      widget: 'string'
+    },
+    {
       label: 'Tag',
       name: 'tags',
       widget: 'list',
       hint: 'We recommend what game it\'s of. Apply tags to create archives of posts that are similar and/or related. Separate multiple with a comma: i.e. Tag 1, Tag 2, Tag 3'
     },
     {
-      label: 'Video Thumbnail',
+      label: 'Header Image or Video Thumbnail',
       name: 'image_card',
       widget: 'image',
       required: false,
@@ -48,7 +81,7 @@ export default {
       hint: 'Recommended size: 1280x720 pixels (16:9)'
     },
     {
-      label: 'Video Thumbnail Alt Text',
+      label: 'Header Image or Video Thumbnail Alt Text',
       name: 'image_card_alt',
       widget: 'string',
       required: false,
@@ -103,7 +136,6 @@ export default {
       label: 'TL;DR',
       name: 'excerpt',
       widget: 'markdown',
-      buttons: '',
       required: false,
       hint: 'A short description of this post for people who don\'t want to read. Shown at the beginning of the post. You can use Markdown!'
     },
@@ -117,6 +149,7 @@ export default {
     {
       label: 'Body',
       name: 'body',
+      buttons: ['bold', 'italic', 'code', 'link', 'heading-two', 'heading-three', 'heading-four', 'heading-five', 'heading-six', 'quote', 'bulleted-list', 'numbered-list'],
       widget: 'markdown'
     },
     {

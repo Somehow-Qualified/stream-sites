@@ -84,6 +84,7 @@ The following to generate the [Todo list for Atom](https://atom.io/packages/todo
 
 ### Up Next
 
+- [ ] Next/Prev links for archives
 - [ ] Collection for managing emotes, chat commands, point redemptions, sound effect previews, etc.; include copy-to-clipboard and searching on front-end
 - [ ] Support the Channel collection + page for affiliate links, donations, etc.
 - [ ] Merch collection + page (maybe this is the same as Support?)
@@ -103,6 +104,7 @@ The following to generate the [Todo list for Atom](https://atom.io/packages/todo
 
 ### Done!
 
+- [x] Categories
 - [x] CMS: Map core fields
 - [x] iframe rendering for Twitch Clips, Twitch Vods, Twitch Collections, YouTube videos, YouTube playlists, and Vimeo
 - [x] LD-JSON: Page level complete
@@ -111,7 +113,6 @@ The following to generate the [Todo list for Atom](https://atom.io/packages/todo
 - [x] Search page for no-JS fallback
 - [x] RSS and Atom feeds
 - [x] Next/Prev links for posts
-- [x] Next/Prev links for archives
 - [x] Tag List generation
 - [x] Site search
 - [x] Twitch Live Alert

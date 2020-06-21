@@ -95,13 +95,13 @@ export default {
           label: 'TL;DR',
           name: 'excerpt',
           widget: 'markdown',
-          buttons: '',
           required: false,
           hint: 'A short description of this post for people who don\'t want to read. Shown at the beginning of the post. You can use Markdown!'
         },
         {
           label: 'Body',
           name: 'body',
+          buttons: ['bold', 'italic', 'code', 'link', 'heading-two', 'heading-three', 'heading-four', 'heading-five', 'heading-six', 'quote', 'bulleted-list', 'numbered-list'],
           widget: 'markdown'
         },
         {
@@ -131,9 +131,9 @@ export default {
       ]
     },
     {
-      label: 'Archive Page',
-      name: 'archive',
-      file: 'src/site/page/archive.md',
+      label: 'Posts Page',
+      name: 'post_page',
+      file: 'src/site/page/posts.md',
       slug: '{{fields.slug}}',
       preview: false,
       fields: [
@@ -150,76 +150,8 @@ export default {
         {
           label: 'Slug',
           name: 'slug',
-          widget: 'string',
-          'default': 'archive'
-        },
-        {
-          label: 'Image Card',
-          name: 'image_card',
-          widget: 'image',
-          required: false,
-          media_library: {
-            config: {
-              multiple: false
-            }
-          },
-          hint: 'Recommended size: 1200×628 pixels'
-        },
-        {
-          label: 'Image Card Alt Text',
-          name: 'image_card_alt',
-          widget: 'string',
-          required: false,
-          hint: 'Describe this image for anyone who can\'t see it.'
-        },
-        {
-          label: 'SEO Title',
-          name: 'seo_title',
-          widget: 'string',
-          required: false,
-          hint: 'A title to display on a Search result. (What do you want Google to see?)'
-        },
-        {
-          label: 'SEO Description',
-          name: 'seo_desc',
-          widget: 'text',
-          required: false,
-          hint: 'A short description to tease this in a Search or Social Media preview.',
-          pattern: [
-            '.{,240}',
-            'Max 240 characters'
-          ]
-        },
-        {
-          label: 'Template',
-          name: 'layout',
           widget: 'hidden',
-          'default': 'archive.njk'
-        }
-      ]
-    },
-    {
-      label: 'Blog Page',
-      name: 'blog_page',
-      file: 'src/site/page/blog.md',
-      slug: '{{fields.slug}}',
-      preview: false,
-      fields: [
-        {
-          label: 'Title',
-          name: 'title',
-          widget: 'string'
-        },
-        {
-          label: 'Subtitle',
-          name: 'subtitle',
-          widget: 'string'
-        },
-        {
-          label: 'Slug',
-          name: 'slug',
-          widget: 'string',
-          'default': 'blog'
+          'default': 'posts'
         },
         {
           label: 'Image Card',
@@ -353,13 +285,13 @@ export default {
           label: 'TL;DR',
           name: 'excerpt',
           widget: 'markdown',
-          buttons: '',
           required: false,
           hint: 'A short description of this post for people who don\'t want to read. Shown at the beginning of the post. You can use Markdown!'
         },
         {
           label: 'Body',
           name: 'body',
+          buttons: ['bold', 'italic', 'code', 'link', 'heading-two', 'heading-three', 'heading-four', 'heading-five', 'heading-six', 'quote', 'bulleted-list', 'numbered-list'],
           widget: 'markdown'
         },
         {
@@ -414,6 +346,7 @@ export default {
         {
           label: 'Body',
           name: 'body',
+          buttons: ['bold', 'italic', 'code', 'link', 'heading-two', 'heading-three', 'heading-four', 'heading-five', 'heading-six', 'quote', 'bulleted-list', 'numbered-list'],
           widget: 'markdown'
         },
         {
@@ -532,6 +465,142 @@ export default {
           name: 'layout',
           widget: 'hidden',
           'default': 'search.njk'
+        }
+      ]
+    },
+    {
+      label: 'Category Pages',
+      name: 'category',
+      file: 'src/site/page/category.md',
+      slug: '{{fields.slug}}',
+      preview: false,
+      fields: [
+        {
+          label: 'Title',
+          name: 'title',
+          widget: 'string'
+        },
+        {
+          label: 'Subtitle',
+          name: 'subtitle',
+          widget: 'string'
+        },
+        {
+          label: 'Slug',
+          name: 'slug',
+          widget: 'string',
+          'default': 'category'
+        },
+        {
+          label: 'Image Card',
+          name: 'image_card',
+          widget: 'image',
+          required: false,
+          media_library: {
+            config: {
+              multiple: false
+            }
+          },
+          hint: 'Recommended size: 1200×628 pixels'
+        },
+        {
+          label: 'Image Card Alt Text',
+          name: 'image_card_alt',
+          widget: 'string',
+          required: false,
+          hint: 'Describe this image for anyone who can\'t see it.'
+        },
+        {
+          label: 'SEO Title',
+          name: 'seo_title',
+          widget: 'string',
+          required: false,
+          hint: 'A title to display on a Search result. (What do you want Google to see?)'
+        },
+        {
+          label: 'SEO Description',
+          name: 'seo_desc',
+          widget: 'text',
+          required: false,
+          hint: 'A short description to tease this in a Search or Social Media preview.',
+          pattern: [
+            '.{,240}',
+            'Max 240 characters'
+          ]
+        },
+        {
+          label: 'Template',
+          name: 'layout',
+          widget: 'hidden',
+          'default': 'archive.njk'
+        }
+      ]
+    },
+    {
+      label: 'Categories Page',
+      name: 'categories',
+      file: 'src/site/page/categories.md',
+      slug: '{{fields.slug}}',
+      preview: false,
+      fields: [
+        {
+          label: 'Title',
+          name: 'title',
+          widget: 'string'
+        },
+        {
+          label: 'Subtitle',
+          name: 'subtitle',
+          widget: 'string'
+        },
+        {
+          label: 'Slug',
+          name: 'slug',
+          widget: 'hidden',
+          'default': 'category'
+        },
+        {
+          label: 'Image Card',
+          name: 'image_card',
+          widget: 'image',
+          required: false,
+          media_library: {
+            config: {
+              multiple: false
+            }
+          },
+          hint: 'Recommended size: 1200×628 pixels'
+        },
+        {
+          label: 'Image Card Alt Text',
+          name: 'image_card_alt',
+          widget: 'string',
+          required: false,
+          hint: 'Describe this image for anyone who can\'t see it.'
+        },
+        {
+          label: 'SEO Title',
+          name: 'seo_title',
+          widget: 'string',
+          required: false,
+          hint: 'A title to display on a Search result. (What do you want Google to see?)'
+        },
+        {
+          label: 'SEO Description',
+          name: 'seo_desc',
+          widget: 'text',
+          required: false,
+          hint: 'A short description to tease this in a Search or Social Media preview.',
+          pattern: [
+            '.{,240}',
+            'Max 240 characters'
+          ]
+        },
+        {
+          label: 'Template',
+          name: 'layout',
+          widget: 'hidden',
+          'default': 'tags.njk'
         }
       ]
     },
@@ -668,74 +737,6 @@ export default {
           name: 'layout',
           widget: 'hidden',
           'default': 'tags.njk'
-        }
-      ]
-    },
-    {
-      label: 'Video Page',
-      name: 'video_page',
-      file: 'src/site/page/video.md',
-      slug: '{{fields.slug}}',
-      preview: false,
-      fields: [
-        {
-          label: 'Title',
-          name: 'title',
-          widget: 'string'
-        },
-        {
-          label: 'Subtitle',
-          name: 'subtitle',
-          widget: 'string'
-        },
-        {
-          label: 'Slug',
-          name: 'slug',
-          widget: 'string',
-          'default': 'video'
-        },
-        {
-          label: 'Image Card',
-          name: 'image_card',
-          widget: 'image',
-          required: false,
-          media_library: {
-            config: {
-              multiple: false
-            }
-          },
-          hint: 'Recommended size: 1200×628 pixels'
-        },
-        {
-          label: 'Image Card Alt Text',
-          name: 'image_card_alt',
-          widget: 'string',
-          required: false,
-          hint: 'Describe this image for anyone who can\'t see it.'
-        },
-        {
-          label: 'SEO Title',
-          name: 'seo_title',
-          widget: 'string',
-          required: false,
-          hint: 'A title to display on a Search result. (What do you want Google to see?)'
-        },
-        {
-          label: 'SEO Description',
-          name: 'seo_desc',
-          widget: 'text',
-          required: false,
-          hint: 'A short description to tease this in a Search or Social Media preview.',
-          pattern: [
-            '.{,240}',
-            'Max 240 characters'
-          ]
-        },
-        {
-          label: 'Template',
-          name: 'layout',
-          widget: 'hidden',
-          'default': 'archive.njk'
         }
       ]
     },

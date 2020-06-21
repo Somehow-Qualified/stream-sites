@@ -69,7 +69,6 @@ export default {
       label: 'TL;DR',
       name: 'excerpt',
       widget: 'markdown',
-      buttons: '',
       required: false,
       hint: 'A short description of this post for people who don\'t want to read. Shown at the beginning of the post. You can use Markdown!'
     },
@@ -83,6 +82,7 @@ export default {
     {
       label: 'Body',
       name: 'body',
+      buttons: ['bold', 'italic', 'code', 'link', 'heading-two', 'heading-three', 'heading-four', 'heading-five', 'heading-six', 'quote', 'bulleted-list', 'numbered-list'],
       widget: 'markdown'
     },
     {
