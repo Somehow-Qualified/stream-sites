@@ -9,7 +9,7 @@ export default {
   preview_path: '{{fields.slug}}',
   files: [
     {
-      label: 'About Page',
+      label: 'About',
       name: 'about',
       file: 'src/site/page/about.md',
       slug: '{{fields.slug}}',
@@ -131,75 +131,7 @@ export default {
       ]
     },
     {
-      label: 'Posts Page',
-      name: 'post_page',
-      file: 'src/site/page/posts.md',
-      slug: '{{fields.slug}}',
-      preview: false,
-      fields: [
-        {
-          label: 'Title',
-          name: 'title',
-          widget: 'string'
-        },
-        {
-          label: 'Subtitle',
-          name: 'subtitle',
-          widget: 'string'
-        },
-        {
-          label: 'Slug',
-          name: 'slug',
-          widget: 'hidden',
-          'default': 'posts'
-        },
-        {
-          label: 'Image Card',
-          name: 'image_card',
-          widget: 'image',
-          required: false,
-          media_library: {
-            config: {
-              multiple: false
-            }
-          },
-          hint: 'Recommended size: 1200×628 pixels'
-        },
-        {
-          label: 'Image Card Alt Text',
-          name: 'image_card_alt',
-          widget: 'string',
-          required: false,
-          hint: 'Describe this image for anyone who can\'t see it.'
-        },
-        {
-          label: 'SEO Title',
-          name: 'seo_title',
-          widget: 'string',
-          required: false,
-          hint: 'A title to display on a Search result. (What do you want Google to see?)'
-        },
-        {
-          label: 'SEO Description',
-          name: 'seo_desc',
-          widget: 'text',
-          required: false,
-          hint: 'A short description to tease this in a Search or Social Media preview.',
-          pattern: [
-            '.{,240}',
-            'Max 240 characters'
-          ]
-        },
-        {
-          label: 'Template',
-          name: 'layout',
-          widget: 'hidden',
-          'default': 'archive.njk'
-        }
-      ]
-    },
-    {
-      label: 'Contact Page',
+      label: 'Contact',
       name: 'contact',
       file: 'src/site/page/contact.md',
       slug: '{{fields.slug}}',
@@ -376,7 +308,7 @@ export default {
       ]
     },
     {
-      label: 'Search Page',
+      label: 'Search',
       name: 'search',
       file: 'src/site/page/search.md',
       slug: '{{fields.slug}}',
@@ -469,9 +401,9 @@ export default {
       ]
     },
     {
-      label: 'Category Pages',
-      name: 'category',
-      file: 'src/site/page/category.md',
+      label: 'Posts - Collection',
+      name: 'post_page',
+      file: 'src/site/page/posts.md',
       slug: '{{fields.slug}}',
       preview: false,
       fields: [
@@ -488,7 +420,75 @@ export default {
         {
           label: 'Slug',
           name: 'slug',
+          widget: 'hidden',
+          'default': 'posts'
+        },
+        {
+          label: 'Image Card',
+          name: 'image_card',
+          widget: 'image',
+          required: false,
+          media_library: {
+            config: {
+              multiple: false
+            }
+          },
+          hint: 'Recommended size: 1200×628 pixels'
+        },
+        {
+          label: 'Image Card Alt Text',
+          name: 'image_card_alt',
           widget: 'string',
+          required: false,
+          hint: 'Describe this image for anyone who can\'t see it.'
+        },
+        {
+          label: 'SEO Title',
+          name: 'seo_title',
+          widget: 'string',
+          required: false,
+          hint: 'A title to display on a Search result. (What do you want Google to see?)'
+        },
+        {
+          label: 'SEO Description',
+          name: 'seo_desc',
+          widget: 'text',
+          required: false,
+          hint: 'A short description to tease this in a Search or Social Media preview.',
+          pattern: [
+            '.{,240}',
+            'Max 240 characters'
+          ]
+        },
+        {
+          label: 'Template',
+          name: 'layout',
+          widget: 'hidden',
+          'default': 'archive.njk'
+        }
+      ]
+    },
+    {
+      label: 'Category - Single',
+      name: 'category',
+      file: 'src/site/page/category.md',
+      slug: '{{fields.slug}}',
+      preview: false,
+      fields: [
+        {
+          label: 'Title',
+          name: 'title',
+          widget: 'hidden'
+        },
+        {
+          label: 'Subtitle',
+          name: 'subtitle',
+          widget: 'string'
+        },
+        {
+          label: 'Slug',
+          name: 'slug',
+          widget: 'hidden',
           'default': 'category'
         },
         {
@@ -537,7 +537,7 @@ export default {
       ]
     },
     {
-      label: 'Categories Page',
+      label: 'Category - Collection',
       name: 'categories',
       file: 'src/site/page/categories.md',
       slug: '{{fields.slug}}',
@@ -605,7 +605,7 @@ export default {
       ]
     },
     {
-      label: 'Tag Pages',
+      label: 'Tag - Single',
       name: 'tag',
       file: 'src/site/page/tag.md',
       slug: '{{fields.slug}}',
@@ -673,7 +673,7 @@ export default {
       ]
     },
     {
-      label: 'Tags Page',
+      label: 'Tag - Collection',
       name: 'tags',
       file: 'src/site/page/tags.md',
       slug: '{{fields.slug}}',
