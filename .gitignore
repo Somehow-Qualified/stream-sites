@@ -1,7 +1,6 @@
 .DS_Store
 .env
 .lazyimages.json
-.old
 dist/
 node_modules/
 LocalValetDriver.php

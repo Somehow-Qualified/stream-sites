@@ -2,6 +2,7 @@
   "name": "Stream Sites",
   "description": "My awesome Stream Site",
   "url": "https://demo.streamsites.xyz",
+  "domain": "demo.streamsites.xyz",
   "language": "en-US",
   "locale": "en",
   "author_name": "Melanie E Magdalena",

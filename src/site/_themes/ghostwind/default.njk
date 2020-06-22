@@ -39,7 +39,7 @@ Dynamic Data:
 
     <div class="wrapper flex flex-col items-stretch min-h-full">
       {# Include header #}
-      {% include "ghostwind/header.njk" %}
+      {% include "header.njk" %}
 
       <main id="main" class="main hfeed flex-grow flex-shrink-0" role="main" tabindex="-1">
         {# Templates and content load here! #}
@@ -47,7 +47,7 @@ Dynamic Data:
       </main>
 
       {# Include footer #}
-      {% include "ghostwind/footer.njk" %}
+      {% include "footer.njk" %}
     </div>
 
     {% if site.twitch_client %}
