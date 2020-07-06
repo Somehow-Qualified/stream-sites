@@ -80,9 +80,9 @@ Follow the journey on [Stream Sites](https://streamsites.xyz) or [the log](https
 
 ### Internal Dev Comment Flags
 
-The following to generate the [Todo list for Atom](https://atom.io/packages/todo-show): `TODO, FIXME, CHANGED, XXX, IDEA, HACK, NOTE, REVIEW, NB, BUG, QUESTION, COMBAK, TEMP`
+The following options generate the [Todo list for Atom](https://atom.io/packages/todo-show): `TODO, FIXME, CHANGED, XXX, IDEA, HACK, NOTE, REVIEW, NB, BUG, QUESTION, COMBAK, TEMP`
 
-### Up Next
+### To-Dos/Up Next
 
 - [ ] Next/Prev links for archives
 - [ ] Collection for managing emotes, chat commands, point redemptions, sound effect previews, etc.; include copy-to-clipboard and searching on front-end
@@ -116,7 +116,7 @@ The following to generate the [Todo list for Atom](https://atom.io/packages/todo
 - [x] Next/Prev links for posts
 - [x] Tag List generation
 - [x] Site search
-- [x] Twitch Live Alert
+- [x] ~Twitch Live Alert~ (it died from the new OAuth requirements)
 - [x] Netlify CMS manual initialization
 - [x] PWA mode
 - [x] Light/Dark mode
