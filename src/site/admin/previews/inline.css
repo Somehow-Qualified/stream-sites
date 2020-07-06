@@ -308,8 +308,8 @@ li:last-child {
   user-select: none;
   white-space: nowrap;
   word-wrap: break-word;
-  -webkit-border-horizontal-spacing: 0px;
-  -webkit-border-vertical-spacing: 0px;
+  -webkit-border-horizontal-spacing: 0;
+  -webkit-border-vertical-spacing: 0;
   -webkit-font-smoothing: antialiased;
 }
 .seo-og > .text > .content {
@@ -328,8 +328,8 @@ li:last-child {
   text-align: left;
   user-select: none;
   word-wrap: break-word;
-  -webkit-border-horizontal-spacing: 0px;
-  -webkit-border-vertical-spacing: 0px;
+  -webkit-border-horizontal-spacing: 0;
+  -webkit-border-vertical-spacing: 0;
   -webkit-font-smoothing: antialiased;
 }
 .seo-og > .text > .content > .title {
@@ -349,8 +349,8 @@ li:last-child {
   white-space: normal;
   width: auto;
   word-wrap: break-word;
-  -webkit-border-horizontal-spacing: 0px;
-  -webkit-border-vertical-spacing: 0px;
+  -webkit-border-horizontal-spacing: 0;
+  -webkit-border-vertical-spacing: 0;
   -webkit-font-smoothing: antialiased;
 }
 .seo-og > .text > .content > .desc {
@@ -372,8 +372,8 @@ li:last-child {
   white-space: normal;
   word-break: break-word;
   word-wrap: break-word;
-  -webkit-border-horizontal-spacing: 0px;
-  -webkit-border-vertical-spacing: 0px;
+  -webkit-border-horizontal-spacing: 0;
+  -webkit-border-vertical-spacing: 0;
   -webkit-box-orient: vertical;
   -webkit-font-smoothing: antialiased;
   -webkit-line-clamp: 1;
