@@ -2,6 +2,23 @@
   command = "CI= npm run netlify"
   publish = "dist"
 
+[build.processing]
+  skip_processing = false
+
+[build.processing.css]
+  bundle = true
+  minify = true
+
+[build.processing.js]
+  bundle = true
+  minify = true
+
+[build.processing.html]
+  pretty_urls = true
+
+[build.processing.images]
+  compress = true
+
 [context.production]
   environment = { NODE_VERSION = "12", NODE_ENV = "production" }
 
