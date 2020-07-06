@@ -1,6 +1,6 @@
 {
 	"name": "streamsites",
-	"version": "0.0.4",
+	"version": "0.0.5",
 	"description": "Stream Sites - a static site boilerplate for streamers.",
 	"url": "https://demo-streamsites.netlify.com",
 	"author": {
@@ -19,8 +19,8 @@
 		}
 	],
 	"license": "MIT",
-	"repository": "gitlab:stream-sites/ss-core",
-	"bugs": "https://gitlab.com/stream-sites/ss-core/-/issues",
+	"repository": "https://github.com/Somehow-Qualified/stream-sites",
+	"bugs": "https://github.com/Somehow-Qualified/stream-sites/issues",
 	"homepage": "https://streamsites.xyz",
 	"main": "index.js",
 	"scripts": {
