@@ -2,7 +2,7 @@
 	"name": "streamsites",
 	"version": "0.0.5",
 	"description": "Stream Sites - a static site boilerplate for streamers.",
-	"url": "https://demo-streamsites.netlify.com",
+	"url": "https://demo.streamsites.xyz",
 	"author": {
 		"name": "Melanie E Magdalena",
 		"email": "hello@melaniemagdalena.com",
@@ -30,7 +30,6 @@
 		"build:css": "NODE_ENV=production postcss src/site/_includes/_css/main.css -o dist/css/main.min.css",
 		"build:css:admin": "NODE_ENV=admin postcss src/site/_includes/_css/main.css -o dist/admin/css/tailwind.min.css",
 		"build:js": "terser src/site/_includes/_js/main.js -c -o dist/js/main.min.js",
-		"build:sw": "workbox generateSW workbox-config.js",
 		"debug": "DEBUG=Eleventy* npm run build:html",
 		"watch": "npm-run-all --parallel watch:css watch:html",
 		"watch:html": "eleventy --config=eleventy.config.js --serve --port=8181",
@@ -62,7 +61,6 @@
 		"postcss-cli": "^7.1.1",
 		"tailwindcss": "^1.4.6",
 		"tailwindcss-dark-mode": "^1.1.4",
-		"terser": "^4.8.0",
-		"workbox-cli": "^5.1.3"
+		"terser": "^4.8.0"
 	}
 }

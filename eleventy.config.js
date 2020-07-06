@@ -95,6 +95,7 @@ module.exports = function (eleventyConfig) {
 
   // Copy static assests
   eleventyConfig.addPassthroughCopy({ 'src/site/_includes/_fonts': 'fonts' });
+  eleventyConfig.addPassthroughCopy({ 'src/site/_includes/_js': 'js' });
   eleventyConfig.addPassthroughCopy('images');
   eleventyConfig.addPassthroughCopy('src/site/admin');
   eleventyConfig.addPassthroughCopy('src/site/_redirects');
