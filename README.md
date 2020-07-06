@@ -12,7 +12,7 @@ A static site boilerplate built for streamers by streamers. Proudly [#BuiltWith1
 
 You can deploy Stream Sites to Netlify with one click to be up and running in minutes! Once you're running, you can [**Connect Netlify CMS**](#connect-netlify-cms).
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy)
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/Somehow-Qualified/stream-sites)
 
 ### Method 2: Clone or Fork this Repo
 
