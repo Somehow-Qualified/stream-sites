@@ -1,6 +1,6 @@
 # Stream Sites
 
-[![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=102)](https://github.com/ellerbrock/open-source-badge/) [![Open Source Love](https://badges.frapsoft.com/os/mit/mit.svg?v=102)](https://github.com/ellerbrock/open-source-badge/) [![Netlify Status](https://api.netlify.com/api/v1/badges/f4455669-0ce8-40ea-8ff5-5c31f0aadfa5/deploy-status)](https://app.netlify.com/sites/demo-streamsites/deploys)
+[![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=102)](https://github.com/ellerbrock/open-source-badge/) [![Open Source Love](https://badges.frapsoft.com/os/mit/mit.svg?v=102)](https://github.com/ellerbrock/open-source-badge/) [![Netlify Status](https://api.netlify.com/api/v1/badges/5ac40edf-d66e-4f82-b140-2ebf93f99829/deploy-status)](https://app.netlify.com/sites/streamsites/deploys)
 
 A static site boilerplate built for streamers by streamers. Proudly [#BuiltWith11ty](https://www.11ty.dev/) and [TailwindCSS](https://tailwindcss.com/)!
 
@@ -42,13 +42,15 @@ Before you can use the CMS, you need to do some config in Netlify. [They provide
 
 4. Once you’ve enabled Identity, click “Invite Users” and invite yourself.
 
-5. Check the invite link in your inbox and click the link in the email that’s sent to you.
+5. From Identity, jump over to "Settings and Usage" and enable `git-gateway` under Services.
 
-6. Set a password in the popup box (and save it to your password manager).
+6. Go to your email click the invite link sent to you.
 
-7. Go to /admin on your site and login.
+7. Set a password in the popup box (and save it to your password manager).
 
-8. You’re in and ready to edit your content!
+8. Go to /admin on your site and login.
+
+9. You’re in and ready to edit your content!
 
 ## Deploying Local Changes
 
@@ -104,6 +106,7 @@ The following to generate the [Todo list for Atom](https://atom.io/packages/todo
 
 ### Done!
 
+- [x] Set repo to public on Github
 - [x] Categories
 - [x] CMS: Map core fields
 - [x] iframe rendering for Twitch Clips, Twitch Vods, Twitch Collections, YouTube videos, YouTube playlists, and Vimeo
@@ -175,10 +178,14 @@ Additional features were made possible by scrounging through the internet for aw
 
 - **Markdown flavoring** comes from [markdown-it](https://www.npmjs.com/package/markdown-it) and friends: [markdown-it-anchor](https://www.npmjs.com/package/markdown-it-anchor), [markdown-it-attrs](https://www.npmjs.com/package/markdown-it-attrs), [markdown-it-footnote](https://www.npmjs.com/package/markdown-it-footnote), [markdown-it-table-of-contents](https://www.npmjs.com/package/markdown-it-table-of-contents), and [markdown-it-video](https://www.npmjs.com/package/markdown-it-video).
 
-- **Twitch Live Alert** - Shoutout to [@brob](https://twitter.com/brob) for his Twitch stream ["Building a quick 11ty integration with the Twitch API"](https://www.twitch.tv/videos/557243663) and my good luck of running into his [Tweet](https://twitter.com/brob/status/1232016529300037634). Combined with [Standard Library](https://build.stdlib.com/), you can use Netlify Build Hooks to automate turning the alert on and off. This led to a separate journey into [web components](https://www.twitch.tv/videos/559178782) that doesn't need Build Hooks at all!
-
 - **Search** is a combination of Tailwind Toolbox's [Searchy](https://www.tailwindtoolbox.com/components/searchy) and Phil Hawksworth's [Adding Search to a JAMstack Site](https://www.hawksworx.com/blog/adding-search-to-a-jamstack-site/).
 
 - **Previous and Next Links on posts** come from [this reply](https://github.com/11ty/eleventy/issues/529#issuecomment-568257426) by [pascalw](https://github.com/pascalw).
 
 - **Categories** are based on Philip Borenstein's [Implementing Categories](https://www.pborenstein.com/posts/categories/).
+
+## RIP
+
+Features that have exploded due to external dependencies changing their rules. These need to be reevaluated and rewritten accordingly.
+
+- **Twitch Live Alert** - Shoutout to [@brob](https://twitter.com/brob) for his Twitch stream ["Building a quick 11ty integration with the Twitch API"](https://www.twitch.tv/videos/557243663) and my good luck of running into his [Tweet](https://twitter.com/brob/status/1232016529300037634). Combined with [Standard Library](https://build.stdlib.com/), you can use Netlify Build Hooks to automate turning the alert on and off. This led to a separate journey into [web components](https://www.twitch.tv/videos/559178782) that doesn't need Build Hooks at all!
