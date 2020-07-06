@@ -1,5 +1,5 @@
 [build]
-  command = "CI= npm run netlify"
+  command = "CI='' npm run netlify"
   publish = "dist"
 
 [context.production]
