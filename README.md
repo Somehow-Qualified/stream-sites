@@ -16,7 +16,7 @@ You can deploy Stream Sites to Netlify with one click to be up and running in mi
 
 ### Method 2: Clone or Fork this Repo
 
-1. Clone (or fork) this repo: `git clone https://gitlab.com/stream-sites/ss-core.git your-site-name`
+1. Clone (or fork) this repo: `git clone https://github.com/Somehow-Qualified/stream-sites.git your-site-name` (set `your-site-name` to whatever you want the folder to be called).
 
 2. Go into the project directory `cd your-site-name` and run `npm install`.
 
@@ -32,9 +32,9 @@ You can deploy Stream Sites to Netlify with one click to be up and running in mi
 
 ## Connect Netlify CMS
 
-Before you can use the CMS, you need to do some config in Netlify. [They provide a very handy guide to get started.](https://www.netlify.com/docs/identity/)
+Before you can use the CMS, you need to do some configuration in Netlify. [They provide a very handy guide to get started.](https://www.netlify.com/docs/identity/)
 
-1. Once you’ve set up the site on Netlify, go to “Settings” > “Identity” and enable Identity.
+1. Once you’ve added the site to Netlify, go to “Settings” > “Identity” and enable Identity.
 
 2. Scroll down to the “Git Gateway” area, click “Enable Git Gateway” and follow the steps.
 
