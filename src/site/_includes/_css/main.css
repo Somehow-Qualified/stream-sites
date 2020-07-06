@@ -117,12 +117,6 @@ code {
   @apply bg-black text-white px-2 py-1 text-sm;
 }
 
-code[class*="language-"],
-pre[class*="language-"] {
-  @apply px-0;
-  font-size: 1rem;
-}
-
 @tailwind components;
 
 /*
@@ -513,6 +507,8 @@ li.footnote-item:last-of-type {
  */
 code[class*="language-"],
 pre[class*="language-"] {
+  @apply px-0;
+  font-size: 1rem;
   background: transparent;
   color: #c5c8c6;
   text-shadow: 0 1px rgba(0, 0, 0, 0.3);
@@ -612,7 +608,7 @@ pre[class*="language-"] {
 
 .token.entity {
   color: #FFFFB6;
-  /* text-decoration: underline; */
+  cursor: help;
 }
 
 .token.url {
@@ -648,8 +644,4 @@ pre[class*="language-"] {
 
 .token.italic {
   font-style: italic;
-}
-
-.token.entity {
-  cursor: help;
 }
