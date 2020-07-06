@@ -42,15 +42,13 @@ Before you can use the CMS, you need to do some config in Netlify. [They provide
 
 4. Once you’ve enabled Identity, click “Invite Users” and invite yourself.
 
-5. From Identity, jump over to "Settings and Usage" and enable `git-gateway` under Services.
+5. Go to your email click the invite link sent to you.
 
-6. Go to your email click the invite link sent to you.
+6. Set a password in the popup box (and save it to your password manager).
 
-7. Set a password in the popup box (and save it to your password manager).
+7. Go to /admin on your site. Login with your email address and new password.
 
-8. Go to /admin on your site and login.
-
-9. You’re in and ready to edit your content!
+8. You’re in and ready to edit your content!
 
 ## Deploying Local Changes
 
