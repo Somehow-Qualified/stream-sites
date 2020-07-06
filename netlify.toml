@@ -1,9 +1,9 @@
 [build]
-  command = "CI='' npm run netlify"
+  command = "CI= npm run netlify"
   publish = "dist"
 
 [context.production]
-  environment = { NODE_ENV = "production" }
+  environment = { NODE_VERSION = "12", NODE_ENV = "production" }
 
 [dev]
   command = "npm run start"
