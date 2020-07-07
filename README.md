@@ -95,6 +95,7 @@ The following options generate the [Todo list for Atom](https://atom.io/packages
 - [ ] Rich snippet structured data (articles, videos) with [schema markup](https://schema.org/docs/gs.html) and [JSON-LD](https://json-ld.org/playground/)
 - [ ] [Microformats](http://microformats.org/wiki/microformats2) for IndieWeb
 - [ ] [Webmentions](https://mxb.dev/blog/using-webmentions-on-static-sites/)
+- [ ] PWA mode with offline page showing available/saved content
 
 ### Needs fine tuning
 - **Bug - Sitemap**: Set <lastmod> to file modified date, not build date; same for RSS and Atom feeds
