@@ -84,15 +84,13 @@ module.exports = {
     const post = collection.getFilteredByGlob('**/posts/*.md');
 
     for (let i = 0; i < post.length; i++) {
-      const prevPost = post[i - 1]
-      const nextPost = post[i + 1]
+      const prevPost = post[i - 1];
+      const nextPost = post[i + 1];
 
-      post[i].data["prevPost"] = prevPost
-      post[i].data["nextPost"] = nextPost
+      post[i].data["prevPost"] = prevPost;
+      post[i].data["nextPost"] = nextPost;
     }
 
-    return post.reverse()
-    // return collection.getFilteredByGlob('**/post/*.md').reverse();
     return post.reverse();
   },
 
