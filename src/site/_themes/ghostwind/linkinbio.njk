@@ -46,9 +46,9 @@ Dynamic Data:
 
         <h1 class="page-title text-2xl md:text-3xl mt-0">{{ title }}</h1>
 
-        <div class="text-sm md:text-base">{{ content | safe }}</div>
+        <div class="content text-sm md:text-base">{{ content | safe }}</div>
 
-        <ul class="content text-center text-{{ theme.colors.main }}-100 py-8 w-full">
+        <ul class="text-center text-{{ theme.colors.main }}-100 py-8 w-full">
           {% for item in linkinbio.linkinbio %}
           <a href="{{ item.link | safe }}" target="_blank" class="lg:p-4 py-3 px-0 block font-bold hover:text-{{ theme.colors.main }}-900 bg-{{ theme.colors.accent }}-600 hover:bg-{{ theme.colors.accent }}-400 mb-4"><li>{{ item.text }}</li></a>
           {% endfor %}
