@@ -1,5 +1,4 @@
-// const util         = require('util');
-const fs           = require('fs');
+const fs = require('fs');
 
 // Theme Config
 const config = require('./src/site/_data/theme.json');
@@ -7,7 +6,6 @@ const config = require('./src/site/_data/theme.json');
 // 11ty Files
 const filters = require('./src/utils/filters.js');
 const collections = require('./src/utils/collections.js');
-// const transforms = require('./src/utils/transforms.js');
 
 // Markdown Plugins
 const markdownIt = require('markdown-it');
@@ -34,11 +32,6 @@ module.exports = function (eleventyConfig) {
   Object.keys(collections).forEach(collectionName => {
     eleventyConfig.addCollection(collectionName, collections[collectionName])
   });
-
-  // WIP: Transforms
-  // Object.keys(transforms).forEach(transformName => {
-  //   eleventyConfig.addTransform(transformName, transforms[transformName])
-  // });
 
   // Load plugins
   // eleventyConfig.addPlugin(pluginLazyImages, {
