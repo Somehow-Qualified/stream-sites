@@ -3,7 +3,7 @@ permalink: search.json
 eleventyExcludeFromCollections: true
 ---
 {"search" : [
-{%- for item in collections.all %}
+{%- for item in collections.searchable %}
 {%- if item.data.sitemapIgnore !== true %}
   {
     "url" : "{{ item.url }}",
