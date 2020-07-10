@@ -91,6 +91,7 @@ export default {
       label: 'Video ID',
       name: 'video_id',
       widget: 'string',
+      required: false,
       hint: 'Get this from the video URL. Clip example: HedonisticConsiderateOrcaWutFace'
     },
     {
@@ -123,6 +124,7 @@ export default {
           value: 'playlist'
         }
       ],
+      required: false,
       hint: 'Select the type of video to embed. Vods include video and past broadcasts.'
     },
     {
