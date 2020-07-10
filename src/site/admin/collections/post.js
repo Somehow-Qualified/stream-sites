@@ -167,11 +167,7 @@ export default {
       name: 'seo_desc',
       widget: 'text',
       required: false,
-      hint: 'A short description to tease this in a Search or Social Media preview.',
-      pattern: [
-        '.{,240}',
-        'Max 240 characters'
-      ]
+      hint: 'Max 240 characters. A short description to tease this in a Search or Social Media preview.'
     }
   ]
 }
