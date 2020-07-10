@@ -24,7 +24,8 @@
   "robots": {
     "pinterest": "allow",
     "twitter": "disallow",
-    "search_crawler": "follow"
+    "search_crawler": "follow",
+    "metomic": "off"
   },
   "search_engine": "https://duckduckgo.com/"
 }

@@ -54,6 +54,7 @@ Dynamic Data:
     <script src="{{ '/js/main.min.js' | url | cacheBuster }}" defer></script>
 
     {# Metomic - https://metomic.io/ #}
+    {% if site.metomic === "on" %}
     <script src="https://config.metomic.io/config.js?id=prj:dd25acac-40e8-4583-b7a4-603f493a8d90" crossorigin charset="utf-8" defer></script>
     <script src="https://consent-manager.metomic.io/embed.js" crossorigin charset="utf-8" defer></script>
     {% endif %}

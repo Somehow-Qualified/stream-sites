@@ -258,6 +258,22 @@ export default {
                   value: 'noindex,nofollow'
                 }
               ]
+            },
+            {
+              label: 'Enable Metomic Contextual Consent',
+              name: 'metomic',
+              widget: 'select',
+              options: [
+                {
+                  label: 'Yes',
+                  value: 'on'
+                },
+                {
+                  label: 'No',
+                  value: 'off'
+                }
+              ],
+              hint: 'Learn more at contextual.metomic.io - we have this snippet ready to toggle on or off at any time!'
             }
           ]
         }
