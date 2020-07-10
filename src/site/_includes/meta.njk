@@ -15,7 +15,7 @@
 <meta name="description" content="{{ metaDescription }}">
 <meta name="author" content="{{ authorName }}">
 <meta name="copyright" content="{{ authorName }}, {{ site.name }}">
-<meta name="theme-color" content="{{ theme.colors.pwa }}"/>
+<meta name="theme-color" content="{{ theme.colors.pwa }}">
 <link rel="canonical" href="{{site.url}}{{ page.url }}">
 {%- if site.verification.google %}
 <meta name="google-site-verification" content="{{ site.verification.google }}">
@@ -57,7 +57,7 @@
 <meta property="og:locale" content="{{ site.language }}">
 
 {# sameAs links #}
-{%- for service, link in social %}
+{%- for network, link in social %}
 {%- if link != "" %}
 <link href="{{ link }}" rel="me">
 {%- endif %}
@@ -81,9 +81,9 @@
 {# Robots #}
 <meta name="robots" content="{{ site.robots.search_crawler }}">
 {%- if site.robots.pinterest === "disallow" %}
-<meta name="pinterest" content="nopin" >
-<meta name="pinterest" content="nohover" >
-<meta name="pinterest-rich-pin" content="false" >
+<meta name="pinterest" content="nopin">
+<meta name="pinterest" content="nohover">
+<meta name="pinterest-rich-pin" content="false">
 {%- endif %}
 {%- if site.robots.twitter === "disallow" %}
 <meta name="twitter:dnt" content="on">
