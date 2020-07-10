@@ -23,10 +23,6 @@ Dynamic Data:
 
     {# Stylesheet #}
     <link rel="stylesheet" href="{{ '/css/main.min.css' | url | cacheBuster }}" rel="preload">
-    {# for Twitch Live Alert #}
-    {% if site.twitch_client %}
-    <link rel="stylesheet" href="{{ '/css/twitch.css' | url | cacheBuster }}" rel="preload">
-    {% endif %}
 
     {# Dark Mode Handler #}
     <script>(localStorage.getItem('darkMode') === 'true') && document.documentElement.classList.add('mode-dark');</script>
