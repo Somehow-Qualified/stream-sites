@@ -14,7 +14,7 @@ export default {
     {
       label: 'Link in Bio Page',
       name: 'linkinbio_content',
-      file: 'src/site/page/linkinbio.md',
+      file: 'src/site/pages/linkinbio.md',
       fields: [
         {
           label: 'Title',

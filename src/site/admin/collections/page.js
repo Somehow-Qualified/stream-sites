@@ -3,7 +3,7 @@ export default {
   label: 'Pages',
   label_singular: 'Page',
   description: 'Create or edit a page',
-  folder: 'src/site/page',
+  folder: 'src/site/pages',
   create: true,
   filter: {
     field: 'page_type',

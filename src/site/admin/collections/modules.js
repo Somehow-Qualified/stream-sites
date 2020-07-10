@@ -11,7 +11,7 @@ export default {
     {
       label: 'About',
       name: 'about',
-      file: 'src/site/page/about.md',
+      file: 'src/site/pages/about.md',
       slug: '{{fields.slug}}',
       preview: true,
       fields: [
@@ -133,7 +133,7 @@ export default {
     {
       label: 'Contact',
       name: 'contact',
-      file: 'src/site/page/contact.md',
+      file: 'src/site/pages/contact.md',
       slug: '{{fields.slug}}',
       preview: true,
       fields: [
@@ -255,7 +255,7 @@ export default {
     {
       label: 'Privacy Policy',
       name: 'privacy',
-      file: 'src/site/page/privacy-policy.md',
+      file: 'src/site/pages/privacy-policy.md',
       slug: '{{fields.slug}}',
       preview: true,
       fields: [
@@ -310,7 +310,7 @@ export default {
     {
       label: 'Search',
       name: 'search',
-      file: 'src/site/page/search.md',
+      file: 'src/site/pages/search.md',
       slug: '{{fields.slug}}',
       preview: false,
       fields: [
@@ -403,7 +403,7 @@ export default {
     {
       label: 'Posts - Collection',
       name: 'post_page',
-      file: 'src/site/page/posts.md',
+      file: 'src/site/pages/posts.md',
       slug: '{{fields.slug}}',
       preview: false,
       fields: [
@@ -471,7 +471,7 @@ export default {
     {
       label: 'Category - Single',
       name: 'category',
-      file: 'src/site/page/category.md',
+      file: 'src/site/pages/category.md',
       slug: '{{fields.slug}}',
       preview: false,
       fields: [
@@ -539,7 +539,7 @@ export default {
     {
       label: 'Category - Collection',
       name: 'categories',
-      file: 'src/site/page/categories.md',
+      file: 'src/site/pages/categories.md',
       slug: '{{fields.slug}}',
       preview: false,
       fields: [
@@ -607,7 +607,7 @@ export default {
     {
       label: 'Tag - Single',
       name: 'tag',
-      file: 'src/site/page/tag.md',
+      file: 'src/site/pages/tag.md',
       slug: '{{fields.slug}}',
       preview: false,
       fields: [
@@ -675,7 +675,7 @@ export default {
     {
       label: 'Tag - Collection',
       name: 'tags',
-      file: 'src/site/page/tags.md',
+      file: 'src/site/pages/tags.md',
       slug: '{{fields.slug}}',
       preview: false,
       fields: [
@@ -743,7 +743,7 @@ export default {
     {
       label: '404 Page',
       name: '404_page',
-      file: 'src/site/page/404.md',
+      file: 'src/site/pages/404.md',
       slug: '{{fields.slug}}',
       preview: false,
       fields: [
