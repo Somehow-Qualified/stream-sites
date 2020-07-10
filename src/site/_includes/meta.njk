@@ -57,9 +57,11 @@
 <meta property="og:locale" content="{{ site.language }}">
 
 {# sameAs links #}
-{% for service, link in social %}
+{%- for service, link in social %}
+{%- if link != "" %}
 <link href="{{ link }}" rel="me">
-{% endfor %}
+{%- endif %}
+{%- endfor %}
 
 {# Feeds #}
 <link rel="alternate" type="application/rss+xml" href="{{ site.url}}/rss.xml" title="{{ site.name }} RSS Feed">
@@ -102,7 +104,9 @@
     "@context":"http://schema.org",
     "sameAs": [
       {%- for network, link in social %}
+      {%- if link != "" %}
       "{{ link }}"{%- if not loop.last %},{%- else %}{%- endif %}
+      {%- endif %}
       {%- endfor %}
     ]
   }
