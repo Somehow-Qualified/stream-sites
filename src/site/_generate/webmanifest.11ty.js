@@ -12,7 +12,7 @@ class WebAppManifest {
     const content = {
       "short_name": data.site.name,
       "name": data.site.name,
-      "description": "Weather forecast information",
+      "description": data.site.description,
       "icons": [
         {
           "src": data.site.favicon,
