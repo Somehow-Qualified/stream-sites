@@ -18,8 +18,11 @@
 <meta name="copyright" content="{{ authorName }}, {{ site.name }}">
 <meta name="theme-color" content="{{ theme.colors.pwa }}"/>
 <link rel="canonical" href="{{site.url}}{{ page.url }}">
-{%- if site.google_verification %}
-<meta name="google-site-verification" content="{{ site.google_verification }}">
+{%- if site.verification.google %}
+<meta name="google-site-verification" content="{{ site.verification.google }}">
+{%- endif %}
+{%- if site.verification.pinterest %}
+<meta name="p:domain_verify" content="{{ site.verification.pinterest }}">
 {%- endif %}
 
 {# Schema #}

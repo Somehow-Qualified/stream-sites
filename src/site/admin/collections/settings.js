@@ -94,13 +94,6 @@ export default {
           hint: 'Enter your Twitch handle.'
         },
         {
-          label: 'Twitch Client ID',
-          name: 'twitch_client',
-          widget: 'string',
-          required: false,
-          hint: 'Enter your Client ID from Twitch Developers to enable live alerts.'
-        },
-        {
           label: 'Logo',
           name: 'logo',
           widget: 'image',
@@ -178,6 +171,26 @@ export default {
           ],
           required: false,
           hint: 'Show your love or Stream Sites in the footer.'
+        },
+        {
+          label: 'Verification Tags (Advanced Users)',
+          name: 'verification',
+          widget: 'object',
+          hint: 'Add verification tags to your website',
+          fields: [
+            {
+              label: 'Google Verification',
+              name: 'google',
+              widget: 'text',
+              hint: 'Verify your website with Google. We already include the meta tag, so just add the unique code string.',
+            },
+            {
+              label: 'Pinterest Verification',
+              name: 'pinterest',
+              widget: 'text',
+              hint: 'Verify your website with Google. We already include the meta tag, so just add the unique code string.',
+            }
+          ]
         },
         {
           label: 'Privacy Options (Advanced Users)',
