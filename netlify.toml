@@ -1,5 +1,5 @@
 [build]
-  command = "CI= npm run netlify"
+  command = "CI= npm run build"
   publish = "dist"
 
 [build.processing]

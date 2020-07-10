@@ -54,7 +54,7 @@ Before you can use the CMS, you need to do some configuration in Netlify. [They 
 
 ### Method 1: Via Netlify Continuous Deployment
 
-Commit and push your changes to a branch connected to Netlify. Netlify will take care of the rest with `npm run netlify`.
+Commit and push your changes to a branch connected to Netlify. Netlify will take care of the rest with `npm run build`.
 
 > With continuous deployment, Netlify will automatically deploy new versions of your site when you push commits to your connected Git repository. This also facilitates features like Deploy Previews. (Some features must be enabled in the Netlify UI.) - [Netlify Docs](https://docs.netlify.com/cli/get-started/#continuous-deployment)
 
@@ -68,11 +68,12 @@ Todo... (Looking into Storybook.js for it.)
 
 ### Build Commands
 
-- `build`: makes use of [npm-run-all](https://www.npmjs.com/package/npm-run-all) to process all build scripts
-- `build:html`: minify HTML via [html-minifier](https://www.npmjs.com/package/html-minifier)
-- `build:css`: uses [postcss-cli](https://www.npmjs.com/package/postcss-cli) for [TailwindCSS](https://tailwindcss.com/) with [autoprefixer](https://www.npmjs.com/package/autoprefixer), [cssnano](https://www.npmjs.com/package/cssnano), and [PurgeCSS](https://www.npmjs.com/package/purgecss).
-- `build:css:admin`: minify without purging; used for Netlify CMS preview templates.
-- `build:js`: minify JavaScript with [terser](https://www.npmjs.com/package/terser)
+- `build`: Run all of the build scripts.
+- `build:html`: Minify HTML via [html-minifier](https://www.npmjs.com/package/html-minifier).
+- `build:css`: Uses [postcss-cli](https://www.npmjs.com/package/postcss-cli) for [TailwindCSS](https://tailwindcss.com/) with [autoprefixer](https://www.npmjs.com/package/autoprefixer), [cssnano](https://www.npmjs.com/package/cssnano), and [PurgeCSS](https://www.npmjs.com/package/purgecss).
+- `build:css:admin`: Minify CSS without purging; used for Netlify CMS preview templates.
+- `build:js`: Minify JavaScript with [terser](https://www.npmjs.com/package/terser).
+- `clean`: Delete the dist folder so you can build a clean copy of the site.
 
 ## Roadmap
 
