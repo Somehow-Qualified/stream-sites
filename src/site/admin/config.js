@@ -8,7 +8,6 @@ import page from './collections/page.js';
 import modules from './collections/modules.js';
 import linkInBio from './collections/linkinbio.js';
 import settings from './collections/settings.js';
-import custom from './collections/custom.js';
 
 export default {
   backend: {
@@ -29,8 +28,7 @@ export default {
     page,
     modules,
     linkInBio,
-    settings,
-    custom
+    settings
   ]
 }
 
