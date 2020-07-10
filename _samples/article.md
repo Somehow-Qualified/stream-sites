@@ -8,12 +8,12 @@ category: tutorial
 tags:
   - getting-started
 image_card: /images/post-3.jpg
-image_card_alt: A cool Stream Site logo banner.
+image_card_alt:
 image_card_credit: >-
   [Unsplash](https://unsplash.com)
+teaser: Check out the many ways to add flair to your Markdown posts.
 excerpt: >-
   Stream Sites come with a variety of markdown options to make writing with fancy flair easier.
-teaser: Check out the many ways to add flair to your Markdown posts.
 seo_title: Getting started with Markdown on Stream Sites
 seo_desc: >-
     Stream Sites come with a variety of markdown options to make writing with
