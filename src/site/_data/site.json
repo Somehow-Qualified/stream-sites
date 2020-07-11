@@ -27,5 +27,6 @@
     "search_crawler": "follow",
     "metomic": "off"
   },
-  "search_engine": "https://duckduckgo.com/"
+  "search_engine": "https://duckduckgo.com/",
+  "webmentions": "disable"
 }
