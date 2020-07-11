@@ -4,7 +4,7 @@
 
   {% set title = post.data.title %}
   {% set featuredImage = post.data.image_card or site.image_card %}
-  {% set featuredImageAlt = 'Video clip thumbnail' or post.data.image_caption %}
+  {% set featuredImageAlt = 'Video clip thumbnail' or post.data.image_card_alt %}
   {% set postCredit = post.data.clipper or site.author_name %}
   {% set publishDate = post.data.date %}
   {% set excerpt = post.data.teaser %}

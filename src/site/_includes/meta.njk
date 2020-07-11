@@ -4,7 +4,7 @@
 {% set metaTitle =  seo_title or renderData.title or title or site.name %}
 {% set metaDescription = seo_desc or renderData.desc or site.description %}
 {% set metaImage = image_card or site.image_card %}
-{% set metaImageAlt = image_caption or site.image_card_alt %}
+{% set metaImageAlt = image_card_alt or site.image_card_alt %}
 {% set authorName = site.author_name %}
 {% set authorTwitter = site.author_twitter %}
 
@@ -107,7 +107,7 @@
     "sameAs": [
       {%- for network, link in social %}
       {%- if link != "" %}
-      "{{ link }}"{%- if not loop.last %},{%- else %}{%- endif %}
+      "{{ link }}"{%- if not loop.last %},{%- endif %}
       {%- endif %}
       {%- endfor %}
     ]
