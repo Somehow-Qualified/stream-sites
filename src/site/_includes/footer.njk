@@ -21,12 +21,12 @@
       {# Social Links #}
       <address>
         <ul class="flex flex-row flex-wrap list-none">
-        {% for icon, link in social %}
-          {% if link %}
+        {% for network, link in social %}
+          {% if link != "" %}
           <li>
-            <a href="{{ link | safe }}" class="block p-2 hover:text-{{ theme.colors.accent }}-500" aria-label="{{ icon | capitalize }}" rel="me noopener noreferrer" title="{{ icon }}" target="_blank">
-              <svg class="inline-block h-5 w-5 sm:h-4 sm:w-4" fill="currentColor" role="img" aria-hidden="true">
-                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/icon-library.svg#icon-{{ icon }}"></use>
+            <a href="{{ link | safe }}" class="block p-2 hover:text-{{ theme.colors.accent }}-500" aria-label="{{ network | capitalize }}" rel="me noopener noreferrer" title="{{ network }}" target="_blank">
+              <svg class="inline-block h-5 w-5 sm:h-4 sm:w-4" role="img" aria-hidden="true">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/icon-library.svg#{{ network }}"></use>
               </svg>
             </a>
           </li>

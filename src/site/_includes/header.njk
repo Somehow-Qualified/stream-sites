@@ -25,21 +25,24 @@
 	    </nav>
 		</div>
 		<div class="flex justify-end -mx-2">
+
       {# Search #}
       <button href="/search" id="search-link" title="Search" class="p-2 border-2 border-transparent rounded-full hover:text-{{ theme.colors.main}}-100 dark-hover:text-{{ theme.colors.main}}-900 hover:bg-{{ theme.colors.main }}-900 dark-hover:bg-{{ theme.colors.main }}-100">
-        <svg class="icon-search h-4 w-4" fill="currentColor" stroke="currentColor" role="img" aria-hidden="true">
-          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/icon-library.svg#icon-search"></use>
+        <svg class="icon-search h-4 w-4" role="img" aria-hidden="true">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/icon-library.svg#search"></use>
         </svg>
       </button>
+
 			{# Dark/Light Mode Toggle #}
 			<button class="darkmodebtn js-darkmode-toggle p-2 border-2 border-transparent rounded-full text-base hover:text-{{ theme.colors.main}}-100 dark-hover:text-{{ theme.colors.main}}-900 hover:bg-{{ theme.colors.main }}-900 dark-hover:bg-{{ theme.colors.main }}-100" title="Toggle Dark Mode" role="switch" aria-checked="false">
-				<svg class="icon-light h-4 w-4" fill="currentColor" stroke="currentColor" role="img" aria-hidden="true">
-					<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/icon-library.svg#icon-sun"></use>
+				<svg class="icon-light h-4 w-4" role="img" aria-hidden="true">
+					<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/icon-library.svg#sun"></use>
 				</svg>
-				<svg class="icon-dark h-4 w-4" fill="currentColor" stroke="currentColor" role="img" aria-hidden="true">
-					<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/icon-library.svg#icon-moon"></use>
+				<svg class="icon-dark h-4 w-4" role="img" aria-hidden="true">
+					<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/icon-library.svg#moon"></use>
 				</svg>
 			</button>
+
 	  </div>
 	</div>
 </header>
@@ -75,12 +78,12 @@ TODO: only include on collections.post #}
         <p class="hidden sm:block mr-2 text-center h-14 py-4 text-sm"><span class="pr-2">Share this</span>👉</p>
         <a class="flex items-center justify-center text-white no-underline hover:text-white hover:text-underline text-center h-10 w-10 p-2 md:h-auto md:w-16 md:p-4" href="https://twitter.com/intent/tweet?url={{ site.url }}{{ page.url }}" target="_blank" rel="noopener noreferrer" style="background-color:#33b1ff;">
           <svg class="block" fill="currentColor" role="img" aria-hidden="true" width="18" height="18">
-            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/icon-library.svg#icon-twitter"></use>
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/icon-library.svg#twitter"></use>
           </svg>
         </a>
         <a class="flex items-center justify-center text-white no-underline hover:text-white hover:text-underline text-center h-10 w-10 p-2 md:h-auto md:w-16 md:p-4" href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ page.url }}" target="_blank" rel="noopener noreferrer" style="background-color:#005e99">
           <svg class="block" fill="currentColor" role="img" aria-hidden="true" width="18" height="18">
-            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/icon-library.svg#icon-facebook"></use>
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/icon-library.svg#facebook"></use>
           </svg>
         </a>
       </div>
