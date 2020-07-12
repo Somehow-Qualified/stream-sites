@@ -7,6 +7,7 @@ const config = require('./src/site/_data/theme.json');
 const filters = require('./src/utils/filters.js');
 const shortcodes = require('./src/utils/shortcodes.js');
 const collections = require('./src/utils/collections.js');
+const transforms = require('./src/utils/transforms.js');
 
 // Markdown Plugins
 const markdownIt = require('markdown-it');
@@ -24,22 +25,10 @@ const pluginSyntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 
 module.exports = function (eleventyConfig) {
 
-  // Filters
-  Object.keys(filters).forEach(filterName => {
-    eleventyConfig.addFilter(filterName, filters[filterName])
-  });
-
-  // Shortcodes
-  Object.keys(shortcodes).forEach(shortcodeName => {
-    eleventyConfig.addShortcode(shortcodeName, shortcodes[shortcodeName])
-  });
-
-  // Collections
-  Object.keys(collections).forEach(collectionName => {
-    eleventyConfig.addCollection(collectionName, collections[collectionName])
-  });
-
-  // Load plugins
+  /**
+   * Add plugins
+   * @link https://www.11ty.dev/docs/plugins/
+   */
   // eleventyConfig.addPlugin(pluginLazyImages, {
   //   imgSelector: 'img', // custom image selector
   //   placeholderQuality: 75
@@ -48,9 +37,54 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addPlugin(pluginSyntaxHighlight);
 
-  eleventyConfig.setDataDeepMerge(true);
+  /**
+   * Add Collections
+   * @link https://www.11ty.dev/docs/collections/
+   */
+  Object.keys(collections).forEach(collectionName => {
+    eleventyConfig.addCollection(collectionName, collections[collectionName])
+  });
 
-  // Markdown Parsing
+  /**
+   * Add Filters
+   * @link https://www.11ty.io/docs/filters/
+   */
+  Object.keys(filters).forEach(filterName => {
+    eleventyConfig.addFilter(filterName, filters[filterName])
+  });
+
+  /**
+   * Add Shortcodes
+   * @link https://www.11ty.io/docs/shortcodes/
+   */
+  Object.keys(shortcodes).forEach(shortcodeName => {
+    eleventyConfig.addShortcode(shortcodeName, shortcodes[shortcodeName])
+  });
+
+  /**
+   * Add Transforms
+   * @link https://www.11ty.io/docs/config/#transforms
+   */
+  Object.keys(transforms).forEach(transformName => {
+    eleventyConfig.addTransform(transformName, transforms[transformName])
+  });
+
+  /**
+   * Add async shortcodes
+   * @link https://www.11ty.dev/docs/languages/nunjucks/#asynchronous-shortcodes
+   */
+  //eleventyConfig.addNunjucksAsyncShortcode('svgsprite', svgsprite)
+
+  /**
+   * Add custom watch targets
+   * @link https://www.11ty.dev/docs/config/#add-your-own-watch-targets
+   */
+  eleventyConfig.addWatchTarget('./tailwind.config.js')
+
+  /**
+   * Set custom markdown library instance
+   * @link https://www.11ty.dev/docs/languages/liquid/#optional-set-your-own-library-instance
+   */
   eleventyConfig.setLibrary('md',
       markdownIt({
         html: true,
@@ -78,28 +112,32 @@ module.exports = function (eleventyConfig) {
         prezi: { width: 550, height: 400 }
       }).use(markdownItFootnote)
   );
-  // For inline excerpts/TLDRs
+  // TODO: MOVE TO /utils/transforms ~ For inline excerpts/TLDRs
   const mdRender = new markdownIt({});
   eleventyConfig.addFilter('renderMarkdownInline', (rawString) => {
 		return mdRender.renderInline(rawString);
 	});
 
-  // Prepare assets for production
-  if (process.env.NODE_ENV === 'production') {
-    // Minify the html output when building production
-    eleventyConfig.addTransform('htmlmin', require('./src/utils/htmlmin.js') );
-    // CSS is handled via postcss-cli in package.json
-    // JavaScript is handled by terser is package.json
-  }
-
-  // Copy static assests
+  /**
+   * Passthrough file copy
+   * @link https://www.11ty.io/docs/copy/
+   */
   eleventyConfig.addPassthroughCopy({ 'src/site/_includes/_fonts': 'fonts' });
   eleventyConfig.addPassthroughCopy({ 'src/site/_includes/_js': 'js' });
   eleventyConfig.addPassthroughCopy('images');
   eleventyConfig.addPassthroughCopy('src/site/admin');
   eleventyConfig.addPassthroughCopy('src/site/_redirects');
 
-  // Browsersync for localhost:8181
+  /**
+   * Opts in to a full deep merge when combining the Data Cascade.
+   * @link https://www.11ty.dev/docs/data-deep-merge/#data-deep-merge
+   */
+  eleventyConfig.setDataDeepMerge(true);
+
+  /**
+   * Override BrowserSync Server options
+   * @link https://www.11ty.dev/docs/config/#override-browsersync-server-options
+   */
   eleventyConfig.setBrowserSyncConfig({
     callbacks: {
       ready: function(err, browserSync) {
@@ -115,16 +153,20 @@ module.exports = function (eleventyConfig) {
     ghostMode: false
   });
 
+  /**
+   * Configuration
+   * @link https://www.11ty.dev/docs/config/#configuration-options
+   */
   return {
     dir: {
       input: 'src/site',
       includes: '_includes',
-      layouts: `_themes/${config.theme}`, // .eleventyignore the rest
+      layouts: `_themes/${config.theme}`, // only use selected theme, .eleventyignore the rest
       data: '_data',
-      output: 'dist' // the Publish directory
+      output: 'dist' // publish directory
     },
     passthroughFileCopy: true,
-    templateFormats : ['njk', 'md', 'html', '11ty.js', 'txt'],
+    templateFormats : ['njk', 'md', 'html', '11ty.js'],
     htmlTemplateEngine : 'njk',
     markdownTemplateEngine : 'njk',
   };
