@@ -40,7 +40,7 @@ class DarkMode {
   }
 
   toggle(force) {
-    this.isActive = typeof force === 'boolean' ? force : !this.isActive;
+    this.isActive = typeof force === 'boolean' ? force : !this.isActive
     document.documentElement.classList.toggle(
       CLASSES.darkMode,
       this.isActive
