@@ -85,6 +85,10 @@ module.exports = {
         'square': '100%',
       },
       height: {
+        '72': '18rem',
+        '96': '24rem',
+        '50vh': '50vh',
+        '60vh': '60vh',
         '75vh': '75vh',
       },
       width: {
