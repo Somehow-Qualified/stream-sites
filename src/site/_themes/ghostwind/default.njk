@@ -19,17 +19,17 @@ Dynamic Data:
     {% include "meta.njk" %}
 
     {# Stylesheet #}
-    {% if helpers.env === "production" %}
-    <link rel="stylesheet" href="{{ '/css/main.min.css' | url | cacheBuster }}" rel="preload">
-    {% else %}
+    {% if helpers.env != "production" %}
     <link rel="stylesheet" href="{{ '/css/tailwind.min.css' | url | cacheBuster }}" rel="preload">
+    {% else %}
+    <link rel="stylesheet" href="{{ '/css/main.min.css' | url | cacheBuster }}" rel="preload">
     {% endif %}
 
     {# Dark Mode Handler #}
     <script>(localStorage.getItem('darkMode') === 'true') && document.documentElement.classList.add('mode-dark');</script>
 
     {# Netlify Identity - TODO: only load on Home Page #}
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js" defer></script>
 
   </head>
 
@@ -51,10 +51,10 @@ Dynamic Data:
     </div>
 
     {# Scripts #}
-    {% if helpers.env === "production" %}
-    <script src="{{ '/js/main.min.js' | url | cacheBuster }}" defer></script>
-    {% else %}
+    {% if helpers.env != "production" %}
     <script src="{{ '/js/main.js' | url | cacheBuster }}" defer></script>
+    {% elseif helpers.env === "production" %}
+    <script src="{{ '/js/main.min.js' | url | cacheBuster }}" defer></script>
     {% endif %}
 
     {# Netlify Identity -  TODO: Only load on Home Page #}

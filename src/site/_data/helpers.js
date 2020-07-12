@@ -1,4 +1,4 @@
 module.exports = {
-  // environment helper
-  'env': process.env.ELEVENTY_ENV
-};
+    env: process.env.ELEVENTY_ENV,
+    timestamp: new Date()
+}
