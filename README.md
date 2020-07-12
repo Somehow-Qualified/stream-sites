@@ -85,7 +85,6 @@ The following options generate the [Todo list for Atom](https://atom.io/packages
 
 ### To-Dos/Up Next
 
-- [ ] Better social links and icon management
 - [ ] Home page modules
 - [ ] Collection for managing emotes, chat commands, point redemptions, sound effect previews, etc.; include copy-to-clipboard and searching on front-end
 - [ ] Support the Channel collection + page for affiliate links, donations, etc.
@@ -105,6 +104,7 @@ The following options generate the [Todo list for Atom](https://atom.io/packages
 
 ### Done!
 
+- [x] Improved social links with icon selection
 - [x] Enable GitHub sponsors
 - [x] Set repo to public on Github
 - [x] Categories
