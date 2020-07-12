@@ -1,5 +1,5 @@
 export default {
-  name: 'post',
+  name: 'posts',
   label: 'Posts',
   label_singular: 'Post',
   description: 'Create or edit a post.',
@@ -10,14 +10,14 @@ export default {
   sortableFields: ['title', 'date'],
   view_filters: [
     {
-      label: "Articles",
-      field: "post_type",
-      pattern: "article"
+      label: 'Articles',
+      field: 'post_type',
+      pattern: 'article'
     },
     {
-      label: "Videos",
-      field: "post_type",
-      pattern: "video"
+      label: 'Videos',
+      field: 'post_type',
+      pattern: 'video'
     }
   ],
   fields: [

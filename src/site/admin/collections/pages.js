@@ -1,5 +1,5 @@
 export default {
-  name: 'page',
+  name: 'pages',
   label: 'Pages',
   label_singular: 'Page',
   description: 'Create or edit a page',

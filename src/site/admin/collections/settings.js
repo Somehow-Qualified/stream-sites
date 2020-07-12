@@ -610,16 +610,16 @@ export default {
           'default': 'logoAndText',
           options: [
             {
-              label: "Logo Only",
-              value: "logo"
+              label: 'Logo Only',
+              value: 'logo'
             },
             {
-              label: "Text Only",
-              value: "text"
+              label: 'Text Only',
+              value: 'text'
             },
             {
-              label: "Logo and Text",
-              value: "logoAndText"
+              label: 'Logo and Text',
+              value: 'logoAndText'
             }
           ],
           hint: 'Display your logo and/or brand name in the site header. You can upload/change your logo in Settings: Branding.'

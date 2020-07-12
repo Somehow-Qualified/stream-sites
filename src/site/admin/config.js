@@ -3,10 +3,11 @@
 // import { en } from 'netlify-cms-locales';
 
 // Import Collections
-import post from './collections/post.js';
-import page from './collections/page.js';
+import posts from './collections/posts.js';
+import pages from './collections/pages.js';
 import modules from './collections/modules.js';
 import settings from './collections/settings.js';
+// import site from '../_data/site.json';
 
 export default {
   backend: {
@@ -23,8 +24,8 @@ export default {
   // locale: 'en',
   show_preview_links: true,
   collections: [
-    post,
-    page,
+    posts,
+    pages,
     modules,
     settings
   ]
