@@ -5,10 +5,28 @@ layout: default.njk
 You Are Here:
 - Home for Ghostwind
 - src/site/_themes/ghostwind/home.njk
-#}
-
-{% include 'sections/hero.njk' %}
 {% include 'sections/headline-image.njk' %}
-{% include 'sections/headline-posts.njk' %}
-{% include 'sections/row-image.njk' %}
-{% include 'sections/headline.njk' %}
+#}
+{% for section in home.sections %}
+
+  {% if section.template === "hero" %}
+  {% include 'sections/hero.njk' %}
+  {% endif %}
+
+  {% if section.template === "headline-text" %}
+  {% include 'sections/headline-text.njk' %}
+  {% endif %}
+
+  {% if section.template === "image-parallax" %}
+  {% include 'sections/image-parallax.njk' %}
+  {% endif %}
+
+  {% if section.template === "posts-featured" %}
+  {% include 'sections/posts.njk' %}
+  {% endif %}
+
+  {% if section.template === "headline" %}
+  {% include 'sections/headline.njk' %}
+  {% endif %}
+
+{% endfor %}
