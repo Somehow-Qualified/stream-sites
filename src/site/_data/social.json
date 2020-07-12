@@ -1,8 +1,19 @@
 {
-  "discord": "",
-  "facebook": "",
-  "instagram": "",
-  "linkedin": "",
-  "twitter": "https://twitter.com/m2creates",
-  "twitch": "https://twitch.tv/m2creates"
+  "networks": [
+    {
+      "name": "Buy Me A Coffee",
+      "link": "https://buymeacoffee.com/m2",
+      "icon": "coffee"
+    },
+    {
+      "name": "Twitter",
+      "link": "https://twitter.com/m2creates",
+      "icon": "twitter"
+    },
+    {
+      "name": "Twitch",
+      "link": "https://twitch.tv/m2creates",
+      "icon": "twitch"
+    }
+  ]
 }

@@ -675,43 +675,27 @@ export default {
           label: 'Social Links',
           label_singular: 'Social Link',
           name: 'social_links',
-          widget: 'object',
+          widget: 'list',
           fields: [
             {
-              label: 'Twitter',
-              name: 'twitter',
+              label: 'Name',
+              name: 'name',
               widget: 'string',
-              required: false,
-              hint: 'https://twitter.com/yourhandle'
+              hint: 'The name of the social network'
             },
             {
-              label: 'Twitch',
-              name: 'twitch',
+              label: 'Link',
+              name: 'link',
               widget: 'string',
-              required: false,
-              hint: 'https://twitch.tv/yourhandle'
+              hint: 'Link to your profile'
             },
             {
-              label: 'YouTube',
-              name: 'youtube',
+              label: 'Icon',
+              name: 'icon',
               widget: 'string',
               required: false,
-              hint: 'https://youtube.com/channel/yourchannelhash'
+              hint: 'Enter the icon name from icon-library.svg (The ID in the symbol). Example, Twitter is `twitter`.'
             },
-            {
-              label: 'LinkedIn',
-              name: 'linkedin',
-              widget: 'string',
-              required: false,
-              hint: 'https://linkedin.com/in/yourhandle'
-            },
-            {
-              label: 'Facebook',
-              name: 'facebook',
-              widget: 'string',
-              required: false,
-              hint: 'https://facebook.com/yourpagename'
-            }
           ]
         }
       ]

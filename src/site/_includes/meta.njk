@@ -57,9 +57,9 @@
 <meta property="og:locale" content="{{ site.language }}">
 
 {# sameAs links #}
-{%- for network, link in social %}
-{%- if link != "" %}
-<link href="{{ link }}" rel="me">
+{% for item in social.networks %}
+{%- if item.link != "" %}
+<link href="{{ item.link }}" rel="me">
 {%- endif %}
 {%- endfor %}
 
@@ -105,9 +105,9 @@
     "headline":"{{ title }} | {{ site.name }}",
     "@context":"http://schema.org",
     "sameAs": [
-      {%- for network, link in social %}
-      {%- if link != "" %}
-      "{{ link }}"{%- if not loop.last %},{%- endif %}
+      {% for item in social.networks %}
+      {%- if item.link != "" %}
+      "{{ item.link }}"{%- if not loop.last %},{%- endif %}
       {%- endif %}
       {%- endfor %}
     ]

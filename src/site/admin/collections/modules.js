@@ -51,7 +51,7 @@ export default {
               widget: 'string',
               required: false,
               hint: 'Enter the icon name from icon-library.svg (The ID in the symbol)'
-            },
+            }
           ]
         },
         {
