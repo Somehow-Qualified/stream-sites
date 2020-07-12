@@ -44,7 +44,14 @@ export default {
               name: 'link',
               widget: 'string',
               hint: 'Where should the link go? Include the https:// if you want to guarantee it works.'
-            }
+            },
+            {
+              label: 'Icon',
+              name: 'icon',
+              widget: 'string',
+              required: false,
+              hint: 'Enter the icon name from icon-library.svg (The ID in the symbol)'
+            },
           ]
         },
         {

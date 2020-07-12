@@ -71,7 +71,7 @@ Todo... (Looking into Storybook.js for it.)
 - `build`: Run all of the build scripts.
 - `build:html`: Minify HTML via [html-minifier](https://www.npmjs.com/package/html-minifier).
 - `build:css`: Uses [postcss-cli](https://www.npmjs.com/package/postcss-cli) for [TailwindCSS](https://tailwindcss.com/) with [autoprefixer](https://www.npmjs.com/package/autoprefixer), [cssnano](https://www.npmjs.com/package/cssnano), and [PurgeCSS](https://www.npmjs.com/package/purgecss).
-- `build:css:admin`: Minify CSS without purging; used for Netlify CMS preview templates.
+- `build:css:dev`: Minify CSS without purging; used for Netlify CMS preview templates.
 - `build:js`: Minify JavaScript with [terser](https://www.npmjs.com/package/terser).
 - `clean`: Delete the dist folder so you can build a clean copy of the site.
 
@@ -85,14 +85,13 @@ The following options generate the [Todo list for Atom](https://atom.io/packages
 
 ### To-Dos/Up Next
 
-- [ ] Next/Prev links for archives
+- [ ] Better social links and icon management
+- [ ] Home page modules
 - [ ] Collection for managing emotes, chat commands, point redemptions, sound effect previews, etc.; include copy-to-clipboard and searching on front-end
 - [ ] Support the Channel collection + page for affiliate links, donations, etc.
 - [ ] Merch collection + page (maybe this is the same as Support?)
-- [ ] Better social links and icon management
-- [ ] Tag list - add a filter for "most popular"
-- [ ] Netlify CMS Styled Previews - Link In Bio, improve others
-- [ ] Home page modules
+- [ ] Next/Prev links for archives
+- [ ] Add more Netlify CMS Styled Previews
 - [ ] Rich snippet structured data (articles, videos) with [schema markup](https://schema.org/docs/gs.html) and [JSON-LD](https://json-ld.org/playground/)
 - [ ] [Microformats](http://microformats.org/wiki/microformats2) for IndieWeb
 - [ ] [Webmentions](https://mxb.dev/blog/using-webmentions-on-static-sites/)
@@ -106,6 +105,7 @@ The following options generate the [Todo list for Atom](https://atom.io/packages
 
 ### Done!
 
+- [x] Enable GitHub sponsors
 - [x] Set repo to public on Github
 - [x] Categories
 - [x] CMS: Map core fields

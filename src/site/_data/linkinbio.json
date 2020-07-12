@@ -6,11 +6,13 @@
   "linkinbio": [
     {
       "text": "Buy Me A Coffee",
-      "link": "https://buymeacoffee.com/m2"
+      "link": "https://buymeacoffee.com/m2",
+      "icon": "coffee"
     },
     {
       "text": "Stalk my Tweets",
-      "link": "https://twitter.com/m2creates"
+      "link": "https://twitter.com/m2creates",
+      "icon": "twitter"
     }
   ],
   "seo_title": "Link In Bio",
