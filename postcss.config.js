@@ -32,7 +32,7 @@ module.exports = {
   plugins: [
     require('tailwindcss'),
     require('autoprefixer'),
-    ...process.env.NODE_ENV === 'production' ? [purgecss,  cssnano] : [],
-    ...process.env.NODE_ENV === 'admin' ? [cssnano] : []
+    ...process.env.ELEVENTY_ENV === 'production' ? [purgecss,  cssnano] : [],
+    ...process.env.ELEVENTY_ENV === 'admin' ? [cssnano] : []
   ],
 };
