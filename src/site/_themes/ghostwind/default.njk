@@ -57,6 +57,8 @@ Dynamic Data:
     <script src="{{ '/js/main.min.js' | url | cacheBuster }}" defer></script>
     {% endif %}
 
+    <script>{% include "_js/custom.js" %}</script>
+
     {# Netlify Identity -  TODO: Only load on Home Page #}
     <script>
     if (window.netlifyIdentity) { window.netlifyIdentity.on("init", user => { if (!user) { window.netlifyIdentity.on("login", () => { document.location.href = "/admin/"; }); } }); }
