@@ -440,6 +440,19 @@ li.footnote-item:last-of-type {
 }
 
 /*
+ * Breakout Utility
+ * Use full width regardless of parent
+ */
+.breakout {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+
+/*
  * Responsive iframes
  * always ignored for purgecss
  */
