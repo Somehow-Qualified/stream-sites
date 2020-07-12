@@ -52,7 +52,7 @@ CMS.registerPreviewTemplate('category', Page);
 CMS.registerPreviewTemplate('categories', Page);
 CMS.registerPreviewTemplate('404_page', Page);
 
-CMS.registerPreviewStyle('./css/tailwind.min.css');
+CMS.registerPreviewStyle('../css/tailwind.min.css');
 CMS.registerPreviewStyle('./previews/inline.css');
 
 // Register locale if not English
