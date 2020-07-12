@@ -13,8 +13,8 @@ TODO: Create a filter for popular tags, and use `limit` to choose how many; prob
 
 const { DateTime } = require('luxon');
 const siteData = require('../site/_data/site.json');
-const rootUrl = siteData.url
-const twitter = siteData.author_twitter
+const rootUrl = siteData.url;
+const twitter = siteData.author_twitter;
 
 module.exports = {
 
