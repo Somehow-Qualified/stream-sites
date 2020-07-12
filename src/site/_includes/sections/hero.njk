@@ -10,14 +10,14 @@
 
       <div class="max-w-md">
         <h1 class="font-extrabold text-4xl md:text-6xl mb-4 leading-none">{{ home.sections[0].headline | safe }}</h1>
-        <p class="mb-8 leading-relaxed">
+        <p class="mb-8 leading-relaxed font-bold">
           {{ home.sections[0].text | safe }}
         </p>
         <div class="mt-5 sm:mt-8 sm:flex sm:flex-wrap sm:justify-start">
-          <a href="{{ home.sections[0].buttons[0].link | safe }}" class="w-auto flex items-center mb-3 mr-3 justify-center px-8 md:px-10 py-3 md:py-4 border border-transparent text-base md:text-lg leading-6 font-medium rounded-md text-white bg-{{ theme.colors.main }}-600 hover:bg-{{ theme.colors.main }}-500 focus:outline-none focus:border-{{ theme.colors.main }}-700 focus:shadow-outline-{{ theme.colors.main }} transition duration-150 ease-in-out">
+          <a href="{{ home.sections[0].buttons[0].link | safe }}" class="w-auto flex items-center mb-3 mr-3 justify-center px-8 md:px-10 py-3 md:py-4 border border-transparent text-base md:text-lg leading-6 font-bold rounded-md text-white bg-{{ theme.colors.main }}-600 hover:bg-{{ theme.colors.main }}-500 focus:outline-none focus:border-{{ theme.colors.main }}-700 focus:shadow-outline-{{ theme.colors.main }} transition duration-150 ease-in-out">
             {{ home.sections[0].buttons[0].text | safe }}
           </a>
-          <a href="{{ home.sections[0].buttons[1].link | safe }}" class="w-auto flex items-center justify-center mb-3 mr-3 px-8 md:px-10 py-3 md:py-4 border border-transparent text-base md:text-lg leading-6 font-medium rounded-md text-{{ theme.colors.main }}-700 bg-{{ theme.colors.main }}-200 hover:text-{{ theme.colors.main }}-900 hover:bg-{{ theme.colors.main }}-300 focus:outline-none focus:shadow-outline-{{ theme.colors.main }} focus:border-{{ theme.colors.main }}-300 transition duration-150 ease-in-out">
+          <a href="{{ home.sections[0].buttons[1].link | safe }}" class="w-auto flex items-center justify-center mb-3 mr-3 px-8 md:px-10 py-3 md:py-4 border border-transparent text-base md:text-lg leading-6 font-bold rounded-md text-{{ theme.colors.main }}-700 bg-{{ theme.colors.main }}-200 hover:text-{{ theme.colors.main }}-900 hover:bg-{{ theme.colors.main }}-300 focus:outline-none focus:shadow-outline-{{ theme.colors.main }} focus:border-{{ theme.colors.main }}-300 transition duration-150 ease-in-out">
             {{ home.sections[0].buttons[1].text | safe }}
           </a>
         </div>
