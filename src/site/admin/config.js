@@ -6,7 +6,6 @@
 import post from './collections/post.js';
 import page from './collections/page.js';
 import modules from './collections/modules.js';
-import linkInBio from './collections/linkinbio.js';
 import settings from './collections/settings.js';
 
 export default {
@@ -27,7 +26,6 @@ export default {
     post,
     page,
     modules,
-    linkInBio,
     settings
   ]
 }
@@ -41,16 +39,9 @@ import Page from './previews/page.js';
 // Register Previews
 CMS.registerPreviewTemplate('post', Blog);
 CMS.registerPreviewTemplate('page', Page);
-CMS.registerPreviewTemplate('post_page', Page);
 CMS.registerPreviewTemplate('about', Page);
 CMS.registerPreviewTemplate('contact', Page);
 CMS.registerPreviewTemplate('privacy', Page);
-CMS.registerPreviewTemplate('search', Page);
-CMS.registerPreviewTemplate('tag', Page);
-CMS.registerPreviewTemplate('tags', Page);
-CMS.registerPreviewTemplate('category', Page);
-CMS.registerPreviewTemplate('categories', Page);
-CMS.registerPreviewTemplate('404_page', Page);
 
 CMS.registerPreviewStyle('../css/tailwind.min.css');
 CMS.registerPreviewStyle('./previews/inline.css');

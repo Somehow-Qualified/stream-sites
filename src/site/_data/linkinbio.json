@@ -1,4 +1,8 @@
 {
+  "title": "Link In Bio",
+  "image_card": "",
+  "image_card_alt": "",
+  "intro": "hello world!",
   "linkinbio": [
     {
       "text": "Buy Me A Coffee",
@@ -8,5 +12,7 @@
       "text": "Stalk my Tweets",
       "link": "https://twitter.com/m2creates"
     }
-  ]
+  ],
+  "seo_title": "Link In Bio",
+  "seo_desc": "Get in touch!"
 }
