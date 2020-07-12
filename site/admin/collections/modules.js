@@ -11,7 +11,7 @@ export default {
     {
       label: 'Link In Bio',
       name: 'linkinbio',
-      file: 'src/site/_data/linkinbio.json',
+      file: 'site/_data/linkinbio.json',
       slug: '{{fields.slug}}',
       preview: false,
       fields: [
@@ -107,7 +107,7 @@ export default {
     {
       label: 'About',
       name: 'about',
-      file: 'src/site/pages/about.md',
+      file: 'site/pages/about.md',
       slug: '{{fields.slug}}',
       preview: true,
       fields: [
@@ -225,7 +225,7 @@ export default {
     {
       label: 'Contact',
       name: 'contact',
-      file: 'src/site/pages/contact.md',
+      file: 'site/pages/contact.md',
       slug: '{{fields.slug}}',
       preview: true,
       fields: [
@@ -343,7 +343,7 @@ export default {
     {
       label: 'Privacy Policy',
       name: 'privacy',
-      file: 'src/site/pages/privacy-policy.md',
+      file: 'site/pages/privacy-policy.md',
       slug: '{{fields.slug}}',
       preview: true,
       fields: [
@@ -394,7 +394,7 @@ export default {
     {
       label: 'Search',
       name: 'search',
-      file: 'src/site/pages/search.md',
+      file: 'site/pages/search.md',
       slug: '{{fields.slug}}',
       preview: false,
       fields: [
@@ -483,7 +483,7 @@ export default {
     {
       label: 'Posts - Collection',
       name: 'post_page',
-      file: 'src/site/pages/posts.md',
+      file: 'site/pages/posts.md',
       slug: '{{fields.slug}}',
       preview: false,
       fields: [
@@ -547,7 +547,7 @@ export default {
     {
       label: 'Category - Single',
       name: 'category',
-      file: 'src/site/pages/category.md',
+      file: 'site/pages/category.md',
       slug: '{{fields.slug}}',
       preview: false,
       fields: [
@@ -611,7 +611,7 @@ export default {
     {
       label: 'Category - Collection',
       name: 'categories',
-      file: 'src/site/pages/categories.md',
+      file: 'site/pages/categories.md',
       slug: '{{fields.slug}}',
       preview: false,
       fields: [
@@ -675,7 +675,7 @@ export default {
     {
       label: 'Tag - Single',
       name: 'tag',
-      file: 'src/site/pages/tag.md',
+      file: 'site/pages/tag.md',
       slug: '{{fields.slug}}',
       preview: false,
       fields: [
@@ -739,7 +739,7 @@ export default {
     {
       label: 'Tag - Collection',
       name: 'tags',
-      file: 'src/site/pages/tags.md',
+      file: 'site/pages/tags.md',
       slug: '{{fields.slug}}',
       preview: false,
       fields: [
@@ -803,7 +803,7 @@ export default {
     {
       label: '404 Page',
       name: '404_page',
-      file: 'src/site/pages/404.md',
+      file: 'site/pages/404.md',
       slug: '{{fields.slug}}',
       preview: false,
       fields: [

@@ -3,7 +3,7 @@ export default {
   label: 'Posts',
   label_singular: 'Post',
   description: 'Create or edit a post.',
-  folder: 'src/site/posts',
+  folder: 'site/posts',
   create: true,
   slug: '{{fields.slug}}',
   preview_path: 'posts/{{fields.slug}}',

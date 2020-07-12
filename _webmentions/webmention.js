@@ -1,5 +1,5 @@
 /*
-Move to src/site/_data
+Move to site/_data
 */
 
 const fs = require('fs');

@@ -1,5 +1,5 @@
 {#
-This File: src/site/_layouts/blank.njk
+This File: site/_layouts/blank.njk
 This is an empty boilerplate you can use for expanding your Stream Site.
 Copy it to your theme to use for overlays, new templates, etc.
 #}
@@ -16,7 +16,7 @@ Copy it to your theme to use for overlays, new templates, etc.
     <link rel="stylesheet" href="{{ '/css/tailwind.min.css' | url | cacheBuster }}" rel="preload">
     {% endif %}
   </head>
-  <body class="h-full w-full font-sans text-lg leading-normal bg-{{ theme.colors.main }}-800 text-{{ theme.colors.main }}-100">
+  <body>
 
     {# Your Creativity Goes Here #}
     {{ content | safe }}

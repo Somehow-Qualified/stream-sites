@@ -25,14 +25,14 @@
 	"scripts": {
 		"build": "npm-run-all clean build:html build:css build:css:dev build:js",
 		"build:html": "ELEVENTY_ENV=production eleventy --config=eleventy.config.js",
-		"build:css": "ELEVENTY_ENV=production postcss src/site/_includes/_css/main.css -o dist/css/main.min.css",
-		"build:css:dev": "ELEVENTY_ENV=admin postcss src/site/_includes/_css/main.css -o dist/css/tailwind.min.css",
+		"build:css": "ELEVENTY_ENV=production postcss site/_includes/_css/main.css -o dist/css/main.min.css",
+		"build:css:dev": "ELEVENTY_ENV=admin postcss site/_includes/_css/main.css -o dist/css/tailwind.min.css",
 		"build:js": "terser dist/js/main.js -c -o dist/js/main.min.js",
 		"clean": "rm -rf dist",
 		"debug": "DEBUG=Eleventy* npm run build:html",
 		"watch": "npm-run-all --parallel watch:css watch:html",
 		"watch:html": "eleventy --config=eleventy.config.js --serve --port=8181",
-		"watch:css": "postcss src/site/_includes/_css/main.css -o dist/css/tailwind.min.css --watch",
+		"watch:css": "postcss site/_includes/_css/main.css -o dist/css/tailwind.min.css --watch",
 		"start": "npm run watch"
 	},
 	"dependencies": {

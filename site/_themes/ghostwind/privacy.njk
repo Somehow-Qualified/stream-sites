@@ -4,16 +4,16 @@ layout: default.njk
 {#
 You Are Here:
 - Privacy for Ghostwind
-- src/site/_themes/ghostwind/privacy.njk
+- site/_themes/ghostwind/privacy.njk
 
 How It Works:
 - On build, this page fills in your name, site URL, and email address
-  from src/site/_data/site.json
+  from site/_data/site.json
 
 Dynamic Data:
 - anything in {{ curly braces }} is a variable from:
-  (a) frontmatter in the associated markdown file (src/site/pages/privacy.md)
-  (b) src/site/_data
+  (a) frontmatter in the associated markdown file (site/pages/privacy.md)
+  (b) site/_data
 - aliases are defined in `{% set %}`
 
 TODO: Add LAST MODIFIED time instead of default date

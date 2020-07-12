@@ -1,13 +1,13 @@
 const fs = require('fs');
 
 // Theme Config
-const config = require('./src/site/_data/theme.json');
+const config = require('./site/_data/theme.json');
 
 // 11ty Files
-const filters = require('./src/utils/filters.js');
-const shortcodes = require('./src/utils/shortcodes.js');
-const collections = require('./src/utils/collections.js');
-const transforms = require('./src/utils/transforms.js');
+const filters = require('./utils/filters.js');
+const shortcodes = require('./utils/shortcodes.js');
+const collections = require('./utils/collections.js');
+const transforms = require('./utils/transforms.js');
 
 // Markdown Plugins
 const markdownIt = require('markdown-it');
@@ -122,11 +122,11 @@ module.exports = function (eleventyConfig) {
    * Passthrough file copy
    * @link https://www.11ty.io/docs/copy/
    */
-  eleventyConfig.addPassthroughCopy({ 'src/site/_includes/_fonts': 'fonts' });
-  eleventyConfig.addPassthroughCopy({ 'src/site/_includes/_js': 'js' });
+  eleventyConfig.addPassthroughCopy({ 'site/_includes/_fonts': 'fonts' });
+  eleventyConfig.addPassthroughCopy({ 'site/_includes/_js': 'js' });
   eleventyConfig.addPassthroughCopy('images');
-  eleventyConfig.addPassthroughCopy('src/site/admin');
-  eleventyConfig.addPassthroughCopy('src/site/_redirects');
+  eleventyConfig.addPassthroughCopy('site/admin');
+  eleventyConfig.addPassthroughCopy('site/_redirects');
 
   /**
    * Opts in to a full deep merge when combining the Data Cascade.
@@ -159,7 +159,7 @@ module.exports = function (eleventyConfig) {
    */
   return {
     dir: {
-      input: 'src/site',
+      input: 'site',
       includes: '_includes',
       layouts: `_themes/${config.theme}`, // only use selected theme, .eleventyignore the rest
       data: '_data',
