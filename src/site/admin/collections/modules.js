@@ -7,7 +7,6 @@ export default {
   delete: false,
   slug: '{{slug}}',
   preview_path: '{{fields.slug}}',
-  sortableFields: ['title'],
   files: [
     {
       label: 'Link In Bio',
@@ -27,6 +26,22 @@ export default {
           widget: 'string',
           required: false,
           hint: 'Add an optional string of text to the beginning of the page.'
+        },
+        {
+          label: 'Featured Post',
+          name: 'featured_post',
+          widget: 'relation',
+          required: false,
+          collection: 'posts',
+          searchFields: [
+            'title'
+          ],
+          valueField: '{{slug}}',
+          displayFields: [
+            'title'
+          ],
+          optionsLength: 10,
+          hint: 'Select a post to feature at the top of your link in bio.'
         },
         {
           label: 'Add a link',

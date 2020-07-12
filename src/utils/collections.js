@@ -6,6 +6,8 @@
 |----------------------------------------------------------------
 */
 
+const linkinbio = require('../site/_data/linkinbio.json');
+
 module.exports = {
 
   // Tags: A list of every tag used on a post or page
@@ -103,6 +105,11 @@ module.exports = {
       else if (a.data.title < b.data.title) return 1;
       else return 0;
     });
+  },
+
+  featuredBio: collection => {
+    const post = collection.getFilteredByGlob(`**/posts/${linkinbio.featured_post}.md`);
+    return post;
   }
 
 }
