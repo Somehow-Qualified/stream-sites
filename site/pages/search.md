@@ -9,5 +9,6 @@ seo_desc: Lets see what you discover!
 heading_form: Search the site
 heading_tags: Browse by tag
 type: core
+key: search
 layout: search.njk
 ---

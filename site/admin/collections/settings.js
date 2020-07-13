@@ -145,6 +145,10 @@ export default {
               value: 'https://duckduckgo.com/'
             },
             {
+              label: 'Ecosia',
+              value: 'https://ecosia.org/search'
+            },
+            {
               label: 'Google',
               value: 'https://www.google.com/search'
             },
@@ -153,7 +157,7 @@ export default {
               value: 'https://www.bing.com/search'
             }
           ],
-          hint: 'Select which search engine to use for your Search forms.'
+          hint: 'Select which search engine to use on your Search page.'
         },
         {
           label: 'Footer Credit',

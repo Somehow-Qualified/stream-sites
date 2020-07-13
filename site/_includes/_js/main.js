@@ -83,11 +83,11 @@ document.addEventListener('keyup', function (e) {
 
 // Search Part 2
 // Find matching results; hide Search UI if icon clicked
-btnHandler("#search-link", function() {
+btnHandler("#searchLink", function() {
   var l = null,
     e = document.querySelector(".search-ui"),
     i = document.querySelector(".search-results"),
-    n = document.querySelector("#search-str"),
+    n = document.querySelector("#searchString"),
     a = function() {
       for (; i.firstChild;) i.removeChild(i.firstChild);
     };

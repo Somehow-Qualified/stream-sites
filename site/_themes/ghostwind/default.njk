@@ -28,8 +28,10 @@ Dynamic Data:
     {# Dark Mode Handler #}
     <script>(localStorage.getItem('darkMode') === 'true') && document.documentElement.classList.add('mode-dark');</script>
 
-    {# Netlify Identity - TODO: only load on Home Page #}
+    {# Netlify Identity #}
+    {% if page.url === "/" %}
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js" defer></script>
+    {% endif %}
 
   </head>
 
@@ -57,12 +59,17 @@ Dynamic Data:
     <script src="{{ '/js/main.min.js' | url | cacheBuster }}" defer></script>
     {% endif %}
 
+    {# Custom Scripts: Enable this in Site Settings (_data/site.json) #}
+    {% if site.customjs === "enable" %}
     <script>{% include "_js/custom.js" %}</script>
+    {% endif %}
 
-    {# Netlify Identity -  TODO: Only load on Home Page #}
+    {# Netlify Identity #}
+    {% if page.url === "/" %}
     <script>
     if (window.netlifyIdentity) { window.netlifyIdentity.on("init", user => { if (!user) { window.netlifyIdentity.on("login", () => { document.location.href = "/admin/"; }); } }); }
     </script>
+    {% endif %}
 
     {# Metomic - https://metomic.io/ #}
     {% if site.metomic === "on" %}
@@ -70,7 +77,68 @@ Dynamic Data:
     <script src="https://consent-manager.metomic.io/embed.js" crossorigin charset="utf-8" defer></script>
     {% endif %}
 
-    {# TODO: Move scroll indicator here, but only include on collections.posts #}
+    {# ScrollShare: Scrolling Progress Share Bar #}
+    {% if scrollshare === "true" %}
+    <script>
+      /* Progress bar */
+      //Source: https://alligator.io/js/progress-bar-javascript-css-variables/
+      var h = document.documentElement,
+          b = document.body,
+          st = 'scrollTop',
+          sh = 'scrollHeight',
+          progress = document.querySelector('#progress'),
+          scroll;
+      var scrollpos = window.scrollY;
+      var header = document.getElementById("scrollHeader");
+
+      document.addEventListener('scroll', function() {
+
+        /*Refresh scroll % width*/
+        scroll = (h[st]||b[st]) / ((h[sh]||b[sh]) - h.clientHeight) * 100;
+        progress.style.setProperty('--scroll', scroll + '%');
+
+        /*Apply classes for slide in bar*/
+        scrollpos = window.scrollY;
+
+        if(scrollpos > 100){
+          header.classList.remove("hidden");
+          header.classList.remove("fadeOutUp");
+          header.classList.add("slideInDown");
+        }
+        else {
+          header.classList.remove("slideInDown");
+          header.classList.add("fadeOutUp");
+          header.classList.add("hidden");
+        }
+
+      });
+
+    </script>
+    {% endif %}
+
+    {# iFrame Loader for Featured Videos on Posts #}
+    {% if post_type === "video" %}
+    {% include "iframe-loader.njk" %}
+    {% endif %}
+
+    {# Search Form additions for DuckDuckGo #}
+    {% if key === "search" %}
+    {% if site.search_engine === "https://duckduckgo.com/" %}
+    <script>
+      // Enable DuckDuckGo Site Search
+      (function(document){
+        document.getElementById('searchForm')
+          .addEventListener('submit', function(){
+            var $query = document.getElementById('query'),
+                prepend = document.getElementById('prepend').value;
+            $query.value = prepend + ' ' + $query.value;
+            return true;
+          }, false);
+      }(this.document));
+    </script>
+    {% endif %}
+    {% endif %}
+
   </body>
 
 </html>

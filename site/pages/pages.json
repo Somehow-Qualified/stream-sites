@@ -1,6 +1,7 @@
 {
   "layout": "page.njk",
   "tags": "page",
+  "scrollshare": "false",
   "templateEngineOverride": "njk,md",
   "outputPath": "dist",
   "permalink": "{{ slug }}/index.html"

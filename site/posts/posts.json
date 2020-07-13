@@ -1,6 +1,7 @@
 {
   "layout": "post.njk",
   "tags": "post",
+  "scrollshare": "true",
   "templateEngineOverride": "njk,md",
   "outputPath": "dist/posts/"
 }

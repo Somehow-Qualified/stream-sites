@@ -28,5 +28,6 @@
     "metomic": "off"
   },
   "search_engine": "https://duckduckgo.com/",
-  "webmentions": "disable"
+  "webmentions": "disable",
+  "customjs": "disable"
 }

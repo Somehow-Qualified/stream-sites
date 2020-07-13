@@ -1,8 +1,11 @@
 {# Main Nav #}
 <header class="flex-shrink-0 w-full bg-white dark:bg-{{ theme.colors.main }}-900 p-4 mt-0 shadow-md border-b-4 border-{{ theme.colors.accent }}-500">
   <div class="container mx-auto flex items-center justify-between text-{{ theme.colors.main }}-900 dark:text-{{ theme.colors.main }}-100">
+
+    {# Left Section - Branding + Nav Items #}
     <div class="flex justify-start">
-			{# Branding #}
+
+			{# Branding from _data/site.json and _data/theme.json #}
 			<a class="flex items-center hover:text-{{ theme.colors.accent }}-600 dark-hover:text-{{ theme.colors.accent }}-600 hover:no-underline font-semibold" href="/">
         {% if navigation.nav_brand === "logo" %}
         <img src="{{ site.logo }}" alt="{{ site.name }}" class="h-8 w-auto mr-2">
@@ -13,6 +16,8 @@
 				<span class="hidden w-0 md:w-auto md:block -ml-2 mr-2">{{ site.name }}</span>
         {% endif %}
 			</a>
+      {# /end Branding #}
+
 			{# Nav Items from _data/navigation.json #}
 	    <nav class="block mx-3 md:mx-0">
 	      <ul class="flex flex-wrap md:justify-between flex-1 md:flex-none items-center text-sm sm:text-base">
@@ -23,41 +28,63 @@
 					{% endfor %}
 	      </ul>
 	    </nav>
+      {# /end Nav Items #}
+
 		</div>
+
+    {# Right Section - Icon Buttons #}
 		<div class="flex justify-end -mx-2">
 
-      {# Search #}
-      <button href="/search" id="search-link" title="Search" class="p-2 border-2 border-transparent rounded-full hover:text-{{ theme.colors.main}}-100 dark-hover:text-{{ theme.colors.main}}-900 hover:bg-{{ theme.colors.main }}-900 dark-hover:bg-{{ theme.colors.main }}-100">
+      {# Search:
+       - uses btnHandler() from _includes/_js/main.js
+       - uses ScrollShare script in _themes/ghostwind/default.njk #}
+      <button href="/search" id="searchLink" title="Search" class="p-2 border-2 border-transparent rounded-full hover:text-{{ theme.colors.main}}-100 dark-hover:text-{{ theme.colors.main}}-900 hover:bg-{{ theme.colors.main }}-900 dark-hover:bg-{{ theme.colors.main }}-100">
+
+        {# Search Icon #}
         <svg class="icon-search h-4 w-4" role="img" aria-hidden="true">
           <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/icon-library.svg#search"></use>
         </svg>
+
       </button>
 
-			{# Dark/Light Mode Toggle #}
-			<button id="color-mode" class="darkmodebtn js-darkmode-toggle p-2 border-2 border-transparent rounded-full text-base hover:text-{{ theme.colors.main}}-100 dark-hover:text-{{ theme.colors.main}}-900 hover:bg-{{ theme.colors.main }}-900 dark-hover:bg-{{ theme.colors.main }}-100" title="Toggle Dark Mode" role="switch" aria-checked="false">
+			{# Dark/Light Mode Toggle: uses _includes/_js/main.js #}
+			<button id="colorMode" class="darkmodebtn js-darkmode-toggle p-2 border-2 border-transparent rounded-full text-base hover:text-{{ theme.colors.main}}-100 dark-hover:text-{{ theme.colors.main}}-900 hover:bg-{{ theme.colors.main }}-900 dark-hover:bg-{{ theme.colors.main }}-100" title="Toggle Dark Mode" role="switch" aria-checked="false">
+
+        {# Light (Sun) Icon #}
 				<svg class="icon-light h-4 w-4" role="img" aria-hidden="true">
 					<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/icon-library.svg#sun"></use>
 				</svg>
+
+        {# Dark (Moon) Icon #}
 				<svg class="icon-dark h-4 w-4" role="img" aria-hidden="true">
 					<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/icon-library.svg#moon"></use>
 				</svg>
+
 			</button>
 
 	  </div>
+    {# /end Icon Buttons #}
+
 	</div>
 </header>
+{# /end Main Nav #}
 
 {# Search Container #}
-<div class="flex-shrink-0 search-ui hidden relative w-full bg-white shadow-xl z-10 relative">
+<div id="searchBox" class="flex-shrink-0 search-ui hidden relative w-full bg-white shadow-xl z-10 relative">
   <div class="container mx-auto py-4 text-{{ site.colors.main }}-900">
-    <input id="search-str" type="search" placeholder="Search..." autofocus="autofocus" class="search-str w-full text-{{ theme.colors.main }}-800 transition focus:outline-none focus:border-transparent p-2 appearance-none leading-normal text-xl lg:text-2xl">
+    {# Search Input #}
+    <input id="searchString" type="search" placeholder="Search..." autofocus="autofocus" class="search-str w-full text-{{ theme.colors.main }}-800 transition focus:outline-none focus:border-transparent p-2 appearance-none leading-normal text-xl lg:text-2xl">
   </div>
-  <div class="container mx-auto"><ol class="search-results text-{{ theme.colors.main }}-800"></ol></div>
+  <div class="container mx-auto">
+    {# Search Results come from dist/search.json #}
+    <ol class="search-results text-{{ theme.colors.main }}-800"></ol>
+  </div>
 </div>
+{# /end Search Container #}
 
-{# Scroll Progress Bar for Posts
-TODO: only include on collections.post #}
-<div id="scrollHeader" class="bg-{{ theme.colors.accent }}-100 fixed w-full z-10 top-0 hidden animated flex-shrink-0">
+{# ScrollShare: Scrolling Progress Share Bar #}
+{% if scrollshare === "true" %}
+<div id="scrollHeader" class="bg-{{ theme.colors.accent }}-100 fixed w-full z-50 top-0 hidden animated flex-shrink-0">
   <div class="bg-white dark:bg-{{ theme.colors.main }}-900">
     <div class="flex flex-wrap items-center content-center">
       {# Branding #}
@@ -92,3 +119,5 @@ TODO: only include on collections.post #}
   {# Scroll Progress Color Bar #}
   <div id="progress" class="h-1 bg-{{ theme.colors.accent }}-100 shadow" style="background:linear-gradient(to right, {{ theme.colors.progress }} var(--scroll), transparent 0);"></div>
 </div>
+{% endif %}
+{# /end ScrollShare #}

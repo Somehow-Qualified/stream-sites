@@ -1,31 +1,25 @@
 {#
-Search Engine Reference
+Search Engine Reference:
 - Duck Duck Go: https://duckduckgo.com/
 - Google: https://www.google.com/search
 - Bing: https://www.bing.com/search
+- Ecosia: https://www.ecosia.org/search
 #}
 <form action="{{ site.search_engine }}" method="get" class="search w-full mx-auto" id="searchForm">
   <div class="flex items-center border-b border-b-2 border-{{ theme.colors.accent }}-500 py-2 max-w-sm mx-auto" role="search">
+
+    {# Hidden Fields for Queries #}
     <input type="hidden" name="q" id="prepend" value="site:{{ site.url }}">
     <input type="hidden" name="kaf" value="1">
     <input type="hidden" name="kh" value="1">
+
+    {# Search Input #}
     <input class="appearance-none bg-transparent border-none w-full mr-3 py-1 px-2 leading-tight focus:outline-none" type="search" name="q" id="query" placeholder="What are you looking for?" aria-label="Search this site via keyword">
+
+    {# Submit Button#}
     <button class="flex-shrink-0 bg-{{ theme.colors.accent }}-500 hover:bg-{{ theme.colors.accent }}-700 border-{{ theme.colors.accent }}-500 hover:border-{{ theme.colors.accent }}-700 text-sm border-4 text-white py-1 px-2 rounded" type="submit">
       Search
     </button>
+
   </div>
 </form>
-{% if site.search_engine === "https://duckduckgo.com/" %}
-<script>
-  // Enable DuckDuckGo Site Search
-  (function(document){
-    document.getElementById('searchForm')
-      .addEventListener('submit', function(){
-        var $query = document.getElementById('query'),
-            prepend = document.getElementById('prepend').value;
-        $query.value = prepend + ' ' + $query.value;
-        return true;
-      }, false);
-  }(this.document));
-</script>
-{% endif %}
