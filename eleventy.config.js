@@ -80,7 +80,7 @@ module.exports = function (eleventyConfig) {
    * @link https://www.11ty.dev/docs/config/#add-your-own-watch-targets
    */
   eleventyConfig.addWatchTarget('./tailwind.config.js');
-  eleventyConfig.addWatchTarget(`./site/_themes/${config.theme}`);
+  eleventyConfig.addWatchTarget(`_themes/${config.theme}`);
 
   /**
    * Set custom markdown library instance
