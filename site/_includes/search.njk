@@ -1,9 +1,24 @@
 {#
-Search Engine Reference:
-- Duck Duck Go: https://duckduckgo.com/
-- Google: https://www.google.com/search
-- Bing: https://www.bing.com/search
-- Ecosia: https://www.ecosia.org/search
+  SEARCH FORM
+  - site/_includes/search.njk
+
+  Usage:
+  - site/_themes/ghostwind/search.njk
+
+  Data Sources:
+  - site/_data/site.json
+  - site/_data/theme.json
+  - site/_includes/js/main.js
+  - site/_themes/ghostwind/default.njk - `<script>` for Duck Duck GO
+
+  Includes:
+  - search_engine, site url
+
+  Search Engine Reference:
+  - Duck Duck Go: https://duckduckgo.com/
+  - Google: https://www.google.com/search
+  - Bing: https://www.bing.com/search
+  - Ecosia: https://www.ecosia.org/search
 #}
 <form action="{{ site.search_engine }}" method="get" class="search w-full mx-auto" id="searchForm">
   <div class="flex items-center border-b border-b-2 border-{{ theme.colors.accent }}-500 py-2 max-w-sm mx-auto" role="search">

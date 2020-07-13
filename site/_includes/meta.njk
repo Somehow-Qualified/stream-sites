@@ -1,4 +1,30 @@
-{# Site Meta: site/_includes/meta.njk #}
+{#
+  SITE META
+  - site/_includes/meta.njk
+
+  Usage:
+  - site/_themes/ghostwind/default.njk
+  - site/_themes/ghostwind/landing.njk
+
+  Data Sources:
+  - site/_data/site.json
+  - site/posts/*.md or site/pages/*.md
+
+  Includes:
+  - title
+  - meta: description, author, copyright
+  - meta(verification): google-site-verification, p:domain_verify
+  - meta(browser): theme-color
+  - schema: itemprops for name, description, image
+  - social(twitter): summary_large_image, site, title, description, creator, image source, image alt
+  - social(open graph): title, type-website, url, image, image alt, description, site name, locale
+  - social(open graph) for posts: type-article, publish time, tags
+  - links: canonical, sameAs, rss feed, atom feed
+  - webmentions: webmention, pingback
+  - more: robots (optional), pinterst blocking (optional), twitter dnt, site manifest, ld+json
+
+  TODO: expand ld+json conditions per post_type (i.e. review, how-to)
+#}
 
 {% set title = archive_title or heading or title %}
 {% set metaTitle =  seo_title or renderData.title or title or site.name %}

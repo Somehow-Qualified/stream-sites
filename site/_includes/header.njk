@@ -1,3 +1,26 @@
+{#
+  HEADER
+  - site/_includes/header.njk
+
+  Usage:
+  - site/_themes/ghostwind/default.njk
+
+  Data Sources:
+  - site/_data/navigation.json
+  - site/_data/site.json
+  - site/_data/theme.json
+  - site/_includes/js/main.js
+
+  Includes:
+  - site.logo and/or site.name
+  - navigation items
+  - site search button and search form
+  - light/dark mode button
+  - scrolling progress + share bar
+
+  TODO: Enhance mobile nav experience
+#}
+
 {# Main Nav #}
 <header class="flex-shrink-0 w-full bg-white dark:bg-{{ theme.colors.main }}-900 p-4 mt-0 shadow-md border-b-4 border-{{ theme.colors.accent }}-500">
   <div class="container mx-auto flex items-center justify-between text-{{ theme.colors.main }}-900 dark:text-{{ theme.colors.main }}-100">

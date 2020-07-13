@@ -3,16 +3,23 @@ slug: link-in-bio
 layout: landing.njk
 ---
 {#
-You Are Here:
-- Link In Bio for Ghostwind
-- site/_themes/ghostwind/linkinbio.njk
+LINK IN BIO
+- site/pages/linkinbio.njk
 
-How It Works:
-- On build, this page lists all the Links for your Bio from
-site/_data/linkinbio.json
+Usage:
+- This file generates the final page
 
-Dynamic Data:
-- anything in {{ curly braces }} is a variable from site/_data
+Data Sources:
+- site/_data/linkinbio.json
+- site/_data/site.json
+- site/_data/theme.json
+
+Includes:
+- link, url, icon
+- featured_post
+
+TODO: Design featured_post card to look different
+TODO: Can chunks be replaced with {% block %} to use default.njk instead? Else, change parent layout name
 #}
 
 <a href="#main" class="sr-skip-link">skip to main content</a>

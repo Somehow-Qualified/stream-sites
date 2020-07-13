@@ -2,10 +2,12 @@
 layout: default.njk
 ---
 {#
-You Are Here:
-- Home for Ghostwind
+HOME
 - site/_themes/ghostwind/home.njk
-{% include 'sections/headline-image.njk' %}
+
+Usage:
+- site/pages/home.md
+
 #}
 {% for section in home.sections %}
 
@@ -27,6 +29,10 @@ You Are Here:
 
   {% if section.template === "headline" %}
   {% include 'sections/headline.njk' %}
+  {% endif %}
+
+  {% if section.template === "cta" %}
+  {% include 'sections/cta-feeds.njk' %}
   {% endif %}
 
 {% endfor %}

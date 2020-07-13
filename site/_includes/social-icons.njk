@@ -1,17 +1,17 @@
 {#
-You Are Here:
-- Social Icons
-- site/_includes/skeleventy/social-icons.njk
+  SOCIAL ICONS
+  - site/_includes/social-icons.njk
 
-How It Works:
-- On build, this is placed on every page with `{% include "social-icons.njk" %}`
-- It is included in the footer by default
-- SVGs come from the sprite sheet: images/icons/icon-library.svg
+  Usage:
+  - Not currently in use
 
-Dynamic Data:
-- anything in {{ curly braces }} is a variable from
-  (a) site/_data/social.json (for icons, links)
-  (b) site/_data (for anything else, like theme color)
+  Data Sources:
+  - images/icons/icon-library.svg
+  - site/_data/social.json
+  - site/_data/theme.json
+
+  Includes:
+  - icon, link for each social network
 #}
 
 <ul class="flex list-reset justify-center list-none" aria-label="Social Media Links">

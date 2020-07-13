@@ -1,13 +1,39 @@
-{# Footer #}
+{#
+  FOOTER
+  - site/_includes/footer.njk
+
+  Usage:
+  - site/_themes/ghostwind/default.njk
+
+  Data Sources:
+  - images/icons/icon-library.svg
+  - site/_data/navigation.json
+  - site/_data/site.json
+  - site/_data/social.json
+  - site/_data/theme.json
+  
+  Includes:
+  - copyright, author_name
+  - optional Stream Sites credit
+  - navigation
+  - social links
+  - microformats: p-name, u-url
+
+  TODO: Mobile, enlarge touch targets
+#}
+
 <footer class="flex-shrink-0 w-full bg-white dark:bg-{{ theme.colors.main }}-900 py-4 px-6 shadow-md-top border-t-4 border-{{ theme.colors.accent }}-500">
   <div class="container mx-auto flex flex-col-reverse md:flex-row items-center justify-between text-{{ theme.colors.main }}-900 dark:text-{{ theme.colors.main }}-100 text-sm">
+
     {# Copyright and Credits #}
     <div class="flex md:justify-start flex-grow-0 w-auto">
       <p class="pt-2 md:pt-0">© 2020 <a class="p-name u-url" rel="me" href="{{ site.url }}">{{ site.author_name }}</a>.
         {% if site.footer_credit === "yes" %} Built with <a class="hover:text-{{ theme.colors.accent }}-500 underline" href="https://streamsites.xyz/">Stream Sites</a>.{% endif %}</p>
     </div>
+
     {# Nav and Social #}
     <div class="flex items-center justify-end flex-grow-0 w-auto text-{{ theme.colors.main }}-900 dark:text-{{ theme.colors.main }}-100">
+
       {# Nav Items #}
       <nav aria-label="Footer Navigation" class="px-2">
         <ul class="list-reset flex justify-end flex-1 md:flex-none items-center">
@@ -18,6 +44,8 @@
           {% endfor %}
         </ul>
       </nav>
+      {# /end Nav Items #}
+
       {# Social Links #}
       <address>
         <ul class="flex flex-row flex-wrap list-none" aria-label="Social Media Links">
@@ -39,6 +67,10 @@
           {% endfor %}
         </ul>
       </address>
+      {# /end Social Links #}
+
     </div>
+    {# /end Nav & Social #}
+
   </div>
 </footer>

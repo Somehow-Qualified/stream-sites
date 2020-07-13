@@ -11,9 +11,9 @@ image_card: /images/post-1.jpg
 image_card_alt: People sitting around a table.
 image_card_credit: >-
   [Unsplash](https://unsplash.com)
+teaser: This is an Article sample.
 excerpt: >-
   This is an article sample featuring what you can do with Markdown.
-teaser: This is an Article sample.
 seo_title: Welcome to Stream Sites!
 seo_desc: >-
     This is an Article sample.

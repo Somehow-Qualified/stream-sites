@@ -306,6 +306,12 @@ code {
 
 /* Markdown Formatting */
 
+.content > * {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+}
+
 .content p {
   @apply mb-8;
 }
@@ -354,6 +360,10 @@ code {
 
 .content li:last-child {
   @apply mb-8;
+}
+
+.content > nav > p {
+  margin-bottom: unset;
 }
 
 /* Bookmark Anchors */
@@ -432,7 +442,7 @@ a.footnote-backref {
 }
 
 li.footnote-item {
-  padding-bottom: 1rem;
+  padding-bottom: 0;
 }
 
 li.footnote-item:last-of-type {

@@ -1,3 +1,16 @@
+{#
+  TAG LIST
+  - site/_includes/taglist.njk
+
+  Usage:
+  - site/_themes/ghostwind/archive.njk
+
+  Data Sources:
+  - site/pages/tags.md
+
+  Includes:
+  - tag, url, quantity
+#}
 <ul class="flex flex-row flex-wrap justify-center -mx-2">
 {% for tag in collections.tagList %}
     {% set tagUrl %}/tags/{{ tag | slug }}/{% endset %}

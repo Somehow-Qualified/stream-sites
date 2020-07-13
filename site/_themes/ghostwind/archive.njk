@@ -14,6 +14,8 @@ layout: default.njk
       {% include "postslist.njk" %}
     </div>
   </div>
+
+  {# TODO: ALLY Pagination - https://www.11ty.dev/docs/pagination/nav/#put-it-all-together & https://unfetteredthoughts.net/2017/09/26/voiceover-and-list-style-type-none/ #}
   <nav class="flex flex-row items-center w-full justify-center md:px-24" aria-label="Archive Navigation">
     {% if pagination.href.previous %}<p class="text-sm mb-0 px-2"><a href="{{ pagination.href.previous }}">Previous</a></p>{% endif %}
     {%- for pageEntry in pagination.pages %}

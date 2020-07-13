@@ -1,4 +1,25 @@
-{# Posts List  #}
+{#
+  POSTS LIST
+  - site/_includes/postslist.njk
+
+  Usage:
+  - site/_themes/ghostwind/archive.njk
+  - site/_themes/ghostwind/post.njk
+  - site/_includes/sections/posts-featured.njk
+
+  Data Sources:
+  - site/_data/site.json
+  - site/_data/theme.json
+  - site/posts/*.md
+
+  Includes:
+  - title, link, tags, image_card, date, author_photo
+
+  TODO: choice between icon for post_type or author_photo
+  TODO: add the category
+  TODO: turn category/tag display on/off
+  TODO: add featured post as first in loop, use different design
+#}
 
 {% for post in postslist %}
 
@@ -7,7 +28,7 @@
   {% set featuredImageAlt = 'Video clip thumbnail' or post.data.image_card_alt %}
   {% set postCredit = post.data.clipper or site.author_name %}
   {% set publishDate = post.data.date %}
-  {% set excerpt = post.data.teaser %}
+  {% set teaser = post.data.teaser %}
 
   <article class="w-full sm:w-1/2 md:w-1/3 px-2 pb-12">
     <a href="{{ post.url }}" class="h-full bg-white rounded overflow-hidden shadow-md hover:shadow-lg relative smooth no-underline hover:no-underline flex flex-col">
@@ -15,23 +36,23 @@
         <img src="{{ featuredImage }}" class="absolute h-full w-full rounded-t object-cover">
       </div>
       <div class="px-6 pt-6 h-auto min-h-32 flex-grow">
-        <p class="text-{{ theme.colors.main }}-800 text-xs md:text-sm {{ theme_ghostwind.fonts.postslist.tags }}">
+        <p class="text-{{ theme.colors.main }}-800 text-xs md:text-sm {{ theme.fonts.postslist.tags }}">
         {% for tag in post.data.tags %}
           {%- if (tag != "post") and (tag != "page") -%}
             <span class="inline-block mr-2">{{ tag | upper }}</span>
           {%- endif -%}
         {% endfor %}
         </p>
-        <h2 class="font-bold text-xl text-{{ theme.colors.main }}-900 {{ theme_ghostwind.fonts.postslist.title }} my-3 hover:underline">{{ title }}</h2>
-        {% if excerpt %}
-        <p class="text-{{ theme.colors.main }}-800 {{ theme_ghostwind.fonts.postslist.excerpt }} text-base mb-5">
-          {{ excerpt | safe }}
+        <h2 class="font-bold text-xl text-{{ theme.colors.main }}-900 {{ theme.fonts.postslist.title }} my-3 hover:underline">{{ title }}</h2>
+        {% if teaser %}
+        <p class="text-{{ theme.colors.main }}-800 {{ theme.fonts.postslist.teaser }} text-base mb-5">
+          {{ teaser | safe }}
         </p>
         {% endif %}
       </div>
       <div class="flex items-center justify-between inset-x-0 bottom-0 px-6 pb-6">
         <img class="w-8 h-8 rounded-full mr-4" src="{{ site.author_avatar }}" alt="Avatar of {{ site.author_name }}">
-        <p class="text-{{ theme.colors.main }}-800 text-xs md:text-sm {{ theme_ghostwind.fonts.postslist.date }}">{{ publishDate | readableDate }}</p>
+        <p class="text-{{ theme.colors.main }}-800 text-xs md:text-sm {{ theme.fonts.postslist.date }}">{{ publishDate | readableDate }}</p>
       </div>
     </a>
   </article>

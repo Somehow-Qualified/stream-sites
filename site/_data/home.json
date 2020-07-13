@@ -42,7 +42,22 @@
     },
     {
       "template": "headline",
-      "headline": "Nullam quis risus eget urna mollis ornare vel eu leo."
+      "headline": "Nullam id dolor id nibh ultricies vehicula ut id elit."
+    },
+    {
+      "template": "cta",
+      "headline": "Subscribe to Stream Sites",
+      "text": "Get the latest posts delivered to your feed reader.",
+      "button_primary": {
+        "text": "Atom",
+        "link": "/atom.xml",
+        "icon": "subscribe"
+      },
+      "button_secondary": {
+        "text": "RSS",
+        "link": "/rss.xml",
+        "icon": "subscribe"
+      }
     }
   ]
 }
