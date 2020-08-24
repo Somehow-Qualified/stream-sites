@@ -2,6 +2,7 @@ const fs = require('fs');
 
 // Theme Config
 const config = require('./site/_data/theme.json');
+const configPosts = require('./site/posts/posts.json');
 
 // 11ty Files
 const filters = require('./utils/filters.js');
@@ -13,8 +14,10 @@ const transforms = require('./utils/transforms.js');
 const markdownIt = require('markdown-it');
 const markdownItAnchor = require('markdown-it-anchor');
 const markdownItAttrs = require('markdown-it-attrs');
+const markdownItCollapsible = require("markdown-it-collapsible");
 const markdownItFootnote = require('markdown-it-footnote');
-const markdownItToc = require('markdown-it-table-of-contents');
+const markdownItImageSize = require('markdown-it-imsize');
+const markdownItToc = require('markdown-it-toc-done-right');
 const markdownItVideo = require('markdown-it-video');
 
 // 11ty Plugins
@@ -24,18 +27,6 @@ const pluginRss = require('@11ty/eleventy-plugin-rss');
 const pluginSyntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 
 module.exports = function (eleventyConfig) {
-
-  /**
-   * Add plugins
-   * @link https://www.11ty.dev/docs/plugins/
-   */
-  // eleventyConfig.addPlugin(pluginLazyImages, {
-  //   imgSelector: 'img', // custom image selector
-  //   placeholderQuality: 75
-  // });
-  eleventyConfig.addPlugin(pluginReadingTime);
-  eleventyConfig.addPlugin(pluginRss);
-  eleventyConfig.addPlugin(pluginSyntaxHighlight);
 
   /**
    * Add Collections
@@ -73,7 +64,7 @@ module.exports = function (eleventyConfig) {
    * Add async shortcodes
    * @link https://www.11ty.dev/docs/languages/nunjucks/#asynchronous-shortcodes
    */
-  //eleventyConfig.addNunjucksAsyncShortcode('svgsprite', svgsprite)
+   // add files here
 
   /**
    * Add custom watch targets
@@ -81,6 +72,18 @@ module.exports = function (eleventyConfig) {
    */
   eleventyConfig.addWatchTarget('./tailwind.config.js');
   eleventyConfig.addWatchTarget(`_themes/${config.theme}`);
+
+  /**
+   * Add plugins
+   * @link https://www.11ty.dev/docs/plugins/
+   */
+  // eleventyConfig.addPlugin(pluginLazyImages, {
+  //   imgSelector: 'img', // custom image selector
+  //   placeholderQuality: 75
+  // });
+  eleventyConfig.addPlugin(pluginReadingTime);
+  eleventyConfig.addPlugin(pluginRss);
+  eleventyConfig.addPlugin(pluginSyntaxHighlight);
 
   /**
    * Set custom markdown library instance
@@ -101,11 +104,14 @@ module.exports = function (eleventyConfig) {
         leftDelimiter: '{',
         rightDelimiter: '}',
         allowedAttributes: []
+      }).use(markdownItCollapsible
+       ).use(markdownItImageSize, {
+        autofill: true
       }).use(markdownItToc, {
         containerClass: 'md-toc',
-        includeLevel: [2, 3, 4, 5, 6],
-        listType: 'ul',
-        containerHeaderHtml: '<p class="md-toc-header">Table of Contents</p>'
+        containerId: 'md-toc',
+        level: 2,
+        listType: `${configPosts.tocListType}`
       }).use(markdownItVideo, {
         youtube: { width: 640, height: 390 },
         vimeo: { width: 500, height: 281 },
@@ -113,11 +119,6 @@ module.exports = function (eleventyConfig) {
         prezi: { width: 550, height: 400 }
       }).use(markdownItFootnote)
   );
-  // TODO: MOVE TO /utils/transforms ~ For inline excerpts/TLDRs
-  const mdRender = new markdownIt({});
-  eleventyConfig.addFilter('renderMarkdownInline', (rawString) => {
-		return mdRender.renderInline(rawString);
-	});
 
   /**
    * Passthrough file copy

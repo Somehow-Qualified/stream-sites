@@ -2,8 +2,8 @@
 title: Video Samples
 slug: video
 image_card:
-video_id: BtWwCWsGrjY
-video_type: youtube
+video_id: BlatantModernPeanutKlappa
+video_type: clip
 clipper:
 date: 2014-04-05
 dateMod: Last Modified
@@ -18,7 +18,7 @@ seo_title: Welcome to Stream Sites! [Video Edition]
 seo_desc: >-
   Examples of videos
 ---
-Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Etiam porta sem malesuada magna mollis euismod. Donec id elit non mi porta gravida at eget metus. Vestibulum id ligula porta felis euismod semper. Nulla vitae elit libero, a pharetra augue. Donec ullamcorper nulla non metus auctor fringilla. Cras mattis consectetur purus sit amet fermentum.
+Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Etiam porta sem malesuada magna mollis euismod. Donec id elit non mi porta gravida at eget metus. Vestibulum id ligula porta felis euismod semper. Nulla vitae elit libero, a pharetra augue. Donec ullamcorper nulla non metus auctor fringilla. Cras mattis consectetur purus sit amet .
 
 ## Twitch Clip
 

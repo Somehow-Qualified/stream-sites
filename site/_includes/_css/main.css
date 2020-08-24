@@ -304,79 +304,37 @@ code {
   background-image: linear-gradient(180deg, transparent 70%, rgba(213, 63, 140, .7) 0);
 }
 
-/* Markdown Formatting */
+/*
+ * Markdown Formatting
+ * (Tailwind Typography .prose Additions)
+ */
 
-.content > * {
+/* Force word break for inline `code` and very long hyperlinks */
+.prose > * {
   overflow-wrap: break-word;
   word-wrap: break-word;
   word-break: break-word;
 }
-
-.content p {
-  @apply mb-8;
+.prose > :first-child {
+  margin-top: 2rem;
 }
-
-.content img {
-  @apply w-full;
-}
-
-.content blockquote {
-  margin: 0 0 1.5rem;
-  padding: 0 1.5rem;
-  border-left: 3px solid #E2E8F0;
-}
-
-.content blockquote p {
-  margin: 0 0 1rem;
-  color: inherit;
-  font-size: inherit;
-  line-height: inherit;
-  font-style: italic;
-}
-
-.content blockquote p:last-child {
-  margin-bottom: 0;
-}
-
-.content ol,
-.content ul {
-  padding-left: 1.3rem;
-  padding-right: 1.5rem;
-}
-
-.content ol {
-  list-style: decimal;
-}
-
-.content ul {
-  list-style: disc;
-}
-
-.content li {
-  margin: .5rem 0;
-  padding-left: .3rem;
-  word-break: break-word;
-}
-
-.content li:last-child {
-  @apply mb-8;
-}
-
-.content > nav > p {
-  margin-bottom: unset;
+.prose > details {
+  cursor: pointer;
 }
 
 /* Bookmark Anchors */
-
-.content h2:focus>.bookmark,
-.content h2:hover>.bookmark,
-.content h3:focus>.bookmark,
-.content h3:hover>.bookmark,
-.content h4:focus>.bookmark,
-.content h4:hover>.bookmark {
+.prose h2:focus>.bookmark,
+.prose h2:hover>.bookmark,
+.prose h3:focus>.bookmark,
+.prose h3:hover>.bookmark,
+.prose h4:focus>.bookmark,
+.prose h4:hover>.bookmark,
+.prose h5:focus>.bookmark,
+.prose h5:hover>.bookmark,
+.prose h6:focus>.bookmark,
+.prose h6:hover>.bookmark {
   opacity: .75;
 }
-
 .bookmark {
   display: none;
   position: absolute;
@@ -389,7 +347,6 @@ code {
 .bookmark:hover {
   opacity: 1 !important;
 }
-
 @media (min-width: 670px) {
   .content .bookmark {
     display: block;
@@ -398,55 +355,43 @@ code {
 
 /* Table of Contents */
 .md-toc {
-  @apply px-4 pb-4 -mt-4 border-b border-solid;
+  @apply pb-4 mt-4 border-b border-solid;
 }
-
-.md-toc-header {
-  font-weight: 700;
+/* .prose .md-toc ol {
+  counter-reset: list-item;
 }
-
-.md-toc ul {
-  margin: 0 1rem;
-  padding: 0;
-  /* list-style-type: "✓"; */
+.prose .md-toc li {
+  display: block;
+  counter-increment: list-item;
 }
-
-.md-toc ul > li > ul > li:last-child {
-  @apply mb-0;
-}
-
-.md-toc ul>li>* {
-  @apply my-0;
-}
+.prose .md-toc li:before {
+  display: block;
+  content: counters(list-item,'.') ')';
+  margin-right: 1rem;
+} */
 
 /* Footnotes */
-
+.prose hr.footnotes-sep {
+  margin-top: 2rem;
+  margin-bottom: 0;
+}
 .footnotes-sep {
-  @apply mt-8 border-b border-gray-300 border-t-0 border-r-0 border-l-0;
+  @apply border-b border-gray-300 border-t-0 border-r-0 border-l-0;
 }
-
-ol.footnotes-list>li>p {
-  display: contents;
-}
-
-ol.footnotes-list {
+.prose ol.footnotes-list {
+  margin-top: 0;
+  margin-bottom: 0;
   padding-top: 1rem;
 }
-
-hr.footnotes-sep {
-  margin-top: 2rem;
+ol.footnotes-list > li > p {
+  display: contents;
 }
-
-a.footnote-backref {
-  background: none !important;
-}
-
-li.footnote-item {
-  padding-bottom: 0;
-}
-
+li.footnote-item,
 li.footnote-item:last-of-type {
   padding-bottom: 0;
+}
+a.footnote-backref {
+  background: none !important;
 }
 
 /*
@@ -473,7 +418,6 @@ li.footnote-item:last-of-type {
   overflow: hidden;
   padding-top: 56.25%;
 }
-
 .resp-container iframe,
 .embed-responsive iframe,
 .resp-iframe {
@@ -484,7 +428,6 @@ li.footnote-item:last-of-type {
   height: 100%;
   border: 0;
 }
-
 .resp-container .preview-image {
   position: absolute;
   display: block;
@@ -498,7 +441,6 @@ li.footnote-item:last-of-type {
   left: 0;
   cursor: pointer;
 }
-
 .resp-container .play-icon {
   height: 72px;
   width: 72px;
@@ -512,7 +454,9 @@ li.footnote-item:last-of-type {
   background-size: contain;
 }
 
+
 @tailwind utilities;
+
 
 #menu-toggle:checked+#menu {
   display: block;

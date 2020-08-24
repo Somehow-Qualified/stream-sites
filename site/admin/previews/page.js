@@ -1,12 +1,12 @@
 import htm from 'https://unpkg.com/htm?module'
 
 // Customize markdown-it
-let options = {
-  html: true,
-  breaks: true,
-  linkify: true
-};
-const md = new markdownIt(options).use(markdownItAttrs);
+// let options = {
+//   html: true,
+//   breaks: true,
+//   linkify: true
+// };
+// const md = new markdownIt(options).use(markdownItAttrs);
 
 const html= htm.bind(h);
 
@@ -26,10 +26,10 @@ const Page = createClass({
     const image_card_credit = entry.getIn(['data', 'image_card_credit'], null);
 
     const tldr = entry.getIn(['data', 'excerpt'], null);
-    const tldrRendered = md.render(tldr || '');
+    // const tldrRendered = md.render(tldr || '');
 
     const body = entry.getIn(['data', 'body'], null);
-    const bodyRendered = md.render(body || '');
+    // const bodyRendered = md.render(body || '');
 
     const seo_title = entry.getIn(['data', 'seo_title'], null);
     const seo_desc = entry.getIn(['data', 'seo_desc'], null);
@@ -43,8 +43,10 @@ const Page = createClass({
           <div><img src="${image_card}" alt="${image_card_alt}" /></div>
           <figcaption>${image_card_credit}</figcaption>
         </figure>
-        <div class="tldr" dangerouslySetInnerHTML=${{__html: tldrRendered}}></div>
-        <div dangerouslySetInnerHTML=${{__html: bodyRendered}}></div>
+        <!-- <div class="tldr" dangerouslySetInnerHTML=${{__html: tldrRendered}}></div>
+        <div dangerouslySetInnerHTML=${{__html: bodyRendered}}></div> -->
+        <div class="tldr" dangerouslySetInnerHTML=${{__html: tldr}}></div>
+        <div dangerouslySetInnerHTML=${{__html: body}}></div>
       </article>
       <section class="seo">
         <h2>SEO Preview</h2>

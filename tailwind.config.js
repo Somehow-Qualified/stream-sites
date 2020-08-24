@@ -760,6 +760,7 @@ module.exports = {
       '5xl': '64rem',
       '6xl': '72rem',
       full: '100%',
+      none: 'none',
     }),
 
     /*
@@ -964,6 +965,7 @@ module.exports = {
     stroke: {
       current: 'currentColor',
     },
+
     flex: {
       '1': '1 1 0%',
       auto: '1 1 auto',
@@ -978,16 +980,89 @@ module.exports = {
       '0': 0,
       default: 1,
     },
+
     listStyleType: {
       none: 'none',
       disc: 'disc',
       decimal: 'decimal',
     },
+
     inset: {
       '0': 0,
       auto: 'auto',
     },
-    container: {}
+
+    container: {},
+
+    typography: {
+      default: {
+        css: {
+          color: 'unset',
+          a: {
+            color: 'unset',
+            textDecoration: 'unset',
+          },
+          code: {
+            color: '#fff',
+            backgroundColor: '#000',
+            fontSize: '0.875rem',
+            fontWeight: 'unset',
+            '&::before': {
+              content: 'unset',
+            },
+            '&::after': {
+              content: 'unset',
+            },
+          },
+          h1: {
+            color: 'unset',
+          },
+          h2: {
+            color: 'unset',
+          },
+          h3: {
+            color: 'unset',
+          },
+          h4: {
+            color: 'unset',
+          },
+          h5: {
+            color: 'unset',
+          },
+          h6: {
+            color: 'unset',
+          },
+        },
+      },
+      lg: {
+        css: {
+          code: {
+            fontSize: '0.875rem',
+            fontWeight: 'unset',
+            '&::before': {
+              content: 'unset',
+            },
+            '&::after': {
+              content: 'unset',
+            },
+          },
+        },
+      },
+      xl: {
+        css: {
+          code: {
+            fontSize: '0.875rem',
+            fontWeight: 'unset',
+            '&::before': {
+              content: 'unset',
+            },
+            '&::after': {
+              content: 'unset',
+            },
+          },
+        },
+      },
+    },
   },
 
   /*
@@ -1148,5 +1223,6 @@ module.exports = {
   plugins: [
      require('tailwindcss-dark-mode')(),
      require('@tailwindcss/custom-forms'),
+     require('@tailwindcss/typography'),
   ],
 }

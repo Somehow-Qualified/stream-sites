@@ -16,10 +16,11 @@ excerpt: >-
   This is an article sample featuring what you can do with Markdown.
 seo_title: Welcome to Stream Sites!
 seo_desc: >-
-    This is an Article sample.
+  This is an Article sample.
 ---
-
++++ Contents
 [[toc]]
++++
 
 Stream Sites pages and posts use Markdown. A variety of plugins are included to make Markdown fun and easier to use for fancy things.
 
@@ -29,17 +30,27 @@ At the top of this post is a table of contents, auto-generated from headings. He
 
 ## Images
 
-Images default to 100% width and auto height. This can be changed in `site/includes/resources/sass/components/_blog.scss` with the selector `.content.post > img`.
+Images default to 100% width and auto height.
 
-Example:
+Example using Markdown: `![Alt text](/path/to/image.jpg "Optional title text")`
 
 ![A girl running](/images/post-3.jpg "A girl prepares to run")
 
-Example:
+You can set dimensions on the image if you happen to need it less than full width (like a tall image). The image will resize and contain itself to the pixel dimensions.
 
-```markdown
-![Alt text](/path/to/image.jpg "Optional title text")
-```
+Docs: [https://www.npmjs.com/package/markdown-it-imsize](https://www.npmjs.com/package/markdown-it-imsize)
+
+Example: `![A girl running](/images/post-3.jpg "A girl prepares to run" =300x300)`
+
+If your dimensions exceed a phone screen's width, your size will be overridden and stop at 100% width of the container.
+
+![A girl running](/images/post-3.jpg "A girl prepares to run" =500x500)
+
+You can use a shortcode to make an image breakout of the container. You'll need to include path to the image, alt text, and an optional height class (from TailwindCSS).
+
+Example using shortcode: `{% breakoutImage "/images/ss-card.jpg", "An image test", "h-96" %}`
+
+{% breakoutImage "/images/post-3.jpg", "An image test", "h-96" %}
 
 ## Syntax Highlighting
 
@@ -75,9 +86,7 @@ See docs: [https://www.npmjs.com/package/markdown-it-footnote](https://www.npmjs
 
 Modify `markdown-it-footnote` styles in `site/includes/resources/sass/components/_blog.scss`
 
-Example:
-
-Let's try out some footnotes. Here is a footnote reference,[^1] and another.[^longnote]
+Example: Let's try out some footnotes. Here is a footnote reference,[^1] and another.[^longnote]
 
 [^1]: Here is the footnote.
 
@@ -102,17 +111,44 @@ Classes available are:
 
 ### Table of Contents
 
-See docs: [https://www.npmjs.com/package/markdown-it-table-of-contents](https://www.npmjs.com/package/markdown-it-table-of-contents)
+See docs: [https://www.npmjs.com/package/markdown-it-toc-done-right](https://www.npmjs.com/package/markdown-it-toc-done-right)
 
 Modify `markdown-it-table-of-contents` configuration settings in `.eleventy.config.js`
 
 ```js
 let markdownItTocConfig = {
-    containerClass: 'md-toc', // The class for the container DIV
-    includeLevel: [2, 3, 4, 5, 6], // Headings levels to use (2 for h2:s etc)
-    listType: 'ul',	 // Type of list (ul for unordered, ol for ordered)
-    containerHeaderHtml: '<p class="md-toc-header">Contents</p>' // Optional HTML string for container header
+    containerClass: 'md-toc', // The class for the container NAV
+    containerId: 'md-toc', // The id for the container DETAILS
+    level: 2, // Headings level to start at (2 = h2s, ignores h1 which is the page title)
+    listType: `${configPosts.tocListType}`, // Type of list (ul for unordered, ol for ordered), set it in your post settings
+    summary: `${configPosts.tocLabel}` // The title to show; default "Table of Contents", set it in your post settings
 };
+```
+
+### Collapse Things
+
+See docs: [https://www.npmjs.com/package/markdown-it-collapsible](https://www.npmjs.com/package/markdown-it-collapsible)
+
+Stick parts of your post into a collapsible `<details>`! Be sure to include a `<summary>` or it will label it `Details`.
+
++++ Show Me The Cake
+Everything is cake.
++++
+
+How it works:
+
+```markdown
++++ <visible_text>
+<hidden_text>
++++
+```
+
+For example, make your Table of Contents collapsible:
+
+```markdown
++++ Table of Contents
+[[toc]]
++++
 ```
 
 ### Video Embeds
@@ -121,7 +157,7 @@ See docs: [https://www.npmjs.com/package/markdown-it-video](https://www.npmjs.co
 
 Modify `markdown-it-video` configuration settings in `.eleventy.config.js`
 
-Example:
+Example using `@[youtube](lJIrF4YjHfQ)` on a new line
 
 @[youtube](lJIrF4YjHfQ)
 

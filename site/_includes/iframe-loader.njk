@@ -9,7 +9,6 @@ Data Sources:
 
 TODO: Refactor using maps https://hmiller.dev/posts/front-end-practices-that-changed-my-life/
 #}
-
 {% set video_type = video_type %}
 {% if video_type %}
 <script>
@@ -22,11 +21,11 @@ TODO: Refactor using maps https://hmiller.dev/posts/front-end-practices-that-cha
     let videoType = document.getElementById("video-frame").dataset.type;
     function getUrl() {
       if (videoType === "clip") {
-        return "https://clips.twitch.tv/embed?clip=";
+        return "https://clips.twitch.tv/embed?parent=" + "{{ site.domain }}" + "&clip=";
       } else if (videoType === "vod") {
-        return "https://player.twitch.tv/?autoplay=false&video=v";
+        return "https://player.twitch.tv/?autoplay=false&parent=" + "{{ site.domain }}" + "&video=v";
       } else if (videoType === "collection") {
-        return "https://player.twitch.tv/?autoplay=false&collection=";
+        return "https://player.twitch.tv/?autoplay=false&parent=" + "{{ site.domain }}" + "&collection=";
       } else if (videoType === "youtube"){
         return "https://www.youtube-nocookie.com/embed/";
       } else if (videoType === "playlist") {

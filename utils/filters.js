@@ -15,6 +15,8 @@ const { DateTime } = require('luxon');
 const siteData = require('../site/_data/site.json');
 const rootUrl = siteData.url;
 const twitter = siteData.author_twitter;
+const markdownIt = require('markdown-it');
+const mdRender = new markdownIt({});
 
 module.exports = {
 
@@ -132,6 +134,13 @@ module.exports = {
     let milliseconds = Date.now();
     return value + "?rev=" + milliseconds;
   },
+
+  /**
+   * Render Markdown Inline
+   */
+  renderMarkdownInline: (rawString) => {
+		return mdRender.renderInline(rawString);
+	},
 
   /**
    * Webmentions by sia.codes

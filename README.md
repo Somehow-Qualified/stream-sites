@@ -177,7 +177,7 @@ Additional features were made possible by scrounging through the internet for aw
 
 - **Dark mode** is made possible by [tailwindcss-dark-mode](https://www.npmjs.com/package/tailwindcss-dark-mode).
 
-- **Markdown flavoring** comes from [markdown-it](https://www.npmjs.com/package/markdown-it) and friends: [markdown-it-anchor](https://www.npmjs.com/package/markdown-it-anchor), [markdown-it-attrs](https://www.npmjs.com/package/markdown-it-attrs), [markdown-it-footnote](https://www.npmjs.com/package/markdown-it-footnote), [markdown-it-table-of-contents](https://www.npmjs.com/package/markdown-it-table-of-contents), and [markdown-it-video](https://www.npmjs.com/package/markdown-it-video).
+- **Markdown flavoring** comes from [markdown-it](https://www.npmjs.com/package/markdown-it) and friends: [markdown-it-anchor](https://www.npmjs.com/package/markdown-it-anchor), [markdown-it-attrs](https://www.npmjs.com/package/markdown-it-attrs), [markdown-it-collapsible](https://www.npmjs.com/package/markdown-it-collapsible), [markdown-it-footnote](https://www.npmjs.com/package/markdown-it-footnote), [markdown-it-imsize](https://www.npmjs.com/package/markdown-it-imsize), [markdown-it-toc-done-right](https://www.npmjs.com/package/markdown-it-toc-done-right), and [markdown-it-video](https://www.npmjs.com/package/markdown-it-video).
 
 - **Search** is a combination of Tailwind Toolbox's [Searchy](https://www.tailwindtoolbox.com/components/searchy) and Phil Hawksworth's [Adding Search to a JAMstack Site](https://www.hawksworx.com/blog/adding-search-to-a-jamstack-site/).
 
