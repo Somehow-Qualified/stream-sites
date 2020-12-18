@@ -27,8 +27,10 @@ layout: default.njk
       </p>
       {% endif %}
 
-      {# Markdown #}
-      {{ content | safe }}
+      <div class="prose prose-xl highlight-{{ theme.colors.accent }}">
+        {# Markdown #}
+        {{ content | safe }}
+      </div>
 
       {# Contact Form #}
       {% if form %}

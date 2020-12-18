@@ -103,6 +103,75 @@ module.exports = {
       boxShadow: {
         'md-top': '0 4px 6px -1px rgba(0, 0, 0, .1), 0 -6px 4px -1px rgba(0, 0, 0, .06)',
       },
+      typography: {
+        DEFAULT: {
+          css: {
+            color: 'unset',
+            a: {
+              color: 'unset',
+              textDecoration: 'unset',
+            },
+            code: {
+              color: '#fff',
+              backgroundColor: '#000',
+              fontSize: '0.875rem',
+              fontWeight: 'unset',
+              '&::before': {
+                content: 'unset',
+              },
+              '&::after': {
+                content: 'unset',
+              },
+            },
+            h1: {
+              color: 'unset',
+            },
+            h2: {
+              color: 'unset',
+            },
+            h3: {
+              color: 'unset',
+            },
+            h4: {
+              color: 'unset',
+            },
+            h5: {
+              color: 'unset',
+            },
+            h6: {
+              color: 'unset',
+            },
+          },
+        },
+        lg: {
+          css: {
+            code: {
+              fontSize: '0.875rem',
+              fontWeight: 'unset',
+              '&::before': {
+                content: 'unset',
+              },
+              '&::after': {
+                content: 'unset',
+              },
+            },
+          },
+        },
+        xl: {
+          css: {
+            code: {
+              fontSize: '0.875rem',
+              fontWeight: 'unset',
+              '&::before': {
+                content: 'unset',
+              },
+              '&::after': {
+                content: 'unset',
+              },
+            },
+          },
+        },
+      },
     },
 
     /*
@@ -993,76 +1062,6 @@ module.exports = {
     },
 
     container: {},
-
-    typography: {
-      DEFAULT: {
-        css: {
-          color: 'unset',
-          a: {
-            color: 'unset',
-            textDecoration: 'unset',
-          },
-          code: {
-            color: '#fff',
-            backgroundColor: '#000',
-            fontSize: '0.875rem',
-            fontWeight: 'unset',
-            '&::before': {
-              content: 'unset',
-            },
-            '&::after': {
-              content: 'unset',
-            },
-          },
-          h1: {
-            color: 'unset',
-          },
-          h2: {
-            color: 'unset',
-          },
-          h3: {
-            color: 'unset',
-          },
-          h4: {
-            color: 'unset',
-          },
-          h5: {
-            color: 'unset',
-          },
-          h6: {
-            color: 'unset',
-          },
-        },
-      },
-      lg: {
-        css: {
-          code: {
-            fontSize: '0.875rem',
-            fontWeight: 'unset',
-            '&::before': {
-              content: 'unset',
-            },
-            '&::after': {
-              content: 'unset',
-            },
-          },
-        },
-      },
-      xl: {
-        css: {
-          code: {
-            fontSize: '0.875rem',
-            fontWeight: 'unset',
-            '&::before': {
-              content: 'unset',
-            },
-            '&::after': {
-              content: 'unset',
-            },
-          },
-        },
-      },
-    },
   },
 
   /*
