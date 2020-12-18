@@ -56,7 +56,7 @@ TODO: Can chunks be replaced with {% block %} to use default.njk instead? Else, 
       {% for post in collections.featuredBio %}
       {% if linkinbio.featured_post !="" %}
       <li class="text-center">
-        <a href="{{ post.data.url | safe }}" target="_blank" class="min-w-full lg:p-4 p-3 block font-bold hover:text-{{ theme.colors.main }}-900 bg-{{ theme.colors.accent }}-600 hover:bg-{{ theme.colors.accent }}-200 mb-4">
+        <a href="{{ post.url | safe }}" target="_blank" class="min-w-full lg:p-4 p-3 block font-bold hover:text-{{ theme.colors.main }}-900 bg-{{ theme.colors.accent }}-600 hover:bg-{{ theme.colors.accent }}-200 mb-4">
           {{ post.data.title }}
         </a>
       </li>
