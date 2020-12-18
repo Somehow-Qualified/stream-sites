@@ -11,7 +11,7 @@
   </div>
   {% endif %}
 
-  <div class="w-full md:min-w-4xl lg:min-w-6xl max-w-6xl mx-auto {% if section.headline or section.text != "" %}pt-10{% endif %}">
+  <div class="w-full md:min-w-2xl lg:min-w-4xl max-w-6xl mx-auto {% if section.headline or section.text != "" %}pt-10{% endif %}">
     <div class="flex flex-wrap -mx-2">
     {% set postslist = collections.posts | limit(3) %}
     {% include 'postslist.njk' %}
