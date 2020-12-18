@@ -17,7 +17,7 @@
         "text": "Demo",
         "link": "https://demo.streamsites.com"
       },
-      "image": "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=1400",
+      "image": "/images/home/photo-1542751371-adc38448a05e.jpeg",
       "image_alt": "Sitting on a rock, overlooking the city."
     },
     {
@@ -27,7 +27,7 @@
     },
     {
       "template": "image-parallax",
-      "image": "https://images.unsplash.com/photo-1580234831315-438a4813685c?w=2000",
+      "image": "/images/home/photo-1580234831315-438a4813685c.jpeg",
       "text": ""
     },
     {
@@ -37,7 +37,7 @@
     },
     {
       "template": "image-parallax",
-      "image": "https://images.unsplash.com/photo-1495954222046-2c427ecb546d?w=2000",
+      "image": "/images/home/photo-1495954222046-2c427ecb546d.jpeg",
       "text": "In dolore fugiat laborum fugiat aliquip velit in nisi commodo culpa minim."
     },
     {

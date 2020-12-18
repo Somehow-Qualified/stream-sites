@@ -21,7 +21,7 @@ seo_desc: >-
 +++ Contents
 [[toc]]
 +++
-
+<br />
 Stream Sites pages and posts use Markdown. A variety of plugins are included to make Markdown fun and easier to use for fancy things.
 
 ## Markdown Flair

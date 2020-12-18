@@ -1,5 +1,5 @@
 ---
-title: Meet m2creates
+title: Meet Stream Sites
 subtitle: About
 slug: about
 form: no
