@@ -1,0 +1,21 @@
+{
+  "title": "Link In Bio",
+  "image_card": "",
+  "image_card_alt": "",
+  "intro": "hello world!",
+  "featured_post": "hello-world",
+  "linkinbio": [
+    {
+      "text": "Buy Me A Coffee",
+      "link": "https://buymeacoffee.com/m2",
+      "icon": "coffee"
+    },
+    {
+      "text": "Stalk my Tweets",
+      "link": "https://twitter.com/m2creates",
+      "icon": "twitter"
+    }
+  ],
+  "seo_title": "Link In Bio",
+  "seo_desc": "Get in touch!"
+}

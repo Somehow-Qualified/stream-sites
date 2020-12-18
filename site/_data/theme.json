@@ -1,0 +1,31 @@
+{
+  "theme": "ghostwind",
+  "colors": {
+    "main": "purple",
+    "accent": "pink",
+    "pwa": "#6B46C1",
+    "progress": "#D53F8C",
+    "postFooter": "pink"
+  },
+  "fonts": {
+    "post": {
+      "title": "font-sans",
+      "meta": "font-sans",
+      "tldr": "font-serif",
+      "author": "font-sans",
+      "morePosts": "font-sans"
+    },
+    "postslist": {
+      "title": "font-sans",
+      "tags": "font-sans",
+      "teaser": "font-serif",
+      "date": "font-sans"
+    }
+  },
+  "labels": {
+    "nextPost": "Up Next: ",
+    "prevPost": "Previously: ",
+    "authorLink": "Read More",
+    "morePosts": "More Posts to Read!"
+  }
+}

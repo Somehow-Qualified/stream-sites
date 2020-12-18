@@ -1,0 +1,36 @@
+{#
+CTA: Feeds
+Features RSS and ATOM feeds.
+
+Fields:
+- headline
+- text
+- button { text, link, icon }
+
+TODO: Can webmentions live here?
+
+#}
+
+{# Call to Action Text #}
+<div class="container w-full max-w-6xl mx-auto my-20">
+  <div class="w-full text-{{ theme.colors.main }}-100 bg-{{ theme.colors.accent }}-600 p-4 md:p-16 text-center w-full">
+
+    <h2 class="font-extrabold break-normal text-2xl md:text-4xl mt-3">Subscribe to {{ site.name }}</h2>
+    <p class="font-extrabold break-normal font-normal text-base md:text-xl">Get the latest posts delivered to your feed reader.</p>
+
+    <div class="w-full text-center mt-8 flex -mx-3 justify-center">
+
+      {# Atom Feed #}
+      <a href="/atom.xml" title="Subscribe via Atom" class="w-auto flex items-center mb-3 mr-3 justify-center px-8 md:px-10 py-3 md:py-4 border border-transparent text-base md:text-lg leading-6 font-bold rounded-md text-white bg-{{ theme.colors.main }}-600 hover:bg-{{ theme.colors.main }}-500 focus:outline-none focus:border-{{ theme.colors.main }}-700 focus:shadow-outline-{{ theme.colors.main }} transition duration-150 ease-in-out">Atom<svg class="inline-block font-normal h-3 w-3 ml-2" fill="currentColor" role="img" aria-hidden="true">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/icon-library.svg#subscribe"></use>
+      </svg></a>
+
+      {# RSS Feed #}
+      <a href="/rss.xml" title="Subscribe via RSS" class="w-auto flex items-center justify-center mb-3 mr-3 px-8 md:px-10 py-3 md:py-4 border border-transparent text-base md:text-lg leading-6 font-bold rounded-md text-{{ theme.colors.main }}-700 bg-{{ theme.colors.main }}-200 hover:text-{{ theme.colors.main }}-900 hover:bg-{{ theme.colors.main }}-300 focus:outline-none focus:shadow-outline-{{ theme.colors.main }} focus:border-{{ theme.colors.main }}-300 transition duration-150 ease-in-out">RSS<svg class="inline-block font-normal h-3 w-3 ml-2" fill="currentColor" role="img" aria-hidden="true">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/icon-library.svg#subscribe"></use>
+      </svg></a>
+
+    </div>
+
+  </div>
+</div>

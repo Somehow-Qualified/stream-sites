@@ -1,0 +1,5 @@
+<div class="w-full min-h-96 h-full flex justify-center items-center" style="background: url({{ section.image }}) center center no-repeat; background-attachment: fixed;">
+  {% if section.text %}
+  <p class="max-w-2xl m-8 p-8 text-{{ theme.colors.main }}-100 bg-{{ theme.colors.main }}-800 font-extrabold text-center text-4xl leading-tight shadow-lg">{{ section.text | safe }}</p>
+  {% endif %}
+</div>

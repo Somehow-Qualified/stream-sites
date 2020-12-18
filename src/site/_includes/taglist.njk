@@ -1,6 +1,0 @@
-<ul class="flex flex-row flex-wrap justify-center -mx-2">
-{% for tag in collections.tagList %}
-    {% set tagUrl %}/tags/{{ tag | slug }}/{% endset %}
-    <li class="px-2 inline-block"><a href="{{ tagUrl }}" class="tag pb-4 underline">{{ tag }}</a> ({{ collections[tag].length }})</li>
-{% endfor %}
-</ul>

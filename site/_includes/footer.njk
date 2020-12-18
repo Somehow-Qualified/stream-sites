@@ -1,0 +1,76 @@
+{#
+  FOOTER
+  - site/_includes/footer.njk
+
+  Usage:
+  - site/_themes/ghostwind/default.njk
+
+  Data Sources:
+  - images/icons/icon-library.svg
+  - site/_data/navigation.json
+  - site/_data/site.json
+  - site/_data/social.json
+  - site/_data/theme.json
+  
+  Includes:
+  - copyright, author_name
+  - optional Stream Sites credit
+  - navigation
+  - social links
+  - microformats: p-name, u-url
+
+  TODO: Mobile, enlarge touch targets
+#}
+
+<footer class="flex-shrink-0 w-full bg-white dark:bg-{{ theme.colors.main }}-900 py-4 px-6 shadow-md-top border-t-4 border-{{ theme.colors.accent }}-500">
+  <div class="container mx-auto flex flex-col-reverse md:flex-row items-center justify-between text-{{ theme.colors.main }}-900 dark:text-{{ theme.colors.main }}-100 text-sm">
+
+    {# Copyright and Credits #}
+    <div class="flex md:justify-start flex-grow-0 w-auto">
+      <p class="pt-2 md:pt-0">© 2020 <a class="p-name u-url" rel="me" href="{{ site.url }}">{{ site.author_name }}</a>.
+        {% if site.footer_credit === "yes" %} Built with <a class="hover:text-{{ theme.colors.accent }}-500 underline" href="https://streamsites.xyz/">Stream Sites</a>.{% endif %}</p>
+    </div>
+
+    {# Nav and Social #}
+    <div class="flex items-center justify-end flex-grow-0 w-auto text-{{ theme.colors.main }}-900 dark:text-{{ theme.colors.main }}-100">
+
+      {# Nav Items #}
+      <nav aria-label="Footer Navigation" class="px-2">
+        <ul class="list-reset flex justify-end flex-1 md:flex-none items-center">
+          {% for item in navigation.footer %}
+          <li>
+            <a class="inline-block pl-2 pr-1 no-underline hover:text-{{ theme.colors.accent }}-500" href="{{ item.url | safe }}">{{ item.label }}</a> /
+          </li>
+          {% endfor %}
+        </ul>
+      </nav>
+      {# /end Nav Items #}
+
+      {# Social Links #}
+      <address>
+        <ul class="flex flex-row flex-wrap list-none" aria-label="Social Media Links">
+          {% for item in social.networks %}
+          {% if item.link != "" %}
+          <li>
+            <a href="{{ item.link | safe }}" class="inline-block lg:p-2 {% if loop.first %}-ml-2{% endif %} {% if item.icon != "" %} py-3 px-1{% else %} pl-2 pr-1 hover:text-{{ theme.colors.accent }}-500{% endif %} not-italic" aria-label="{{ item.name | capitalize }}" title="{{ item.name }}" target="_blank" rel="me noopener noreferrer">
+            {% if item.icon != "" %}
+              <svg class="block" role="img" aria-hidden="true" width="18" height="18">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/icon-library.svg#{{ item.icon }}"></use>
+              </svg>
+            </a>
+            {% else %}
+              {{ item.name }}
+            </a>{%- if not loop.last %}/{%- endif %}
+            {% endif %}
+          </li>
+          {% endif %}
+          {% endfor %}
+        </ul>
+      </address>
+      {# /end Social Links #}
+
+    </div>
+    {# /end Nav & Social #}
+
+  </div>
+</footer>

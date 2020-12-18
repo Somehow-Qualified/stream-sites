@@ -85,7 +85,16 @@ module.exports = {
         'square': '100%',
       },
       height: {
+        '72': '18rem',
+        '96': '24rem',
+        '50vh': '50vh',
+        '60vh': '60vh',
         '75vh': '75vh',
+        '80vh': '80vh',
+        '90vh': '90vh',
+      },
+      minHeight: {
+        '96': '24rem',
       },
       width: {
         '30': '30%',
@@ -93,6 +102,75 @@ module.exports = {
       },
       boxShadow: {
         'md-top': '0 4px 6px -1px rgba(0, 0, 0, .1), 0 -6px 4px -1px rgba(0, 0, 0, .06)',
+      },
+      typography: {
+        DEFAULT: {
+          css: {
+            color: 'unset',
+            a: {
+              color: 'unset',
+              textDecoration: 'unset',
+            },
+            code: {
+              color: '#fff',
+              backgroundColor: '#000',
+              fontSize: '0.875rem',
+              fontWeight: 'unset',
+              '&::before': {
+                content: 'unset',
+              },
+              '&::after': {
+                content: 'unset',
+              },
+            },
+            h1: {
+              color: 'unset',
+            },
+            h2: {
+              color: 'unset',
+            },
+            h3: {
+              color: 'unset',
+            },
+            h4: {
+              color: 'unset',
+            },
+            h5: {
+              color: 'unset',
+            },
+            h6: {
+              color: 'unset',
+            },
+          },
+        },
+        lg: {
+          css: {
+            code: {
+              fontSize: '0.875rem',
+              fontWeight: 'unset',
+              '&::before': {
+                content: 'unset',
+              },
+              '&::after': {
+                content: 'unset',
+              },
+            },
+          },
+        },
+        xl: {
+          css: {
+            code: {
+              fontSize: '0.875rem',
+              fontWeight: 'unset',
+              '&::before': {
+                content: 'unset',
+              },
+              '&::after': {
+                content: 'unset',
+              },
+            },
+          },
+        },
       },
     },
 
@@ -535,7 +613,7 @@ module.exports = {
     */
 
     borderWidth: {
-      default: '1px',
+      DEFAULT: '1px',
       '0': '0',
       '2': '2px',
       '4': '4px',
@@ -562,7 +640,7 @@ module.exports = {
 
     borderColor: theme => ({
       ...theme('colors'),
-      default: theme('colors.gray.300', 'currentColor'),
+      DEFAULT: theme('colors.gray.300', 'currentColor'),
     }),
 
     /*
@@ -585,13 +663,13 @@ module.exports = {
     borderRadius: {
       none: '0',
       sm: '.125rem',
-      default: '.25rem',
+      DEFAULT: '.25rem',
       lg: '.5rem',
       full: '9999px',
     },
     cursor: {
       auto: 'auto',
-      default: 'default',
+      DEFAULT: 'default',
       pointer: 'pointer',
       wait: 'wait',
       move: 'move',
@@ -751,6 +829,7 @@ module.exports = {
       '5xl': '64rem',
       '6xl': '72rem',
       full: '100%',
+      none: 'none',
     }),
 
     /*
@@ -861,7 +940,7 @@ module.exports = {
     */
 
     boxShadow: {
-      default: '0 1px 3px 0 rgba(0, 0, 0, .1), 0 1px 2px 0 rgba(0, 0, 0, .06)',
+      DEFAULT: '0 1px 3px 0 rgba(0, 0, 0, .1), 0 1px 2px 0 rgba(0, 0, 0, .06)',
       md: '0 4px 6px -1px rgba(0, 0, 0, .1), 0 2px 4px -1px rgba(0, 0, 0, .06)',
       lg: '0 10px 15px -3px rgba(0, 0, 0, .1), 0 4px 6px -2px rgba(0, 0, 0, .05)',
       xl: '0 20px 25px -5px rgba(0, 0, 0, .1), 0 10px 10px -5px rgba(0, 0, 0, .04)',
@@ -955,6 +1034,7 @@ module.exports = {
     stroke: {
       current: 'currentColor',
     },
+
     flex: {
       '1': '1 1 0%',
       auto: '1 1 auto',
@@ -963,27 +1043,30 @@ module.exports = {
     },
     flexGrow: {
       '0': 0,
-      default: 1,
+      DEFAULT: 1,
     },
     flexShrink: {
       '0': 0,
-      default: 1,
+      DEFAULT: 1,
     },
+
     listStyleType: {
       none: 'none',
       disc: 'disc',
       decimal: 'decimal',
     },
+
     inset: {
       '0': 0,
       auto: 'auto',
     },
-    container: {}
+
+    container: {},
   },
 
   /*
   |-----------------------------------------------------------------------------
-  | Variants                Default: https://tailwindcss.com/docs/state-variants
+  | Variants                DEFAULT: https://tailwindcss.com/docs/state-variants
   |             Dark mode: https://github.com/ChanceArthur/tailwindcss-dark-mode
   |-----------------------------------------------------------------------------
   |
@@ -1138,6 +1221,7 @@ module.exports = {
   corePlugins: {},
   plugins: [
      require('tailwindcss-dark-mode')(),
-     require('@tailwindcss/custom-forms'),
+     require('@tailwindcss/forms'),
+     require('@tailwindcss/typography'),
   ],
 }

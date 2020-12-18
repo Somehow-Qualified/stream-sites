@@ -1,0 +1,63 @@
+{
+  "title": "Home",
+  "image_card": "",
+  "image_card_alt": "",
+  "seo_title": "Stream Sites",
+  "seo_desc": "Stream Sites is a Eleventy static site generated with Netlify and powered with Netlify CMS + Identity",
+  "sections": [
+    {
+      "template": "hero",
+      "headline": "Hello,<br>Stream Sites!",
+      "text": "Boost your discoverability with a free home for your content.",
+      "button_primary": {
+        "text": "Explore",
+        "link": "/posts"
+      },
+      "button_secondary": {
+        "text": "Demo",
+        "link": "https://demo.streamsites.com"
+      },
+      "image": "/images/home/photo-1542751371-adc38448a05e.jpeg",
+      "image_alt": "Sitting on a rock, overlooking the city."
+    },
+    {
+      "template": "headline-text",
+      "headline": "Justo Pharetra Dolor Nibh",
+      "text": "Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus."
+    },
+    {
+      "template": "image-parallax",
+      "image": "/images/home/photo-1580234831315-438a4813685c.jpeg",
+      "text": ""
+    },
+    {
+      "template": "posts-featured",
+      "headline": "Nullam quis risus eget",
+      "text": "Cras justo odio, dapibus ac facilisis in, egestas eget quam."
+    },
+    {
+      "template": "image-parallax",
+      "image": "/images/home/photo-1495954222046-2c427ecb546d.jpeg",
+      "text": "In dolore fugiat laborum fugiat aliquip velit in nisi commodo culpa minim."
+    },
+    {
+      "template": "headline",
+      "headline": "Nullam id dolor id nibh ultricies vehicula ut id elit."
+    },
+    {
+      "template": "cta",
+      "headline": "Subscribe to Stream Sites",
+      "text": "Get the latest posts delivered to your feed reader.",
+      "button_primary": {
+        "text": "Atom",
+        "link": "/atom.xml",
+        "icon": "subscribe"
+      },
+      "button_secondary": {
+        "text": "RSS",
+        "link": "/rss.xml",
+        "icon": "subscribe"
+      }
+    }
+  ]
+}

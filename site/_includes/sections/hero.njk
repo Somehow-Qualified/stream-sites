@@ -1,0 +1,46 @@
+<section class="w-full relative px-8 py-16 md:p-20">
+
+  <div class="relative z-10 flex flex-wrap md:items-center h-full -mt-20 pt-20">
+
+    <div class="w-full md:w-1/2">
+      <div class="relative pb-16/9">
+        <img src="{{ section.image | safe }}" alt="{{ section.image_alt | safe }}" class="absolute w-full h-full object-cover shadow-lg"/>
+      </div>
+    </div>
+
+    <div class="w-2/3 ml-auto md:w-1/2 md:ml-0 md:pl-10 flex justify-center items-center">
+
+      <div class="max-w-md">
+        {% if section.headline %}
+        <h1 class="font-extrabold text-4xl lg:text-6xl mb-4 leading-none">{{ section.headline | safe }}</h1>
+        {% endif %}
+        {% if section.text %}
+        <p class="mb-8 leading-relaxed font-bold">
+          {{ section.text | safe }}
+        </p>
+        {% endif %}
+        {% if section.button_primary.text or section.button_secondary.text %}
+        <div class="mt-5 sm:mt-8 flex flex-wrap justify-start">
+          {% if section.button_primary.text %}
+          <a href="{{ section.button_primary.link | safe }}" class="w-auto flex items-center mb-3 mr-3 justify-center px-8 md:px-10 py-3 md:py-4 border border-transparent text-base md:text-lg leading-6 font-bold rounded-md text-white bg-{{ theme.colors.main }}-600 hover:bg-{{ theme.colors.main }}-500 focus:outline-none focus:border-{{ theme.colors.main }}-700 focus:shadow-outline-{{ theme.colors.main }} transition duration-150 ease-in-out">
+            {{ section.button_primary.text | safe }}
+          </a>
+          {% endif %}
+          {% if section.button_secondary.text %}
+          <a href="{{ section.button_secondary.link | safe }}" class="w-auto flex items-center justify-center mb-3 mr-3 px-8 md:px-10 py-3 md:py-4 border border-transparent text-base md:text-lg leading-6 font-bold rounded-md text-{{ theme.colors.main }}-700 bg-{{ theme.colors.main }}-200 hover:text-{{ theme.colors.main }}-900 hover:bg-{{ theme.colors.main }}-300 focus:outline-none focus:shadow-outline-{{ theme.colors.main }} focus:border-{{ theme.colors.main }}-300 transition duration-150 ease-in-out">
+            {{ section.button_secondary.text | safe }}
+          </a>
+          {% endif %}
+        </div>
+        {% endif %}
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="w-2/5 md:w-1/2 h-full bg-{{ theme.colors.accent }}-500 absolute top-0 left-0 -ml-20"></div>
+
+  <div class="w-1 h-64 bg-{{ theme.colors.main }}-100 absolute bottom-0 left-0 ml-5"></div>
+
+</section>

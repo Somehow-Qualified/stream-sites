@@ -1,0 +1,141 @@
+{#
+  SITE META
+  - site/_includes/meta.njk
+
+  Usage:
+  - site/_themes/ghostwind/default.njk
+  - site/_themes/ghostwind/landing.njk
+
+  Data Sources:
+  - site/_data/site.json
+  - site/posts/*.md or site/pages/*.md
+
+  Includes:
+  - title
+  - meta: description, author, copyright
+  - meta(verification): google-site-verification, p:domain_verify
+  - meta(browser): theme-color
+  - schema: itemprops for name, description, image
+  - social(twitter): summary_large_image, site, title, description, creator, image source, image alt
+  - social(open graph): title, type-website, url, image, image alt, description, site name, locale
+  - social(open graph) for posts: type-article, publish time, tags
+  - links: canonical, sameAs, rss feed, atom feed
+  - webmentions: webmention, pingback
+  - more: robots (optional), pinterst blocking (optional), twitter dnt, site manifest, ld+json
+
+  TODO: expand ld+json conditions per post_type (i.e. review, how-to)
+#}
+
+{% set title = archive_title or heading or title %}
+{% set metaTitle =  seo_title or renderData.title or title or site.name %}
+{% set metaDescription = seo_desc or renderData.desc or site.description %}
+{% set metaImage = image_card or site.image_card %}
+{% set metaImageAlt = image_card_alt or site.image_card_alt %}
+{% set authorName = site.author_name %}
+{% set authorTwitter = site.author_twitter %}
+
+{# Site #}
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{% if title %}{{ title }} | {% endif %}{{ site.name }}</title>
+<meta name="description" content="{{ metaDescription }}">
+<meta name="author" content="{{ authorName }}">
+<meta name="copyright" content="{{ authorName }}, {{ site.name }}">
+<meta name="theme-color" content="{{ theme.colors.pwa }}">
+<link rel="canonical" href="{{site.url}}{{ page.url }}">
+{%- if site.verification.google %}
+<meta name="google-site-verification" content="{{ site.verification.google }}">
+{%- endif %}
+{%- if site.verification.pinterest %}
+<meta name="p:domain_verify" content="{{ site.verification.pinterest }}">
+{%- endif %}
+
+{# Schema #}
+<meta itemprop="name" content="{{ metaTitle }}">
+<meta itemprop="description" content="{{ metaDescription }}">
+<meta itemprop="image" content="{{ site.url }}{{ metaImage }}">
+
+{# Twitter #}
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="{{ authorTwitter }}">
+<meta name="twitter:title" content="{{ metaTitle }}">
+<meta name="twitter:description" content="{{ metaDescription }}">
+<meta name="twitter:creator" content="{{ authorTwitter }}">
+<meta name="twitter:image:src" content="{{ site.url }}{{ metaImage }}">
+<meta name="twitter:image:alt" content="{{ metaImageAlt }}">
+
+{# Open Graph #}
+<meta property="og:title" content="{{ metaTitle }}">
+{%- if collections.posts %}
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="{{ page.date | dateToIso }}">
+{%- for tag in tags %}{%- if (tag != "post") and (tag != "page") %}
+<meta name="article:tag" content="{{ tag }}">{%- endif %}
+{%- endfor %}
+{%- else %}
+<meta property="og:type" content="website">
+{%- endif %}
+<meta property="og:url" content="{{ site.url }}{{ page.url }}">
+<meta property="og:image" content="{{ site.url }}{{ metaImage }}">
+<meta property="og:image:alt" content="{{ metaImageAlt }}">
+<meta property="og:description" content="{{ metaDescription }}">
+<meta name="og:site_name" content="{{ site.name }}">
+<meta property="og:locale" content="{{ site.language }}">
+
+{# sameAs links #}
+{% for item in social.networks %}
+{%- if item.link != "" %}
+<link href="{{ item.link }}" rel="me">
+{%- endif %}
+{%- endfor %}
+
+{# Feeds #}
+<link rel="alternate" type="application/rss+xml" href="{{ site.url}}/rss.xml" title="{{ site.name }} RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="{{ site.url}}/atom.xml" title="{{ site.name }} Atom Feed">
+
+{# Icons #}
+<link rel="icon" type="image/ico" href="{{ site.favicon }}">
+<link rel="apple-touch-icon" href="{{ site.favicon }}">
+
+{# Service Worker #}
+<link rel="manifest" href="/site.webmanifest">
+
+{# Webmentions #}
+{%- if site.webmentions === "enable" %}
+<link rel="webmention" href="https://webmention.io/{{ site.domain }}/webmention">
+<link rel="pingback" href="https://webmention.io/{{ site.domain }}/xmlrpc">
+{%- endif %}
+
+{# Robots #}
+<meta name="robots" content="{{ site.robots.search_crawler }}">
+{%- if site.robots.pinterest === "disallow" %}
+<meta name="pinterest" content="nopin">
+<meta name="pinterest" content="nohover">
+<meta name="pinterest-rich-pin" content="false">
+{%- endif %}
+{%- if site.robots.twitter === "disallow" %}
+<meta name="twitter:dnt" content="on">
+{%- endif %}
+
+<script type="application/ld+json">
+  {
+    "name":"{{ title }} | {{ site.name }}",
+    "description":"{{ metaDescription }}",
+    "author": {
+        "@type":"Person",
+        "name":"{{ authorName }}"
+    },
+    "@type":"WebSite",
+    "url":"{{site.url}}{{ page.url }}",
+    "image":"{{ site.url }}{{ metaImage }}",
+    "headline":"{{ title }} | {{ site.name }}",
+    "@context":"http://schema.org",
+    "sameAs": [
+      {% for item in social.networks %}
+      {%- if item.link != "" %}
+      "{{ item.link }}"{%- if not loop.last %},{%- endif %}
+      {%- endif %}
+      {%- endfor %}
+    ]
+  }
+</script>

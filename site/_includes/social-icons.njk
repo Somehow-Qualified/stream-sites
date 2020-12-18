@@ -1,0 +1,36 @@
+{#
+  SOCIAL ICONS
+  - site/_includes/social-icons.njk
+
+  Usage:
+  - Not currently in use
+
+  Data Sources:
+  - images/icons/icon-library.svg
+  - site/_data/social.json
+  - site/_data/theme.json
+
+  Includes:
+  - icon, link for each social network
+#}
+
+<ul class="flex list-reset justify-center list-none" aria-label="Social Media Links">
+
+  {% for item in social.networks %}
+  {% if item.link != "" %}
+  <li>
+    <a href="{{ item.link | safe }}" class="inline-block lg:p-2 {% if item.icon != "" %}{% if loop.first %}-ml-2{% endif %} py-3 px-1{% else %} pl-2 pr-1 hover:text-{{ theme.colors.accent }}-500{% endif %} not-italic" aria-label="{{ item.name | capitalize }}" title="{{ item.name }}" target="_blank" rel="me noopener noreferrer">
+    {% if item.icon != "" %}
+      <svg class="block" role="img" aria-hidden="true" width="18" height="18">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/icon-library.svg#{{ item.icon }}"></use>
+      </svg>
+    </a>
+    {% else %}
+      {{ item.name }}
+    </a>{%- if not loop.last %}/{%- endif %}
+    {% endif %}
+  </li>
+  {% endif %}
+  {% endfor %}
+
+</ul>

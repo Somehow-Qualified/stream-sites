@@ -1,0 +1,56 @@
+---
+layout: default.njk
+---
+<section class="mx-auto px-6 pb-20">
+
+  {% if key === "archives" %}
+  <div class="text-center pt-20 pb-12">
+    <p class="text-sm md:text-base text-{{ theme.colors.accent }}-600 dark:text-{{ theme.colors.main }}-100 font-bold {{ fontMeta }}">{{ subtitle | upper }}</p>
+    <h1 class="font-bold break-normal text-3xl md:text-5xl">{{ title }}</h1>
+  </div>
+  <div class="w-full md:min-w-2xl lg:min-w-4xl max-w-6xl mx-auto pb-8 md:px-0">
+    <div class="flex flex-wrap -mx-2 ">
+      {% set postslist = posts %}
+      {% include "postslist.njk" %}
+    </div>
+  </div>
+
+  {# TODO: ALLY Pagination - https://www.11ty.dev/docs/pagination/nav/#put-it-all-together & https://unfetteredthoughts.net/2017/09/26/voiceover-and-list-style-type-none/ #}
+  <nav class="flex flex-row items-center w-full justify-center md:px-24" aria-label="Archive Navigation">
+    {% if pagination.href.previous %}<p class="text-sm mb-0 px-2"><a href="{{ pagination.href.previous }}">Previous</a></p>{% endif %}
+    {%- for pageEntry in pagination.pages %}
+    {%- if not loop.last %}<p class="text-sm mb-0 px-2"><a href="{{ pagination.hrefs[ loop.index0 ] }}"{% if page.url == pagination.hrefs[ loop.index0 ] %} aria-current="page" class="highlight-{{ theme.colors.accent }}"{% endif %}>{{ loop.index }}</a></p>{% endif %}
+    {%- endfor %}
+    {% if pagination.href.next %}<p class="text-sm mb-0 px-2"><a href="{{ pagination.href.next }}">Next</a></p>{% endif %}
+  </nav>
+  {% endif %}
+
+  {% if key === "tagged" %}
+  <div class="text-center pt-20 pb-12">
+    <p class="text-sm lg:text-base text-{{ theme.colors.accent }}-600 dark:text-{{ theme.colors.main }}-100 font-bold">{{ subtitle | upper }}</p>
+    <h1 class="font-bold break-normal text-3xl md:text-5xl">“{{ tag }}”</h1>
+  </div>
+
+  <div class="w-full md:min-w-2xl lg:min-w-4xl max-w-6xl mx-auto pb-8 px-6 md:px-0">
+    <div class="flex flex-wrap -mx-2">
+      {% set postslist = collections[ tag ] | reverse %}
+      {% include "postslist.njk" %}
+    </div>
+  </div>
+  {% endif %}
+
+  {% if key === "categorized" %}
+  <div class="text-center pt-20 pb-12">
+    <p class="text-sm lg:text-base text-{{ theme.colors.accent }}-600 dark:text-{{ theme.colors.main }}-100 font-bold">{{ subtitle | upper }}</p>
+    <h1 class="font-bold break-normal text-3xl md:text-5xl">{{ category }}</h1>
+  </div>
+
+  <div class="w-full md:min-w-2xl lg:min-w-4xl max-w-6xl mx-auto pb-8 px-6 md:px-0">
+    <div class="flex flex-wrap -mx-2">
+      {% set postslist = collections.category[ category ] | reverse %}
+      {% include "postslist.njk" %}
+    </div>
+  </div>
+  {% endif %}
+
+</section>

@@ -1,0 +1,182 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <!-- Include Netlify Identity for authentication -->
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <title>Stream Sites Admin</title>
+  <link rel="icon" type="image/ico" href="/images/logo-ss-square.png">
+  <style>
+    :root {
+      --cms-primary: rgb(58, 105, 199);
+      --cms-gray: rgb(223, 223, 227);
+      --cms-text-dark: rgb(49, 61, 62);
+    }
+    /* Modify sidebar: from https://github.com/netlify/netlify-cms/issues/1040#issuecomment-427533565 */
+    aside {
+      padding: 6px 0 12px !important;
+    }
+    aside h2 {
+      margin-top: 12px !important;
+      font-size: 22px !important;
+      line-height: 37px !important;
+    }
+    aside a span {
+      display: inline-flex !important;
+      justify-content: center;
+      align-items: center;
+    }
+    aside a span svg {
+      display: none !important;
+    }
+    aside a span::before {
+      font-family: "Font Awesome 5 Free";
+      font-size: 1rem;
+      font-weight: 900;
+    }
+    /* Sidebar Icons */
+    aside a[href="#/collections/posts"] span::before {
+      content: "\f304";
+    }
+    aside a[href="#/collections/pages"] span::before {
+      content: "\f15c";
+    }
+    aside a[href="#/collections/modules"] span::before {
+      content: "\f1b3";
+    }
+    aside a[href="#/collections/settings"] span::before {
+      content: "\f085";
+    }
+    aside a[href="#/collections/custom"] span::before {
+      content: "\f7d9";
+    }
+    /* Expand the container */
+    div[class*="CollectionTopContainer-dropMain-card-cardTop"],
+    li[class*="ListCard-dropMain-card"] {
+      width: 100%;
+    }
+    /* Card Header */
+    div[class*="CollectionTopContainer-dropMain-card-cardTop"] > div[class*="CollectionTopRow"] {
+      margin-bottom: 8px;
+    }
+    div[class*="CollectionTopContainer-dropMain-card-cardTop"] p[class*="CollectionTopDescription-cardTopDescription"] {
+      margin: 0;
+    }
+    /* Remove ViewContols until Grid actually does something */
+    div[class*="CollectionTopContainer-dropMain-card-cardTop"] > div[class*="ViewControls"] {
+      display: none;
+    }
+    /* Make toggles not invisible */
+    span[class*="ToggleHandle-dropDeep-ToggleHandle"] {
+      box-shadow: rgba(68, 74, 87, 0.5) 0 1px 8px 0, rgba(68, 74, 87, 0.5) 0 0 4px 0;
+    }
+    /* Prominent hover on collection items */
+    li > a[class*="ListCardLink"] {
+      border: 2px solid transparent;
+    }
+    li > a[class*="ListCardLink"]:hover {
+      border-radius: inherit;
+      transition: ease-in-out 300ms;
+      border: 2px solid var(--cms-primary);
+      background-color: rgb(232, 245, 254);
+    }
+    li > a[class*="ListCardLink"]:hover > h2 {
+      color: var(--cms-primary);
+      transition: ease-in-out 100ms;
+    }
+    a[class*="CollectionTopNewButton-button-dropDeep-default-gray"]:hover {
+      background-color: var(--cms-primary);
+    }
+    /* Control Panel */
+    div[class*="PreviewPaneContainer-ControlPaneContainer"] {
+      padding: 10px 16px;
+    }
+    /* Fields */
+    div[class*="css-"],
+    label[class*="css-"],
+    input[type=text],
+    textarea[class*="TextControl"]  {
+      border-radius: 0 !important;
+    }
+    label[class*="css-"]::before,
+    label[class*="css-"]::after {
+      display: none;
+    }
+    input[type=text] {
+      border-top: none;
+      border-left: none;
+      border-right: none;
+      border-bottom: 2px solid var(--cms-gray);
+      padding: 10px 8px;
+    }
+    textarea[class*="TextControl"] {
+      border: 2px solid var(--cms-gray) !important;
+      padding: 10px 8px !important;
+    }
+    [data-whatintent="mouse"] :focus {
+      border-color: var(--cms-primary) !important;
+    }
+    /* Image Selector Container > Thumbnail */
+    img[class*="-Image"] {
+      object-fit: cover;
+    }
+    /* Image Selector Container > Buttons */
+    div[class*="-ControlContainer"] > div > span > div > div {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    div[class*="-ControlContainer"] > div > span > div > div > button {
+      margin: 0;
+      height: 30px;
+    }
+    /* Collapsible Groups */
+    div[class*="-TopBarContainer"] {
+      justify-content: space-between;
+    }
+    button[class*="-ExpandButton-"] {
+      display: flex;
+    }
+    button[class*="-ExpandButton-"]::before {
+      content: 'Expand/Collapse';
+      margin-right: 8px;
+      font-size: 12px;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+    div[class*="ControlContainer"]:first-of-type {
+      margin-top: 0;
+    }
+  </style>
+</head>
+
+<body>
+<!-- <script src="https://wzrd.in/standalone/markdown-it@latest"></script> -->
+<!-- <script src="https://wzrd.in/standalone/markdown-it-attrs@latest"></script> -->
+  <!-- Include the script that builds the page and powers Netlify CMS -->
+  <script>
+    window.CMS_MANUAL_INIT = true;
+  </script>
+  <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js" defer></script>
+  <script type="module">
+    const { CMS, initCMS: init } = window;
+    import config from '/admin/config.js';
+    init({config});
+  </script>
+  <script>
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", user => {
+        if (!user) {
+          window.netlifyIdentity.on("login", () => {
+            document.location.href = "/admin/";
+          });
+        }
+      });
+    }
+  </script>
+</body>
+
+</html>

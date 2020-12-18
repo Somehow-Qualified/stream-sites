@@ -1,0 +1,144 @@
+{#
+This File: site/_themes/ghostwind/default.njk
+
+THIS IS AN ESSENTIAL FILE. ALL LAYOUTS LOAD INTO HERE.
+- <head> includes the essentials: meta, stylesheet, favicon, manifest,
+  service worker, dark mode handler, Netlify Identity
+- <body> is your content. It includes header, any content via another
+  layout, footer, and scripts.
+
+Dynamic Data:
+- Theme Colors from site/_data/theme.json
+- Metomic from site/_data/site.json
+#}
+
+<!doctype html>
+<html lang="{{ site.language }}" class="min-h-full antialiased">
+  <head>
+    {# Meta Tags #}
+    {% include "meta.njk" %}
+
+    {# Stylesheet #}
+    {% if helpers.env != "production" %}
+    <link rel="stylesheet" href="{{ '/css/tailwind.min.css' | url | cacheBuster }}" rel="preload">
+    {% else %}
+    <link rel="stylesheet" href="{{ '/css/main.min.css' | url | cacheBuster }}" rel="preload">
+    {% endif %}
+
+    {# Dark Mode Handler #}
+    <script>(localStorage.getItem('darkMode') === 'true') && document.documentElement.classList.add('mode-dark');</script>
+
+    {# Netlify Identity #}
+    {% if page.url === "/" %}
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js" defer></script>
+    {% endif %}
+
+  </head>
+
+  <body class="font-sans text-lg leading-normal text-{{ theme.colors.main }}-900 dark:text-{{ theme.colors.main }}-100 bg-{{ theme.colors.main }}-100 dark:bg-{{ theme.colors.main }}-800">
+
+    <a href="#main" class="sr-skip-link">skip to main content</a>
+
+    <div class="wrapper flex flex-col items-stretch min-h-full">
+      {# Header #}
+      {% include "header.njk" %}
+
+      <main id="main" class="main hfeed flex-grow flex-shrink-0" role="main" tabindex="-1">
+        {# Templates and content load here! #}
+        {{ content | safe }}
+      </main>
+
+      {# Footer #}
+      {% include "footer.njk" %}
+    </div>
+
+    {# Scripts #}
+    {% if helpers.env != "production" %}
+    <script src="{{ '/js/main.js' | url | cacheBuster }}" defer></script>
+    {% elseif helpers.env === "production" %}
+    <script src="{{ '/js/main.min.js' | url | cacheBuster }}" defer></script>
+    {% endif %}
+
+    {# Custom Scripts: Enable this in Site Settings (_data/site.json) #}
+    {% if site.customjs === "enable" %}
+    <script>{% include "_js/custom.js" %}</script>
+    {% endif %}
+
+    {# Netlify Identity #}
+    {% if page.url === "/" %}
+    <script>
+    if (window.netlifyIdentity) { window.netlifyIdentity.on("init", user => { if (!user) { window.netlifyIdentity.on("login", () => { document.location.href = "/admin/"; }); } }); }
+    </script>
+    {% endif %}
+
+    {# Metomic - https://metomic.io/ #}
+    {% if site.robots.metomic === "on" %}
+    <script src="https://config.metomic.io/config.js?id=prj:dd25acac-40e8-4583-b7a4-603f493a8d90" crossorigin charset="utf-8" defer></script>
+    <script src="https://consent-manager.metomic.io/embed.js" crossorigin charset="utf-8" defer></script>
+    {% endif %}
+
+    {# ScrollShare: Scrolling Progress Share Bar #}
+    {% if scrollshare === "true" %}
+    <script>
+      /* Progress bar */
+      //Source: https://alligator.io/js/progress-bar-javascript-css-variables/
+      var h = document.documentElement,
+          b = document.body,
+          st = 'scrollTop',
+          sh = 'scrollHeight',
+          progress = document.querySelector('#progress'),
+          scroll;
+      var scrollpos = window.scrollY;
+      var header = document.getElementById("scrollHeader");
+
+      document.addEventListener('scroll', function() {
+
+        /*Refresh scroll % width*/
+        scroll = (h[st]||b[st]) / ((h[sh]||b[sh]) - h.clientHeight) * 100;
+        progress.style.setProperty('--scroll', scroll + '%');
+
+        /*Apply classes for slide in bar*/
+        scrollpos = window.scrollY;
+
+        if(scrollpos > 100){
+          header.classList.remove("hidden");
+          header.classList.remove("fadeOutUp");
+          header.classList.add("slideInDown");
+        }
+        else {
+          header.classList.remove("slideInDown");
+          header.classList.add("fadeOutUp");
+          header.classList.add("hidden");
+        }
+
+      });
+
+    </script>
+    {% endif %}
+
+    {# iFrame Loader for Featured Videos on Posts #}
+    {% if post_type === "video" %}
+    {% include "iframe-loader.njk" %}
+    {% endif %}
+
+    {# Search Form additions for DuckDuckGo #}
+    {% if key === "search" %}
+    {% if site.search_engine === "https://duckduckgo.com/" %}
+    <script>
+      // Enable DuckDuckGo Site Search
+      (function(document){
+        document.getElementById('searchForm')
+          .addEventListener('submit', function(){
+            var $query = document.getElementById('query'),
+                prepend = document.getElementById('prepend').value;
+            $query.value = prepend + ' ' + $query.value;
+            return true;
+          }, false);
+      }(this.document));
+    </script>
+    {% endif %}
+    {% endif %}
+
+  </body>
+
+</html>

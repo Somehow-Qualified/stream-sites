@@ -1,0 +1,38 @@
+---
+layout: default.njk
+---
+{#
+HOME
+- site/_themes/ghostwind/home.njk
+
+Usage:
+- site/pages/home.md
+
+#}
+{% for section in home.sections %}
+
+  {% if section.template === "hero" %}
+  {% include 'sections/hero.njk' %}
+  {% endif %}
+
+  {% if section.template === "headline-text" %}
+  {% include 'sections/headline-text.njk' %}
+  {% endif %}
+
+  {% if section.template === "image-parallax" %}
+  {% include 'sections/image-parallax.njk' %}
+  {% endif %}
+
+  {% if section.template === "posts-featured" %}
+  {% include 'sections/posts-featured.njk' %}
+  {% endif %}
+
+  {% if section.template === "headline" %}
+  {% include 'sections/headline.njk' %}
+  {% endif %}
+
+  {% if section.template === "cta" %}
+  {% include 'sections/cta-feeds.njk' %}
+  {% endif %}
+
+{% endfor %}

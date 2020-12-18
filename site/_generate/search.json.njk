@@ -1,0 +1,15 @@
+---
+permalink: search.json
+eleventyExcludeFromCollections: true
+---
+{"search" : [
+{%- for item in collections.searchable %}
+{%- if item.data.sitemapIgnore !== true %}
+  {
+    "url" : "{{ item.url }}",
+    "title" : "{{ item.data.title }}",
+    "text" : "{{ (item.data.title + " " + item.data.subtitle + " " + item.templateContent) | squash }}"
+  }{% if not loop.last %},{% else %}{%- endif -%}
+{%- endif %}
+{%- endfor %}
+]}
