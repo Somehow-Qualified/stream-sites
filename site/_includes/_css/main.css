@@ -355,7 +355,7 @@ code {
 
 /* Table of Contents */
 .md-toc {
-  @apply pb-4 mt-4 border-b border-solid;
+  @apply pb-4 mt-4 mb-4 border-b border-solid;
 }
 /* .prose .md-toc ol {
   counter-reset: list-item;
