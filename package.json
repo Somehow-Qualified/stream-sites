@@ -53,7 +53,7 @@
 		"luxon": "^1.25.0",
 		"markdown-it": "^11.0.1",
 		"markdown-it-anchor": "^6.0.0",
-		"markdown-it-attrs": "^3.0.3",
+		"markdown-it-attrs": "^4.0.0",
 		"markdown-it-collapsible": "^1.0.0",
 		"markdown-it-footnote": "^3.0.2",
 		"markdown-it-imsize": "^2.0.1",
