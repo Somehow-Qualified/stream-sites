@@ -42,7 +42,7 @@
 		"@fullhuman/postcss-purgecss": "^3.0.0",
 		"@tailwindcss/forms": "^0.2.1",
 		"@tailwindcss/postcss7-compat": "^2.0.2",
-		"@tailwindcss/typography": "^0.3.0",
+		"@tailwindcss/typography": "^0.4.1",
 		"autoprefixer": "^9.8.6",
 		"cssnano": "^4.1.10",
 		"dotenv": "^8.2.0",
